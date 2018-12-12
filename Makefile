@@ -136,6 +136,23 @@ $(BIN)/exec/BnBSolverExec: $(BIN)/disjoint-sets/DisjointSets.o \
 	$(MKDIR) $(@D)
 	$(CPP) $(CXXFILES) -o $@ $^ $(CARGS) $(DLIB) -I$(GRBINC) $(GRBLIB)
 
+$(BIN)/test/BnCSolverTest: $(BIN)/disjoint-sets/DisjointSets.o \
+                           $(BIN)/graph/Vertex.o \
+                           $(BIN)/graph/Edge.o \
+                           $(BIN)/graph/Graph.o \
+                           $(BIN)/instance/Instance.o \
+                           $(BIN)/solution/Solution.o \
+                           $(BIN)/solver/heuristic/Heuristic.o \
+                           $(BIN)/solver/heuristic/constructive/GreedyConstructiveHeuristic.o \
+                           $(BIN)/solver/heuristic/fixer/SolutionFixer.o \
+                           $(BIN)/solver/heuristic/localsearch/LocalSearchHeuristic.o \
+                           $(BIN)/solver/CEDPSolver.o \
+                           $(BIN)/solver/exact/branch-and-cut/BnCSolverCallback.o \
+                           $(BIN)/solver/exact/branch-and-cut/BnCSolver.o \
+                           $(BIN)/test/BnCSolverTest.o
+	$(MKDIR) $(@D)
+	$(CPP) $(CXXFILES) -o $@ $^ $(CARGS) $(DLIB) -I$(GRBINC) $(GRBLIB)
+
 InstanceTest: $(BIN)/test/InstanceTest
 
 GraphGeneratorExec: $(BIN)/exec/GraphGeneratorExec
@@ -153,4 +170,6 @@ LinearRelaxationSolverExec: $(BIN)/exec/LinearRelaxationSolverExec
 BnBSolverTest: $(BIN)/test/BnBSolverTest
 
 BnBSolverExec: $(BIN)/exec/BnBSolverExec
+
+BnCSolverTest: $(BIN)/test/BnCSolverTest
 
