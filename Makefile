@@ -176,6 +176,23 @@ $(BIN)/test/StatisticsTest: $(BIN)/statistics/Statistics.o \
 	$(MKDIR) $(@D)
 	$(CPP) -o $@ $^ $(CARGS)
 
+$(BIN)/test/GRASPSolverTest: $(BIN)/disjoint-sets/DisjointSets.o \
+                             $(BIN)/statistics/Statistics.o \
+                             $(BIN)/graph/Vertex.o \
+                             $(BIN)/graph/Edge.o \
+                             $(BIN)/graph/Graph.o \
+                             $(BIN)/instance/Instance.o \
+                             $(BIN)/solution/Solution.o \
+                             $(BIN)/solver/heuristic/Heuristic.o \
+                             $(BIN)/solver/heuristic/constructive/GreedyConstructiveHeuristic.o \
+                             $(BIN)/solver/heuristic/fixer/SolutionFixer.o \
+                             $(BIN)/solver/heuristic/localsearch/LocalSearchHeuristic.o \
+                             $(BIN)/solver/CEDPSolver.o \
+                             $(BIN)/solver/metaheuristic/grasp/GRASPSolver.o \
+                             $(BIN)/test/GRASPSolverTest.o
+	$(MKDIR) $(@D)
+	$(CPP) $(CXXFILES) -o $@ $^ $(CARGS) $(DLIB)
+
 InstanceTest: $(BIN)/test/InstanceTest
 
 GraphGeneratorExec: $(BIN)/exec/GraphGeneratorExec
@@ -199,4 +216,6 @@ BnCSolverTest: $(BIN)/test/BnCSolverTest
 BnCSolverExec: $(BIN)/exec/BnCSolverExec
 
 StatisticsTest: $(BIN)/test/StatisticsTest
+
+GRASPSolverTest: $(BIN)/test/GRASPSolverTest
 
