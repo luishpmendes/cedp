@@ -86,6 +86,23 @@ $(BIN)/test/LinearRelaxationSolverTest: $(BIN)/disjoint-sets/DisjointSets.o \
 	$(MKDIR) $(@D)
 	$(CPP) $(CXXFILES) -o $@ $^ $(CARGS) $(DLIB) -I$(GRBINC) $(GRBLIB)
 
+$(BIN)/exec/LinearRelaxationSolverExec: $(BIN)/disjoint-sets/DisjointSets.o \
+                                        $(BIN)/graph/Vertex.o \
+                                        $(BIN)/graph/Edge.o \
+                                        $(BIN)/graph/Graph.o \
+                                        $(BIN)/instance/Instance.o \
+                                        $(BIN)/solution/Solution.o \
+                                        $(BIN)/solver/heuristic/Heuristic.o \
+                                        $(BIN)/solver/heuristic/constructive/GreedyConstructiveHeuristic.o \
+                                        $(BIN)/solver/heuristic/fixer/SolutionFixer.o \
+                                        $(BIN)/solver/heuristic/localsearch/LocalSearchHeuristic.o \
+                                        $(BIN)/solver/CEDPSolver.o \
+                                        $(BIN)/solver/metaheuristic/linear-relaxation/LinearRelaxationSolver.o \
+                                        $(BIN)/exec/ArgumentParser.o \
+                                        $(BIN)/exec/LinearRelaxationSolverExec.o
+	$(MKDIR) $(@D)
+	$(CPP) $(CXXFILES) -o $@ $^ $(CARGS) $(DLIB) -I$(GRBINC) $(GRBLIB)
+
 InstanceTest: $(BIN)/test/InstanceTest
 
 GraphGeneratorExec: $(BIN)/exec/GraphGeneratorExec
@@ -97,4 +114,6 @@ SolutionTest: $(BIN)/test/SolutionTest
 HeuristicTest: $(BIN)/test/HeuristicTest
 
 LinearRelaxationSolverTest: $(BIN)/test/LinearRelaxationSolverTest
+
+LinearRelaxationSolverExec: $(BIN)/exec/LinearRelaxationSolverExec
 
