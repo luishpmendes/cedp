@@ -1,0 +1,153 @@
+BnBSolver
+make: Nothing to be done for 'BnBSolverExec'.
+Instance: grid-m5V25E24B10D05
+Start time: qui mar 19 21:05:17 -03 2020
+Academic license - for non-commercial use only
+End time: qui mar 19 21:05:46 -03 2020
+Instance: grid-m5V49E48B10D05
+Start time: qui mar 19 21:05:46 -03 2020
+Academic license - for non-commercial use only
+End time: qui mar 19 21:16:53 -03 2020
+Instance: grid-m5V100E99B10D05
+Start time: qui mar 19 21:16:53 -03 2020
+Academic license - for non-commercial use only
+End time: qui mar 19 22:16:53 -03 2020
+Instance: grid-m10V25E24B10D05
+Start time: qui mar 19 22:16:53 -03 2020
+Academic license - for non-commercial use only
+End time: qui mar 19 22:17:55 -03 2020
+Instance: grid-m10V49E48B10D05
+Start time: qui mar 19 22:17:55 -03 2020
+Academic license - for non-commercial use only
+End time: qui mar 19 23:17:56 -03 2020
+Instance: grid-m10V100E99B10D05
+Start time: qui mar 19 23:17:56 -03 2020
+Academic license - for non-commercial use only
+End time: sex mar 20 00:17:56 -03 2020
+Instance: random-m5V25E24B10D05
+Start time: sex mar 20 00:17:56 -03 2020
+Academic license - for non-commercial use only
+End time: sex mar 20 00:18:27 -03 2020
+Instance: random-m5V49E48B10D05
+Start time: sex mar 20 00:18:27 -03 2020
+Academic license - for non-commercial use only
+End time: sex mar 20 01:02:07 -03 2020
+Instance: random-m5V100E99B10D05
+Start time: sex mar 20 01:02:07 -03 2020
+Academic license - for non-commercial use only
+End time: sex mar 20 02:02:08 -03 2020
+Instance: random-m10V25E24B10D05
+Start time: sex mar 20 02:02:08 -03 2020
+Academic license - for non-commercial use only
+End time: sex mar 20 02:03:18 -03 2020
+Instance: random-m10V49E48B10D05
+Start time: sex mar 20 02:03:18 -03 2020
+Academic license - for non-commercial use only
+End time: sex mar 20 03:03:19 -03 2020
+Instance: random-m10V100E99B10D05
+Start time: sex mar 20 03:03:19 -03 2020
+Academic license - for non-commercial use only
+End time: sex mar 20 04:03:20 -03 2020
+BnCSolver
+make: Nothing to be done for 'BnCSolverExec'.
+Instance: grid-m5V25E24B10D05
+Start time: sex mar 20 04:03:20 -03 2020
+Academic license - for non-commercial use only
+End time: sex mar 20 04:04:22 -03 2020
+Instance: grid-m5V49E48B10D05
+Start time: sex mar 20 04:04:22 -03 2020
+Academic license - for non-commercial use only
+End time: sex mar 20 05:04:23 -03 2020
+Instance: grid-m5V100E99B10D05
+Start time: sex mar 20 05:04:23 -03 2020
+Academic license - for non-commercial use only
+End time: sex mar 20 06:04:23 -03 2020
+Instance: grid-m10V25E24B10D05
+Start time: sex mar 20 06:04:23 -03 2020
+Academic license - for non-commercial use only
+End time: sex mar 20 06:05:13 -03 2020
+Instance: grid-m10V49E48B10D05
+Start time: sex mar 20 06:05:13 -03 2020
+Academic license - for non-commercial use only
+End time: sex mar 20 07:05:13 -03 2020
+Instance: grid-m10V100E99B10D05
+Start time: sex mar 20 07:05:13 -03 2020
+Academic license - for non-commercial use only
+End time: sex mar 20 08:05:14 -03 2020
+Instance: random-m5V25E24B10D05
+Start time: sex mar 20 08:05:14 -03 2020
+Academic license - for non-commercial use only
+End time: sex mar 20 08:06:06 -03 2020
+Instance: random-m5V49E48B10D05
+Start time: sex mar 20 08:06:06 -03 2020
+Academic license - for non-commercial use only
+End time: sex mar 20 09:06:06 -03 2020
+Instance: random-m5V100E99B10D05
+Start time: sex mar 20 09:06:06 -03 2020
+Academic license - for non-commercial use only
+End time: sex mar 20 10:06:07 -03 2020
+Instance: random-m10V25E24B10D05
+Start time: sex mar 20 10:06:07 -03 2020
+Academic license - for non-commercial use only
+End time: sex mar 20 10:08:54 -03 2020
+Instance: random-m10V49E48B10D05
+Start time: sex mar 20 10:08:54 -03 2020
+Academic license - for non-commercial use only
+End time: sex mar 20 11:08:55 -03 2020
+Instance: random-m10V100E99B10D05
+Start time: sex mar 20 11:08:55 -03 2020
+Academic license - for non-commercial use only
+End time: sex mar 20 12:08:56 -03 2020
+GRASPSolver
+make: Nothing to be done for 'GRASPSolverExec'.
+m=10
+k=100
+Instance: grid-m5V25E24B10D05
+Start time: sex mar 20 12:08:56 -03 2020
+-1805 3600
+End time: sex mar 20 13:08:56 -03 2020
+Instance: grid-m5V49E48B10D05
+Start time: sex mar 20 13:08:56 -03 2020
+-6852 3600
+End time: sex mar 20 14:08:56 -03 2020
+Instance: grid-m5V100E99B10D05
+Start time: sex mar 20 14:08:56 -03 2020
+-29168 3600
+End time: sex mar 20 15:08:56 -03 2020
+Instance: grid-m10V25E24B10D05
+Start time: sex mar 20 15:08:56 -03 2020
+-4820 3600
+End time: sex mar 20 16:08:56 -03 2020
+Instance: grid-m10V49E48B10D05
+Start time: sex mar 20 16:08:56 -03 2020
+-15733 3600
+End time: sex mar 20 17:08:56 -03 2020
+Instance: grid-m10V100E99B10D05
+Start time: sex mar 20 17:08:56 -03 2020
+-61515 3600
+End time: sex mar 20 18:08:56 -03 2020
+Instance: random-m5V25E24B10D05
+Start time: sex mar 20 18:08:56 -03 2020
+-2033 3600
+End time: sex mar 20 19:08:56 -03 2020
+Instance: random-m5V49E48B10D05
+Start time: sex mar 20 19:08:56 -03 2020
+-7676 3600
+End time: sex mar 20 20:08:56 -03 2020
+Instance: random-m5V100E99B10D05
+Start time: sex mar 20 20:08:56 -03 2020
+-28412 3600
+End time: sex mar 20 21:08:56 -03 2020
+Instance: random-m10V25E24B10D05
+Start time: sex mar 20 21:08:56 -03 2020
+-4571 3600
+End time: sex mar 20 22:08:56 -03 2020
+Instance: random-m10V49E48B10D05
+Start time: sex mar 20 22:08:56 -03 2020
+-17303 3600
+End time: sex mar 20 23:08:56 -03 2020
+Instance: random-m10V100E99B10D05
+Start time: sex mar 20 23:08:56 -03 2020
+-66155 3600
+End time: sáb mar 21 00:08:56 -03 2020
+Finished
