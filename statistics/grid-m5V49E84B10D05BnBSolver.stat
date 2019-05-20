@@ -1,0 +1,17 @@
+m: 5
+D: 1937
+B: 1
+|V|: 49
+|E|: 84
+|U|: 84
+|A|: 214
+|U'|: 85
+|A'|: 298
+Maximum demand: 1937
+Time limit: 3600s
+Seed: 1955421225
+Solving time: 3600s
+Solutions found: 1
+Best primal bound: 25078
+Best dual bound: 26512
+Is solution feasible: 1
