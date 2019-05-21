@@ -14,7 +14,7 @@ int main (int argc, char * argv[]) {
                      firstSolutionIteration, firstSolutionTime, 
                      bestSolutionIteration, bestSolutionTime, notPartition, 
                      notConnected, dontRespectCapacity, notBalanced, 
-                     notFeasible, fixed;
+                     notFeasible, fixedSolutions, localSearchCounter;
         double B, bestDualBound, maximumDemand, Dratio;
 
         type = argParser.getCmdOption("--type");
@@ -30,6 +30,7 @@ int main (int argc, char * argv[]) {
         scanf("|A|: %u\n", &A);
         scanf("|U'|: %u\n", &UPrime);
         scanf("|A'|: %u\n", &APrime);
+        scanf("Maximum demand: %lf\n", &maximumDemand);
         scanf("Time limit: %us\n", &timeLimit);
         scanf("Seed: %u\n", &seed);
         scanf("Solving time: %us\n", &solvingTime);
@@ -37,7 +38,6 @@ int main (int argc, char * argv[]) {
         scanf("Best primal bound: %u\n", &bestPrimalBound);
         scanf("Best dual bound: %lf\n", &bestDualBound);
         scanf("Is solution feasible: %u\n", &isSolutionFeasible);
-        scanf("Maximum demand: %lf\n", &maximumDemand);
 
         if (solver.compare("GRASPSolver") == 0 || 
                 solver.compare("LagrangianHeuristicSolver1") == 0 || 
@@ -52,15 +52,18 @@ int main (int argc, char * argv[]) {
             scanf("Solutions that do not respects the capacity: %u\n", &dontRespectCapacity);
             scanf("Solutions that are not balanced: %u\n", &notBalanced);
             scanf("Solutions that are not feasible: %u\n", &notFeasible);
-            scanf("Solutions that were fixed: %u\n", &fixed);
+            scanf("Solutions that were fixed: %u\n", &fixedSolutions);
+            if (solver.compare("GRASPSolver") == 0) {
+                scanf("Local search counter: %u\n", &localSearchCounter);
+            }
         }
 
         std::cout << type << " " << Dratio << " " << solver << " " << m << " " 
             << D << " " << B << " " << V << " " << E << " " << U << " " << A 
-            << " " << UPrime << " " << APrime << " " << timeLimit << " " << 
-            seed << " " << solvingTime << " " << solutionsFound << " " << 
-            bestPrimalBound << " " << bestDualBound << " " << 
-            isSolutionFeasible << " " << maximumDemand;
+            << " " << UPrime << " " << APrime << " " << maximumDemand << " " 
+            << timeLimit << " " << seed << " " << solvingTime << " " << 
+            solutionsFound << " " << bestPrimalBound << " " << bestDualBound 
+            << " " << isSolutionFeasible;
 
         if (solver.compare("GRASPSolver") == 0 || 
                 solver.compare("LagrangianHeuristicSolver1") == 0 || 
@@ -70,7 +73,10 @@ int main (int argc, char * argv[]) {
                 bestSolutionIteration << " " << bestSolutionTime << " " <<
                 notPartition << " " << notConnected << " " << 
                 dontRespectCapacity << " " << notBalanced << " " << 
-                notFeasible << " " << fixed;
+                notFeasible << " " << fixedSolutions;
+            if (solver.compare("GRASPSolver") == 0) {
+                std::cout << " " << localSearchCounter;
+            }
         }
 
         std::cout << std::endl;
