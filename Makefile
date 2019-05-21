@@ -277,6 +277,11 @@ $(BIN)/exec/LagrangianHeuristicSolver2Exec: $(BIN)/disjoint-sets/DisjointSets.o 
 	$(MKDIR) $(@D)
 	$(CPP) $(CXXFILES) -o $@ $^ $(CARGS) $(DLIB) -I$(GRBINC) $(GRBLIB)
 
+$(BIN)/exec/StatisticsAggregatorExec: $(BIN)/exec/ArgumentParser.o \
+                                      $(BIN)/exec/StatisticsAggregatorExec.o
+	$(MKDIR) $(@D)
+	$(CPP) $(CXXFILES) -o $@ $^ $(CARGS) $(DLIB)
+
 InstanceTest: $(BIN)/test/InstanceTest
 
 GraphGeneratorExec: $(BIN)/exec/GraphGeneratorExec
@@ -312,4 +317,6 @@ LagrangianHeuristicSolver1Exec: $(BIN)/exec/LagrangianHeuristicSolver1Exec
 LagrangianHeuristicSolver2Test: $(BIN)/test/LagrangianHeuristicSolver2Test
 
 LagrangianHeuristicSolver2Exec: $(BIN)/exec/LagrangianHeuristicSolver2Exec
+
+StatisticsAggregatorExec: $(BIN)/exec/StatisticsAggregatorExec
 
