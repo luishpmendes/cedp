@@ -282,6 +282,17 @@ $(BIN)/exec/StatisticsAggregatorExec: $(BIN)/exec/ArgumentParser.o \
 	$(MKDIR) $(@D)
 	$(CPP) $(CXXFILES) -o $@ $^ $(CARGS) $(DLIB)
 
+$(BIN)/exec/PlotGeneratorExec: $(BIN)/disjoint-sets/DisjointSets.o \
+                               $(BIN)/graph/Vertex.o \
+                               $(BIN)/graph/Edge.o \
+                               $(BIN)/graph/Graph.o \
+                               $(BIN)/instance/Instance.o \
+                               $(BIN)/solution/Solution.o \
+                               $(BIN)/exec/ArgumentParser.o \
+                               $(BIN)/exec/PlotGeneratorExec.o
+	$(MKDIR) $(@D)
+	$(CPP) -o $@ $^ $(CARGS)
+
 InstanceTest: $(BIN)/test/InstanceTest
 
 GraphGeneratorExec: $(BIN)/exec/GraphGeneratorExec
@@ -319,4 +330,6 @@ LagrangianHeuristicSolver2Test: $(BIN)/test/LagrangianHeuristicSolver2Test
 LagrangianHeuristicSolver2Exec: $(BIN)/exec/LagrangianHeuristicSolver2Exec
 
 StatisticsAggregatorExec: $(BIN)/exec/StatisticsAggregatorExec
+
+PlotGeneratorExec: $(BIN)/exec/PlotGeneratorExec
 
