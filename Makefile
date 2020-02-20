@@ -21,6 +21,17 @@ $(BIN)/test/InstanceTest: $(BIN)/disjoint-sets/DisjointSets.o \
 	$(MKDIR) $(@D)
 	$(CPP) -o $@ $^ $(CARGS)
 
+$(BIN)/exec/GraphGeneratorExec: $(BIN)/disjoint-sets/DisjointSets.o \
+                                $(BIN)/graph/Vertex.o \
+                                $(BIN)/graph/Edge.o \
+                                $(BIN)/graph/Graph.o \
+                                $(BIN)/instance/Instance.o \
+                                $(BIN)/exec/ArgumentParser.o \
+                                $(BIN)/exec/GraphGeneratorExec.o
+	$(MKDIR) $(@D)
+	$(CPP) -o $@ $^ $(CARGS)
 
 InstanceTest: $(BIN)/test/InstanceTest
+
+GraphGeneratorExec: $(BIN)/exec/GraphGeneratorExec
 
