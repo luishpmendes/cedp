@@ -171,6 +171,11 @@ $(BIN)/exec/BnCSolverExec: $(BIN)/disjoint-sets/DisjointSets.o \
 	$(MKDIR) $(@D)
 	$(CPP) $(CXXFILES) -o $@ $^ $(CARGS) $(DLIB) -I$(GRBINC) $(GRBLIB)
 
+$(BIN)/test/StatisticsTest: $(BIN)/statistics/Statistics.o \
+                            $(BIN)/test/StatisticsTest.o
+	$(MKDIR) $(@D)
+	$(CPP) -o $@ $^ $(CARGS)
+
 InstanceTest: $(BIN)/test/InstanceTest
 
 GraphGeneratorExec: $(BIN)/exec/GraphGeneratorExec
@@ -192,4 +197,6 @@ BnBSolverExec: $(BIN)/exec/BnBSolverExec
 BnCSolverTest: $(BIN)/test/BnCSolverTest
 
 BnCSolverExec: $(BIN)/exec/BnCSolverExec
+
+StatisticsTest: $(BIN)/test/StatisticsTest
 
