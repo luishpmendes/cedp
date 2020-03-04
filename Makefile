@@ -293,6 +293,10 @@ $(BIN)/exec/PlotGeneratorExec: $(BIN)/disjoint-sets/DisjointSets.o \
 	$(MKDIR) $(@D)
 	$(CPP) -o $@ $^ $(CARGS)
 
+$(BIN)/exec/PerformanceProfilesPrimalExec: $(BIN)/exec/PerformanceProfilesPrimalExec.o 
+	$(MKDIR) $(@D)
+	$(CPP) -o $@ $^ $(CARGS)
+
 InstanceTest: $(BIN)/test/InstanceTest
 
 GraphGeneratorExec: $(BIN)/exec/GraphGeneratorExec
@@ -332,4 +336,6 @@ LagrangianHeuristicSolver2Exec: $(BIN)/exec/LagrangianHeuristicSolver2Exec
 StatisticsAggregatorExec: $(BIN)/exec/StatisticsAggregatorExec
 
 PlotGeneratorExec: $(BIN)/exec/PlotGeneratorExec
+
+PerformanceProfilesPrimalExec: $(BIN)/exec/PerformanceProfilesPrimalExec
 
