@@ -297,6 +297,10 @@ $(BIN)/exec/PerformanceProfilesPrimalExec: $(BIN)/exec/PerformanceProfilesPrimal
 	$(MKDIR) $(@D)
 	$(CPP) -o $@ $^ $(CARGS)
 
+$(BIN)/exec/PerformanceProfilesDualExec: $(BIN)/exec/PerformanceProfilesDualExec.o 
+	$(MKDIR) $(@D)
+	$(CPP) -o $@ $^ $(CARGS)
+
 InstanceTest: $(BIN)/test/InstanceTest
 
 GraphGeneratorExec: $(BIN)/exec/GraphGeneratorExec
@@ -338,4 +342,6 @@ StatisticsAggregatorExec: $(BIN)/exec/StatisticsAggregatorExec
 PlotGeneratorExec: $(BIN)/exec/PlotGeneratorExec
 
 PerformanceProfilesPrimalExec: $(BIN)/exec/PerformanceProfilesPrimalExec
+
+PerformanceProfilesDualExec: $(BIN)/exec/PerformanceProfilesDualExec
 
