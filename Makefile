@@ -306,6 +306,11 @@ $(BIN)/exec/PerformanceProfilesPrimalTExec: $(BIN)/exec/ArgumentParser.o \
 	$(MKDIR) $(@D)
 	$(CPP) -o $@ $^ $(CARGS)
 
+$(BIN)/exec/PerformanceProfilesDualTExec: $(BIN)/exec/ArgumentParser.o \
+                                          $(BIN)/exec/PerformanceProfilesDualTExec.o 
+	$(MKDIR) $(@D)
+	$(CPP) -o $@ $^ $(CARGS)
+
 InstanceTest: $(BIN)/test/InstanceTest
 
 GraphGeneratorExec: $(BIN)/exec/GraphGeneratorExec
@@ -351,4 +356,6 @@ PerformanceProfilesPrimalExec: $(BIN)/exec/PerformanceProfilesPrimalExec
 PerformanceProfilesDualExec: $(BIN)/exec/PerformanceProfilesDualExec
 
 PerformanceProfilesPrimalTExec: $(BIN)/exec/PerformanceProfilesPrimalTExec
+
+PerformanceProfilesDualTExec: $(BIN)/exec/PerformanceProfilesDualTExec
 
