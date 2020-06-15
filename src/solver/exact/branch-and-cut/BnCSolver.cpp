@@ -22,28 +22,14 @@ BnCSolver::BnCSolver() : CEDPSolver::CEDPSolver() {}
 void BnCSolver::solve() {
     this->startTime = std::chrono::steady_clock::now();
 
-    this->bestPrimalSolution = this->gcHeuristic.constructSolution(round(
-                0.05 * ((double) this->timeLimit)));
-
-    if (!this->bestPrimalSolution.isFeasible()) {
-        this->bestPrimalSolution = SolutionFixer::fixSolution(
-                this->bestPrimalSolution, round(
-                    0.05 * ((double) this->timeLimit)));
-    }
-
-    if (this->bestPrimalSolution.isFeasible()) {
-        this->solutionsCounter++;
-        this->bestPrimalBound = this->bestPrimalSolution.getValue();
-    }
-
     GRBEnv * env = 0;
 
     try {
         env = new GRBEnv();
         GRBModel model = GRBModel(* env);
 
-        std::vector<std::vector<GRBVar> > x (this->instance.getG().m(), 
-                std::vector<GRBVar> (this->instance.getM()));
+        std::vector<std::vector<GRBVar> > x (this->instance.getG().m(), std::vector<GRBVar>
+                (this->instance.getM()));
 
         /* ∀ e ∈ E */
         for (const Edge & e : this->instance.getG().getEdges()) {
@@ -54,8 +40,8 @@ void BnCSolver::solve() {
                 unsigned int obj = this->instance.getC(eId, j);
 
                 /* x_{e, j} ∈ {0, 1} */
-                x[eId - 1][j] = model.addVar(0.0, 1.0, obj, GRB_BINARY, "x_" + 
-                        std::to_string(eId - 1) + "_" + std::to_string(j));
+                x[eId - 1][j] = model.addVar(0.0, 1.0, obj, GRB_BINARY, "x_" + std::to_string(eId -
+                            1) + "_" + std::to_string(j));
             }
         }
 
@@ -69,13 +55,13 @@ void BnCSolver::solve() {
             unsigned int eId = this->instance.getG().getEdgeId(e);
 
             /* ∑_{j = 1}^{m}{x_{e, j}} = 1 */
-            GRBLinExpr constr1 = 0.0;
+            GRBLinExpr lhs1 = 0.0;
 
             for (unsigned int j = 0; j < this->instance.getM(); j++) {
-                constr1 += x[eId - 1][j];
+                lhs1 += x[eId - 1][j];
             }
 
-            model.addConstr(constr1 == 1, "c_1_" + std::to_string(eId - 1));
+            model.addConstr(lhs1 == 1, "c_1_" + std::to_string(eId - 1));
         }
 
         /* ∀ j ∈ {1, ..., m} */
@@ -84,49 +70,30 @@ void BnCSolver::solve() {
              * 2 * ∑_{e ∈ E}{d_{e} * x_{e, j}} <= 
              * min{D, ((2 * (1 + B)) / m) * ∑_{e ∈ E}{d_{e}}
              */
-            GRBLinExpr constr2 = 0.0;
+            GRBLinExpr lhs2 = 0.0;
 
             for (const Edge & e : this->instance.getG().getEdges()) {
                 unsigned int eId = this->instance.getG().getEdgeId(e);
 
-                constr2 += 2.0 * e.w * x[eId - 1][j];
+                lhs2 += 2.0 * e.w * x[eId - 1][j];
             }
 
-            double rhs = this->instance.getMaximumDemand();
-
-            model.addConstr(constr2 <= rhs, "c_2_" + std::to_string(j));
+            model.addConstr(lhs2 <= this->instance.getMaximumDemand(), "c_2_" + 
+                    std::to_string(j));
         }
 
         /* ∀ j ∈ {1, ..., m} */
         for (unsigned int j = 0; j < this->instance.getM(); j++) {
             /* ∑_{e ∈ E}{d_{e} * x_{e, j}} >= ((2 * (1 - B)) / m) * ∑_{e ∈ E}{d_{e}} */
-            GRBLinExpr constr3 = 0.0;
+            GRBLinExpr lhs3 = 0.0;
 
             for (const Edge & e : this->instance.getG().getEdges()) {
                 unsigned int eId = this->instance.getG().getEdgeId(e);
 
-                constr3 += 2.0 * e.w * x[eId - 1][j];
+                lhs3 += 2.0 * e.w * x[eId - 1][j];
             }
 
-            double rhs = this->instance.getMinimumDemand();
-
-            model.addConstr(constr3 >= rhs, "c_3_" + std::to_string(j));
-        }
-
-        for (const Edge & e : this->instance.getG().getEdges()) {
-            unsigned int eId = this->instance.getG().getEdgeId(e);
-
-            for (unsigned int j = 0; j < this->instance.getM(); j++) {
-                x[eId - 1][j].set(GRB_DoubleAttr_Start, 0.0);
-            }
-        }
-
-        for (unsigned int j = 0; j < this->instance.getM(); j++) {
-            for (const Edge & e : this->bestPrimalSolution.getDistrict(j)) {
-                unsigned int eId = this->instance.getG().getEdgeId(e);
-
-                x[eId - 1][j].set(GRB_DoubleAttr_Start, 1.0);
-            }
+            model.addConstr(lhs3 >= this->instance.getMinimumDemand(), "c_3_" + std::to_string(j));
         }
 
         unsigned int elapsedTime = this->getElapsedTime();
@@ -142,8 +109,6 @@ void BnCSolver::solve() {
         model.set(GRB_DoubleParam_TimeLimit, ((double) remainingTime));
         model.set(GRB_IntParam_OutputFlag, 0);
         model.set(GRB_IntParam_LazyConstraints, 1);
-        model.set(GRB_IntParam_PoolSearchMode, 2);
-        model.set(GRB_IntParam_PoolSolutions, 16);
         model.set(GRB_IntParam_Threads, 1);
 
         model.update();
@@ -174,50 +139,6 @@ void BnCSolver::solve() {
             if (this->bestPrimalBound < primalBound) {
                 this->bestPrimalBound = primalBound;
                 this->bestPrimalSolution = solution;
-            }
-        } else {
-            this->bestDualBound = model.get(GRB_DoubleAttr_ObjBound);
-
-            unsigned int nSolutions = model.get(GRB_IntAttr_SolCount);
-
-            for (unsigned int i = 0; i < nSolutions; i++) {
-                std::vector<std::set<Edge> > districts (this->instance.getM());
-
-                model.set(GRB_IntParam_SolutionNumber, i);
-
-                for (unsigned int j = 0; j < this->instance.getM(); j++) {
-                    for (const Edge & e : this->instance.getG().getEdges()) {
-                        unsigned int eId = this->instance.getG().getEdgeId(e);
-
-                        if (x[eId - 1][j].get(GRB_DoubleAttr_Xn) >= 0.5) {
-                            districts[j].insert(e);
-                        }
-                    }
-                }
-
-                Solution solution = Solution(this->instance, districts);
-
-                this->solutionsCounter++;
-
-                elapsedTime = this->getElapsedTime();
-                remainingTime = 0;
-
-                if (this->timeLimit > elapsedTime) {
-                    remainingTime = this->timeLimit - elapsedTime;
-                }
-
-                solution = this->lsHeuristic.improveSolution(solution, remainingTime);
-
-                double primalBound = solution.getValue();
-
-                if (this->bestPrimalBound < primalBound) {
-                    this->bestPrimalBound = primalBound;
-                    this->bestPrimalSolution = solution;
-                }
-
-                if (this->areTerminationCriteriaMet()) {
-                    break;
-                }
             }
         }
     } catch (GRBException e) {
