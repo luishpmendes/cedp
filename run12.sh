@@ -8,10 +8,7 @@ timeLimit=3600;
 echo "BnBSolver";
 make BnBSolverExec;
 
-for instance in grid-m5V25E40B10D10 grid-m5V49E84B10D10 grid-m5V100E180B10D10 \
-        grid-m10V25E40B10D10 grid-m10V49E84B10D10 grid-m10V100E180B10D10 \
-        random-m5V25E40B10D10 random-m5V49E84B10D10 random-m5V100E180B10D10 \
-        random-m10V25E40B10D10 random-m10V49E84B10D10 random-m10V100E180B10D10
+for instance in grid-m5V25E32B10D10 grid-m5V100E99B10D10 random-m5V25E40B10D10 random-m5V100E140B10D10
 do
     echo "Instance: "$instance;
     echo "Start time: "$(date);
@@ -25,10 +22,7 @@ done
 echo "BnCSolver";
 make BnCSolverExec;
 
-for instance in grid-m5V25E40B10D10 grid-m5V49E84B10D10 grid-m5V100E180B10D10 \
-        grid-m10V25E40B10D10 grid-m10V49E84B10D10 grid-m10V100E180B10D10 \
-        random-m5V25E40B10D10 random-m5V49E84B10D10 random-m5V100E180B10D10 \
-        random-m10V25E40B10D10 random-m10V49E84B10D10 random-m10V100E180B10D10
+for instance in grid-m5V25E32B10D10 grid-m5V100E99B10D10 random-m5V25E40B10D10 random-m5V100E140B10D10
 do
     echo "Instance: "$instance;
     echo "Start time: "$(date);
@@ -46,10 +40,7 @@ echo "m="$m;
 k=100;
 echo "k="$k;
 
-for instance in grid-m5V25E40B10D10 grid-m5V49E84B10D10 grid-m5V100E180B10D10 \
-        grid-m10V25E40B10D10 grid-m10V49E84B10D10 grid-m10V100E180B10D10 \
-        random-m5V25E40B10D10 random-m5V49E84B10D10 random-m5V100E180B10D10 \
-        random-m10V25E40B10D10 random-m10V49E84B10D10 random-m10V100E180B10D10
+for instance in grid-m5V25E32B10D10 grid-m5V100E99B10D10 random-m5V25E40B10D10 random-m5V100E140B10D10
 do
     echo "Instance: "$instance;
     echo "Start time: "$(date);
