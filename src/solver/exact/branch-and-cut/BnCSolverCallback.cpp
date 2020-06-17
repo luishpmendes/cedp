@@ -27,14 +27,14 @@ void BnCSolverCallback::callback() {
                     }
                 }
 
-                std::vector<Graph> connectedComponents = 
-                    this->instance.getG().getInducedSubGraph(district).
-                    getConnectedComponents();
+                std::vector<Graph> connectedComponents =
+                    this->instance.getG().getInducedSubGraph(district).getConnectedComponents();
 
                 if (connectedComponents.size() > 1) {
                     for (unsigned int i = 0; i < connectedComponents.size(); i++) {
-                        std::set<Edge> cut = this->instance.getG().
-                            getAdjacentEdges(connectedComponents[i].getEdges());
+                        std::set<Edge> cut =
+                            this->instance.getG().getAdjacentEdges(connectedComponents[i].
+                                    getEdges());
 
                         for (const Edge & e : connectedComponents[i].getEdges()) {
                             unsigned int eId = this->instance.getG().getEdgeId(e);
@@ -49,8 +49,7 @@ void BnCSolverCallback::callback() {
                                         constr += this->x[fId - 1][j];
 
                                         for (const Edge & g : cut) {
-                                            unsigned int gId = this->instance.
-                                                getG().getEdgeId(g);
+                                            unsigned int gId = this->instance.getG().getEdgeId(g);
 
                                             constr -= this->x[gId - 1][j];
                                         }
