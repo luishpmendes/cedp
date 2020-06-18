@@ -1,0 +1,17 @@
+m: 10
+D: 181
+B: 1
+|V|: 25
+|E|: 24
+|U|: 24
+|A|: 32
+|U'|: 25
+|A'|: 56
+Maximum demand: 181
+Time limit: 3600s
+Seed: 1056441852
+Solving time: 3498s
+Solutions found: 1
+Best primal bound: 4615
+Best dual bound: 4615
+Is solution feasible: 0

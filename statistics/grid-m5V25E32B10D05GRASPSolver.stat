@@ -1,0 +1,29 @@
+m: 5
+D: 680
+B: 1
+|V|: 25
+|E|: 32
+|U|: 32
+|A|: 62
+|U'|: 33
+|A'|: 94
+Maximum demand: 680
+Time limit: 3600s
+Seed: 735171075
+Solving time: 3600s
+Solutions found: 52467
+Best primal bound: 3795
+Best dual bound: 1.79769e+308
+Is solution feasible: 1
+Total iterations: 163470
+First solution iteration: 7
+First solution time: 0
+Best solution iteration: 108375
+Best solution time: 2401
+Solutions that are not partition: 0
+Solutions that are not connected: 119025
+Solutions that do not respects the capacity: 0
+Solutions that are not balanced: 0
+Solutions that are not feasible: 119025
+Solutions that were fixed: 8023
+Local search counter: 4078

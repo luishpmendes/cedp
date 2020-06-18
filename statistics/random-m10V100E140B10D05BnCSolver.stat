@@ -1,0 +1,17 @@
+m: 10
+D: 940
+B: 1
+|V|: 100
+|E|: 140
+|U|: 140
+|A|: 380
+|U'|: 141
+|A'|: 520
+Maximum demand: 940
+Time limit: 3600s
+Seed: 611878003
+Solving time: 3600s
+Solutions found: 0
+Best primal bound: 0
+Best dual bound: 1.79769e+308
+Is solution feasible: 0
