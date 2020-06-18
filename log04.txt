@@ -1,0 +1,57 @@
+BnBSolver
+make: Nothing to be done for 'BnBSolverExec'.
+Instance: grid-m5V25E24B10D10
+Start time: Wed Jun 17 20:07:16 -03 2020
+Academic license - for non-commercial use only
+End time: Wed Jun 17 20:30:38 -03 2020
+Instance: grid-m5V49E84B10D10
+Start time: Wed Jun 17 20:30:38 -03 2020
+Academic license - for non-commercial use only
+End time: Wed Jun 17 21:30:39 -03 2020
+Instance: random-m5V25E32B10D10
+Start time: Wed Jun 17 21:30:39 -03 2020
+Academic license - for non-commercial use only
+End time: Wed Jun 17 22:30:40 -03 2020
+Instance: random-m5V100E99B10D10
+Start time: Wed Jun 17 22:30:40 -03 2020
+Academic license - for non-commercial use only
+End time: Wed Jun 17 23:30:40 -03 2020
+BnCSolver
+make: Nothing to be done for 'BnCSolverExec'.
+Instance: grid-m5V25E24B10D10
+Start time: Wed Jun 17 23:30:40 -03 2020
+Academic license - for non-commercial use only
+End time: Wed Jun 17 23:30:42 -03 2020
+Instance: grid-m5V49E84B10D10
+Start time: Wed Jun 17 23:30:42 -03 2020
+Academic license - for non-commercial use only
+End time: Thu Jun 18 00:30:43 -03 2020
+Instance: random-m5V25E32B10D10
+Start time: Thu Jun 18 00:30:43 -03 2020
+Academic license - for non-commercial use only
+End time: Thu Jun 18 00:30:48 -03 2020
+Instance: random-m5V100E99B10D10
+Start time: Thu Jun 18 00:30:48 -03 2020
+Academic license - for non-commercial use only
+End time: Thu Jun 18 01:30:49 -03 2020
+GRASPSolver
+make: Nothing to be done for 'GRASPSolverExec'.
+m=10
+k=100
+Instance: grid-m5V25E24B10D10
+Start time: Thu Jun 18 01:30:49 -03 2020
+-1930 3600
+End time: Thu Jun 18 02:30:49 -03 2020
+Instance: grid-m5V49E84B10D10
+Start time: Thu Jun 18 02:30:49 -03 2020
+-25411 3600
+End time: Thu Jun 18 03:30:49 -03 2020
+Instance: random-m5V25E32B10D10
+Start time: Thu Jun 18 03:30:49 -03 2020
+-3908 3600
+End time: Thu Jun 18 04:30:49 -03 2020
+Instance: random-m5V100E99B10D10
+Start time: Thu Jun 18 04:30:49 -03 2020
+-28175 3600
+End time: Thu Jun 18 05:30:49 -03 2020
+Finished
