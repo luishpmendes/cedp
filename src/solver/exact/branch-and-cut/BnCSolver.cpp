@@ -22,20 +22,6 @@ BnCSolver::BnCSolver() : CEDPSolver::CEDPSolver() {}
 void BnCSolver::solve() {
     this->startTime = std::chrono::steady_clock::now();
 
-    this->bestPrimalSolution = this->gcHeuristic.constructSolution(round(
-                0.05 * ((double) this->timeLimit)));
-
-    if (!this->bestPrimalSolution.isFeasible()) {
-        this->bestPrimalSolution = SolutionFixer::fixSolution(
-                this->bestPrimalSolution, round(
-                    0.05 * ((double) this->timeLimit)));
-    }
-
-    if (this->bestPrimalSolution.isFeasible()) {
-        this->solutionsCounter++;
-        this->bestPrimalBound = this->bestPrimalSolution.getValue();
-    }
-
     GRBEnv * env = 0;
 
     try {
@@ -142,8 +128,6 @@ void BnCSolver::solve() {
         model.set(GRB_DoubleParam_TimeLimit, ((double) remainingTime));
         model.set(GRB_IntParam_OutputFlag, 0);
         model.set(GRB_IntParam_LazyConstraints, 1);
-        model.set(GRB_IntParam_PoolSearchMode, 2);
-        model.set(GRB_IntParam_PoolSolutions, 16);
         model.set(GRB_IntParam_Threads, 1);
 
         model.update();
@@ -174,50 +158,6 @@ void BnCSolver::solve() {
             if (this->bestPrimalBound < primalBound) {
                 this->bestPrimalBound = primalBound;
                 this->bestPrimalSolution = solution;
-            }
-        } else {
-            this->bestDualBound = model.get(GRB_DoubleAttr_ObjBound);
-
-            unsigned int nSolutions = model.get(GRB_IntAttr_SolCount);
-
-            for (unsigned int i = 0; i < nSolutions; i++) {
-                std::vector<std::set<Edge> > districts (this->instance.getM());
-
-                model.set(GRB_IntParam_SolutionNumber, i);
-
-                for (unsigned int j = 0; j < this->instance.getM(); j++) {
-                    for (const Edge & e : this->instance.getG().getEdges()) {
-                        unsigned int eId = this->instance.getG().getEdgeId(e);
-
-                        if (x[eId - 1][j].get(GRB_DoubleAttr_Xn) >= 0.5) {
-                            districts[j].insert(e);
-                        }
-                    }
-                }
-
-                Solution solution = Solution(this->instance, districts);
-
-                this->solutionsCounter++;
-
-                elapsedTime = this->getElapsedTime();
-                remainingTime = 0;
-
-                if (this->timeLimit > elapsedTime) {
-                    remainingTime = this->timeLimit - elapsedTime;
-                }
-
-                solution = this->lsHeuristic.improveSolution(solution, remainingTime);
-
-                double primalBound = solution.getValue();
-
-                if (this->bestPrimalBound < primalBound) {
-                    this->bestPrimalBound = primalBound;
-                    this->bestPrimalSolution = solution;
-                }
-
-                if (this->areTerminationCriteriaMet()) {
-                    break;
-                }
             }
         }
     } catch (GRBException e) {
