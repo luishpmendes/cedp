@@ -1,0 +1,17 @@
+m: 5
+D: 814
+B: 1
+|V|: 25
+|E|: 24
+|U|: 24
+|A|: 34
+|U'|: 25
+|A'|: 58
+Maximum demand: 814
+Time limit: 3600s
+Seed: 4093000298
+Solving time: 3s
+Solutions found: 1
+Best primal bound: 1930
+Best dual bound: 1930
+Is solution feasible: 1

@@ -1,0 +1,17 @@
+m: 10
+D: 807
+B: 0.5
+|V|: 49
+|E|: 84
+|U|: 84
+|A|: 214
+|U'|: 85
+|A'|: 298
+Maximum demand: 807
+Time limit: 3600s
+Seed: 685509608
+Solving time: 3600s
+Solutions found: 0
+Best primal bound: 0
+Best dual bound: 1.79769e+308
+Is solution feasible: 0

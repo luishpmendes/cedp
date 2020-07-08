@@ -1,0 +1,17 @@
+m: 5
+D: 907
+B: 1
+|V|: 25
+|E|: 32
+|U|: 32
+|A|: 62
+|U'|: 33
+|A'|: 94
+Maximum demand: 907
+Time limit: 3600s
+Seed: 2885473558
+Solving time: 12s
+Solutions found: 1
+Best primal bound: 3999
+Best dual bound: 3999
+Is solution feasible: 1
