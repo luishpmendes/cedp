@@ -1,0 +1,1 @@
+Statistics obtained with warm-up solution and inefficient version of the separation algorithm.
