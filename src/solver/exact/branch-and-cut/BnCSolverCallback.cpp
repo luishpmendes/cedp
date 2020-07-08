@@ -32,32 +32,40 @@ void BnCSolverCallback::callback() {
                     getConnectedComponents();
 
                 if (connectedComponents.size() > 1) {
-                    for (unsigned int i = 0; i < connectedComponents.size(); i++) {
-                        std::set<Edge> cut = this->instance.getG().
-                            getAdjacentEdges(connectedComponents[i].getEdges());
+                    std::vector<unsigned int> edgeComponent (this->instance.getG().getMaxEid(),
+                            connectedComponents.size());
+                    std::vector<GRBLinExpr> cutExpr (connectedComponents.size(), 0);
 
-                        for (const Edge & e : connectedComponents[i].getEdges()) {
+                    for (unsigned int i = 0; i < connectedComponents.size(); i++) {
+                        std::set<Edge> componentEdges = connectedComponents[i].getEdges();
+
+                        for (const Edge & e : componentEdges) {
+                            unsigned int eId = connectedComponents[i].getEdgeId(e);
+
+                            edgeComponent[eId - 1] = i;
+                        }
+
+                        std::set<Edge> cutEdges =
+                            this->instance.getG().getAdjacentEdges(componentEdges);
+
+                        for (const Edge & e : cutEdges) {
                             unsigned int eId = this->instance.getG().getEdgeId(e);
 
-                            for (unsigned int k = 0; k < connectedComponents.size(); k++) {
-                                if (k != i) {
-                                    for (const Edge & f : connectedComponents[k].getEdges()) {
-                                        unsigned int fId = this->instance.getG().getEdgeId(f);
+                            cutExpr[i] += this->x[eId - 1][j];
+                        }
+                    }
 
-                                        GRBLinExpr constr = 0.0;
-                                        constr += this->x[eId - 1][j];
-                                        constr += this->x[fId - 1][j];
+                    for (const Edge & e : district) {
+                        unsigned int eId = this->instance.getG().getEdgeId(e);
 
-                                        for (const Edge & g : cut) {
-                                            unsigned int gId = this->instance.
-                                                getG().getEdgeId(g);
+                        for (const Edge & f : district) {
+                            unsigned int fId = this->instance.getG().getEdgeId(f);
 
-                                            constr -= this->x[gId - 1][j];
-                                        }
+                            if (edgeComponent[eId - 1] != edgeComponent[fId - 1]) {
+                                GRBLinExpr constr = this->x[eId - 1][j] + this->x[fId - 1][j] -
+                                    cutExpr[edgeComponent[eId - 1]];
 
-                                        this->addLazy(constr <= 1);
-                                    }
-                                }
+                                this->addLazy(constr <= 1);
                             }
                         }
                     }
