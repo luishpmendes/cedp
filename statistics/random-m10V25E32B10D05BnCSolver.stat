@@ -1,0 +1,17 @@
+m: 10
+D: 197
+B: 1
+|V|: 25
+|E|: 32
+|U|: 32
+|A|: 68
+|U'|: 33
+|A'|: 100
+Maximum demand: 197
+Time limit: 3600s
+Seed: 2038976487
+Solving time: 18s
+Solutions found: 1
+Best primal bound: 8603
+Best dual bound: 8603
+Is solution feasible: 1

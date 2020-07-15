@@ -1,0 +1,17 @@
+m: 5
+D: 616
+B: 0.5
+|V|: 49
+|E|: 48
+|U|: 48
+|A|: 72
+|U'|: 49
+|A'|: 120
+Maximum demand: 615.6
+Time limit: 3600s
+Seed: 1570045301
+Solving time: 2979s
+Solutions found: 2
+Best primal bound: 7191
+Best dual bound: 7191
+Is solution feasible: 1

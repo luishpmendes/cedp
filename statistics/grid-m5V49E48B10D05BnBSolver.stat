@@ -1,0 +1,17 @@
+m: 5
+D: 950
+B: 1
+|V|: 49
+|E|: 48
+|U|: 48
+|A|: 59
+|U'|: 49
+|A'|: 107
+Maximum demand: 950
+Time limit: 3600s
+Seed: 1841221419
+Solving time: 159s
+Solutions found: 1
+Best primal bound: 6852
+Best dual bound: 6852
+Is solution feasible: 1

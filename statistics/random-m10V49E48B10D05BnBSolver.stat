@@ -1,0 +1,17 @@
+m: 10
+D: 308
+B: 1
+|V|: 49
+|E|: 48
+|U|: 48
+|A|: 72
+|U'|: 49
+|A'|: 120
+Maximum demand: 308
+Time limit: 3600s
+Seed: 3595649003
+Solving time: 243s
+Solutions found: 1
+Best primal bound: 18059
+Best dual bound: 18059
+Is solution feasible: 1
