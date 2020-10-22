@@ -1,21 +1,25 @@
 CPP=g++
 CARGS=-std=c++14 -Wall -Werror -O0 -g3 -m64
-DLIBINC=/opt/dlib-19.19/
+DLIBINC=/opt/dlib-19.21/
 DLIB=-lpthread -lX11
-CXXFILES=/opt/dlib-19.19/dlib/all/source.cpp
-GRBINC=/opt/gurobi901/linux64/include/
-GRBLIB=-L/opt/gurobi901/linux64/lib -lgurobi_c++ -lgurobi90 -lm
+CXXFILES=/opt/dlib-19.21/dlib/all/source.cpp
+GRBINC=/opt/gurobi903/linux64/include/
+GRBLIB=-L/opt/gurobi903/linux64/lib -lgurobi_c++ -lgurobi90 -lm
 MKDIR=mkdir -p
 RM=rm -rf
 SRC=$(PWD)/src
 BIN=$(PWD)/bin
 
 clean:
+	@echo "--> Cleaning compiled..."
 	$(RM) $(BIN)
+	@echo
 
 $(BIN)/%.o: $(SRC)/%.cpp
+	@echo "--> Compiling $<..."
 	$(MKDIR) $(@D)
 	$(CPP) $(CARGS) -c $< -o $@ -I$(DLIBINC) -I$(GRBINC) $(GRBLIB)
+	@echo
 
 $(BIN)/test/InstanceTest: $(BIN)/disjoint-sets/DisjointSets.o \
                           $(BIN)/graph/Vertex.o \
@@ -23,8 +27,14 @@ $(BIN)/test/InstanceTest: $(BIN)/disjoint-sets/DisjointSets.o \
                           $(BIN)/graph/Graph.o \
                           $(BIN)/instance/Instance.o \
                           $(BIN)/test/InstanceTest.o
-	$(MKDIR) $(@D)
+	@echo "--> Linking objects..." 
 	$(CPP) -o $@ $^ $(CARGS)
+	@echo
+	@echo "--> Running test..."
+	$(BIN)/test/InstanceTest
+	@echo
+
+InstanceTest: clean $(BIN)/test/InstanceTest
 
 $(BIN)/exec/GraphGeneratorExec: $(BIN)/disjoint-sets/DisjointSets.o \
                                 $(BIN)/graph/Vertex.o \
@@ -33,8 +43,11 @@ $(BIN)/exec/GraphGeneratorExec: $(BIN)/disjoint-sets/DisjointSets.o \
                                 $(BIN)/instance/Instance.o \
                                 $(BIN)/exec/ArgumentParser.o \
                                 $(BIN)/exec/GraphGeneratorExec.o
-	$(MKDIR) $(@D)
+	@echo "--> Linking objects..."
 	$(CPP) -o $@ $^ $(CARGS)
+	@echo
+
+GraphGeneratorExec: clean $(BIN)/exec/GraphGeneratorExec
 
 $(BIN)/exec/InstanceGeneratorExec: $(BIN)/disjoint-sets/DisjointSets.o \
                                    $(BIN)/graph/Vertex.o \
@@ -43,8 +56,11 @@ $(BIN)/exec/InstanceGeneratorExec: $(BIN)/disjoint-sets/DisjointSets.o \
                                    $(BIN)/instance/Instance.o \
                                    $(BIN)/exec/ArgumentParser.o \
                                    $(BIN)/exec/InstanceGeneratorExec.o
-	$(MKDIR) $(@D)
+	@echo "--> Linking objects..."
 	$(CPP) -o $@ $^ $(CARGS)
+	@echo
+
+InstanceGeneratorExec: clean $(BIN)/exec/InstanceGeneratorExec
 
 $(BIN)/test/SolutionTest: $(BIN)/disjoint-sets/DisjointSets.o \
                           $(BIN)/graph/Vertex.o \
@@ -53,8 +69,14 @@ $(BIN)/test/SolutionTest: $(BIN)/disjoint-sets/DisjointSets.o \
                           $(BIN)/instance/Instance.o \
                           $(BIN)/solution/Solution.o \
                           $(BIN)/test/SolutionTest.o
-	$(MKDIR) $(@D)
+	@echo "--> Linking objects..." 
 	$(CPP) -o $@ $^ $(CARGS)
+	@echo
+	@echo "--> Running test..."
+	$(BIN)/test/SolutionTest
+	@echo
+
+SolutionTest: clean $(BIN)/test/SolutionTest
 
 $(BIN)/test/HeuristicTest: $(BIN)/disjoint-sets/DisjointSets.o \
                            $(BIN)/graph/Vertex.o \
@@ -67,8 +89,14 @@ $(BIN)/test/HeuristicTest: $(BIN)/disjoint-sets/DisjointSets.o \
                            $(BIN)/solver/heuristic/fixer/SolutionFixer.o \
                            $(BIN)/solver/heuristic/localsearch/LocalSearchHeuristic.o \
                            $(BIN)/test/HeuristicTest.o
-	$(MKDIR) $(@D)
+	@echo "--> Linking objects..." 
 	$(CPP) $(CXXFILES) -o $@ $^ $(CARGS) $(DLIB)
+	@echo
+	@echo "--> Running test..."
+	$(BIN)/test/HeuristicTest
+	@echo
+
+HeuristicTest: clean $(BIN)/test/HeuristicTest
 
 $(BIN)/test/LinearRelaxationSolverTest: $(BIN)/disjoint-sets/DisjointSets.o \
                                         $(BIN)/graph/Vertex.o \
@@ -83,8 +111,14 @@ $(BIN)/test/LinearRelaxationSolverTest: $(BIN)/disjoint-sets/DisjointSets.o \
                                         $(BIN)/solver/CEDPSolver.o \
                                         $(BIN)/solver/metaheuristic/linear-relaxation/LinearRelaxationSolver.o \
                                         $(BIN)/test/LinearRelaxationSolverTest.o
-	$(MKDIR) $(@D)
+	@echo "--> Linking objects..." 
 	$(CPP) $(CXXFILES) -o $@ $^ $(CARGS) $(DLIB) -I$(GRBINC) $(GRBLIB)
+	@echo
+	@echo "--> Running test..."
+	$(BIN)/test/LinearRelaxationSolverTest
+	@echo
+
+LinearRelaxationSolverTest: clean $(BIN)/test/LinearRelaxationSolverTest
 
 $(BIN)/exec/LinearRelaxationSolverExec: $(BIN)/disjoint-sets/DisjointSets.o \
                                         $(BIN)/graph/Vertex.o \
@@ -100,8 +134,11 @@ $(BIN)/exec/LinearRelaxationSolverExec: $(BIN)/disjoint-sets/DisjointSets.o \
                                         $(BIN)/solver/metaheuristic/linear-relaxation/LinearRelaxationSolver.o \
                                         $(BIN)/exec/ArgumentParser.o \
                                         $(BIN)/exec/LinearRelaxationSolverExec.o
-	$(MKDIR) $(@D)
+	@echo "--> Linking objects..." 
 	$(CPP) $(CXXFILES) -o $@ $^ $(CARGS) $(DLIB) -I$(GRBINC) $(GRBLIB)
+	@echo
+
+LinearRelaxationSolverExec: clean $(BIN)/exec/LinearRelaxationSolverExec
 
 $(BIN)/test/BnBSolverTest: $(BIN)/disjoint-sets/DisjointSets.o \
                            $(BIN)/graph/Vertex.o \
@@ -116,8 +153,14 @@ $(BIN)/test/BnBSolverTest: $(BIN)/disjoint-sets/DisjointSets.o \
                            $(BIN)/solver/CEDPSolver.o \
                            $(BIN)/solver/exact/branch-and-bound/BnBSolver.o \
                            $(BIN)/test/BnBSolverTest.o
-	$(MKDIR) $(@D)
+	@echo "--> Linking objects..." 
 	$(CPP) $(CXXFILES) -o $@ $^ $(CARGS) $(DLIB) -I$(GRBINC) $(GRBLIB)
+	@echo
+	@echo "--> Running test..."
+	$(BIN)/test/BnBSolverTest
+	@echo
+
+BnBSolverTest: clean $(BIN)/test/BnBSolverTest
 
 $(BIN)/exec/BnBSolverExec: $(BIN)/disjoint-sets/DisjointSets.o \
                            $(BIN)/graph/Vertex.o \
@@ -133,8 +176,11 @@ $(BIN)/exec/BnBSolverExec: $(BIN)/disjoint-sets/DisjointSets.o \
                            $(BIN)/solver/exact/branch-and-bound/BnBSolver.o \
                            $(BIN)/exec/ArgumentParser.o \
                            $(BIN)/exec/BnBSolverExec.o
-	$(MKDIR) $(@D)
+	@echo "--> Linking objects..." 
 	$(CPP) $(CXXFILES) -o $@ $^ $(CARGS) $(DLIB) -I$(GRBINC) $(GRBLIB)
+	@echo
+
+BnBSolverExec: clean $(BIN)/exec/BnBSolverExec
 
 $(BIN)/test/BnCSolverTest: $(BIN)/disjoint-sets/DisjointSets.o \
                            $(BIN)/graph/Vertex.o \
@@ -150,8 +196,14 @@ $(BIN)/test/BnCSolverTest: $(BIN)/disjoint-sets/DisjointSets.o \
                            $(BIN)/solver/exact/branch-and-cut/BnCSolverCallback.o \
                            $(BIN)/solver/exact/branch-and-cut/BnCSolver.o \
                            $(BIN)/test/BnCSolverTest.o
-	$(MKDIR) $(@D)
+	@echo "--> Linking objects..." 
 	$(CPP) $(CXXFILES) -o $@ $^ $(CARGS) $(DLIB) -I$(GRBINC) $(GRBLIB)
+	@echo
+	@echo "--> Running test..."
+	$(BIN)/test/BnCSolverTest
+	@echo
+
+BnCSolverTest: clean $(BIN)/test/BnCSolverTest
 
 $(BIN)/exec/BnCSolverExec: $(BIN)/disjoint-sets/DisjointSets.o \
                            $(BIN)/graph/Vertex.o \
@@ -168,13 +220,22 @@ $(BIN)/exec/BnCSolverExec: $(BIN)/disjoint-sets/DisjointSets.o \
                            $(BIN)/solver/exact/branch-and-cut/BnCSolver.o \
                            $(BIN)/exec/ArgumentParser.o \
                            $(BIN)/exec/BnCSolverExec.o
-	$(MKDIR) $(@D)
+	@echo "--> Linking objects..." 
 	$(CPP) $(CXXFILES) -o $@ $^ $(CARGS) $(DLIB) -I$(GRBINC) $(GRBLIB)
+	@echo
+
+BnCSolverExec: clean $(BIN)/exec/BnCSolverExec
 
 $(BIN)/test/StatisticsTest: $(BIN)/statistics/Statistics.o \
                             $(BIN)/test/StatisticsTest.o
-	$(MKDIR) $(@D)
+	@echo "--> Linking objects..." 
 	$(CPP) -o $@ $^ $(CARGS)
+	@echo
+	@echo "--> Running test..."
+	$(BIN)/test/StatisticsTest
+	@echo
+
+StatisticsTest: clean $(BIN)/test/StatisticsTest
 
 $(BIN)/test/GRASPSolverTest: $(BIN)/disjoint-sets/DisjointSets.o \
                              $(BIN)/statistics/Statistics.o \
@@ -190,8 +251,14 @@ $(BIN)/test/GRASPSolverTest: $(BIN)/disjoint-sets/DisjointSets.o \
                              $(BIN)/solver/CEDPSolver.o \
                              $(BIN)/solver/metaheuristic/grasp/GRASPSolver.o \
                              $(BIN)/test/GRASPSolverTest.o
-	$(MKDIR) $(@D)
+	@echo "--> Linking objects..." 
 	$(CPP) $(CXXFILES) -o $@ $^ $(CARGS) $(DLIB)
+	@echo
+	@echo "--> Running test..."
+	$(BIN)/test/GRASPSolverTest
+	@echo
+
+GRASPSolverTest: clean $(BIN)/test/GRASPSolverTest
 
 $(BIN)/exec/GRASPSolverExec: $(BIN)/disjoint-sets/DisjointSets.o \
                              $(BIN)/statistics/Statistics.o \
@@ -208,8 +275,11 @@ $(BIN)/exec/GRASPSolverExec: $(BIN)/disjoint-sets/DisjointSets.o \
                              $(BIN)/solver/metaheuristic/grasp/GRASPSolver.o \
                              $(BIN)/exec/ArgumentParser.o \
                              $(BIN)/exec/GRASPSolverExec.o
-	$(MKDIR) $(@D)
+	@echo "--> Linking objects..." 
 	$(CPP) $(CXXFILES) -o $@ $^ $(CARGS) $(DLIB)
+	@echo
+
+GRASPSolverExec: clean $(BIN)/exec/GRASPSolverExec
 
 $(BIN)/test/LagrangianHeuristicSolver1Test: $(BIN)/disjoint-sets/DisjointSets.o \
                                             $(BIN)/graph/Vertex.o \
@@ -224,8 +294,14 @@ $(BIN)/test/LagrangianHeuristicSolver1Test: $(BIN)/disjoint-sets/DisjointSets.o 
                                             $(BIN)/solver/CEDPSolver.o \
                                             $(BIN)/solver/metaheuristic/lagrangian-heuristic/LagrangianHeuristicSolver1.o \
                                             $(BIN)/test/LagrangianHeuristicSolver1Test.o
-	$(MKDIR) $(@D)
+	@echo "--> Linking objects..." 
 	$(CPP) $(CXXFILES) -o $@ $^ $(CARGS) $(DLIB)
+	@echo
+	@echo "--> Running test..."
+	$(BIN)/test/LagrangianHeuristicSolver1Test
+	@echo
+
+LagrangianHeuristicSolver1Test: clean $(BIN)/test/LagrangianHeuristicSolver1Test
 
 $(BIN)/exec/LagrangianHeuristicSolver1Exec: $(BIN)/disjoint-sets/DisjointSets.o \
                                             $(BIN)/graph/Vertex.o \
@@ -241,8 +317,11 @@ $(BIN)/exec/LagrangianHeuristicSolver1Exec: $(BIN)/disjoint-sets/DisjointSets.o 
                                             $(BIN)/solver/metaheuristic/lagrangian-heuristic/LagrangianHeuristicSolver1.o \
                                             $(BIN)/exec/ArgumentParser.o \
                                             $(BIN)/exec/LagrangianHeuristicSolver1Exec.o
-	$(MKDIR) $(@D)
+	@echo "--> Linking objects..." 
 	$(CPP) $(CXXFILES) -o $@ $^ $(CARGS) $(DLIB)
+	@echo
+
+LagrangianHeuristicSolver1Exec: clean $(BIN)/exec/LagrangianHeuristicSolver1Exec
 
 $(BIN)/test/LagrangianHeuristicSolver2Test: $(BIN)/disjoint-sets/DisjointSets.o \
                                             $(BIN)/graph/Vertex.o \
@@ -257,8 +336,14 @@ $(BIN)/test/LagrangianHeuristicSolver2Test: $(BIN)/disjoint-sets/DisjointSets.o 
                                             $(BIN)/solver/CEDPSolver.o \
                                             $(BIN)/solver/metaheuristic/lagrangian-heuristic/LagrangianHeuristicSolver2.o \
                                             $(BIN)/test/LagrangianHeuristicSolver2Test.o
-	$(MKDIR) $(@D)
+	@echo "--> Linking objects..." 
 	$(CPP) $(CXXFILES) -o $@ $^ $(CARGS) $(DLIB) -I$(GRBINC) $(GRBLIB)
+	@echo
+	@echo "--> Running test..."
+	$(BIN)/test/LagrangianHeuristicSolver2Test
+	@echo
+
+LagrangianHeuristicSolver2Test: clean $(BIN)/test/LagrangianHeuristicSolver2Test
 
 $(BIN)/exec/LagrangianHeuristicSolver2Exec: $(BIN)/disjoint-sets/DisjointSets.o \
                                             $(BIN)/graph/Vertex.o \
@@ -274,13 +359,19 @@ $(BIN)/exec/LagrangianHeuristicSolver2Exec: $(BIN)/disjoint-sets/DisjointSets.o 
                                             $(BIN)/solver/metaheuristic/lagrangian-heuristic/LagrangianHeuristicSolver2.o \
                                             $(BIN)/exec/ArgumentParser.o \
                                             $(BIN)/exec/LagrangianHeuristicSolver2Exec.o
-	$(MKDIR) $(@D)
+	@echo "--> Linking objects..." 
 	$(CPP) $(CXXFILES) -o $@ $^ $(CARGS) $(DLIB) -I$(GRBINC) $(GRBLIB)
+	@echo
+
+LagrangianHeuristicSolver2Exec: clean $(BIN)/exec/LagrangianHeuristicSolver2Exec
 
 $(BIN)/exec/StatisticsAggregatorExec: $(BIN)/exec/ArgumentParser.o \
                                       $(BIN)/exec/StatisticsAggregatorExec.o
-	$(MKDIR) $(@D)
+	@echo "--> Linking objects..." 
 	$(CPP) $(CXXFILES) -o $@ $^ $(CARGS) $(DLIB)
+	@echo
+
+StatisticsAggregatorExec: clean $(BIN)/exec/StatisticsAggregatorExec
 
 $(BIN)/exec/PlotGeneratorExec: $(BIN)/disjoint-sets/DisjointSets.o \
                                $(BIN)/graph/Vertex.o \
@@ -290,142 +381,157 @@ $(BIN)/exec/PlotGeneratorExec: $(BIN)/disjoint-sets/DisjointSets.o \
                                $(BIN)/solution/Solution.o \
                                $(BIN)/exec/ArgumentParser.o \
                                $(BIN)/exec/PlotGeneratorExec.o
-	$(MKDIR) $(@D)
+	@echo "--> Linking objects..." 
 	$(CPP) -o $@ $^ $(CARGS)
+	@echo
+
+PlotGeneratorExec: clean $(BIN)/exec/PlotGeneratorExec
 
 $(BIN)/exec/PerformanceProfilesPrimalExec: $(BIN)/exec/PerformanceProfilesPrimalExec.o 
-	$(MKDIR) $(@D)
+	@echo "--> Linking objects..." 
 	$(CPP) -o $@ $^ $(CARGS)
+	@echo
+
+PerformanceProfilesPrimalExec: clean $(BIN)/exec/PerformanceProfilesPrimalExec
 
 $(BIN)/exec/PerformanceProfilesDualExec: $(BIN)/exec/PerformanceProfilesDualExec.o 
-	$(MKDIR) $(@D)
+	@echo "--> Linking objects..." 
 	$(CPP) -o $@ $^ $(CARGS)
+	@echo
+
+PerformanceProfilesDualExec: clean $(BIN)/exec/PerformanceProfilesDualExec
 
 $(BIN)/exec/PerformanceProfilesPrimalTExec: $(BIN)/exec/ArgumentParser.o \
                                             $(BIN)/exec/PerformanceProfilesPrimalTExec.o 
-	$(MKDIR) $(@D)
+	@echo "--> Linking objects..." 
 	$(CPP) -o $@ $^ $(CARGS)
+	@echo
+
+PerformanceProfilesPrimalTExec: clean $(BIN)/exec/PerformanceProfilesPrimalTExec
 
 $(BIN)/exec/PerformanceProfilesDualTExec: $(BIN)/exec/ArgumentParser.o \
                                           $(BIN)/exec/PerformanceProfilesDualTExec.o 
-	$(MKDIR) $(@D)
+	@echo "--> Linking objects..." 
 	$(CPP) -o $@ $^ $(CARGS)
+	@echo
+
+PerformanceProfilesDualTExec: clean $(BIN)/exec/PerformanceProfilesDualTExec
 
 $(BIN)/exec/PerformanceProfilesPrimalMExec: $(BIN)/exec/ArgumentParser.o \
                                             $(BIN)/exec/PerformanceProfilesPrimalMExec.o 
-	$(MKDIR) $(@D)
+	@echo "--> Linking objects..." 
 	$(CPP) -o $@ $^ $(CARGS)
+	@echo
+
+PerformanceProfilesPrimalMExec: clean $(BIN)/exec/PerformanceProfilesPrimalMExec
 
 $(BIN)/exec/PerformanceProfilesDualMExec: $(BIN)/exec/ArgumentParser.o \
                                           $(BIN)/exec/PerformanceProfilesDualMExec.o 
-	$(MKDIR) $(@D)
+	@echo "--> Linking objects..." 
 	$(CPP) -o $@ $^ $(CARGS)
+	@echo
+
+PerformanceProfilesDualMExec: clean $(BIN)/exec/PerformanceProfilesDualMExec
 
 $(BIN)/exec/PerformanceProfilesPrimalBExec: $(BIN)/exec/ArgumentParser.o \
                                             $(BIN)/exec/PerformanceProfilesPrimalBExec.o 
-	$(MKDIR) $(@D)
+	@echo "--> Linking objects..." 
 	$(CPP) -o $@ $^ $(CARGS)
+	@echo
+
+PerformanceProfilesPrimalBExec: clean $(BIN)/exec/PerformanceProfilesPrimalBExec
 
 $(BIN)/exec/PerformanceProfilesDualBExec: $(BIN)/exec/ArgumentParser.o \
                                           $(BIN)/exec/PerformanceProfilesDualBExec.o 
-	$(MKDIR) $(@D)
+	@echo "--> Linking objects..." 
 	$(CPP) -o $@ $^ $(CARGS)
+	@echo
+
+PerformanceProfilesDualBExec: clean $(BIN)/exec/PerformanceProfilesDualBExec
 
 $(BIN)/exec/PerformanceProfilesPrimalDExec: $(BIN)/exec/ArgumentParser.o \
                                             $(BIN)/exec/PerformanceProfilesPrimalDExec.o 
-	$(MKDIR) $(@D)
+	@echo "--> Linking objects..." 
 	$(CPP) -o $@ $^ $(CARGS)
+	@echo
+
+PerformanceProfilesPrimalDExec: clean $(BIN)/exec/PerformanceProfilesPrimalDExec
 
 $(BIN)/exec/PerformanceProfilesDualDExec: $(BIN)/exec/ArgumentParser.o \
                                           $(BIN)/exec/PerformanceProfilesDualDExec.o 
-	$(MKDIR) $(@D)
+	@echo "--> Linking objects..." 
 	$(CPP) -o $@ $^ $(CARGS)
+	@echo
+
+PerformanceProfilesDualDExec: clean $(BIN)/exec/PerformanceProfilesDualDExec
 
 $(BIN)/exec/PerformanceProfilesPrimalVExec: $(BIN)/exec/ArgumentParser.o \
                                             $(BIN)/exec/PerformanceProfilesPrimalVExec.o 
-	$(MKDIR) $(@D)
+	@echo "--> Linking objects..." 
 	$(CPP) -o $@ $^ $(CARGS)
+	@echo
+
+PerformanceProfilesPrimalVExec: clean $(BIN)/exec/PerformanceProfilesPrimalVExec
 
 $(BIN)/exec/PerformanceProfilesDualVExec: $(BIN)/exec/ArgumentParser.o \
                                           $(BIN)/exec/PerformanceProfilesDualVExec.o 
-	$(MKDIR) $(@D)
+	@echo "--> Linking objects..." 
 	$(CPP) -o $@ $^ $(CARGS)
+	@echo
+
+PerformanceProfilesDualVExec: clean $(BIN)/exec/PerformanceProfilesDualVExec
 
 $(BIN)/exec/PerformanceProfilesPrimalEExec: $(BIN)/exec/ArgumentParser.o \
                                             $(BIN)/exec/PerformanceProfilesPrimalEExec.o 
-	$(MKDIR) $(@D)
+	@echo "--> Linking objects..." 
 	$(CPP) -o $@ $^ $(CARGS)
+	@echo
+
+PerformanceProfilesPrimalEExec: clean $(BIN)/exec/PerformanceProfilesPrimalEExec
 
 $(BIN)/exec/PerformanceProfilesDualEExec: $(BIN)/exec/ArgumentParser.o \
                                           $(BIN)/exec/PerformanceProfilesDualEExec.o 
-	$(MKDIR) $(@D)
+	@echo "--> Linking objects..." 
 	$(CPP) -o $@ $^ $(CARGS)
+	@echo
 
-InstanceTest: $(BIN)/test/InstanceTest
+PerformanceProfilesDualEExec: clean $(BIN)/exec/PerformanceProfilesDualEExec
 
-GraphGeneratorExec: $(BIN)/exec/GraphGeneratorExec
+tests: InstanceTest \
+       SolutionTest \
+       HeuristicTest \
+       LinearRelaxationSolverTest \
+       BnBSolverTest \
+       BnCSolverTest \
+       StatisticsTest \
+       GRASPSolverTest \
+       LagrangianHeuristicSolver1Test \
+       LagrangianHeuristicSolver2Test
 
-InstanceGeneratorExec: $(BIN)/exec/InstanceGeneratorExec
+execs: GraphGeneratorExec \
+       InstanceGeneratorExec \
+       LinearRelaxationSolverExec \
+       BnBSolverExec \
+       BnCSolverExec \
+       GRASPSolverExec \
+       LagrangianHeuristicSolver1Exec \
+       LagrangianHeuristicSolver2Exec \
+       StatisticsAggregatorExec \
+       PlotGeneratorExec \
+       PerformanceProfilesPrimalExec \
+       PerformanceProfilesDualExec \
+       PerformanceProfilesPrimalTExec \
+       PerformanceProfilesDualTExec \
+       PerformanceProfilesPrimalMExec \
+       PerformanceProfilesDualMExec \
+       PerformanceProfilesPrimalBExec \
+       PerformanceProfilesDualBExec \
+       PerformanceProfilesPrimalDExec \
+       PerformanceProfilesDualDExec \
+       PerformanceProfilesPrimalVExec \
+       PerformanceProfilesDualVExec \
+       PerformanceProfilesPrimalEExec \
+       PerformanceProfilesDualEExec
 
-SolutionTest: $(BIN)/test/SolutionTest
-
-HeuristicTest: $(BIN)/test/HeuristicTest
-
-LinearRelaxationSolverTest: $(BIN)/test/LinearRelaxationSolverTest
-
-LinearRelaxationSolverExec: $(BIN)/exec/LinearRelaxationSolverExec
-
-BnBSolverTest: $(BIN)/test/BnBSolverTest
-
-BnBSolverExec: $(BIN)/exec/BnBSolverExec
-
-BnCSolverTest: $(BIN)/test/BnCSolverTest
-
-BnCSolverExec: $(BIN)/exec/BnCSolverExec
-
-StatisticsTest: $(BIN)/test/StatisticsTest
-
-GRASPSolverTest: $(BIN)/test/GRASPSolverTest
-
-GRASPSolverExec: $(BIN)/exec/GRASPSolverExec
-
-LagrangianHeuristicSolver1Test: $(BIN)/test/LagrangianHeuristicSolver1Test
-
-LagrangianHeuristicSolver1Exec: $(BIN)/exec/LagrangianHeuristicSolver1Exec
-
-LagrangianHeuristicSolver2Test: $(BIN)/test/LagrangianHeuristicSolver2Test
-
-LagrangianHeuristicSolver2Exec: $(BIN)/exec/LagrangianHeuristicSolver2Exec
-
-StatisticsAggregatorExec: $(BIN)/exec/StatisticsAggregatorExec
-
-PlotGeneratorExec: $(BIN)/exec/PlotGeneratorExec
-
-PerformanceProfilesPrimalExec: $(BIN)/exec/PerformanceProfilesPrimalExec
-
-PerformanceProfilesDualExec: $(BIN)/exec/PerformanceProfilesDualExec
-
-PerformanceProfilesPrimalTExec: $(BIN)/exec/PerformanceProfilesPrimalTExec
-
-PerformanceProfilesDualTExec: $(BIN)/exec/PerformanceProfilesDualTExec
-
-PerformanceProfilesPrimalMExec: $(BIN)/exec/PerformanceProfilesPrimalMExec
-
-PerformanceProfilesDualMExec: $(BIN)/exec/PerformanceProfilesDualMExec
-
-PerformanceProfilesPrimalBExec: $(BIN)/exec/PerformanceProfilesPrimalBExec
-
-PerformanceProfilesDualBExec: $(BIN)/exec/PerformanceProfilesDualBExec
-
-PerformanceProfilesPrimalDExec: $(BIN)/exec/PerformanceProfilesPrimalDExec
-
-PerformanceProfilesDualDExec: $(BIN)/exec/PerformanceProfilesDualDExec
-
-PerformanceProfilesPrimalVExec: $(BIN)/exec/PerformanceProfilesPrimalVExec
-
-PerformanceProfilesDualVExec: $(BIN)/exec/PerformanceProfilesDualVExec
-
-PerformanceProfilesPrimalEExec: $(BIN)/exec/PerformanceProfilesPrimalEExec
-
-PerformanceProfilesDualEExec: $(BIN)/exec/PerformanceProfilesDualEExec
+all : tests execs
 
