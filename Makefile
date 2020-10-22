@@ -98,48 +98,6 @@ $(BIN)/test/HeuristicTest: $(BIN)/disjoint-sets/DisjointSets.o \
 
 HeuristicTest: clean $(BIN)/test/HeuristicTest
 
-$(BIN)/test/LinearRelaxationSolverTest: $(BIN)/disjoint-sets/DisjointSets.o \
-                                        $(BIN)/graph/Vertex.o \
-                                        $(BIN)/graph/Edge.o \
-                                        $(BIN)/graph/Graph.o \
-                                        $(BIN)/instance/Instance.o \
-                                        $(BIN)/solution/Solution.o \
-                                        $(BIN)/solver/heuristic/Heuristic.o \
-                                        $(BIN)/solver/heuristic/constructive/GreedyConstructiveHeuristic.o \
-                                        $(BIN)/solver/heuristic/fixer/SolutionFixer.o \
-                                        $(BIN)/solver/heuristic/localsearch/LocalSearchHeuristic.o \
-                                        $(BIN)/solver/CEDPSolver.o \
-                                        $(BIN)/solver/metaheuristic/linear-relaxation/LinearRelaxationSolver.o \
-                                        $(BIN)/test/LinearRelaxationSolverTest.o
-	@echo "--> Linking objects..." 
-	$(CPP) $(CXXFILES) -o $@ $^ $(CARGS) $(DLIB) -I$(GRBINC) $(GRBLIB)
-	@echo
-	@echo "--> Running test..."
-	$(BIN)/test/LinearRelaxationSolverTest
-	@echo
-
-LinearRelaxationSolverTest: clean $(BIN)/test/LinearRelaxationSolverTest
-
-$(BIN)/exec/LinearRelaxationSolverExec: $(BIN)/disjoint-sets/DisjointSets.o \
-                                        $(BIN)/graph/Vertex.o \
-                                        $(BIN)/graph/Edge.o \
-                                        $(BIN)/graph/Graph.o \
-                                        $(BIN)/instance/Instance.o \
-                                        $(BIN)/solution/Solution.o \
-                                        $(BIN)/solver/heuristic/Heuristic.o \
-                                        $(BIN)/solver/heuristic/constructive/GreedyConstructiveHeuristic.o \
-                                        $(BIN)/solver/heuristic/fixer/SolutionFixer.o \
-                                        $(BIN)/solver/heuristic/localsearch/LocalSearchHeuristic.o \
-                                        $(BIN)/solver/CEDPSolver.o \
-                                        $(BIN)/solver/metaheuristic/linear-relaxation/LinearRelaxationSolver.o \
-                                        $(BIN)/exec/ArgumentParser.o \
-                                        $(BIN)/exec/LinearRelaxationSolverExec.o
-	@echo "--> Linking objects..." 
-	$(CPP) $(CXXFILES) -o $@ $^ $(CARGS) $(DLIB) -I$(GRBINC) $(GRBLIB)
-	@echo
-
-LinearRelaxationSolverExec: clean $(BIN)/exec/LinearRelaxationSolverExec
-
 $(BIN)/test/BnBSolverTest: $(BIN)/disjoint-sets/DisjointSets.o \
                            $(BIN)/graph/Vertex.o \
                            $(BIN)/graph/Edge.o \
@@ -281,90 +239,6 @@ $(BIN)/exec/GRASPSolverExec: $(BIN)/disjoint-sets/DisjointSets.o \
 
 GRASPSolverExec: clean $(BIN)/exec/GRASPSolverExec
 
-$(BIN)/test/LagrangianHeuristicSolver1Test: $(BIN)/disjoint-sets/DisjointSets.o \
-                                            $(BIN)/graph/Vertex.o \
-                                            $(BIN)/graph/Edge.o \
-                                            $(BIN)/graph/Graph.o \
-                                            $(BIN)/instance/Instance.o \
-                                            $(BIN)/solution/Solution.o \
-                                            $(BIN)/solver/heuristic/Heuristic.o \
-                                            $(BIN)/solver/heuristic/constructive/GreedyConstructiveHeuristic.o \
-                                            $(BIN)/solver/heuristic/fixer/SolutionFixer.o \
-                                            $(BIN)/solver/heuristic/localsearch/LocalSearchHeuristic.o \
-                                            $(BIN)/solver/CEDPSolver.o \
-                                            $(BIN)/solver/metaheuristic/lagrangian-heuristic/LagrangianHeuristicSolver1.o \
-                                            $(BIN)/test/LagrangianHeuristicSolver1Test.o
-	@echo "--> Linking objects..." 
-	$(CPP) $(CXXFILES) -o $@ $^ $(CARGS) $(DLIB)
-	@echo
-	@echo "--> Running test..."
-	$(BIN)/test/LagrangianHeuristicSolver1Test
-	@echo
-
-LagrangianHeuristicSolver1Test: clean $(BIN)/test/LagrangianHeuristicSolver1Test
-
-$(BIN)/exec/LagrangianHeuristicSolver1Exec: $(BIN)/disjoint-sets/DisjointSets.o \
-                                            $(BIN)/graph/Vertex.o \
-                                            $(BIN)/graph/Edge.o \
-                                            $(BIN)/graph/Graph.o \
-                                            $(BIN)/instance/Instance.o \
-                                            $(BIN)/solution/Solution.o \
-                                            $(BIN)/solver/heuristic/Heuristic.o \
-                                            $(BIN)/solver/heuristic/constructive/GreedyConstructiveHeuristic.o \
-                                            $(BIN)/solver/heuristic/fixer/SolutionFixer.o \
-                                            $(BIN)/solver/heuristic/localsearch/LocalSearchHeuristic.o \
-                                            $(BIN)/solver/CEDPSolver.o \
-                                            $(BIN)/solver/metaheuristic/lagrangian-heuristic/LagrangianHeuristicSolver1.o \
-                                            $(BIN)/exec/ArgumentParser.o \
-                                            $(BIN)/exec/LagrangianHeuristicSolver1Exec.o
-	@echo "--> Linking objects..." 
-	$(CPP) $(CXXFILES) -o $@ $^ $(CARGS) $(DLIB)
-	@echo
-
-LagrangianHeuristicSolver1Exec: clean $(BIN)/exec/LagrangianHeuristicSolver1Exec
-
-$(BIN)/test/LagrangianHeuristicSolver2Test: $(BIN)/disjoint-sets/DisjointSets.o \
-                                            $(BIN)/graph/Vertex.o \
-                                            $(BIN)/graph/Edge.o \
-                                            $(BIN)/graph/Graph.o \
-                                            $(BIN)/instance/Instance.o \
-                                            $(BIN)/solution/Solution.o \
-                                            $(BIN)/solver/heuristic/Heuristic.o \
-                                            $(BIN)/solver/heuristic/constructive/GreedyConstructiveHeuristic.o \
-                                            $(BIN)/solver/heuristic/fixer/SolutionFixer.o \
-                                            $(BIN)/solver/heuristic/localsearch/LocalSearchHeuristic.o \
-                                            $(BIN)/solver/CEDPSolver.o \
-                                            $(BIN)/solver/metaheuristic/lagrangian-heuristic/LagrangianHeuristicSolver2.o \
-                                            $(BIN)/test/LagrangianHeuristicSolver2Test.o
-	@echo "--> Linking objects..." 
-	$(CPP) $(CXXFILES) -o $@ $^ $(CARGS) $(DLIB) -I$(GRBINC) $(GRBLIB)
-	@echo
-	@echo "--> Running test..."
-	$(BIN)/test/LagrangianHeuristicSolver2Test
-	@echo
-
-LagrangianHeuristicSolver2Test: clean $(BIN)/test/LagrangianHeuristicSolver2Test
-
-$(BIN)/exec/LagrangianHeuristicSolver2Exec: $(BIN)/disjoint-sets/DisjointSets.o \
-                                            $(BIN)/graph/Vertex.o \
-                                            $(BIN)/graph/Edge.o \
-                                            $(BIN)/graph/Graph.o \
-                                            $(BIN)/instance/Instance.o \
-                                            $(BIN)/solution/Solution.o \
-                                            $(BIN)/solver/heuristic/Heuristic.o \
-                                            $(BIN)/solver/heuristic/constructive/GreedyConstructiveHeuristic.o \
-                                            $(BIN)/solver/heuristic/fixer/SolutionFixer.o \
-                                            $(BIN)/solver/heuristic/localsearch/LocalSearchHeuristic.o \
-                                            $(BIN)/solver/CEDPSolver.o \
-                                            $(BIN)/solver/metaheuristic/lagrangian-heuristic/LagrangianHeuristicSolver2.o \
-                                            $(BIN)/exec/ArgumentParser.o \
-                                            $(BIN)/exec/LagrangianHeuristicSolver2Exec.o
-	@echo "--> Linking objects..." 
-	$(CPP) $(CXXFILES) -o $@ $^ $(CARGS) $(DLIB) -I$(GRBINC) $(GRBLIB)
-	@echo
-
-LagrangianHeuristicSolver2Exec: clean $(BIN)/exec/LagrangianHeuristicSolver2Exec
-
 $(BIN)/exec/StatisticsAggregatorExec: $(BIN)/exec/ArgumentParser.o \
                                       $(BIN)/exec/StatisticsAggregatorExec.o
 	@echo "--> Linking objects..." 
@@ -500,22 +374,16 @@ PerformanceProfilesDualEExec: clean $(BIN)/exec/PerformanceProfilesDualEExec
 tests: InstanceTest \
        SolutionTest \
        HeuristicTest \
-       LinearRelaxationSolverTest \
        BnBSolverTest \
        BnCSolverTest \
        StatisticsTest \
-       GRASPSolverTest \
-       LagrangianHeuristicSolver1Test \
-       LagrangianHeuristicSolver2Test
+       GRASPSolverTest
 
 execs: GraphGeneratorExec \
        InstanceGeneratorExec \
-       LinearRelaxationSolverExec \
        BnBSolverExec \
        BnCSolverExec \
        GRASPSolverExec \
-       LagrangianHeuristicSolver1Exec \
-       LagrangianHeuristicSolver2Exec \
        StatisticsAggregatorExec \
        PlotGeneratorExec \
        PerformanceProfilesPrimalExec \
