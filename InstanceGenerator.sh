@@ -1,17 +1,18 @@
 #!/bin/bash
 
 IFS=",";
+maxDemand=100;
 
 mkdir -p graphs;
 mkdir -p instances;
 
 echo "InstanceGenerator";
-make GraphGeneratorExec;
-make InstanceGeneratorExec;
-
-maxDemand=100;
 
 echo "Grid"
+
+echo "Graphs"
+
+make GraphGeneratorExec;
 
 for VE in 25,24 25,32 25,40 49,48 49,66 49,84 100,99 100,140 100,180
 do
@@ -22,6 +23,19 @@ do
     echo "E="$E;
     ./bin/exec/GraphGeneratorExec -V $V -E $E --grid --euclidean \
         --max-demand $maxDemand > "graphs/grid-V"$V"E"$E".in";
+done
+
+echo "Instances"
+
+make InstanceGeneratorExec;
+
+for VE in 25,24 25,32 25,40 49,48 49,66 49,84 100,99 100,140 100,180
+do
+    set $VE;
+    V=$1;
+    echo "V="$V;
+    E=$2;
+    echo "E="$E;
     for m in 5 10
     do
         echo "m="$m;
@@ -42,6 +56,9 @@ done
 
 echo "Random"
 
+echo "Graphs"
+
+make GraphGeneratorExec;
 
 for VE in 25,24 25,32 25,40 49,48 49,66 49,84 100,99 100,140 100,180
 do
@@ -52,6 +69,19 @@ do
     echo "E="$E;
     ./bin/exec/GraphGeneratorExec -V $V -E $E --euclidean \
         --max-demand $maxDemand > "graphs/random-V"$V"E"$E".in";
+done
+
+echo "Instances"
+
+make InstanceGeneratorExec;
+
+for VE in 25,24 25,32 25,40 49,48 49,66 49,84 100,99 100,140 100,180
+do
+    set $VE;
+    V=$1;
+    echo "V="$V;
+    E=$2;
+    echo "E="$E;
     for m in 5 10
     do
         echo "m="$m;
