@@ -57,7 +57,7 @@ class Instance {
          * @param generator the pseudo-random numbers generator.
          */
         void init(unsigned int m, unsigned int D, double B, const Graph & G, 
-                std::default_random_engine generator);
+                std::mt19937 generator);
 
     public:
         /*
@@ -103,7 +103,7 @@ class Instance {
          * @param generator the pseudo-random numbers generator.
          */
         Instance(unsigned int m, unsigned int D, double B, const Graph & G, 
-                std::default_random_engine generator);
+                std::mt19937 generator);
 
         /*
          * Constructs a new instance with random costs.
@@ -132,7 +132,7 @@ class Instance {
          * @param G         the new instance's connected undirected graph.
          * @param generator the pseudo-random numbers generator
          */
-        Instance(const Graph & G, std::default_random_engine generator);
+        Instance(const Graph & G, std::mt19937 generator);
 
         /*
          * Constructs a new instance with random costs.

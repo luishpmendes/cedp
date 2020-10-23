@@ -1876,7 +1876,7 @@ std::set<Edge> Graph::getMinimumSpanningTree() {
  */
 Graph Graph::generateRandomCompleteGraph(unsigned int n, 
         unsigned int maxDemand, bool isEuclidean, unsigned int seed) {
-    std::default_random_engine generator (seed);
+    std::mt19937 generator (seed);
     std::uniform_real_distribution <double> distribution (0.0, 1.0);
     std::set<Vertex> vertices;
 
@@ -1927,7 +1927,7 @@ Graph Graph::generateRandomCompleteGraph(unsigned int n,
  */
 Graph Graph::generateRandomConnectedGraph(unsigned int n, unsigned int m, 
         unsigned int maxDemand, bool isEuclidean, unsigned int seed) {
-    std::default_random_engine generator (seed);
+    std::mt19937 generator (seed);
 
     Graph G;
 
@@ -2007,7 +2007,7 @@ Graph Graph::generateRandomConnectedGraph(unsigned int n, double d,
  */
 Graph Graph::generateRandomCompleteGridGraph(unsigned int r, unsigned int c, 
         unsigned int maxDemand, bool isEuclidean, unsigned int seed) {
-    std::default_random_engine generator (seed);
+    std::mt19937 generator (seed);
     std::uniform_real_distribution <double> distribution (0.0, 0.5);
     std::set<Vertex> vertices;
     std::set<Edge> edges;
@@ -2081,7 +2081,7 @@ Graph Graph::generateRandomCompleteGridGraph(unsigned int r, unsigned int c,
 Graph Graph::generateRandomConnectedGridGraph(unsigned int r, unsigned int c, 
         unsigned int m, unsigned int maxDemand, bool isEuclidean, 
         unsigned int seed) {
-    std::default_random_engine generator (seed);
+    std::mt19937 generator (seed);
 
     Graph G;
 

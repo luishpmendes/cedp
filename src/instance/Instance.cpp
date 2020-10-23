@@ -60,7 +60,8 @@ void Instance::init(std::istream & is) {
  * @param generator the pseudo-random numbers generator.
  */
 void Instance::init(unsigned int m, unsigned int D, double B, const Graph & G, 
-        std::default_random_engine generator) {
+        std::mt19937 generator) {
+    generator.discard(1000);
     this->m = m;
     this->D = D;
     this->B = B;
@@ -149,7 +150,7 @@ Instance::Instance(const std::string & filename) : Instance::Instance(filename.c
  * @param generator the pseudo-random numbers generator.
  */
 Instance::Instance(unsigned int m, unsigned int D, double B, const Graph & G, 
-        std::default_random_engine generator) {
+        std::mt19937 generator) {
     this->init(m, D, B, G, generator);
 }
 
@@ -164,7 +165,7 @@ Instance::Instance(unsigned int m, unsigned int D, double B, const Graph & G,
  */
 Instance::Instance(unsigned int m, unsigned int D, double B, const Graph & G, 
         unsigned int seed) : Instance::Instance(m, D, B, G, 
-            std::default_random_engine(seed)) {}
+            std::mt19937(seed)) {}
 
 /*
  * Constructs a new instance with random costs.
@@ -184,7 +185,7 @@ Instance::Instance(unsigned int m, unsigned int D, double B, const Graph & G)
  * @param G         the new instance's connected undirected graph.
  * @param generator the pseudo-random numbers generator.
  */
-Instance::Instance(const Graph & G, std::default_random_engine generator) {
+Instance::Instance(const Graph & G, std::mt19937 generator) {
     unsigned int m = round(sqrt(G.m()));
     double dE = G.getEdgesWeight();
     unsigned int D = round(((2.0 * (1.0 + 0.2)) / ((double) m)) * ((double) dE));
@@ -200,7 +201,7 @@ Instance::Instance(const Graph & G, std::default_random_engine generator) {
  * @param seed the seed for the pseudo-random numbers generator
  */
 Instance::Instance(const Graph & G, unsigned int seed) : Instance::Instance(G, 
-        std::default_random_engine(seed)) {}
+        std::mt19937(seed)) {}
 
 /*
  * Constructs a new instance with random costs.
