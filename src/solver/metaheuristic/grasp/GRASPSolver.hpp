@@ -1,6 +1,9 @@
 #pragma once
 
 #include "../../CEDPSolver.hpp"
+#include "../../heuristic/constructive/GreedyConstructiveHeuristic.hpp"
+#include "../../heuristic/fixer/SolutionFixer.hpp"
+#include "../../heuristic/localsearch/LocalSearchHeuristic.hpp"
 #include "../../../statistics/Statistics.hpp"
 
 /*
@@ -9,6 +12,12 @@
  */
 class GRASPSolver : public CEDPSolver {
     private:
+        /* This solver's greedy constructive heuristic. */
+        GreedyConstructiveHeuristic gcHeuristic;
+
+        /* This solver's local search heuristic. */
+        LocalSearchHeuristic lsHeuristic;
+
         /*
          * The number of values for this solver's threshold parameter.
          */

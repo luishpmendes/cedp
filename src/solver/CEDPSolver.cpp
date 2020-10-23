@@ -10,11 +10,14 @@
  * @param timeLimit the new solver's time limit.
  * @param seed      the seed for the new solver's pseudo-random numbers generator.
  */
-CEDPSolver::CEDPSolver(const Instance & instance, unsigned int timeLimit, 
-        unsigned int seed) : instance(instance), timeLimit(timeLimit), 
-    seed(seed), generator(seed), gcHeuristic(instance, seed, 0.5), 
-    lsHeuristic(instance, seed), solvingTime(0), solutionsCounter(0), 
-    bestPrimalBound(0), bestDualBound(DBL_MAX), bestPrimalSolution(instance) {}
+CEDPSolver::CEDPSolver(const Instance & instance,
+                       unsigned int timeLimit,
+                       unsigned int seed)
+     : instance(instance), timeLimit(timeLimit), seed(seed), generator(seed),
+       solvingTime(0), solutionsCounter(0), bestPrimalBound(0),
+       bestDualBound(DBL_MAX), bestPrimalSolution(instance) {
+    this->generator.discard(1000);
+}
 
 /*
  * Constructs a new empty solver.

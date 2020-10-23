@@ -13,11 +13,13 @@
  * @param k         the number of iterations between each update in the new 
  *                  solver's threshold parameter probabilities.
  */
-GRASPSolver::GRASPSolver(const Instance & instance, unsigned int timeLimit, 
-        unsigned int seed, unsigned int m, unsigned int k) : 
-    CEDPSolver::CEDPSolver(instance, timeLimit, seed), m(m), k(k) {
-    this->gcHeuristic = GreedyConstructiveHeuristic(this->instance, seed);
-}
+GRASPSolver::GRASPSolver(const Instance & instance,
+                         unsigned int timeLimit,
+                         unsigned int seed,
+                         unsigned int m,
+                         unsigned int k)
+    : CEDPSolver::CEDPSolver(instance, timeLimit, seed),
+      gcHeuristic(instance, seed), lsHeuristic(instance, seed), m(m), k(k) {}
 
 /*
  * Constructs a new empty solver.

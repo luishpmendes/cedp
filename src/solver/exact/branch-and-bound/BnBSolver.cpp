@@ -1,16 +1,33 @@
 #include "BnBSolver.hpp"
+#include "../../metaheuristic/grasp/GRASPSolver.hpp"
 #include "gurobi_c++.h"
 #include <algorithm>
 
 /*
  * Constructs a new solver.
  *
- * @param instance  the new solver's instance.
- * @param timeLimit the new solver's time limit.
- * @param seed      the seed for the new solver's pseudo-random numbers generator.
+ * @param instance                the new solver's instance.
+ * @param timeLimit               the new solver's time limit.
+ * @param seed                    the seed for the new solver's pseudo-random
+ *                                numbers generator.
+ * @param warmStartPercentageTime the percentage of time to find a warm start
+ *                                solution.
+ * @param m                       the number of values for the GRASP's threshold
+ *                                parameter.
+ * @param k                       The number of iterations between each update
+ *                                in the GRASP's threshold parameter
+ *                                probabilities.
  */
-BnBSolver::BnBSolver(const Instance & instance, unsigned int timeLimit, 
-        unsigned int seed) : CEDPSolver::CEDPSolver(instance, timeLimit, seed) {}
+BnBSolver::BnBSolver(const Instance & instance,
+                     unsigned int timeLimit,
+                     unsigned int seed,
+                     double warmStartPercentageTime,
+                     unsigned int m,
+                     unsigned int k)
+    : CEDPSolver::CEDPSolver(instance, timeLimit, seed),
+      warmStartPercentageTime(warmStartPercentageTime),
+      m(m),
+      k(k) {}
 
 /*
  * Constructs a new empty solver.
@@ -18,23 +35,56 @@ BnBSolver::BnBSolver(const Instance & instance, unsigned int timeLimit,
 BnBSolver::BnBSolver() : CEDPSolver::CEDPSolver() {}
 
 /*
+ * Returns the percentage of time to find a warm start solution.
+ *
+ * @return the percentage of time to find a warm start solution.
+ */
+double BnBSolver::getWarmStartPercentageTime() const {
+    return this->warmStartPercentageTime;
+}
+
+/*
+ * Returns the number of values for the GRASP's threshold parameter.
+ *
+ * @return the number of values for the GRASP's threshold parameter.
+ */
+unsigned int BnBSolver::getM() const {
+    return this->m;
+}
+
+/*
+ * Returns the number of iterations between each update in the GRASP's threshold parameter.
+ *
+ * @return the number of iterations between each update in the GRASP's threshold parameter.
+ */
+unsigned int BnBSolver::getK() const {
+    return this->k;
+}
+
+/*
  * Solve this solver's instance.
  */
 void BnBSolver::solve() {
     this->startTime = std::chrono::steady_clock::now();
 
-    this->bestPrimalSolution = this->gcHeuristic.constructSolution(round(
-                0.05 * ((double) this->timeLimit)));
+    unsigned int graspTimeLimit =
+        round(this->warmStartPercentageTime*this->timeLimit);
 
-    if (!this->bestPrimalSolution.isFeasible()) {
-        this->bestPrimalSolution = SolutionFixer::fixSolution(
-                this->bestPrimalSolution, 
-                round(0.05 * ((double) this->timeLimit)));
-    }
+    if (graspTimeLimit > 0) {
+        GRASPSolver solver(this->instance,
+                           round(this->warmStartPercentageTime*this->timeLimit),
+                           this->seed,
+                           this->m,
+                           this->k);
 
-    if (this->bestPrimalSolution.isFeasible()) {
-        this->solutionsCounter++;
-        this->bestPrimalBound = this->bestPrimalSolution.getValue();
+        solver.solve();
+
+        this->bestPrimalSolution = solver.getBestPrimalSolution();
+
+        if (this->bestPrimalSolution.isFeasible()) {
+            this->solutionsCounter++;
+            this->bestPrimalBound = this->bestPrimalSolution.getValue();
+        }
     }
 
     GRBEnv * env = 0;
@@ -423,9 +473,9 @@ void BnBSolver::solve() {
 
         model.optimize();
 
-        if (model.get(GRB_IntAttr_Status) == GRB_OPTIMAL) {
-            this->bestDualBound = model.get(GRB_DoubleAttr_ObjBound);
+        this->bestDualBound = model.get(GRB_DoubleAttr_ObjBound);
 
+        if (model.get(GRB_IntAttr_SolCount) > 0) {
             std::vector<std::set<Edge> > districts (this->instance.getM());
 
             for (unsigned int j = 0; j < this->instance.getM(); j++) {

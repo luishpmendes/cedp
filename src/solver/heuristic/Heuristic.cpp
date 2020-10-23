@@ -6,8 +6,10 @@
  * @param instance the new heuristic's instance.
  * @param seed     the seed for the new heuristic's pseudo-random numbers generator.
  */
-Heuristic::Heuristic(const Instance & instance, unsigned int seed) : 
-    instance(instance), generator(seed) {}
+Heuristic::Heuristic(const Instance & instance, unsigned int seed)
+    : instance(instance), generator(seed) {
+    this->generator.discard(1000);
+}
 
 /*
  * Constructs a new empty heuristic.

@@ -5,12 +5,20 @@
 int main () {
     unsigned int timeLimit = 10;
     unsigned int seed = 0;
+    double warmStartPercentageTime = 0.1;
+    unsigned int m = 10;
+    unsigned int k = 100;
     Instance instance;
     BnCSolver solver;
 
     instance = Instance("instances/exampleA.in");
 
-    solver = BnCSolver(instance, timeLimit, seed);
+    solver = BnCSolver(instance,
+                       timeLimit,
+                       seed,
+                       warmStartPercentageTime,
+                       m,
+                       k);
 
     assert(solver.getSolutionsCounter() == 0);
     assert(solver.getSolvingTime() == 0);
@@ -28,7 +36,12 @@ int main () {
 
     instance = Instance("instances/exampleB.in");
 
-    solver = BnCSolver(instance, timeLimit, seed);
+    solver = BnCSolver(instance,
+                       timeLimit,
+                       seed,
+                       warmStartPercentageTime,
+                       m,
+                       k);
 
     assert(solver.getSolutionsCounter() == 0);
     assert(solver.getSolvingTime() == 0);
@@ -46,7 +59,12 @@ int main () {
 
     instance = Instance("instances/exampleC.in");
 
-    solver = BnCSolver(instance, timeLimit, seed);
+    solver = BnCSolver(instance,
+                       timeLimit,
+                       seed,
+                       warmStartPercentageTime,
+                       m,
+                       k);
 
     assert(solver.getSolutionsCounter() == 0);
     assert(solver.getSolvingTime() == 0);
@@ -64,7 +82,12 @@ int main () {
 
     instance = Instance("instances/exampleD.in");
 
-    solver = BnCSolver(instance, timeLimit, seed);
+    solver = BnCSolver(instance,
+                       timeLimit,
+                       seed,
+                       warmStartPercentageTime,
+                       m,
+                       k);
 
     assert(solver.getSolutionsCounter() == 0);
     assert(solver.getSolvingTime() == 0);
@@ -82,7 +105,12 @@ int main () {
 
     instance = Instance("instances/exampleE.in");
 
-    solver = BnCSolver(instance, timeLimit, seed);
+    solver = BnCSolver(instance,
+                       timeLimit,
+                       seed,
+                       warmStartPercentageTime,
+                       m,
+                       k);
 
     assert(solver.getSolutionsCounter() == 0);
     assert(solver.getSolvingTime() == 0);
@@ -100,7 +128,12 @@ int main () {
 
     instance = Instance("instances/exampleF.in");
 
-    solver = BnCSolver(instance, timeLimit, seed);
+    solver = BnCSolver(instance,
+                       timeLimit,
+                       seed,
+                       warmStartPercentageTime,
+                       m,
+                       k);
 
     assert(solver.getSolutionsCounter() == 0);
     assert(solver.getSolvingTime() == 0);

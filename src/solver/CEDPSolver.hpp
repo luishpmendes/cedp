@@ -1,8 +1,8 @@
 #pragma once
 
-#include "heuristic/constructive/GreedyConstructiveHeuristic.hpp"
-#include "heuristic/fixer/SolutionFixer.hpp"
-#include "heuristic/localsearch/LocalSearchHeuristic.hpp"
+#include "../instance/Instance.hpp"
+#include "../solution/Solution.hpp"
+#include "heuristic/Heuristic.hpp"
 #include <chrono>
 
 /*
@@ -23,13 +23,7 @@ class CEDPSolver {
         std::chrono::steady_clock::time_point startTime;
 
         /* This solver's pseudo-random numbers generator. */
-        std::default_random_engine generator;
-
-        /* This solver's greedy constructive heuristic. */
-        GreedyConstructiveHeuristic gcHeuristic;
-
-        /* This solver's local search heuristic. */
-        LocalSearchHeuristic lsHeuristic;
+        std::mt19937 generator;
 
         /* This solver's solving time in seconds. */
         unsigned int solvingTime;

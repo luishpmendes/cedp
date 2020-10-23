@@ -8,13 +8,22 @@ int main (int argc, char * argv[]) {
         std::string instanceFilename = argParser.getCmdOption("--instance");
         unsigned int timeLimit = std::stoul(argParser.getCmdOption("--time-limit"));
         unsigned int seed = std::chrono::system_clock::now().time_since_epoch().count();
+        double warmStartPercentageTime =
+            std::stod(argParser.getCmdOption("--warm-start-percentage-time"));
+        unsigned int m = std::stoul(argParser.getCmdOption("--m"));
+        unsigned int k = std::stoul(argParser.getCmdOption("--k"));
 
         if (argParser.cmdOptionExists("--seed")) {
             seed = std::stoul(argParser.getCmdOption("--seed"));
         }
 
         Instance instance (instanceFilename);
-        BnCSolver solver = BnCSolver(instance, timeLimit, seed);
+        BnCSolver solver = BnCSolver(instance,
+                                     timeLimit,
+                                     seed,
+                                     warmStartPercentageTime,
+                                     m,
+                                     k);
 
         solver.solve();
 
@@ -32,10 +41,16 @@ int main (int argc, char * argv[]) {
             }
         }
     } else {
-        std::cerr << "./BnCSolverExec --instance <instanceFilename> " << 
-            "--time-limit <timeLimit> --seed <seed> " << 
-            "--statistics <solverStatisticsFilename> " << 
-            "--solution <solutionFilename>" << std::endl;
+        std::cerr << "./BnCSolverExec "
+                  <<"--instance <instanceFilename> "
+                  << "--time-limit <timeLimit> "
+                  << "--seed <seed> "
+                  << "--warm-start-percentage-time <warmStartPercentageTime>"
+                  << "--m <m> "
+                  << "--k <k> "
+                  << "--statistics <solverStatisticsFilename> "
+                  << "--solution <solutionFilename>"
+                  << std::endl;
     }
 
     return 0;

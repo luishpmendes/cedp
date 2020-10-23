@@ -10,7 +10,7 @@ class Heuristic {
         Instance instance;
 
         /* This heuristic's pseudo-random numbers generator. */
-        std::default_random_engine generator;
+        std::mt19937 generator;
     public:
         /*
          * Constructs a new heuristic.

@@ -98,92 +98,6 @@ $(BIN)/test/HeuristicTest: $(BIN)/disjoint-sets/DisjointSets.o \
 
 HeuristicTest: clean $(BIN)/test/HeuristicTest
 
-$(BIN)/test/BnBSolverTest: $(BIN)/disjoint-sets/DisjointSets.o \
-                           $(BIN)/graph/Vertex.o \
-                           $(BIN)/graph/Edge.o \
-                           $(BIN)/graph/Graph.o \
-                           $(BIN)/instance/Instance.o \
-                           $(BIN)/solution/Solution.o \
-                           $(BIN)/solver/heuristic/Heuristic.o \
-                           $(BIN)/solver/heuristic/constructive/GreedyConstructiveHeuristic.o \
-                           $(BIN)/solver/heuristic/fixer/SolutionFixer.o \
-                           $(BIN)/solver/heuristic/localsearch/LocalSearchHeuristic.o \
-                           $(BIN)/solver/CEDPSolver.o \
-                           $(BIN)/solver/exact/branch-and-bound/BnBSolver.o \
-                           $(BIN)/test/BnBSolverTest.o
-	@echo "--> Linking objects..." 
-	$(CPP) $(CXXFILES) -o $@ $^ $(CARGS) $(DLIB) -I$(GRBINC) $(GRBLIB)
-	@echo
-	@echo "--> Running test..."
-	$(BIN)/test/BnBSolverTest
-	@echo
-
-BnBSolverTest: clean $(BIN)/test/BnBSolverTest
-
-$(BIN)/exec/BnBSolverExec: $(BIN)/disjoint-sets/DisjointSets.o \
-                           $(BIN)/graph/Vertex.o \
-                           $(BIN)/graph/Edge.o \
-                           $(BIN)/graph/Graph.o \
-                           $(BIN)/instance/Instance.o \
-                           $(BIN)/solution/Solution.o \
-                           $(BIN)/solver/heuristic/Heuristic.o \
-                           $(BIN)/solver/heuristic/constructive/GreedyConstructiveHeuristic.o \
-                           $(BIN)/solver/heuristic/fixer/SolutionFixer.o \
-                           $(BIN)/solver/heuristic/localsearch/LocalSearchHeuristic.o \
-                           $(BIN)/solver/CEDPSolver.o \
-                           $(BIN)/solver/exact/branch-and-bound/BnBSolver.o \
-                           $(BIN)/exec/ArgumentParser.o \
-                           $(BIN)/exec/BnBSolverExec.o
-	@echo "--> Linking objects..." 
-	$(CPP) $(CXXFILES) -o $@ $^ $(CARGS) $(DLIB) -I$(GRBINC) $(GRBLIB)
-	@echo
-
-BnBSolverExec: clean $(BIN)/exec/BnBSolverExec
-
-$(BIN)/test/BnCSolverTest: $(BIN)/disjoint-sets/DisjointSets.o \
-                           $(BIN)/graph/Vertex.o \
-                           $(BIN)/graph/Edge.o \
-                           $(BIN)/graph/Graph.o \
-                           $(BIN)/instance/Instance.o \
-                           $(BIN)/solution/Solution.o \
-                           $(BIN)/solver/heuristic/Heuristic.o \
-                           $(BIN)/solver/heuristic/constructive/GreedyConstructiveHeuristic.o \
-                           $(BIN)/solver/heuristic/fixer/SolutionFixer.o \
-                           $(BIN)/solver/heuristic/localsearch/LocalSearchHeuristic.o \
-                           $(BIN)/solver/CEDPSolver.o \
-                           $(BIN)/solver/exact/branch-and-cut/BnCSolverCallback.o \
-                           $(BIN)/solver/exact/branch-and-cut/BnCSolver.o \
-                           $(BIN)/test/BnCSolverTest.o
-	@echo "--> Linking objects..." 
-	$(CPP) $(CXXFILES) -o $@ $^ $(CARGS) $(DLIB) -I$(GRBINC) $(GRBLIB)
-	@echo
-	@echo "--> Running test..."
-	$(BIN)/test/BnCSolverTest
-	@echo
-
-BnCSolverTest: clean $(BIN)/test/BnCSolverTest
-
-$(BIN)/exec/BnCSolverExec: $(BIN)/disjoint-sets/DisjointSets.o \
-                           $(BIN)/graph/Vertex.o \
-                           $(BIN)/graph/Edge.o \
-                           $(BIN)/graph/Graph.o \
-                           $(BIN)/instance/Instance.o \
-                           $(BIN)/solution/Solution.o \
-                           $(BIN)/solver/heuristic/Heuristic.o \
-                           $(BIN)/solver/heuristic/constructive/GreedyConstructiveHeuristic.o \
-                           $(BIN)/solver/heuristic/fixer/SolutionFixer.o \
-                           $(BIN)/solver/heuristic/localsearch/LocalSearchHeuristic.o \
-                           $(BIN)/solver/CEDPSolver.o \
-                           $(BIN)/solver/exact/branch-and-cut/BnCSolverCallback.o \
-                           $(BIN)/solver/exact/branch-and-cut/BnCSolver.o \
-                           $(BIN)/exec/ArgumentParser.o \
-                           $(BIN)/exec/BnCSolverExec.o
-	@echo "--> Linking objects..." 
-	$(CPP) $(CXXFILES) -o $@ $^ $(CARGS) $(DLIB) -I$(GRBINC) $(GRBLIB)
-	@echo
-
-BnCSolverExec: clean $(BIN)/exec/BnCSolverExec
-
 $(BIN)/test/StatisticsTest: $(BIN)/statistics/Statistics.o \
                             $(BIN)/test/StatisticsTest.o
 	@echo "--> Linking objects..." 
@@ -238,6 +152,101 @@ $(BIN)/exec/GRASPSolverExec: $(BIN)/disjoint-sets/DisjointSets.o \
 	@echo
 
 GRASPSolverExec: clean $(BIN)/exec/GRASPSolverExec
+
+
+$(BIN)/test/BnBSolverTest: $(BIN)/disjoint-sets/DisjointSets.o \
+                           $(BIN)/statistics/Statistics.o \
+                           $(BIN)/graph/Vertex.o \
+                           $(BIN)/graph/Edge.o \
+                           $(BIN)/graph/Graph.o \
+                           $(BIN)/instance/Instance.o \
+                           $(BIN)/solution/Solution.o \
+                           $(BIN)/solver/heuristic/Heuristic.o \
+                           $(BIN)/solver/heuristic/constructive/GreedyConstructiveHeuristic.o \
+                           $(BIN)/solver/heuristic/fixer/SolutionFixer.o \
+                           $(BIN)/solver/heuristic/localsearch/LocalSearchHeuristic.o \
+                           $(BIN)/solver/CEDPSolver.o \
+                           $(BIN)/solver/metaheuristic/grasp/GRASPSolver.o \
+                           $(BIN)/solver/exact/branch-and-bound/BnBSolver.o \
+                           $(BIN)/test/BnBSolverTest.o
+	@echo "--> Linking objects..." 
+	$(CPP) $(CXXFILES) -o $@ $^ $(CARGS) $(DLIB) -I$(GRBINC) $(GRBLIB)
+	@echo
+	@echo "--> Running test..."
+	$(BIN)/test/BnBSolverTest
+	@echo
+
+BnBSolverTest: clean $(BIN)/test/BnBSolverTest
+
+$(BIN)/exec/BnBSolverExec: $(BIN)/disjoint-sets/DisjointSets.o \
+                           $(BIN)/statistics/Statistics.o \
+                           $(BIN)/graph/Vertex.o \
+                           $(BIN)/graph/Edge.o \
+                           $(BIN)/graph/Graph.o \
+                           $(BIN)/instance/Instance.o \
+                           $(BIN)/solution/Solution.o \
+                           $(BIN)/solver/heuristic/Heuristic.o \
+                           $(BIN)/solver/heuristic/constructive/GreedyConstructiveHeuristic.o \
+                           $(BIN)/solver/heuristic/fixer/SolutionFixer.o \
+                           $(BIN)/solver/heuristic/localsearch/LocalSearchHeuristic.o \
+                           $(BIN)/solver/CEDPSolver.o \
+                           $(BIN)/solver/metaheuristic/grasp/GRASPSolver.o \
+                           $(BIN)/solver/exact/branch-and-bound/BnBSolver.o \
+                           $(BIN)/exec/ArgumentParser.o \
+                           $(BIN)/exec/BnBSolverExec.o
+	@echo "--> Linking objects..." 
+	$(CPP) $(CXXFILES) -o $@ $^ $(CARGS) $(DLIB) -I$(GRBINC) $(GRBLIB)
+	@echo
+
+BnBSolverExec: clean $(BIN)/exec/BnBSolverExec
+
+$(BIN)/test/BnCSolverTest: $(BIN)/disjoint-sets/DisjointSets.o \
+                           $(BIN)/statistics/Statistics.o \
+                           $(BIN)/graph/Vertex.o \
+                           $(BIN)/graph/Edge.o \
+                           $(BIN)/graph/Graph.o \
+                           $(BIN)/instance/Instance.o \
+                           $(BIN)/solution/Solution.o \
+                           $(BIN)/solver/heuristic/Heuristic.o \
+                           $(BIN)/solver/heuristic/constructive/GreedyConstructiveHeuristic.o \
+                           $(BIN)/solver/heuristic/fixer/SolutionFixer.o \
+                           $(BIN)/solver/heuristic/localsearch/LocalSearchHeuristic.o \
+                           $(BIN)/solver/CEDPSolver.o \
+                           $(BIN)/solver/metaheuristic/grasp/GRASPSolver.o \
+                           $(BIN)/solver/exact/branch-and-cut/BnCSolverCallback.o \
+                           $(BIN)/solver/exact/branch-and-cut/BnCSolver.o \
+                           $(BIN)/test/BnCSolverTest.o
+	@echo "--> Linking objects..." 
+	$(CPP) $(CXXFILES) -o $@ $^ $(CARGS) $(DLIB) -I$(GRBINC) $(GRBLIB)
+	@echo
+	@echo "--> Running test..."
+	$(BIN)/test/BnCSolverTest
+	@echo
+
+BnCSolverTest: clean $(BIN)/test/BnCSolverTest
+
+$(BIN)/exec/BnCSolverExec: $(BIN)/disjoint-sets/DisjointSets.o \
+                           $(BIN)/statistics/Statistics.o \
+                           $(BIN)/graph/Vertex.o \
+                           $(BIN)/graph/Edge.o \
+                           $(BIN)/graph/Graph.o \
+                           $(BIN)/instance/Instance.o \
+                           $(BIN)/solution/Solution.o \
+                           $(BIN)/solver/heuristic/Heuristic.o \
+                           $(BIN)/solver/heuristic/constructive/GreedyConstructiveHeuristic.o \
+                           $(BIN)/solver/heuristic/fixer/SolutionFixer.o \
+                           $(BIN)/solver/heuristic/localsearch/LocalSearchHeuristic.o \
+                           $(BIN)/solver/CEDPSolver.o \
+                           $(BIN)/solver/metaheuristic/grasp/GRASPSolver.o \
+                           $(BIN)/solver/exact/branch-and-cut/BnCSolverCallback.o \
+                           $(BIN)/solver/exact/branch-and-cut/BnCSolver.o \
+                           $(BIN)/exec/ArgumentParser.o \
+                           $(BIN)/exec/BnCSolverExec.o
+	@echo "--> Linking objects..." 
+	$(CPP) $(CXXFILES) -o $@ $^ $(CARGS) $(DLIB) -I$(GRBINC) $(GRBLIB)
+	@echo
+
+BnCSolverExec: clean $(BIN)/exec/BnCSolverExec
 
 $(BIN)/exec/StatisticsAggregatorExec: $(BIN)/exec/ArgumentParser.o \
                                       $(BIN)/exec/StatisticsAggregatorExec.o
@@ -374,16 +383,16 @@ PerformanceProfilesDualEExec: clean $(BIN)/exec/PerformanceProfilesDualEExec
 tests: InstanceTest \
        SolutionTest \
        HeuristicTest \
+       StatisticsTest \
        BnBSolverTest \
        BnCSolverTest \
-       StatisticsTest \
        GRASPSolverTest
 
 execs: GraphGeneratorExec \
        InstanceGeneratorExec \
+       GRASPSolverExec \
        BnBSolverExec \
        BnCSolverExec \
-       GRASPSolverExec \
        StatisticsAggregatorExec \
        PlotGeneratorExec \
        PerformanceProfilesPrimalExec \
