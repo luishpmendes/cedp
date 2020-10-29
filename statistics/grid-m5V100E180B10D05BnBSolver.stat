@@ -1,0 +1,17 @@
+m: 5
+D: 4018
+B: 1
+|V|: 100
+|E|: 180
+|U|: 180
+|A|: 484
+|U'|: 181
+|A'|: 664
+Maximum demand: 4018
+Time limit: 3600s
+Seed: 176283626
+Solving time: 3600s
+Solutions found: 2
+Best primal bound: 114483
+Best dual bound: 125269
+Is solution feasible: 1
