@@ -9,7 +9,7 @@ make PlotGeneratorExec;
 
 N=30;
 
-for solver in BnBSolver BnCSolver GRASPSolver
+for solver in "BnBSolverA" "BnCSolverA" "BnBSolverB" "BnCSolverB" "GRASPSolver"
 do
     echo "solver="$solver;
     for m in 5 10
