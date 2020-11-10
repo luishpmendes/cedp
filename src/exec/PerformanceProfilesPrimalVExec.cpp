@@ -9,8 +9,16 @@ int main (int argc, char * argv[]) {
     ArgumentParser argParser (argc, argv);
 
     if (argParser.cmdOptionExists("-V")) {
-        std::vector<unsigned int> primalBoundsBnB, primalBoundsBnC, primalBoundsGRASP;
-        std::vector<double> ratiosBnB, ratiosBnC, ratiosGRASP;
+        std::vector<unsigned int> primalBoundsBnBA,
+                                  primalBoundsBnBB,
+                                  primalBoundsBnCA,
+                                  primalBoundsBnCB,
+                                  primalBoundsGRASP;
+        std::vector<double> ratiosBnBA,
+                            ratiosBnBB,
+                            ratiosBnCA,
+                            ratiosBnCB,
+                            ratiosGRASP;
         std::set<double> ratios;
         std::string type, solver;
         unsigned int m, D, V, E, U, A, UPrime, APrime, timeLimit, seed, 
@@ -47,53 +55,86 @@ int main (int argc, char * argv[]) {
             }
 
             if (vertices == V) {
-                if (solver.compare("BnBSolver") == 0) {
-                    primalBoundsBnB.push_back(primalBound);
-                } else if (solver.compare("BnCSolver") == 0) {
-                    primalBoundsBnC.push_back(primalBound);
+                if (solver.compare("BnBSolverA") == 0) {
+                    primalBoundsBnBA.push_back(primalBound);
+                } else if (solver.compare("BnBSolverB") == 0) {
+                    primalBoundsBnBB.push_back(primalBound);
+                } else if (solver.compare("BnCSolverA") == 0) {
+                    primalBoundsBnCA.push_back(primalBound);
+                } else if (solver.compare("BnCSolverB") == 0) {
+                    primalBoundsBnCB.push_back(primalBound);
                 } else if (solver.compare("GRASPSolver") == 0) {
                     primalBoundsGRASP.push_back(primalBound);
                 }
             }
         }
 
-        assert(primalBoundsBnB.size() == 48);
-        assert(primalBoundsBnB.size() == primalBoundsBnC.size());
-        assert(primalBoundsBnC.size() == primalBoundsGRASP.size());
-
         n = 48;
+
+        assert(primalBoundsBnBA.size() == n);
+        assert(primalBoundsBnBB.size() == n);
+        assert(primalBoundsBnCA.size() == n);
+        assert(primalBoundsBnCB.size() == n);
+        assert(primalBoundsGRASP.size() == n);
     
         for (unsigned int i = 0; i < n; i++) {
-            unsigned int primalBoundBnB, primalBoundBnC, primalBoundGRASP, bestPrimalBound;
+            unsigned int primalBoundBnBA,
+                         primalBoundBnBB,
+                         primalBoundBnCA,
+                         primalBoundBnCB,
+                         primalBoundGRASP,
+                         bestPrimalBound;
 
-            primalBoundBnB = primalBoundsBnB[i];
-            primalBoundBnC = primalBoundsBnC[i];
+            primalBoundBnBA = primalBoundsBnBA[i];
+            primalBoundBnBB = primalBoundsBnBB[i];
+            primalBoundBnCA = primalBoundsBnCA[i];
+            primalBoundBnCB = primalBoundsBnCB[i];
             primalBoundGRASP = primalBoundsGRASP[i];
 
             bestPrimalBound = 0;
 
-            if (bestPrimalBound < primalBoundBnB && primalBoundBnB < UINT_MAX) {
-                bestPrimalBound = primalBoundBnB;
+            if (bestPrimalBound < primalBoundBnBA && primalBoundBnBA < UINT_MAX) {
+                bestPrimalBound = primalBoundBnBA;
             }
 
-            if (bestPrimalBound < primalBoundBnC && primalBoundBnC < UINT_MAX) {
-                bestPrimalBound = primalBoundBnC;
+            if (bestPrimalBound < primalBoundBnBB && primalBoundBnBB < UINT_MAX) {
+                bestPrimalBound = primalBoundBnBB;
+            }
+
+            if (bestPrimalBound < primalBoundBnCA && primalBoundBnCA < UINT_MAX) {
+                bestPrimalBound = primalBoundBnCA;
+            }
+
+            if (bestPrimalBound < primalBoundBnCB && primalBoundBnCB < UINT_MAX) {
+                bestPrimalBound = primalBoundBnCB;
             }
 
             if (bestPrimalBound < primalBoundGRASP && primalBoundGRASP < UINT_MAX) {
                 bestPrimalBound = primalBoundGRASP;
             }
 
-            if (primalBoundBnB < UINT_MAX) {
-                double ratioBnB = ((double) bestPrimalBound)/((double) primalBoundBnB);
-                ratiosBnB.push_back(ratioBnB);
-                ratios.insert(ratioBnB);
+            if (primalBoundBnBA < UINT_MAX) {
+                double ratioBnBA = ((double) bestPrimalBound)/((double) primalBoundBnBA);
+                ratiosBnBA.push_back(ratioBnBA);
+                ratios.insert(ratioBnBA);
             }
 
-            if (primalBoundBnC < UINT_MAX) {
-                double ratioBnC = ((double) bestPrimalBound)/((double) primalBoundBnC);
-                ratiosBnC.push_back(ratioBnC);
-                ratios.insert(ratioBnC);
+            if (primalBoundBnBB < UINT_MAX) {
+                double ratioBnBB = ((double) bestPrimalBound)/((double) primalBoundBnBB);
+                ratiosBnBB.push_back(ratioBnBB);
+                ratios.insert(ratioBnBB);
+            }
+
+            if (primalBoundBnCA < UINT_MAX) {
+                double ratioBnCA = ((double) bestPrimalBound)/((double) primalBoundBnCA);
+                ratiosBnCA.push_back(ratioBnCA);
+                ratios.insert(ratioBnCA);
+            }
+
+            if (primalBoundBnCB < UINT_MAX) {
+                double ratioBnCB = ((double) bestPrimalBound)/((double) primalBoundBnCB);
+                ratiosBnCB.push_back(ratioBnCB);
+                ratios.insert(ratioBnCB);
             }
 
             if (primalBoundGRASP < UINT_MAX) {
@@ -104,23 +145,43 @@ int main (int argc, char * argv[]) {
         }
 
         for (double ratio : ratios) {
-            double percentageBnB, percentageBnC, percentageGRASP;
+            double percentageBnBA,
+                   percentageBnBB,
+                   percentageBnCA,
+                   percentageBnCB,
+                   percentageGRASP;
 
-            percentageBnB = 0.0;
-            for (double ratioBnB : ratiosBnB) {
-                if (ratioBnB <= ratio) {
-                    percentageBnB += 1.0;
+            percentageBnBA = 0.0;
+            for (double ratioBnBA : ratiosBnBA) {
+                if (ratioBnBA <= ratio) {
+                    percentageBnBA += 1.0;
                 }
             }
-            percentageBnB *= 100.0/((double) n);
+            percentageBnBA *= 100.0/((double) n);
 
-            percentageBnC = 0.0;
-            for (double ratioBnC : ratiosBnC) {
-                if (ratioBnC <= ratio) {
-                    percentageBnC += 1.0;
+            percentageBnBB = 0.0;
+            for (double ratioBnBB : ratiosBnBB) {
+                if (ratioBnBB <= ratio) {
+                    percentageBnBB += 1.0;
                 }
             }
-            percentageBnC *= 100.0/((double) n);
+            percentageBnBB *= 100.0/((double) n);
+
+            percentageBnCA = 0.0;
+            for (double ratioBnCA : ratiosBnCA) {
+                if (ratioBnCA <= ratio) {
+                    percentageBnCA += 1.0;
+                }
+            }
+            percentageBnCA *= 100.0/((double) n);
+
+            percentageBnCB = 0.0;
+            for (double ratioBnCB : ratiosBnCB) {
+                if (ratioBnCB <= ratio) {
+                    percentageBnCB += 1.0;
+                }
+            }
+            percentageBnCB *= 100.0/((double) n);
 
             percentageGRASP = 0.0;
             for (double ratioGRASP : ratiosGRASP) {
@@ -130,8 +191,12 @@ int main (int argc, char * argv[]) {
             }
             percentageGRASP *= 100.0/((double) n);
 
-            std::cout << ratio << ", " << percentageBnB << ", " << 
-                percentageBnC << ", " << percentageGRASP << std::endl;
+            std::cout << ratio << ", "
+                      << percentageBnBA << ", "
+                      << percentageBnBB << ", "
+                      << percentageBnCA << ", "
+                      << percentageBnCB << ", "
+                      << percentageGRASP << std::endl;
         }
     }
 

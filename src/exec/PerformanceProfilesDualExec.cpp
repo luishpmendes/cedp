@@ -5,7 +5,14 @@
 #include <vector>
 
 int main () {
-    std::vector<double> dualBoundsBnB, dualBoundsBnC, ratiosBnB, ratiosBnC;
+    std::vector<double> dualBoundsBnBA,
+                        dualBoundsBnBB,
+                        dualBoundsBnCA,
+                        dualBoundsBnCB,
+                        ratiosBnBA,
+                        ratiosBnBB,
+                        ratiosBnCA,
+                        ratiosBnCB;
     std::set<double> ratios;
     std::string type, solver;
     unsigned int m, D, V, E, U, A, UPrime, APrime, timeLimit, seed, 
@@ -32,67 +39,122 @@ int main () {
             }
         }
 
-        if (solver.compare("BnBSolver") == 0) {
-            dualBoundsBnB.push_back(dualBound);
-        } else if (solver.compare("BnCSolver") == 0) {
-            dualBoundsBnC.push_back(dualBound);
+        if (solver.compare("BnBSolverA") == 0) {
+            dualBoundsBnBA.push_back(dualBound);
+        } else if (solver.compare("BnBSolverB") == 0) {
+            dualBoundsBnBB.push_back(dualBound);
+        } else if (solver.compare("BnCSolverA") == 0) {
+            dualBoundsBnCA.push_back(dualBound);
+        } else if (solver.compare("BnCSolverB") == 0) {
+            dualBoundsBnCB.push_back(dualBound);
         }
     }
 
-    assert(dualBoundsBnB.size() == 144);
-    assert(dualBoundsBnB.size() == dualBoundsBnC.size());
-
     n = 144;
 
-    for (unsigned int i = 0; i < n; i++) {
-        double dualBoundBnB, dualBoundBnC, bestDualBound;
+    assert(dualBoundsBnBA.size() == n);
+    assert(dualBoundsBnBB.size() == n);
+    assert(dualBoundsBnCA.size() == n);
+    assert(dualBoundsBnCB.size() == n);
 
-        dualBoundBnB = dualBoundsBnB[i];
-        dualBoundBnC = dualBoundsBnC[i];
+    for (unsigned int i = 0; i < n; i++) {
+        double dualBoundBnBA,
+               dualBoundBnBB,
+               dualBoundBnCA,
+               dualBoundBnCB,
+               bestDualBound;
+
+        dualBoundBnBA = dualBoundsBnBA[i];
+        dualBoundBnBB = dualBoundsBnBB[i];
+        dualBoundBnCA = dualBoundsBnCA[i];
+        dualBoundBnCB = dualBoundsBnCB[i];
 
         bestDualBound = DBL_MAX;
 
-        if (bestDualBound > dualBoundBnB && dualBoundBnB >= 0.0) {
-            bestDualBound = dualBoundBnB;
+        if (bestDualBound > dualBoundBnBA && dualBoundBnBA >= 0.0) {
+            bestDualBound = dualBoundBnBA;
         }
 
-        if (bestDualBound > dualBoundBnC && dualBoundBnC >= 0.0) {
-            bestDualBound = dualBoundBnC;
+        if (bestDualBound > dualBoundBnBB && dualBoundBnBB >= 0.0) {
+            bestDualBound = dualBoundBnBB;
         }
 
-        if (dualBoundBnB >= 0.0) {
-            double ratioBnB = dualBoundBnB/bestDualBound;
-            ratiosBnB.push_back(ratioBnB);
-            ratios.insert(ratioBnB);
+        if (bestDualBound > dualBoundBnCA && dualBoundBnCA >= 0.0) {
+            bestDualBound = dualBoundBnCA;
         }
 
-        if (dualBoundBnC >= 0.0) {
-            double ratioBnC = dualBoundBnC/bestDualBound;
-            ratiosBnC.push_back(ratioBnC);
-            ratios.insert(ratioBnC);
+        if (bestDualBound > dualBoundBnCB && dualBoundBnCB >= 0.0) {
+            bestDualBound = dualBoundBnCB;
+        }
+
+        if (dualBoundBnBA >= 0.0) {
+            double ratioBnBA = dualBoundBnBA/bestDualBound;
+            ratiosBnBA.push_back(ratioBnBA);
+            ratios.insert(ratioBnBA);
+        }
+
+        if (dualBoundBnBB >= 0.0) {
+            double ratioBnBB = dualBoundBnBB/bestDualBound;
+            ratiosBnBB.push_back(ratioBnBB);
+            ratios.insert(ratioBnBB);
+        }
+
+        if (dualBoundBnCA >= 0.0) {
+            double ratioBnCA = dualBoundBnCA/bestDualBound;
+            ratiosBnCA.push_back(ratioBnCA);
+            ratios.insert(ratioBnCA);
+        }
+
+        if (dualBoundBnCB >= 0.0) {
+            double ratioBnCB = dualBoundBnCB/bestDualBound;
+            ratiosBnCB.push_back(ratioBnCB);
+            ratios.insert(ratioBnCB);
         }
     }
 
     for (double ratio : ratios) {
-        double percentageBnB, percentageBnC;
+        double percentageBnBA,
+               percentageBnBB,
+               percentageBnCA,
+               percentageBnCB;
 
-        percentageBnB = 0.0;
-        for (double ratioBnB : ratiosBnB) {
-            if (ratioBnB <= ratio) {
-                percentageBnB += 1.0;
+        percentageBnBA = 0.0;
+        for (double ratioBnBA : ratiosBnBA) {
+            if (ratioBnBA <= ratio) {
+                percentageBnBA += 1.0;
             }
         }
-        percentageBnB *= 100.0/((double) n);
+        percentageBnBA *= 100.0/((double) n);
 
-        percentageBnC = 0.0;
-        for (double ratioBnC : ratiosBnC) {
-            if (ratioBnC <= ratio) {
-                percentageBnC += 1.0;
+        percentageBnBB = 0.0;
+        for (double ratioBnBB : ratiosBnBB) {
+            if (ratioBnBB <= ratio) {
+                percentageBnBB += 1.0;
             }
         }
-        percentageBnC *= 100.0/((double) n);
+        percentageBnBB *= 100.0/((double) n);
 
-        std::cout << ratio << ", " << percentageBnB << ", " << percentageBnC << std::endl;
+        percentageBnCA = 0.0;
+        for (double ratioBnCA : ratiosBnCA) {
+            if (ratioBnCA <= ratio) {
+                percentageBnCA += 1.0;
+            }
+        }
+        percentageBnCA *= 100.0/((double) n);
+
+        percentageBnCB = 0.0;
+        for (double ratioBnCB : ratiosBnCB) {
+            if (ratioBnCB <= ratio) {
+                percentageBnCB += 1.0;
+            }
+        }
+        percentageBnCB *= 100.0/((double) n);
+
+        std::cout << ratio << ", "
+                  << percentageBnBA << ", "
+                  << percentageBnBB << ", "
+                  << percentageBnCA << ", "
+                  << percentageBnCB << std::endl;
     }
 
     return 0;
