@@ -1,0 +1,17 @@
+m: 5
+D: 1910
+B: 1
+|V|: 49
+|E|: 84
+|U|: 84
+|A|: 214
+|U'|: 85
+|A'|: 298
+Maximum demand: 1910
+Time limit: 3600s
+Seed: 3250131096
+Solving time: 3600s
+Solutions found: 0
+Best primal bound: 0
+Best dual bound: 27169
+Is solution feasible: 0

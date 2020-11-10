@@ -1,0 +1,17 @@
+m: 5
+D: 1966
+B: 0.5
+|V|: 100
+|E|: 180
+|U|: 180
+|A|: 692
+|U'|: 181
+|A'|: 872
+Maximum demand: 1966
+Time limit: 3600s
+Seed: 2012359542
+Solving time: 3600s
+Solutions found: 2
+Best primal bound: 117353
+Best dual bound: 129540
+Is solution feasible: 1

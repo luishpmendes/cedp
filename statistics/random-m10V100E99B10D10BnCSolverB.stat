@@ -1,0 +1,17 @@
+m: 10
+D: 833
+B: 1
+|V|: 100
+|E|: 99
+|U|: 99
+|A|: 157
+|U'|: 100
+|A'|: 256
+Maximum demand: 833
+Time limit: 3600s
+Seed: 2456346935
+Solving time: 3600s
+Solutions found: 0
+Best primal bound: 0
+Best dual bound: 82504
+Is solution feasible: 0

@@ -1,0 +1,17 @@
+m: 10
+D: 2009
+B: 1
+|V|: 100
+|E|: 180
+|U|: 180
+|A|: 484
+|U'|: 181
+|A'|: 664
+Maximum demand: 2009
+Time limit: 3600s
+Seed: 1986076436
+Solving time: 3601s
+Solutions found: 2
+Best primal bound: 237146
+Best dual bound: 269630
+Is solution feasible: 1
