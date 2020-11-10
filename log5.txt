@@ -1,0 +1,331 @@
+timeLimit=
+warmStartPercentageTime=0.1
+m=10
+k=100
+BnBSolverA
+Instance: grid-m10V25E24B05D05
+Start time: qui nov 5 18:50:51 -03 2020
+Academic license - for non-commercial use only
+End time: qui nov 5 19:50:52 -03 2020
+Instance: grid-m10V25E32B05D10
+Start time: qui nov 5 19:50:52 -03 2020
+Academic license - for non-commercial use only
+End time: qui nov 5 20:00:43 -03 2020
+Instance: grid-m10V25E40B10D05
+Start time: qui nov 5 20:00:43 -03 2020
+Academic license - for non-commercial use only
+End time: qui nov 5 20:08:48 -03 2020
+Instance: grid-m10V49E48B10D10
+Start time: qui nov 5 20:08:48 -03 2020
+Academic license - for non-commercial use only
+End time: qui nov 5 20:19:09 -03 2020
+Instance: grid-m5V49E84B05D05
+Start time: qui nov 5 20:19:09 -03 2020
+Academic license - for non-commercial use only
+End time: qui nov 5 21:19:10 -03 2020
+Instance: grid-m5V100E99B05D10
+Start time: qui nov 5 21:19:10 -03 2020
+Academic license - for non-commercial use only
+End time: qui nov 5 22:19:10 -03 2020
+Instance: grid-m5V100E140B10D05
+Start time: qui nov 5 22:19:10 -03 2020
+Academic license - for non-commercial use only
+End time: qui nov 5 23:19:11 -03 2020
+Instance: grid-m5V100E180B10D10
+Start time: qui nov 5 23:19:11 -03 2020
+Academic license - for non-commercial use only
+End time: sex nov 6 00:19:12 -03 2020
+Instance: random-m10V25E24B05D05
+Start time: sex nov 6 00:19:12 -03 2020
+Academic license - for non-commercial use only
+End time: sex nov 6 00:26:50 -03 2020
+Instance: random-m10V25E32B05D10
+Start time: sex nov 6 00:26:50 -03 2020
+Academic license - for non-commercial use only
+End time: sex nov 6 00:35:34 -03 2020
+Instance: random-m10V25E40B10D05
+Start time: sex nov 6 00:35:34 -03 2020
+Academic license - for non-commercial use only
+End time: sex nov 6 01:11:37 -03 2020
+Instance: random-m10V49E48B10D10
+Start time: sex nov 6 01:11:37 -03 2020
+Academic license - for non-commercial use only
+End time: sex nov 6 01:24:08 -03 2020
+Instance: random-m5V49E84B05D05
+Start time: sex nov 6 01:24:08 -03 2020
+Academic license - for non-commercial use only
+End time: sex nov 6 02:24:09 -03 2020
+Instance: random-m5V100E99B05D10
+Start time: sex nov 6 02:24:09 -03 2020
+Academic license - for non-commercial use only
+End time: sex nov 6 03:24:09 -03 2020
+Instance: random-m5V100E140B10D05
+Start time: sex nov 6 03:24:09 -03 2020
+Academic license - for non-commercial use only
+End time: sex nov 6 04:24:10 -03 2020
+Instance: random-m5V100E180B10D10
+Start time: sex nov 6 04:24:10 -03 2020
+Academic license - for non-commercial use only
+End time: sex nov 6 05:24:11 -03 2020
+BnCSolverA
+Instance: grid-m10V25E24B05D05
+Start time: sex nov 6 05:24:11 -03 2020
+Academic license - for non-commercial use only
+End time: sex nov 6 06:24:12 -03 2020
+Instance: grid-m10V25E32B05D10
+Start time: sex nov 6 06:24:12 -03 2020
+Academic license - for non-commercial use only
+End time: sex nov 6 06:35:32 -03 2020
+Instance: grid-m10V25E40B10D05
+Start time: sex nov 6 06:35:32 -03 2020
+Academic license - for non-commercial use only
+End time: sex nov 6 06:41:54 -03 2020
+Instance: grid-m10V49E48B10D10
+Start time: sex nov 6 06:41:54 -03 2020
+Academic license - for non-commercial use only
+End time: sex nov 6 07:41:54 -03 2020
+Instance: grid-m5V49E84B05D05
+Start time: sex nov 6 07:41:54 -03 2020
+Academic license - for non-commercial use only
+End time: sex nov 6 08:41:54 -03 2020
+Instance: grid-m5V100E99B05D10
+Start time: sex nov 6 08:41:54 -03 2020
+Academic license - for non-commercial use only
+End time: sex nov 6 09:41:55 -03 2020
+Instance: grid-m5V100E140B10D05
+Start time: sex nov 6 09:41:55 -03 2020
+Academic license - for non-commercial use only
+End time: sex nov 6 10:41:56 -03 2020
+Instance: grid-m5V100E180B10D10
+Start time: sex nov 6 10:41:56 -03 2020
+Academic license - for non-commercial use only
+End time: sex nov 6 11:42:00 -03 2020
+Instance: random-m10V25E24B05D05
+Start time: sex nov 6 11:42:00 -03 2020
+Academic license - for non-commercial use only
+End time: sex nov 6 11:48:50 -03 2020
+Instance: random-m10V25E32B05D10
+Start time: sex nov 6 11:48:50 -03 2020
+Academic license - for non-commercial use only
+End time: sex nov 6 11:58:39 -03 2020
+Instance: random-m10V25E40B10D05
+Start time: sex nov 6 11:58:39 -03 2020
+Academic license - for non-commercial use only
+End time: sex nov 6 12:09:45 -03 2020
+Instance: random-m10V49E48B10D10
+Start time: sex nov 6 12:09:45 -03 2020
+Academic license - for non-commercial use only
+End time: sex nov 6 13:09:46 -03 2020
+Instance: random-m5V49E84B05D05
+Start time: sex nov 6 13:09:46 -03 2020
+Academic license - for non-commercial use only
+End time: sex nov 6 14:09:46 -03 2020
+Instance: random-m5V100E99B05D10
+Start time: sex nov 6 14:09:46 -03 2020
+Academic license - for non-commercial use only
+End time: sex nov 6 15:09:47 -03 2020
+Instance: random-m5V100E140B10D05
+Start time: sex nov 6 15:09:47 -03 2020
+Academic license - for non-commercial use only
+End time: sex nov 6 16:10:11 -03 2020
+Instance: random-m5V100E180B10D10
+Start time: sex nov 6 16:10:11 -03 2020
+Academic license - for non-commercial use only
+End time: sex nov 6 17:10:13 -03 2020
+warmStartPercentageTime=0.0
+BnBSolverB
+Instance: grid-m10V25E24B05D05
+Start time: sex nov 6 17:10:13 -03 2020
+Academic license - for non-commercial use only
+End time: sex nov 6 18:10:14 -03 2020
+Instance: grid-m10V25E32B05D10
+Start time: sex nov 6 18:10:14 -03 2020
+Academic license - for non-commercial use only
+End time: sex nov 6 18:15:29 -03 2020
+Instance: grid-m10V25E40B10D05
+Start time: sex nov 6 18:15:29 -03 2020
+Academic license - for non-commercial use only
+End time: sex nov 6 18:19:26 -03 2020
+Instance: grid-m10V49E48B10D10
+Start time: sex nov 6 18:19:26 -03 2020
+Academic license - for non-commercial use only
+End time: sex nov 6 18:24:24 -03 2020
+Instance: grid-m5V49E84B05D05
+Start time: sex nov 6 18:24:24 -03 2020
+Academic license - for non-commercial use only
+End time: sex nov 6 19:24:25 -03 2020
+Instance: grid-m5V100E99B05D10
+Start time: sex nov 6 19:24:25 -03 2020
+Academic license - for non-commercial use only
+End time: sex nov 6 20:24:25 -03 2020
+Instance: grid-m5V100E140B10D05
+Start time: sex nov 6 20:24:25 -03 2020
+Academic license - for non-commercial use only
+End time: sex nov 6 21:24:26 -03 2020
+Instance: grid-m5V100E180B10D10
+Start time: sex nov 6 21:24:26 -03 2020
+Academic license - for non-commercial use only
+End time: sex nov 6 22:24:27 -03 2020
+Instance: random-m10V25E24B05D05
+Start time: sex nov 6 22:24:27 -03 2020
+Academic license - for non-commercial use only
+End time: sex nov 6 22:26:11 -03 2020
+Instance: random-m10V25E32B05D10
+Start time: sex nov 6 22:26:11 -03 2020
+Academic license - for non-commercial use only
+End time: sex nov 6 22:31:07 -03 2020
+Instance: random-m10V25E40B10D05
+Start time: sex nov 6 22:31:07 -03 2020
+Academic license - for non-commercial use only
+End time: sex nov 6 23:08:37 -03 2020
+Instance: random-m10V49E48B10D10
+Start time: sex nov 6 23:08:37 -03 2020
+Academic license - for non-commercial use only
+End time: sex nov 6 23:18:16 -03 2020
+Instance: random-m5V49E84B05D05
+Start time: sex nov 6 23:18:16 -03 2020
+Academic license - for non-commercial use only
+End time: sáb nov 7 00:18:16 -03 2020
+Instance: random-m5V100E99B05D10
+Start time: sáb nov 7 00:18:16 -03 2020
+Academic license - for non-commercial use only
+End time: sáb nov 7 01:18:17 -03 2020
+Instance: random-m5V100E140B10D05
+Start time: sáb nov 7 01:18:17 -03 2020
+Academic license - for non-commercial use only
+End time: sáb nov 7 02:18:18 -03 2020
+Instance: random-m5V100E180B10D10
+Start time: sáb nov 7 02:18:18 -03 2020
+Academic license - for non-commercial use only
+End time: sáb nov 7 03:18:18 -03 2020
+BnCSolverB
+Instance: grid-m10V25E24B05D05
+Start time: sáb nov 7 03:18:18 -03 2020
+Academic license - for non-commercial use only
+End time: sáb nov 7 04:18:20 -03 2020
+Instance: grid-m10V25E32B05D10
+Start time: sáb nov 7 04:18:20 -03 2020
+Academic license - for non-commercial use only
+End time: sáb nov 7 04:28:01 -03 2020
+Instance: grid-m10V25E40B10D05
+Start time: sáb nov 7 04:28:01 -03 2020
+Academic license - for non-commercial use only
+End time: sáb nov 7 04:29:04 -03 2020
+Instance: grid-m10V49E48B10D10
+Start time: sáb nov 7 04:29:04 -03 2020
+Academic license - for non-commercial use only
+End time: sáb nov 7 05:29:04 -03 2020
+Instance: grid-m5V49E84B05D05
+Start time: sáb nov 7 05:29:04 -03 2020
+Academic license - for non-commercial use only
+End time: sáb nov 7 06:29:04 -03 2020
+Instance: grid-m5V100E99B05D10
+Start time: sáb nov 7 06:29:04 -03 2020
+Academic license - for non-commercial use only
+End time: sáb nov 7 07:29:05 -03 2020
+Instance: grid-m5V100E140B10D05
+Start time: sáb nov 7 07:29:05 -03 2020
+Academic license - for non-commercial use only
+End time: sáb nov 7 08:29:05 -03 2020
+Instance: grid-m5V100E180B10D10
+Start time: sáb nov 7 08:29:05 -03 2020
+Academic license - for non-commercial use only
+End time: sáb nov 7 09:29:50 -03 2020
+Instance: random-m10V25E24B05D05
+Start time: sáb nov 7 09:29:50 -03 2020
+Academic license - for non-commercial use only
+End time: sáb nov 7 09:31:10 -03 2020
+Instance: random-m10V25E32B05D10
+Start time: sáb nov 7 09:31:10 -03 2020
+Academic license - for non-commercial use only
+End time: sáb nov 7 09:35:37 -03 2020
+Instance: random-m10V25E40B10D05
+Start time: sáb nov 7 09:35:37 -03 2020
+Academic license - for non-commercial use only
+End time: sáb nov 7 09:50:48 -03 2020
+Instance: random-m10V49E48B10D10
+Start time: sáb nov 7 09:50:48 -03 2020
+Academic license - for non-commercial use only
+End time: sáb nov 7 10:50:48 -03 2020
+Instance: random-m5V49E84B05D05
+Start time: sáb nov 7 10:50:48 -03 2020
+Academic license - for non-commercial use only
+End time: sáb nov 7 11:50:49 -03 2020
+Instance: random-m5V100E99B05D10
+Start time: sáb nov 7 11:50:49 -03 2020
+Academic license - for non-commercial use only
+End time: sáb nov 7 12:50:49 -03 2020
+Instance: random-m5V100E140B10D05
+Start time: sáb nov 7 12:50:49 -03 2020
+Academic license - for non-commercial use only
+End time: sáb nov 7 13:50:49 -03 2020
+Instance: random-m5V100E180B10D10
+Start time: sáb nov 7 13:50:49 -03 2020
+Academic license - for non-commercial use only
+End time: sáb nov 7 14:50:52 -03 2020
+GRASPSolver
+Instance: grid-m10V25E24B05D05
+Start time: sáb nov 7 14:50:52 -03 2020
+0 3600
+End time: sáb nov 7 15:50:52 -03 2020
+Instance: grid-m10V25E32B05D10
+Start time: sáb nov 7 15:50:52 -03 2020
+-8219 3600
+End time: sáb nov 7 16:50:52 -03 2020
+Instance: grid-m10V25E40B10D05
+Start time: sáb nov 7 16:50:52 -03 2020
+-13701 3600
+End time: sáb nov 7 17:50:52 -03 2020
+Instance: grid-m10V49E48B10D10
+Start time: sáb nov 7 17:50:52 -03 2020
+-17417 3600
+End time: sáb nov 7 18:50:52 -03 2020
+Instance: grid-m5V49E84B05D05
+Start time: sáb nov 7 18:50:52 -03 2020
+-24454 3600
+End time: sáb nov 7 19:50:52 -03 2020
+Instance: grid-m5V100E99B05D10
+Start time: sáb nov 7 19:50:52 -03 2020
+-27804 3600
+End time: sáb nov 7 20:50:52 -03 2020
+Instance: grid-m5V100E140B10D05
+Start time: sáb nov 7 20:50:52 -03 2020
+-61647 3600
+End time: sáb nov 7 21:50:53 -03 2020
+Instance: grid-m5V100E180B10D10
+Start time: sáb nov 7 21:50:53 -03 2020
+-106432 3600
+End time: sáb nov 7 22:50:53 -03 2020
+Instance: random-m10V25E24B05D05
+Start time: sáb nov 7 22:50:53 -03 2020
+-4500 3600
+End time: sáb nov 7 23:50:53 -03 2020
+Instance: random-m10V25E32B05D10
+Start time: sáb nov 7 23:50:53 -03 2020
+-7891 3600
+End time: dom nov 8 00:50:53 -03 2020
+Instance: random-m10V25E40B10D05
+Start time: dom nov 8 00:50:53 -03 2020
+-13053 3600
+End time: dom nov 8 01:50:53 -03 2020
+Instance: random-m10V49E48B10D10
+Start time: dom nov 8 01:50:53 -03 2020
+-16963 3600
+End time: dom nov 8 02:50:53 -03 2020
+Instance: random-m5V49E84B05D05
+Start time: dom nov 8 02:50:53 -03 2020
+-26304 3600
+End time: dom nov 8 03:50:53 -03 2020
+Instance: random-m5V100E99B05D10
+Start time: dom nov 8 03:50:53 -03 2020
+-30689 3600
+End time: dom nov 8 04:50:53 -03 2020
+Instance: random-m5V100E140B10D05
+Start time: dom nov 8 04:50:53 -03 2020
+-65491 3600
+End time: dom nov 8 05:50:53 -03 2020
+Instance: random-m5V100E180B10D10
+Start time: dom nov 8 05:50:53 -03 2020
+-116631 3600
+End time: dom nov 8 06:50:54 -03 2020
+Finished
