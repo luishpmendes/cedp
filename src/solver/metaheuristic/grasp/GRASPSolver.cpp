@@ -218,15 +218,14 @@ unsigned int GRASPSolver::chooseAlpha() {
     unsigned int i = 0;
 
     std::uniform_real_distribution<double> distribution(0.0, 1.0);
-    double randP = distribution(this->generator);
-    double sumP = 0;
-    
-    while (i < this->m && sumP + this->p[i] < randP) {
-        sumP += this->p[i];
-        i++;
-    }
+    double toss = distribution(this->generator);
+    double cumulativeProbability = 0;
 
-    return i;
+    do {
+        cumulativeProbability += this->p[i++];
+    } while(cumulativeProbability < toss);
+
+    return --i;
 }
 
 /*
@@ -414,6 +413,14 @@ void GRASPSolver::write(std::ostream & os) const {
     os << "Solutions that are not feasible: " << this->notFeasibleSolutionsCounter << std::endl;
     os << "Solutions that were fixed: " << this->fixedSolutionsCounter << std::endl;
     os << "Local search counter: " << this->localSearchCounter << std::endl;
+    os << "Ratio mean: " << this->ratioStatistics.getMean() << std::endl;
+    os << "Ratio standard deviation: " << this->ratioStatistics.getStandardDeviation() << std::endl;
+    os << "m: " << this->m << std::endl;
+    os << "p: ";
+    for(unsigned i = 0; i < this->m - 1; i++) {
+        os << this->p[i] << " ";
+    }
+    os << this->p[this->m - 1] << std::endl;
 }
 
 /*
