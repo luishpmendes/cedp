@@ -1,10 +1,10 @@
 CPP=g++
-CARGS=-std=c++14 -Wall -Werror -O0 -g3 -m64
+CARGS=-std=c++17 -Wall -Werror -O0 -g3 -m64
 DLIBINC=/opt/dlib-19.21/
 DLIB=-lpthread -lX11
 CXXFILES=/opt/dlib-19.21/dlib/all/source.cpp
-GRBINC=/opt/gurobi903/linux64/include/
-GRBLIB=-L/opt/gurobi903/linux64/lib -lgurobi_c++ -lgurobi90 -lm
+GRBINC=/opt/gurobi911/linux64/include/
+GRBLIB=-L/opt/gurobi911/linux64/lib -lgurobi_c++ -lgurobi91 -lm
 MKDIR=mkdir -p
 RM=rm -rf
 SRC=$(PWD)/src
