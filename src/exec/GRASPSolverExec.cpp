@@ -9,22 +9,28 @@ int main (int argc, char * argv[]) {
             argParser.cmdOptionExists("--m") && 
             argParser.cmdOptionExists("--k")) {
         std::string instanceFilename = argParser.getCmdOption("--instance");
-        unsigned int timeLimit = std::stoul(argParser.getCmdOption("--time-limit"));
-        unsigned int seed = std::chrono::system_clock::now().time_since_epoch().count();
+        unsigned int timeLimit =
+            std::stoul(argParser.getCmdOption("--time-limit"));
+        unsigned int seed =
+            std::chrono::system_clock::now().time_since_epoch().count();
         unsigned int m = std::stoul(argParser.getCmdOption("--m"));
         unsigned int k = std::stoul(argParser.getCmdOption("--k"));
+        bool statisticalFilter =
+            argParser.cmdOptionExists("--statistical-filter");
 
         if (argParser.cmdOptionExists("--seed")) {
             seed = std::stoul(argParser.getCmdOption("--seed"));
         }
 
         Instance instance (instanceFilename);
-        GRASPSolver solver = GRASPSolver(instance, timeLimit, seed, m, k);
+        GRASPSolver solver = GRASPSolver(instance, timeLimit, seed, m, k,
+                statisticalFilter);
 
         solver.solve();
 
         if (argParser.cmdOptionExists("--statistics")) {
-            std::string solverStatisticsFilename = argParser.getCmdOption("--statistics");
+            std::string solverStatisticsFilename =
+                argParser.getCmdOption("--statistics");
 
             solver.write(solverStatisticsFilename);
         }
@@ -41,8 +47,8 @@ int main (int argc, char * argv[]) {
             solver.getSolvingTime() << std::endl; 
     } else {
         std::cerr << "./GRASPSolverExec --instance <instanceFilename> " << 
-            "--time-limit <timeLimit> --seed <seed> --alpha <alpha> " << 
-            "--statistics <solverStatisticsFilename> " << 
+            "--time-limit <timeLimit> --seed <seed> --m <m> --k <k> " << 
+            "--statistical-filter --statistics <solverStatisticsFilename> " << 
             "--solution <solutionFilename>" << std::endl;
     }
 

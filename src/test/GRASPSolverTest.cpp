@@ -12,7 +12,7 @@ int main () {
     for (unsigned int seed = 0; seed < 5; seed ++) {
         instance = Instance("instances/exampleA.in");
 
-        solver = GRASPSolver(instance, timeLimit, seed, m, k);
+        solver = GRASPSolver(instance, timeLimit, seed, m, k, true);
 
         assert(solver.getSolutionsCounter() == 0);
         assert(solver.getSolvingTime() == 0);
@@ -42,7 +42,7 @@ int main () {
 
         instance = Instance("instances/exampleB.in");
 
-        solver = GRASPSolver(instance, timeLimit, seed, m, k);
+        solver = GRASPSolver(instance, timeLimit, seed, m, k, true);
 
         assert(solver.getSolutionsCounter() == 0);
         assert(solver.getSolvingTime() == 0);
@@ -72,7 +72,7 @@ int main () {
 
         instance = Instance("instances/exampleC.in");
 
-        solver = GRASPSolver(instance, timeLimit, seed, m, k);
+        solver = GRASPSolver(instance, timeLimit, seed, m, k, true);
 
         assert(solver.getSolutionsCounter() == 0);
         assert(solver.getSolvingTime() == 0);
@@ -102,7 +102,7 @@ int main () {
 
         instance = Instance("instances/exampleD.in");
 
-        solver = GRASPSolver(instance, timeLimit, seed, m, k);
+        solver = GRASPSolver(instance, timeLimit, seed, m, k, true);
 
         assert(solver.getSolutionsCounter() == 0);
         assert(solver.getSolvingTime() == 0);
@@ -132,7 +132,7 @@ int main () {
 
         instance = Instance("instances/exampleE.in");
 
-        solver = GRASPSolver(instance, timeLimit, seed, m, k);
+        solver = GRASPSolver(instance, timeLimit, seed, m, k, true);
 
         assert(solver.getSolutionsCounter() == 0);
         assert(solver.getSolvingTime() == 0);
@@ -162,7 +162,7 @@ int main () {
 
         instance = Instance("instances/exampleF.in");
 
-        solver = GRASPSolver(instance, timeLimit, seed, m, k);
+        solver = GRASPSolver(instance, timeLimit, seed, m, k, true);
 
         assert(solver.getSolutionsCounter() == 0);
         assert(solver.getSolvingTime() == 0);

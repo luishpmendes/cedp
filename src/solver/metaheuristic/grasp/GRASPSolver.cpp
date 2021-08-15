@@ -4,22 +4,26 @@
 /*
  * Constructs a new solver.
  *
- * @param instance  the new solver's instance.
- * @param timeLimit the new solver's time limit.
- * @param seed      the seed for the new solver's pseudo-random numbers 
- *                  generator.
- * @param m         the number of values for the new solver's threshold 
- *                  parameter.
- * @param k         the number of iterations between each update in the new 
- *                  solver's threshold parameter probabilities.
+ * @param instance          the new solver's instance.
+ * @param timeLimit         the new solver's time limit.
+ * @param seed              the seed for the new solver's pseudo-random
+ *                          numbers generator.
+ * @param m                 the number of values for the new solver's
+ *                          threshold parameter.
+ * @param k                 the number of iterations between each update in
+ *                          the new solver's threshold parameter probabilities.
+ * @param statisticalFilter the flag indicating whether to filter
+ *                          semi-greedy solutions from local search.
  */
 GRASPSolver::GRASPSolver(const Instance & instance,
                          unsigned int timeLimit,
                          unsigned int seed,
                          unsigned int m,
-                         unsigned int k)
+                         unsigned int k,
+                         bool statisticalFilter)
     : CEDPSolver::CEDPSolver(instance, timeLimit, seed),
-      gcHeuristic(instance, seed), lsHeuristic(instance, seed), m(m), k(k) {}
+      gcHeuristic(instance, seed), lsHeuristic(instance, seed), m(m), k(k),
+      statisticalFilter(statisticalFilter) {}
 
 /*
  * Constructs a new empty solver.
@@ -43,6 +47,16 @@ unsigned int GRASPSolver::getM() const {
  */
 unsigned int GRASPSolver::getK() const {
     return this->k;
+}
+
+/*
+ * Returns the flag indicating whether to filter semi-greedy solution from
+ * local search.
+ *
+ * @returns true if the filter is activated; false otherwise.
+ */
+bool GRASPSolver::getStatisticalFilter() const {
+    return this->statisticalFilter;
 }
 
 /*
@@ -337,9 +351,9 @@ void GRASPSolver::solve() {
 
             double primalBound = solution.getValue();
 
-            if (this->solutionsCounter <= k || primalBound >= 
-                    (this->ratioStatistics.getMean() - 2.0 * 
-                     this->ratioStatistics.getStandardDeviation()) * 
+            if (!this->statisticalFilter || this->solutionsCounter <= k ||
+                    primalBound >= (this->ratioStatistics.getMean() - 2.0 *
+                        this->ratioStatistics.getStandardDeviation()) *
                     this->bestPrimalBound) {
                 elapsedTime = this->getElapsedTime();
                 remainingTime = 0;

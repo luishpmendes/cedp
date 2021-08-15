@@ -29,6 +29,12 @@ class GRASPSolver : public CEDPSolver {
          */
         unsigned int k;
 
+        /*  
+         * The flag indicating whether to filter semi-greedy solutions from
+         * local search.
+         */
+        bool statisticalFilter;
+
         /*
          * The set of possible values for α.
          */
@@ -134,17 +140,21 @@ class GRASPSolver : public CEDPSolver {
         /*
          * Constructs a new solver.
          *
-         * @param instance  the new solver's instance.
-         * @param timeLimit the new solver's time limit.
-         * @param seed      the seed for the new solver's pseudo-random 
-         *                  numbers generator.
-         * @param m         the number of values for the new solver's 
-         *                  threshold parameter.
-         * @param k         the number of iterations between each update in 
-         *                  the new solver's threshdold probabilities.
+         * @param instance          the new solver's instance.
+         * @param timeLimit         the new solver's time limit.
+         * @param seed              the seed for the new solver's pseudo-random 
+         *                          numbers generator.
+         * @param m                 the number of values for the new solver's 
+         *                          threshold parameter.
+         * @param k                 the number of iterations between each
+         *                          update in the new solver's threshold
+         *                          probabilities.
+         * @param statisticalFilter the flag indicating whether to filter
+         *                          semi-greedy solutions from local search.
          */
         GRASPSolver(const Instance & instance, unsigned int timeLimit, 
-                unsigned int seed, unsigned int m, unsigned int k);
+                unsigned int seed, unsigned int m, unsigned int k,
+                bool statisticalFilter);
 
         /*
          * Constructs a new empty solver.
@@ -166,6 +176,14 @@ class GRASPSolver : public CEDPSolver {
          *         solver's threshold parameter.
          */
         unsigned int getK() const;
+
+        /*
+         * Returns the flag indicating whether to filter semi-greedy solution
+         * from local search.
+         *
+         * @returns true if the filter is activated; false otherwise.
+         */
+        bool getStatisticalFilter() const;
 
         /*
          * Returns the i-th possible value for alpha.
