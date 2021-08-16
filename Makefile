@@ -1,8 +1,8 @@
 CPP=g++
-CARGS=-std=c++17 -Wall -Werror -O0 -g3 -m64
-DLIBINC=/opt/dlib-19.21/
+CARGS=-std=c++17 -O0 -g3 -m64
+DLIBINC=/opt/dlib-19.22/
 DLIB=-lpthread -lX11
-CXXFILES=/opt/dlib-19.21/dlib/all/source.cpp
+CXXFILES=/opt/dlib-19.22/dlib/all/source.cpp
 GRBINC=/opt/gurobi911/linux64/include/
 GRBLIB=-L/opt/gurobi911/linux64/lib -lgurobi_c++ -lgurobi91 -lm
 MKDIR=mkdir -p
