@@ -3,8 +3,8 @@ CARGS=-std=c++17 -O0 -g3 -m64
 DLIBINC=/opt/dlib-19.22/
 DLIB=-lpthread -lX11
 CXXFILES=/opt/dlib-19.22/dlib/all/source.cpp
-GRBINC=/opt/gurobi911/linux64/include/
-GRBLIB=-L/opt/gurobi911/linux64/lib -lgurobi_c++ -lgurobi91 -lm
+GRBINC=/opt/gurobi912/linux64/include/
+GRBLIB=-L/opt/gurobi912/linux64/lib -lgurobi_c++ -lgurobi91 -lm
 MKDIR=mkdir -p
 RM=rm -rf
 SRC=$(PWD)/src
