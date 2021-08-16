@@ -1,5 +1,6 @@
 #!/bin/bash
 
+IFS=",";
 mkdir -p statistics
 mkdir -p solutions
 
