@@ -1,126 +1,125 @@
 #!/bin/bash
 
-mkdir -p statistics;
-mkdir -p solutions;
+mkdir -p statistics
+mkdir -p solutions
 
-timeLimit=3600;
-echo "timeLimit="$m;
-warmStartPercentageTime=0.1;
-echo "warmStartPercentageTime="$warmStartPercentageTime;
-m=10;
-echo "m="$m;
-k=100;
-echo "k="$k;
+timeLimit=3600
+echo "timeLimit="$timeLimit
+psiSize=20
+echo "psiSize="$psiSize
+k=500
+echo "k="$k
 
-echo "BnBSolverA";
+Ts=(grid random)
+ms=(5)
+Bs=(05 10)
+Ds=(05 10)
+VEs=(25,40 49,84 100,180)
 
-for instance in grid-m5V25E24B10D05 grid-m5V25E32B10D10 grid-m10V25E40B05D05 \
-                grid-m10V49E48B05D10 grid-m10V49E66B10D05 grid-m10V49E84B10D10 \
-                grid-m5V100E140B05D05 grid-m5V100E180B05D10 \
-                random-m5V25E24B10D05 random-m5V25E32B10D10 \
-                random-m10V25E40B05D05 random-m10V49E48B05D10 \
-                random-m10V49E66B10D05 random-m10V49E84B10D10 \
-                random-m5V100E140B05D05 random-m5V100E180B05D10
+for T in ${Ts[@]}
 do
-    echo "Instance: "$instance;
-    echo "Start time: "$(date);
-    ./bin/exec/BnBSolverExec \
-        --instance "instances/"$instance".in" \
-        --time-limit $timeLimit \
-        --warm-start-percentage-time $warmStartPercentageTime \
-        --m $m --k $k \
-        --statistics "statistics/"$instance"BnBSolverA.stat" \
-        --solution "solutions/"$instance"BnBSolverA.sol";
-    echo "End time: "$(date);
-done
-
-echo "BnCSolverA";
-
-for instance in grid-m5V25E24B10D05 grid-m5V25E32B10D10 grid-m10V25E40B05D05 \
-                grid-m10V49E48B05D10 grid-m10V49E66B10D05 grid-m10V49E84B10D10 \
-                grid-m5V100E140B05D05 grid-m5V100E180B05D10 \
-                random-m5V25E24B10D05 random-m5V25E32B10D10 \
-                random-m10V25E40B05D05 random-m10V49E48B05D10 \
-                random-m10V49E66B10D05 random-m10V49E84B10D10 \
-                random-m5V100E140B05D05 random-m5V100E180B05D10
-do
-    echo "Instance: "$instance;
-    echo "Start time: "$(date);
-    ./bin/exec/BnCSolverExec \
-        --instance "instances/"$instance".in" \
-        --time-limit $timeLimit \
-        --warm-start-percentage-time $warmStartPercentageTime \
-        --m $m --k $k \
-        --statistics "statistics/"$instance"BnCSolverA.stat" \
-        --solution "solutions/"$instance"BnCSolverA.sol";
-    echo "End time: "$(date);
-done
-
-warmStartPercentageTime=0.0;
-echo "warmStartPercentageTime="$warmStartPercentageTime;
-
-echo "BnBSolverB";
-
-for instance in grid-m5V25E24B10D05 grid-m5V25E32B10D10 grid-m10V25E40B05D05 \
-                grid-m10V49E48B05D10 grid-m10V49E66B10D05 grid-m10V49E84B10D10 \
-                grid-m5V100E140B05D05 grid-m5V100E180B05D10 \
-                random-m5V25E24B10D05 random-m5V25E32B10D10 \
-                random-m10V25E40B05D05 random-m10V49E48B05D10 \
-                random-m10V49E66B10D05 random-m10V49E84B10D10 \
-                random-m5V100E140B05D05 random-m5V100E180B05D10
-do
-    echo "Instance: "$instance;
-    echo "Start time: "$(date);
-    ./bin/exec/BnBSolverExec \
-        --instance "instances/"$instance".in" \
-        --time-limit $timeLimit \
-        --warm-start-percentage-time $warmStartPercentageTime \
-        --m $m --k $k \
-        --statistics "statistics/"$instance"BnBSolverB.stat" \
-        --solution "solutions/"$instance"BnBSolverB.sol";
-    echo "End time: "$(date);
-done
-
-echo "BnCSolverB";
-
-for instance in grid-m5V25E24B10D05 grid-m5V25E32B10D10 grid-m10V25E40B05D05 \
-                grid-m10V49E48B05D10 grid-m10V49E66B10D05 grid-m10V49E84B10D10 \
-                grid-m5V100E140B05D05 grid-m5V100E180B05D10 \
-                random-m5V25E24B10D05 random-m5V25E32B10D10 \
-                random-m10V25E40B05D05 random-m10V49E48B05D10 \
-                random-m10V49E66B10D05 random-m10V49E84B10D10 \
-                random-m5V100E140B05D05 random-m5V100E180B05D10
-do
-    echo "Instance: "$instance;
-    echo "Start time: "$(date);
-    ./bin/exec/BnCSolverExec \
-        --instance "instances/"$instance".in" \
-        --time-limit $timeLimit \
-        --warm-start-percentage-time $warmStartPercentageTime \
-        --m $m --k $k \
-        --statistics "statistics/"$instance"BnCSolverB.stat" \
-        --solution "solutions/"$instance"BnCSolverB.sol";
-    echo "End time: "$(date);
-done
-
-echo "GRASPSolver";
-
-for instance in grid-m5V25E24B10D05 grid-m5V25E32B10D10 grid-m10V25E40B05D05 \
-                grid-m10V49E48B05D10 grid-m10V49E66B10D05 grid-m10V49E84B10D10 \
-                grid-m5V100E140B05D05 grid-m5V100E180B05D10 \
-                random-m5V25E24B10D05 random-m5V25E32B10D10 \
-                random-m10V25E40B05D05 random-m10V49E48B05D10 \
-                random-m10V49E66B10D05 random-m10V49E84B10D10 \
-                random-m5V100E140B05D05 random-m5V100E180B05D10
-do
-    echo "Instance: "$instance;
-    echo "Start time: "$(date);
-    ./bin/exec/GRASPSolverExec \
-        --instance "instances/"$instance".in" \
-        --time-limit $timeLimit --m $m --k $k \
-        --statistics "statistics/"$instance"GRASPSolver.stat" \
-        --solution "solutions/"$instance"GRASPSolver.sol";
-    echo "End time: "$(date);
+    echo "T: "$T
+    for m in ${ms[@]}
+    do
+        echo "m: "$m
+        for B in ${Bs[@]}
+        do
+            echo "B: "$B
+            for D in ${Ds[@]}
+            do
+                echo "D: "$D
+                for VE in ${VEs[@]}
+                do
+                    set $VE
+                    V=$1
+                    E=$2
+                    echo "V: "$V
+                    echo "E: "$E
+                    instance="${T}-m${m}V${V}E${E}B${B}D${D}"
+                    echo "instance: "$instance
+                    warmStartPercentageTime=0.1
+                    echo "warmStartPercentageTime="$warmStartPercentageTime
+                    echo "BnBSolverA"
+                    command="./bin/exec/BnBSolverExec "
+                    command+="--instance instances/${instance}.in "
+                    command+="--time-limit ${timeLimit} "
+                    command+="--warm-start-percentage-time $warmStartPercentageTime "
+                    command+="--m ${psiSize} "
+                    command+="--k ${k} "
+                    command+="--statistical-filter "
+                    command+="--statistics statistics/${instance}BnBSolverA.stat "
+                    command+="--solution solutions/${instance}BnBSolverA.sol "
+                    echo "Start time: "$(date)
+                    eval $command
+                    echo "End time: "$(date)
+                    echo "BnCSolverA"
+                    command="./bin/exec/BnCSolverExec "
+                    command+="--instance instances/${instance}.in "
+                    command+="--time-limit ${timeLimit} "
+                    command+="--warm-start-percentage-time $warmStartPercentageTime "
+                    command+="--m ${psiSize} "
+                    command+="--k ${k} "
+                    command+="--statistical-filter "
+                    command+="--statistics statistics/${instance}BnCSolverA.stat "
+                    command+="--solution solutions/${instance}BnCSolverA.sol "
+                    echo "Start time: "$(date)
+                    eval $command
+                    echo "End time: "$(date)
+                    warmStartPercentageTime=0.0
+                    echo "warmStartPercentageTime="$warmStartPercentageTime
+                    echo "BnBSolverB"
+                    command="./bin/exec/BnBSolverExec "
+                    command+="--instance instances/${instance}.in "
+                    command+="--time-limit ${timeLimit} "
+                    command+="--warm-start-percentage-time $warmStartPercentageTime "
+                    command+="--m ${psiSize} "
+                    command+="--k ${k} "
+                    command+="--statistical-filter "
+                    command+="--statistics statistics/${instance}BnBSolverB.stat "
+                    command+="--solution solutions/${instance}BnBSolverB.sol "
+                    echo "Start time: "$(date)
+                    eval $command
+                    echo "End time: "$(date)
+                    echo "BnCSolverB"
+                    command="./bin/exec/BnCSolverExec "
+                    command+="--instance instances/${instance}.in "
+                    command+="--time-limit ${timeLimit} "
+                    command+="--warm-start-percentage-time $warmStartPercentageTime "
+                    command+="--m ${psiSize} "
+                    command+="--k ${k} "
+                    command+="--statistical-filter "
+                    command+="--statistics statistics/${instance}BnCSolverB.stat "
+                    command+="--solution solutions/${instance}BnCSolverB.sol "
+                    echo "Start time: "$(date)
+                    eval $command
+                    echo "End time: "$(date)
+                    echo "GRASPSolverA"
+                    command="./bin/exec/GRASPSolverExec "
+                    command+="--instance instances/${instance}.in "
+                    command+="--time-limit ${timeLimit} "
+                    command+="--m ${psiSize} "
+                    command+="--k ${k} "
+                    command+="--statistical-filter "
+                    command+="--statistics statistics/${instance}GRASPA.stat "
+                    command+="--solution solutions/${instance}GRASPA.sol "
+                    echo "Start time: "$(date)
+                    eval $command
+                    echo "End time: "$(date)
+                    echo "GRASPSolverB"
+                    command="./bin/exec/GRASPSolverExec "
+                    command+="--instance instances/${instance}.in "
+                    command+="--time-limit ${timeLimit} "
+                    command+="--m ${psiSize} "
+                    command+="--k ${k} "
+                    command+="--statistics statistics/${instance}GRASPB.stat "
+                    command+="--solution solutions/${instance}GRASPB.sol "
+                    echo "Start time: "$(date)
+                    eval $command
+                    echo "End time: "$(date)
+                done
+            done
+        done
+    done
 done
 
 echo "Finished";
