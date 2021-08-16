@@ -22,6 +22,12 @@ class BnCSolver : public CEDPSolver {
          * threshold parameter probabilities.
          */
         unsigned int k;
+
+        /*  
+         * The flag indicating whether to filter semi-greedy solutions from
+         * local search.
+         */
+        bool statisticalFilter;
         
     public:
         /*
@@ -38,13 +44,17 @@ class BnCSolver : public CEDPSolver {
          * @param k                       The number of iterations between each
          *                                update in the GRASP's threshold
          *                                parameter probabilities.
+         * @param statisticalFilter       the flag indicating whether to filter
+         *                                semi-greedy solutions from local
+         *                                search.
          */
         BnCSolver(const Instance & instance,
                   unsigned int timeLimit,
                   unsigned int seed,
                   double warmStartPercentageTime,
                   unsigned int m,
-                  unsigned int k);
+                  unsigned int k,
+                  bool statisticalFilter);
 
         /*
          * Constructs a new empty solver.
@@ -73,6 +83,14 @@ class BnCSolver : public CEDPSolver {
          *         GRASP's threshold parameter.
          */
         unsigned int getK() const;
+
+        /*
+         * Returns the flag indicating whether to filter semi-greedy solution
+         * from local search.
+         *
+         * @returns true if the filter is activated; false otherwise.
+         */
+        bool getStatisticalFilter() const;
 
         /*
          * Solve this solver's instance.

@@ -16,17 +16,21 @@
  * @param k                       The number of iterations between each update
  *                                in the GRASP's threshold parameter
  *                                probabilities.
+ * @param statisticalFilter       the flag indicating whether to filter
+ *                                semi-greedy solutions from local search.
  */
 BnCSolver::BnCSolver(const Instance & instance,
                      unsigned int timeLimit,
                      unsigned int seed,
                      double warmStartPercentageTime,
                      unsigned int m,
-                     unsigned int k)
+                     unsigned int k,
+                     bool statisticalFilter)
     : CEDPSolver::CEDPSolver(instance, timeLimit, seed),
       warmStartPercentageTime(warmStartPercentageTime),
       m(m),
-      k(k) {}
+      k(k),
+      statisticalFilter(statisticalFilter) {}
 
 /*
  * Constructs a new empty solver.
@@ -61,6 +65,16 @@ unsigned int BnCSolver::getK() const {
 }
 
 /*
+ * Returns the flag indicating whether to filter semi-greedy solution from
+ * local search.
+ *
+ * @returns true if the filter is activated; false otherwise.
+ */
+bool BnCSolver::getStatisticalFilter() const {
+    return this->statisticalFilter;
+}
+
+/*
  * Solve this solver's instance.
  */
 void BnCSolver::solve() {
@@ -74,7 +88,8 @@ void BnCSolver::solve() {
                            round(this->warmStartPercentageTime*this->timeLimit),
                            this->seed,
                            this->m,
-                           this->k);
+                           this->k,
+                           this->statisticalFilter);
 
         solver.solve();
 

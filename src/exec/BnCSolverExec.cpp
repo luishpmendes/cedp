@@ -12,6 +12,8 @@ int main (int argc, char * argv[]) {
             std::stod(argParser.getCmdOption("--warm-start-percentage-time"));
         unsigned int m = std::stoul(argParser.getCmdOption("--m"));
         unsigned int k = std::stoul(argParser.getCmdOption("--k"));
+        bool statisticalFilter =
+            argParser.cmdOptionExists("--statistical-filter");
 
         if (argParser.cmdOptionExists("--seed")) {
             seed = std::stoul(argParser.getCmdOption("--seed"));
@@ -23,7 +25,8 @@ int main (int argc, char * argv[]) {
                                      seed,
                                      warmStartPercentageTime,
                                      m,
-                                     k);
+                                     k,
+                                     statisticalFilter);
 
         solver.solve();
 
@@ -48,6 +51,7 @@ int main (int argc, char * argv[]) {
                   << "--warm-start-percentage-time <warmStartPercentageTime>"
                   << "--m <m> "
                   << "--k <k> "
+                  << "--statistical-filter "
                   << "--statistics <solverStatisticsFilename> "
                   << "--solution <solutionFilename>"
                   << std::endl;

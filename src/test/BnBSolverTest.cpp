@@ -18,7 +18,8 @@ int main () {
                        seed,
                        warmStartPercentageTime,
                        m,
-                       k);
+                       k,
+                       true);
 
     assert(solver.getSolutionsCounter() == 0);
     assert(solver.getSolvingTime() == 0);
@@ -41,7 +42,8 @@ int main () {
                        seed,
                        warmStartPercentageTime,
                        m,
-                       k);
+                       k,
+                       true);
 
     assert(solver.getSolutionsCounter() == 0);
     assert(solver.getSolvingTime() == 0);
@@ -64,7 +66,8 @@ int main () {
                        seed,
                        warmStartPercentageTime,
                        m,
-                       k);
+                       k,
+                       true);
 
     assert(solver.getSolutionsCounter() == 0);
     assert(solver.getSolvingTime() == 0);
@@ -87,7 +90,8 @@ int main () {
                        seed,
                        warmStartPercentageTime,
                        m,
-                       k);
+                       k,
+                       true);
 
     assert(solver.getSolutionsCounter() == 0);
     assert(solver.getSolvingTime() == 0);
@@ -110,7 +114,8 @@ int main () {
                        seed,
                        warmStartPercentageTime,
                        m,
-                       k);
+                       k,
+                       true);
 
     assert(solver.getSolutionsCounter() == 0);
     assert(solver.getSolvingTime() == 0);
@@ -133,7 +138,8 @@ int main () {
                        seed,
                        warmStartPercentageTime,
                        m,
-                       k);
+                       k,
+                       true);
 
     assert(solver.getSolutionsCounter() == 0);
     assert(solver.getSolvingTime() == 0);
