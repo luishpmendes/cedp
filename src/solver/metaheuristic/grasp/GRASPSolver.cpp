@@ -430,6 +430,8 @@ void GRASPSolver::write(std::ostream & os) const {
     os << "Ratio mean: " << this->ratioStatistics.getMean() << std::endl;
     os << "Ratio standard deviation: " << this->ratioStatistics.getStandardDeviation() << std::endl;
     os << "m: " << this->m << std::endl;
+    os << "k: " << this->k << std::endl;
+    os << "Statistical filter: " << this->statisticalFilter << std::endl;
     os << "p: ";
     for(unsigned i = 0; i < this->m - 1; i++) {
         os << this->p[i] << " ";
