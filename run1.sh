@@ -1,6 +1,6 @@
 #!/bin/bash
 
-IFS=",";
+IFS=","
 mkdir -p statistics
 mkdir -p solutions
 
@@ -11,25 +11,19 @@ echo "psiSize="$psiSize
 k=500
 echo "k="$k
 
-Ts=(grid random)
-ms=(5)
-Bs=(05 10)
-Ds=(05 10)
-VEs=(25,24 49,48 100,99)
-
-for T in ${Ts[@]}
+for T in grid random
 do
     echo "T: "$T
-    for m in ${ms[@]}
+    for m in 5
     do
         echo "m: "$m
-        for B in ${Bs[@]}
+        for B in 05 10
         do
             echo "B: "$B
-            for D in ${Ds[@]}
+            for D in 05 10
             do
                 echo "D: "$D
-                for VE in ${VEs[@]}
+                for VE in 25,24 49,48 100,99
                 do
                     set $VE
                     V=$1
