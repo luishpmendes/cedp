@@ -432,6 +432,11 @@ void GRASPSolver::write(std::ostream & os) const {
     os << "m: " << this->m << std::endl;
     os << "k: " << this->k << std::endl;
     os << "Statistical filter: " << this->statisticalFilter << std::endl;
+    os << "Psi: ";
+    for(unsigned i = 0; i < this->m - 1; i++) {
+        os << this->psi[i] << " ";
+    }
+    os << this->psi[this->m - 1] << std::endl;
     os << "p: ";
     for(unsigned i = 0; i < this->m - 1; i++) {
         os << this->p[i] << " ";
