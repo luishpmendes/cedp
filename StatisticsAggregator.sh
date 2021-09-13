@@ -5,7 +5,7 @@ make StatisticsAggregatorExec;
 IFS=",";
 N=30;
 
-for solver in "BnBSolverA" "BnCSolverA" "BnBSolverB" "BnCSolverB" "GRASPSolver"
+for solver in "BnBSolverA" "BnCSolverA" "BnBSolverB" "BnCSolverB" "GRASPA" "GRASPB"
 do
     echo "solver="$solver;
     for type in "grid" "random"
