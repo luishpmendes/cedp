@@ -1,0 +1,17 @@
+m: 5
+D: 2779
+B: 1
+|V|: 100
+|E|: 99
+|U|: 99
+|A|: 128
+|U'|: 100
+|A'|: 227
+Maximum demand: 2779
+Time limit: 3600s
+Seed: 4211813699
+Solving time: 1772s
+Solutions found: 2
+Best primal bound: 29512
+Best dual bound: 29512
+Is solution feasible: 1

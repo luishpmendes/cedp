@@ -1,0 +1,3278 @@
++ IFS=,
++ mkdir -p statistics
++ mkdir -p solutions
++ timeLimit=3600
++ echo timeLimit=3600
+timeLimit=3600
++ psiSize=20
++ echo psiSize=20
+psiSize=20
++ k=500
++ echo k=500
+k=500
++ for T in grid random
++ echo 'T: grid'
+T: grid
++ for m in 5
++ echo 'm: 5'
+m: 5
++ for B in 05 10
++ echo 'B: 05'
+B: 05
++ for D in 05 10
++ echo 'D: 05'
+D: 05
++ for VE in 25,24 49,48 100,99
++ set 25 24
++ V=25
++ E=24
++ echo 'V: 25'
+V: 25
++ echo 'E: 24'
+E: 24
++ instance=grid-m5V25E24B05D05
++ echo 'instance: grid-m5V25E24B05D05'
+instance: grid-m5V25E24B05D05
++ warmStartPercentageTime=0.1
++ echo warmStartPercentageTime=0.1
+warmStartPercentageTime=0.1
++ echo BnBSolverA
+BnBSolverA
++ command='./bin/exec/BnBSolverExec '
++ command+='--instance instances/grid-m5V25E24B05D05.in '
++ command+='--time-limit 3600 '
++ command+='--warm-start-percentage-time 0.1 '
++ command+='--m 20 '
++ command+='--k 500 '
++ command+='--statistical-filter '
++ command+='--statistics statistics/grid-m5V25E24B05D05BnBSolverA.stat '
++ command+='--solution solutions/grid-m5V25E24B05D05BnBSolverA.sol '
+++ date
++ echo 'Start time: Seg Ago 16 20:03:11 -03 2021'
+Start time: Seg Ago 16 20:03:11 -03 2021
++ eval './bin/exec/BnBSolverExec --instance instances/grid-m5V25E24B05D05.in --time-limit 3600 --warm-start-percentage-time 0.1 --m 20 --k 500 --statistical-filter --statistics statistics/grid-m5V25E24B05D05BnBSolverA.stat --solution solutions/grid-m5V25E24B05D05BnBSolverA.sol '
+++ ./bin/exec/BnBSolverExec --instance instances/grid-m5V25E24B05D05.in --time-limit 3600 --warm-start-percentage-time 0.1 --m 20 --k 500 --statistical-filter --statistics statistics/grid-m5V25E24B05D05BnBSolverA.stat --solution solutions/grid-m5V25E24B05D05BnBSolverA.sol
+Academic license - for non-commercial use only - expires 2022-08-11
+++ date
++ echo 'End time: Seg Ago 16 20:09:13 -03 2021'
+End time: Seg Ago 16 20:09:13 -03 2021
++ echo BnCSolverA
+BnCSolverA
++ command='./bin/exec/BnCSolverExec '
++ command+='--instance instances/grid-m5V25E24B05D05.in '
++ command+='--time-limit 3600 '
++ command+='--warm-start-percentage-time 0.1 '
++ command+='--m 20 '
++ command+='--k 500 '
++ command+='--statistical-filter '
++ command+='--statistics statistics/grid-m5V25E24B05D05BnCSolverA.stat '
++ command+='--solution solutions/grid-m5V25E24B05D05BnCSolverA.sol '
+++ date
++ echo 'Start time: Seg Ago 16 20:09:13 -03 2021'
+Start time: Seg Ago 16 20:09:13 -03 2021
++ eval './bin/exec/BnCSolverExec --instance instances/grid-m5V25E24B05D05.in --time-limit 3600 --warm-start-percentage-time 0.1 --m 20 --k 500 --statistical-filter --statistics statistics/grid-m5V25E24B05D05BnCSolverA.stat --solution solutions/grid-m5V25E24B05D05BnCSolverA.sol '
+++ ./bin/exec/BnCSolverExec --instance instances/grid-m5V25E24B05D05.in --time-limit 3600 --warm-start-percentage-time 0.1 --m 20 --k 500 --statistical-filter --statistics statistics/grid-m5V25E24B05D05BnCSolverA.stat --solution solutions/grid-m5V25E24B05D05BnCSolverA.sol
+Academic license - for non-commercial use only - expires 2022-08-11
+++ date
++ echo 'End time: Seg Ago 16 20:15:19 -03 2021'
+End time: Seg Ago 16 20:15:19 -03 2021
++ warmStartPercentageTime=0.0
++ echo warmStartPercentageTime=0.0
+warmStartPercentageTime=0.0
++ echo BnBSolverB
+BnBSolverB
++ command='./bin/exec/BnBSolverExec '
++ command+='--instance instances/grid-m5V25E24B05D05.in '
++ command+='--time-limit 3600 '
++ command+='--warm-start-percentage-time 0.0 '
++ command+='--m 20 '
++ command+='--k 500 '
++ command+='--statistical-filter '
++ command+='--statistics statistics/grid-m5V25E24B05D05BnBSolverB.stat '
++ command+='--solution solutions/grid-m5V25E24B05D05BnBSolverB.sol '
+++ date
++ echo 'Start time: Seg Ago 16 20:15:19 -03 2021'
+Start time: Seg Ago 16 20:15:19 -03 2021
++ eval './bin/exec/BnBSolverExec --instance instances/grid-m5V25E24B05D05.in --time-limit 3600 --warm-start-percentage-time 0.0 --m 20 --k 500 --statistical-filter --statistics statistics/grid-m5V25E24B05D05BnBSolverB.stat --solution solutions/grid-m5V25E24B05D05BnBSolverB.sol '
+++ ./bin/exec/BnBSolverExec --instance instances/grid-m5V25E24B05D05.in --time-limit 3600 --warm-start-percentage-time 0.0 --m 20 --k 500 --statistical-filter --statistics statistics/grid-m5V25E24B05D05BnBSolverB.stat --solution solutions/grid-m5V25E24B05D05BnBSolverB.sol
+Academic license - for non-commercial use only - expires 2022-08-11
+++ date
++ echo 'End time: Seg Ago 16 20:15:20 -03 2021'
+End time: Seg Ago 16 20:15:20 -03 2021
++ echo BnCSolverB
+BnCSolverB
++ command='./bin/exec/BnCSolverExec '
++ command+='--instance instances/grid-m5V25E24B05D05.in '
++ command+='--time-limit 3600 '
++ command+='--warm-start-percentage-time 0.0 '
++ command+='--m 20 '
++ command+='--k 500 '
++ command+='--statistical-filter '
++ command+='--statistics statistics/grid-m5V25E24B05D05BnCSolverB.stat '
++ command+='--solution solutions/grid-m5V25E24B05D05BnCSolverB.sol '
+++ date
++ echo 'Start time: Seg Ago 16 20:15:20 -03 2021'
+Start time: Seg Ago 16 20:15:20 -03 2021
++ eval './bin/exec/BnCSolverExec --instance instances/grid-m5V25E24B05D05.in --time-limit 3600 --warm-start-percentage-time 0.0 --m 20 --k 500 --statistical-filter --statistics statistics/grid-m5V25E24B05D05BnCSolverB.stat --solution solutions/grid-m5V25E24B05D05BnCSolverB.sol '
+++ ./bin/exec/BnCSolverExec --instance instances/grid-m5V25E24B05D05.in --time-limit 3600 --warm-start-percentage-time 0.0 --m 20 --k 500 --statistical-filter --statistics statistics/grid-m5V25E24B05D05BnCSolverB.stat --solution solutions/grid-m5V25E24B05D05BnCSolverB.sol
+Academic license - for non-commercial use only - expires 2022-08-11
+++ date
++ echo 'End time: Seg Ago 16 20:15:27 -03 2021'
+End time: Seg Ago 16 20:15:27 -03 2021
++ echo GRASPSolverA
+GRASPSolverA
++ command='./bin/exec/GRASPSolverExec '
++ command+='--instance instances/grid-m5V25E24B05D05.in '
++ command+='--time-limit 3600 '
++ command+='--m 20 '
++ command+='--k 500 '
++ command+='--statistical-filter '
++ command+='--statistics statistics/grid-m5V25E24B05D05GRASPA.stat '
++ command+='--solution solutions/grid-m5V25E24B05D05GRASPA.sol '
+++ date
++ echo 'Start time: Seg Ago 16 20:15:27 -03 2021'
+Start time: Seg Ago 16 20:15:27 -03 2021
++ eval './bin/exec/GRASPSolverExec --instance instances/grid-m5V25E24B05D05.in --time-limit 3600 --m 20 --k 500 --statistical-filter --statistics statistics/grid-m5V25E24B05D05GRASPA.stat --solution solutions/grid-m5V25E24B05D05GRASPA.sol '
+++ ./bin/exec/GRASPSolverExec --instance instances/grid-m5V25E24B05D05.in --time-limit 3600 --m 20 --k 500 --statistical-filter --statistics statistics/grid-m5V25E24B05D05GRASPA.stat --solution solutions/grid-m5V25E24B05D05GRASPA.sol
+-1970 3600
+++ date
++ echo 'End time: Seg Ago 16 21:15:27 -03 2021'
+End time: Seg Ago 16 21:15:27 -03 2021
++ echo GRASPSolverB
+GRASPSolverB
++ command='./bin/exec/GRASPSolverExec '
++ command+='--instance instances/grid-m5V25E24B05D05.in '
++ command+='--time-limit 3600 '
++ command+='--m 20 '
++ command+='--k 500 '
++ command+='--statistics statistics/grid-m5V25E24B05D05GRASPB.stat '
++ command+='--solution solutions/grid-m5V25E24B05D05GRASPB.sol '
+++ date
++ echo 'Start time: Seg Ago 16 21:15:27 -03 2021'
+Start time: Seg Ago 16 21:15:27 -03 2021
++ eval './bin/exec/GRASPSolverExec --instance instances/grid-m5V25E24B05D05.in --time-limit 3600 --m 20 --k 500 --statistics statistics/grid-m5V25E24B05D05GRASPB.stat --solution solutions/grid-m5V25E24B05D05GRASPB.sol '
+++ ./bin/exec/GRASPSolverExec --instance instances/grid-m5V25E24B05D05.in --time-limit 3600 --m 20 --k 500 --statistics statistics/grid-m5V25E24B05D05GRASPB.stat --solution solutions/grid-m5V25E24B05D05GRASPB.sol
+-1970 3600
+++ date
++ echo 'End time: Seg Ago 16 22:15:27 -03 2021'
+End time: Seg Ago 16 22:15:27 -03 2021
++ for VE in 25,24 49,48 100,99
++ set 49 48
++ V=49
++ E=48
++ echo 'V: 49'
+V: 49
++ echo 'E: 48'
+E: 48
++ instance=grid-m5V49E48B05D05
++ echo 'instance: grid-m5V49E48B05D05'
+instance: grid-m5V49E48B05D05
++ warmStartPercentageTime=0.1
++ echo warmStartPercentageTime=0.1
+warmStartPercentageTime=0.1
++ echo BnBSolverA
+BnBSolverA
++ command='./bin/exec/BnBSolverExec '
++ command+='--instance instances/grid-m5V49E48B05D05.in '
++ command+='--time-limit 3600 '
++ command+='--warm-start-percentage-time 0.1 '
++ command+='--m 20 '
++ command+='--k 500 '
++ command+='--statistical-filter '
++ command+='--statistics statistics/grid-m5V49E48B05D05BnBSolverA.stat '
++ command+='--solution solutions/grid-m5V49E48B05D05BnBSolverA.sol '
+++ date
++ echo 'Start time: Seg Ago 16 22:15:27 -03 2021'
+Start time: Seg Ago 16 22:15:27 -03 2021
++ eval './bin/exec/BnBSolverExec --instance instances/grid-m5V49E48B05D05.in --time-limit 3600 --warm-start-percentage-time 0.1 --m 20 --k 500 --statistical-filter --statistics statistics/grid-m5V49E48B05D05BnBSolverA.stat --solution solutions/grid-m5V49E48B05D05BnBSolverA.sol '
+++ ./bin/exec/BnBSolverExec --instance instances/grid-m5V49E48B05D05.in --time-limit 3600 --warm-start-percentage-time 0.1 --m 20 --k 500 --statistical-filter --statistics statistics/grid-m5V49E48B05D05BnBSolverA.stat --solution solutions/grid-m5V49E48B05D05BnBSolverA.sol
+Academic license - for non-commercial use only - expires 2022-08-11
+++ date
++ echo 'End time: Seg Ago 16 22:29:39 -03 2021'
+End time: Seg Ago 16 22:29:39 -03 2021
++ echo BnCSolverA
+BnCSolverA
++ command='./bin/exec/BnCSolverExec '
++ command+='--instance instances/grid-m5V49E48B05D05.in '
++ command+='--time-limit 3600 '
++ command+='--warm-start-percentage-time 0.1 '
++ command+='--m 20 '
++ command+='--k 500 '
++ command+='--statistical-filter '
++ command+='--statistics statistics/grid-m5V49E48B05D05BnCSolverA.stat '
++ command+='--solution solutions/grid-m5V49E48B05D05BnCSolverA.sol '
+++ date
++ echo 'Start time: Seg Ago 16 22:29:39 -03 2021'
+Start time: Seg Ago 16 22:29:39 -03 2021
++ eval './bin/exec/BnCSolverExec --instance instances/grid-m5V49E48B05D05.in --time-limit 3600 --warm-start-percentage-time 0.1 --m 20 --k 500 --statistical-filter --statistics statistics/grid-m5V49E48B05D05BnCSolverA.stat --solution solutions/grid-m5V49E48B05D05BnCSolverA.sol '
+++ ./bin/exec/BnCSolverExec --instance instances/grid-m5V49E48B05D05.in --time-limit 3600 --warm-start-percentage-time 0.1 --m 20 --k 500 --statistical-filter --statistics statistics/grid-m5V49E48B05D05BnCSolverA.stat --solution solutions/grid-m5V49E48B05D05BnCSolverA.sol
+Academic license - for non-commercial use only - expires 2022-08-11
+++ date
++ echo 'End time: Seg Ago 16 23:29:39 -03 2021'
+End time: Seg Ago 16 23:29:39 -03 2021
++ warmStartPercentageTime=0.0
++ echo warmStartPercentageTime=0.0
+warmStartPercentageTime=0.0
++ echo BnBSolverB
+BnBSolverB
++ command='./bin/exec/BnBSolverExec '
++ command+='--instance instances/grid-m5V49E48B05D05.in '
++ command+='--time-limit 3600 '
++ command+='--warm-start-percentage-time 0.0 '
++ command+='--m 20 '
++ command+='--k 500 '
++ command+='--statistical-filter '
++ command+='--statistics statistics/grid-m5V49E48B05D05BnBSolverB.stat '
++ command+='--solution solutions/grid-m5V49E48B05D05BnBSolverB.sol '
+++ date
++ echo 'Start time: Seg Ago 16 23:29:39 -03 2021'
+Start time: Seg Ago 16 23:29:39 -03 2021
++ eval './bin/exec/BnBSolverExec --instance instances/grid-m5V49E48B05D05.in --time-limit 3600 --warm-start-percentage-time 0.0 --m 20 --k 500 --statistical-filter --statistics statistics/grid-m5V49E48B05D05BnBSolverB.stat --solution solutions/grid-m5V49E48B05D05BnBSolverB.sol '
+++ ./bin/exec/BnBSolverExec --instance instances/grid-m5V49E48B05D05.in --time-limit 3600 --warm-start-percentage-time 0.0 --m 20 --k 500 --statistical-filter --statistics statistics/grid-m5V49E48B05D05BnBSolverB.stat --solution solutions/grid-m5V49E48B05D05BnBSolverB.sol
+Academic license - for non-commercial use only - expires 2022-08-11
+++ date
++ echo 'End time: Seg Ago 16 23:39:00 -03 2021'
+End time: Seg Ago 16 23:39:00 -03 2021
++ echo BnCSolverB
+BnCSolverB
++ command='./bin/exec/BnCSolverExec '
++ command+='--instance instances/grid-m5V49E48B05D05.in '
++ command+='--time-limit 3600 '
++ command+='--warm-start-percentage-time 0.0 '
++ command+='--m 20 '
++ command+='--k 500 '
++ command+='--statistical-filter '
++ command+='--statistics statistics/grid-m5V49E48B05D05BnCSolverB.stat '
++ command+='--solution solutions/grid-m5V49E48B05D05BnCSolverB.sol '
+++ date
++ echo 'Start time: Seg Ago 16 23:39:00 -03 2021'
+Start time: Seg Ago 16 23:39:00 -03 2021
++ eval './bin/exec/BnCSolverExec --instance instances/grid-m5V49E48B05D05.in --time-limit 3600 --warm-start-percentage-time 0.0 --m 20 --k 500 --statistical-filter --statistics statistics/grid-m5V49E48B05D05BnCSolverB.stat --solution solutions/grid-m5V49E48B05D05BnCSolverB.sol '
+++ ./bin/exec/BnCSolverExec --instance instances/grid-m5V49E48B05D05.in --time-limit 3600 --warm-start-percentage-time 0.0 --m 20 --k 500 --statistical-filter --statistics statistics/grid-m5V49E48B05D05BnCSolverB.stat --solution solutions/grid-m5V49E48B05D05BnCSolverB.sol
+Academic license - for non-commercial use only - expires 2022-08-11
+++ date
++ echo 'End time: Ter Ago 17 00:39:00 -03 2021'
+End time: Ter Ago 17 00:39:00 -03 2021
++ echo GRASPSolverA
+GRASPSolverA
++ command='./bin/exec/GRASPSolverExec '
++ command+='--instance instances/grid-m5V49E48B05D05.in '
++ command+='--time-limit 3600 '
++ command+='--m 20 '
++ command+='--k 500 '
++ command+='--statistical-filter '
++ command+='--statistics statistics/grid-m5V49E48B05D05GRASPA.stat '
++ command+='--solution solutions/grid-m5V49E48B05D05GRASPA.sol '
+++ date
++ echo 'Start time: Ter Ago 17 00:39:00 -03 2021'
+Start time: Ter Ago 17 00:39:00 -03 2021
++ eval './bin/exec/GRASPSolverExec --instance instances/grid-m5V49E48B05D05.in --time-limit 3600 --m 20 --k 500 --statistical-filter --statistics statistics/grid-m5V49E48B05D05GRASPA.stat --solution solutions/grid-m5V49E48B05D05GRASPA.sol '
+++ ./bin/exec/GRASPSolverExec --instance instances/grid-m5V49E48B05D05.in --time-limit 3600 --m 20 --k 500 --statistical-filter --statistics statistics/grid-m5V49E48B05D05GRASPA.stat --solution solutions/grid-m5V49E48B05D05GRASPA.sol
+-6579 3600
+++ date
++ echo 'End time: Ter Ago 17 01:39:00 -03 2021'
+End time: Ter Ago 17 01:39:00 -03 2021
++ echo GRASPSolverB
+GRASPSolverB
++ command='./bin/exec/GRASPSolverExec '
++ command+='--instance instances/grid-m5V49E48B05D05.in '
++ command+='--time-limit 3600 '
++ command+='--m 20 '
++ command+='--k 500 '
++ command+='--statistics statistics/grid-m5V49E48B05D05GRASPB.stat '
++ command+='--solution solutions/grid-m5V49E48B05D05GRASPB.sol '
+++ date
++ echo 'Start time: Ter Ago 17 01:39:00 -03 2021'
+Start time: Ter Ago 17 01:39:00 -03 2021
++ eval './bin/exec/GRASPSolverExec --instance instances/grid-m5V49E48B05D05.in --time-limit 3600 --m 20 --k 500 --statistics statistics/grid-m5V49E48B05D05GRASPB.stat --solution solutions/grid-m5V49E48B05D05GRASPB.sol '
+++ ./bin/exec/GRASPSolverExec --instance instances/grid-m5V49E48B05D05.in --time-limit 3600 --m 20 --k 500 --statistics statistics/grid-m5V49E48B05D05GRASPB.stat --solution solutions/grid-m5V49E48B05D05GRASPB.sol
+-6579 3600
+++ date
++ echo 'End time: Ter Ago 17 02:39:00 -03 2021'
+End time: Ter Ago 17 02:39:00 -03 2021
++ for VE in 25,24 49,48 100,99
++ set 100 99
++ V=100
++ E=99
++ echo 'V: 100'
+V: 100
++ echo 'E: 99'
+E: 99
++ instance=grid-m5V100E99B05D05
++ echo 'instance: grid-m5V100E99B05D05'
+instance: grid-m5V100E99B05D05
++ warmStartPercentageTime=0.1
++ echo warmStartPercentageTime=0.1
+warmStartPercentageTime=0.1
++ echo BnBSolverA
+BnBSolverA
++ command='./bin/exec/BnBSolverExec '
++ command+='--instance instances/grid-m5V100E99B05D05.in '
++ command+='--time-limit 3600 '
++ command+='--warm-start-percentage-time 0.1 '
++ command+='--m 20 '
++ command+='--k 500 '
++ command+='--statistical-filter '
++ command+='--statistics statistics/grid-m5V100E99B05D05BnBSolverA.stat '
++ command+='--solution solutions/grid-m5V100E99B05D05BnBSolverA.sol '
+++ date
++ echo 'Start time: Ter Ago 17 02:39:00 -03 2021'
+Start time: Ter Ago 17 02:39:00 -03 2021
++ eval './bin/exec/BnBSolverExec --instance instances/grid-m5V100E99B05D05.in --time-limit 3600 --warm-start-percentage-time 0.1 --m 20 --k 500 --statistical-filter --statistics statistics/grid-m5V100E99B05D05BnBSolverA.stat --solution solutions/grid-m5V100E99B05D05BnBSolverA.sol '
+++ ./bin/exec/BnBSolverExec --instance instances/grid-m5V100E99B05D05.in --time-limit 3600 --warm-start-percentage-time 0.1 --m 20 --k 500 --statistical-filter --statistics statistics/grid-m5V100E99B05D05BnBSolverA.stat --solution solutions/grid-m5V100E99B05D05BnBSolverA.sol
+Academic license - for non-commercial use only - expires 2022-08-11
+++ date
++ echo 'End time: Ter Ago 17 03:39:00 -03 2021'
+End time: Ter Ago 17 03:39:00 -03 2021
++ echo BnCSolverA
+BnCSolverA
++ command='./bin/exec/BnCSolverExec '
++ command+='--instance instances/grid-m5V100E99B05D05.in '
++ command+='--time-limit 3600 '
++ command+='--warm-start-percentage-time 0.1 '
++ command+='--m 20 '
++ command+='--k 500 '
++ command+='--statistical-filter '
++ command+='--statistics statistics/grid-m5V100E99B05D05BnCSolverA.stat '
++ command+='--solution solutions/grid-m5V100E99B05D05BnCSolverA.sol '
+++ date
++ echo 'Start time: Ter Ago 17 03:39:00 -03 2021'
+Start time: Ter Ago 17 03:39:00 -03 2021
++ eval './bin/exec/BnCSolverExec --instance instances/grid-m5V100E99B05D05.in --time-limit 3600 --warm-start-percentage-time 0.1 --m 20 --k 500 --statistical-filter --statistics statistics/grid-m5V100E99B05D05BnCSolverA.stat --solution solutions/grid-m5V100E99B05D05BnCSolverA.sol '
+++ ./bin/exec/BnCSolverExec --instance instances/grid-m5V100E99B05D05.in --time-limit 3600 --warm-start-percentage-time 0.1 --m 20 --k 500 --statistical-filter --statistics statistics/grid-m5V100E99B05D05BnCSolverA.stat --solution solutions/grid-m5V100E99B05D05BnCSolverA.sol
+Academic license - for non-commercial use only - expires 2022-08-11
+++ date
++ echo 'End time: Ter Ago 17 04:39:00 -03 2021'
+End time: Ter Ago 17 04:39:00 -03 2021
++ warmStartPercentageTime=0.0
++ echo warmStartPercentageTime=0.0
+warmStartPercentageTime=0.0
++ echo BnBSolverB
+BnBSolverB
++ command='./bin/exec/BnBSolverExec '
++ command+='--instance instances/grid-m5V100E99B05D05.in '
++ command+='--time-limit 3600 '
++ command+='--warm-start-percentage-time 0.0 '
++ command+='--m 20 '
++ command+='--k 500 '
++ command+='--statistical-filter '
++ command+='--statistics statistics/grid-m5V100E99B05D05BnBSolverB.stat '
++ command+='--solution solutions/grid-m5V100E99B05D05BnBSolverB.sol '
+++ date
++ echo 'Start time: Ter Ago 17 04:39:00 -03 2021'
+Start time: Ter Ago 17 04:39:00 -03 2021
++ eval './bin/exec/BnBSolverExec --instance instances/grid-m5V100E99B05D05.in --time-limit 3600 --warm-start-percentage-time 0.0 --m 20 --k 500 --statistical-filter --statistics statistics/grid-m5V100E99B05D05BnBSolverB.stat --solution solutions/grid-m5V100E99B05D05BnBSolverB.sol '
+++ ./bin/exec/BnBSolverExec --instance instances/grid-m5V100E99B05D05.in --time-limit 3600 --warm-start-percentage-time 0.0 --m 20 --k 500 --statistical-filter --statistics statistics/grid-m5V100E99B05D05BnBSolverB.stat --solution solutions/grid-m5V100E99B05D05BnBSolverB.sol
+Academic license - for non-commercial use only - expires 2022-08-11
+++ date
++ echo 'End time: Ter Ago 17 05:39:01 -03 2021'
+End time: Ter Ago 17 05:39:01 -03 2021
++ echo BnCSolverB
+BnCSolverB
++ command='./bin/exec/BnCSolverExec '
++ command+='--instance instances/grid-m5V100E99B05D05.in '
++ command+='--time-limit 3600 '
++ command+='--warm-start-percentage-time 0.0 '
++ command+='--m 20 '
++ command+='--k 500 '
++ command+='--statistical-filter '
++ command+='--statistics statistics/grid-m5V100E99B05D05BnCSolverB.stat '
++ command+='--solution solutions/grid-m5V100E99B05D05BnCSolverB.sol '
+++ date
++ echo 'Start time: Ter Ago 17 05:39:01 -03 2021'
+Start time: Ter Ago 17 05:39:01 -03 2021
++ eval './bin/exec/BnCSolverExec --instance instances/grid-m5V100E99B05D05.in --time-limit 3600 --warm-start-percentage-time 0.0 --m 20 --k 500 --statistical-filter --statistics statistics/grid-m5V100E99B05D05BnCSolverB.stat --solution solutions/grid-m5V100E99B05D05BnCSolverB.sol '
+++ ./bin/exec/BnCSolverExec --instance instances/grid-m5V100E99B05D05.in --time-limit 3600 --warm-start-percentage-time 0.0 --m 20 --k 500 --statistical-filter --statistics statistics/grid-m5V100E99B05D05BnCSolverB.stat --solution solutions/grid-m5V100E99B05D05BnCSolverB.sol
+Academic license - for non-commercial use only - expires 2022-08-11
+++ date
++ echo 'End time: Ter Ago 17 06:39:01 -03 2021'
+End time: Ter Ago 17 06:39:01 -03 2021
++ echo GRASPSolverA
+GRASPSolverA
++ command='./bin/exec/GRASPSolverExec '
++ command+='--instance instances/grid-m5V100E99B05D05.in '
++ command+='--time-limit 3600 '
++ command+='--m 20 '
++ command+='--k 500 '
++ command+='--statistical-filter '
++ command+='--statistics statistics/grid-m5V100E99B05D05GRASPA.stat '
++ command+='--solution solutions/grid-m5V100E99B05D05GRASPA.sol '
+++ date
++ echo 'Start time: Ter Ago 17 06:39:01 -03 2021'
+Start time: Ter Ago 17 06:39:01 -03 2021
++ eval './bin/exec/GRASPSolverExec --instance instances/grid-m5V100E99B05D05.in --time-limit 3600 --m 20 --k 500 --statistical-filter --statistics statistics/grid-m5V100E99B05D05GRASPA.stat --solution solutions/grid-m5V100E99B05D05GRASPA.sol '
+++ ./bin/exec/GRASPSolverExec --instance instances/grid-m5V100E99B05D05.in --time-limit 3600 --m 20 --k 500 --statistical-filter --statistics statistics/grid-m5V100E99B05D05GRASPA.stat --solution solutions/grid-m5V100E99B05D05GRASPA.sol
+-26515 3600
+++ date
++ echo 'End time: Ter Ago 17 07:39:01 -03 2021'
+End time: Ter Ago 17 07:39:01 -03 2021
++ echo GRASPSolverB
+GRASPSolverB
++ command='./bin/exec/GRASPSolverExec '
++ command+='--instance instances/grid-m5V100E99B05D05.in '
++ command+='--time-limit 3600 '
++ command+='--m 20 '
++ command+='--k 500 '
++ command+='--statistics statistics/grid-m5V100E99B05D05GRASPB.stat '
++ command+='--solution solutions/grid-m5V100E99B05D05GRASPB.sol '
+++ date
++ echo 'Start time: Ter Ago 17 07:39:01 -03 2021'
+Start time: Ter Ago 17 07:39:01 -03 2021
++ eval './bin/exec/GRASPSolverExec --instance instances/grid-m5V100E99B05D05.in --time-limit 3600 --m 20 --k 500 --statistics statistics/grid-m5V100E99B05D05GRASPB.stat --solution solutions/grid-m5V100E99B05D05GRASPB.sol '
+++ ./bin/exec/GRASPSolverExec --instance instances/grid-m5V100E99B05D05.in --time-limit 3600 --m 20 --k 500 --statistics statistics/grid-m5V100E99B05D05GRASPB.stat --solution solutions/grid-m5V100E99B05D05GRASPB.sol
+-26528 3600
+++ date
++ echo 'End time: Ter Ago 17 08:39:01 -03 2021'
+End time: Ter Ago 17 08:39:01 -03 2021
++ for D in 05 10
++ echo 'D: 10'
+D: 10
++ for VE in 25,24 49,48 100,99
++ set 25 24
++ V=25
++ E=24
++ echo 'V: 25'
+V: 25
++ echo 'E: 24'
+E: 24
++ instance=grid-m5V25E24B05D10
++ echo 'instance: grid-m5V25E24B05D10'
+instance: grid-m5V25E24B05D10
++ warmStartPercentageTime=0.1
++ echo warmStartPercentageTime=0.1
+warmStartPercentageTime=0.1
++ echo BnBSolverA
+BnBSolverA
++ command='./bin/exec/BnBSolverExec '
++ command+='--instance instances/grid-m5V25E24B05D10.in '
++ command+='--time-limit 3600 '
++ command+='--warm-start-percentage-time 0.1 '
++ command+='--m 20 '
++ command+='--k 500 '
++ command+='--statistical-filter '
++ command+='--statistics statistics/grid-m5V25E24B05D10BnBSolverA.stat '
++ command+='--solution solutions/grid-m5V25E24B05D10BnBSolverA.sol '
+++ date
++ echo 'Start time: Ter Ago 17 08:39:01 -03 2021'
+Start time: Ter Ago 17 08:39:01 -03 2021
++ eval './bin/exec/BnBSolverExec --instance instances/grid-m5V25E24B05D10.in --time-limit 3600 --warm-start-percentage-time 0.1 --m 20 --k 500 --statistical-filter --statistics statistics/grid-m5V25E24B05D10BnBSolverA.stat --solution solutions/grid-m5V25E24B05D10BnBSolverA.sol '
+++ ./bin/exec/BnBSolverExec --instance instances/grid-m5V25E24B05D10.in --time-limit 3600 --warm-start-percentage-time 0.1 --m 20 --k 500 --statistical-filter --statistics statistics/grid-m5V25E24B05D10BnBSolverA.stat --solution solutions/grid-m5V25E24B05D10BnBSolverA.sol
+Academic license - for non-commercial use only - expires 2022-08-11
+++ date
++ echo 'End time: Ter Ago 17 08:45:02 -03 2021'
+End time: Ter Ago 17 08:45:02 -03 2021
++ echo BnCSolverA
+BnCSolverA
++ command='./bin/exec/BnCSolverExec '
++ command+='--instance instances/grid-m5V25E24B05D10.in '
++ command+='--time-limit 3600 '
++ command+='--warm-start-percentage-time 0.1 '
++ command+='--m 20 '
++ command+='--k 500 '
++ command+='--statistical-filter '
++ command+='--statistics statistics/grid-m5V25E24B05D10BnCSolverA.stat '
++ command+='--solution solutions/grid-m5V25E24B05D10BnCSolverA.sol '
+++ date
++ echo 'Start time: Ter Ago 17 08:45:02 -03 2021'
+Start time: Ter Ago 17 08:45:02 -03 2021
++ eval './bin/exec/BnCSolverExec --instance instances/grid-m5V25E24B05D10.in --time-limit 3600 --warm-start-percentage-time 0.1 --m 20 --k 500 --statistical-filter --statistics statistics/grid-m5V25E24B05D10BnCSolverA.stat --solution solutions/grid-m5V25E24B05D10BnCSolverA.sol '
+++ ./bin/exec/BnCSolverExec --instance instances/grid-m5V25E24B05D10.in --time-limit 3600 --warm-start-percentage-time 0.1 --m 20 --k 500 --statistical-filter --statistics statistics/grid-m5V25E24B05D10BnCSolverA.stat --solution solutions/grid-m5V25E24B05D10BnCSolverA.sol
+Academic license - for non-commercial use only - expires 2022-08-11
+++ date
++ echo 'End time: Ter Ago 17 08:51:04 -03 2021'
+End time: Ter Ago 17 08:51:04 -03 2021
++ warmStartPercentageTime=0.0
++ echo warmStartPercentageTime=0.0
+warmStartPercentageTime=0.0
++ echo BnBSolverB
+BnBSolverB
++ command='./bin/exec/BnBSolverExec '
++ command+='--instance instances/grid-m5V25E24B05D10.in '
++ command+='--time-limit 3600 '
++ command+='--warm-start-percentage-time 0.0 '
++ command+='--m 20 '
++ command+='--k 500 '
++ command+='--statistical-filter '
++ command+='--statistics statistics/grid-m5V25E24B05D10BnBSolverB.stat '
++ command+='--solution solutions/grid-m5V25E24B05D10BnBSolverB.sol '
+++ date
++ echo 'Start time: Ter Ago 17 08:51:04 -03 2021'
+Start time: Ter Ago 17 08:51:04 -03 2021
++ eval './bin/exec/BnBSolverExec --instance instances/grid-m5V25E24B05D10.in --time-limit 3600 --warm-start-percentage-time 0.0 --m 20 --k 500 --statistical-filter --statistics statistics/grid-m5V25E24B05D10BnBSolverB.stat --solution solutions/grid-m5V25E24B05D10BnBSolverB.sol '
+++ ./bin/exec/BnBSolverExec --instance instances/grid-m5V25E24B05D10.in --time-limit 3600 --warm-start-percentage-time 0.0 --m 20 --k 500 --statistical-filter --statistics statistics/grid-m5V25E24B05D10BnBSolverB.stat --solution solutions/grid-m5V25E24B05D10BnBSolverB.sol
+Academic license - for non-commercial use only - expires 2022-08-11
+++ date
++ echo 'End time: Ter Ago 17 08:51:05 -03 2021'
+End time: Ter Ago 17 08:51:05 -03 2021
++ echo BnCSolverB
+BnCSolverB
++ command='./bin/exec/BnCSolverExec '
++ command+='--instance instances/grid-m5V25E24B05D10.in '
++ command+='--time-limit 3600 '
++ command+='--warm-start-percentage-time 0.0 '
++ command+='--m 20 '
++ command+='--k 500 '
++ command+='--statistical-filter '
++ command+='--statistics statistics/grid-m5V25E24B05D10BnCSolverB.stat '
++ command+='--solution solutions/grid-m5V25E24B05D10BnCSolverB.sol '
+++ date
++ echo 'Start time: Ter Ago 17 08:51:05 -03 2021'
+Start time: Ter Ago 17 08:51:05 -03 2021
++ eval './bin/exec/BnCSolverExec --instance instances/grid-m5V25E24B05D10.in --time-limit 3600 --warm-start-percentage-time 0.0 --m 20 --k 500 --statistical-filter --statistics statistics/grid-m5V25E24B05D10BnCSolverB.stat --solution solutions/grid-m5V25E24B05D10BnCSolverB.sol '
+++ ./bin/exec/BnCSolverExec --instance instances/grid-m5V25E24B05D10.in --time-limit 3600 --warm-start-percentage-time 0.0 --m 20 --k 500 --statistical-filter --statistics statistics/grid-m5V25E24B05D10BnCSolverB.stat --solution solutions/grid-m5V25E24B05D10BnCSolverB.sol
+Academic license - for non-commercial use only - expires 2022-08-11
+++ date
++ echo 'End time: Ter Ago 17 08:51:14 -03 2021'
+End time: Ter Ago 17 08:51:14 -03 2021
++ echo GRASPSolverA
+GRASPSolverA
++ command='./bin/exec/GRASPSolverExec '
++ command+='--instance instances/grid-m5V25E24B05D10.in '
++ command+='--time-limit 3600 '
++ command+='--m 20 '
++ command+='--k 500 '
++ command+='--statistical-filter '
++ command+='--statistics statistics/grid-m5V25E24B05D10GRASPA.stat '
++ command+='--solution solutions/grid-m5V25E24B05D10GRASPA.sol '
+++ date
++ echo 'Start time: Ter Ago 17 08:51:14 -03 2021'
+Start time: Ter Ago 17 08:51:14 -03 2021
++ eval './bin/exec/GRASPSolverExec --instance instances/grid-m5V25E24B05D10.in --time-limit 3600 --m 20 --k 500 --statistical-filter --statistics statistics/grid-m5V25E24B05D10GRASPA.stat --solution solutions/grid-m5V25E24B05D10GRASPA.sol '
+++ ./bin/exec/GRASPSolverExec --instance instances/grid-m5V25E24B05D10.in --time-limit 3600 --m 20 --k 500 --statistical-filter --statistics statistics/grid-m5V25E24B05D10GRASPA.stat --solution solutions/grid-m5V25E24B05D10GRASPA.sol
+-1942 3600
+++ date
++ echo 'End time: Ter Ago 17 09:51:14 -03 2021'
+End time: Ter Ago 17 09:51:14 -03 2021
++ echo GRASPSolverB
+GRASPSolverB
++ command='./bin/exec/GRASPSolverExec '
++ command+='--instance instances/grid-m5V25E24B05D10.in '
++ command+='--time-limit 3600 '
++ command+='--m 20 '
++ command+='--k 500 '
++ command+='--statistics statistics/grid-m5V25E24B05D10GRASPB.stat '
++ command+='--solution solutions/grid-m5V25E24B05D10GRASPB.sol '
+++ date
++ echo 'Start time: Ter Ago 17 09:51:14 -03 2021'
+Start time: Ter Ago 17 09:51:14 -03 2021
++ eval './bin/exec/GRASPSolverExec --instance instances/grid-m5V25E24B05D10.in --time-limit 3600 --m 20 --k 500 --statistics statistics/grid-m5V25E24B05D10GRASPB.stat --solution solutions/grid-m5V25E24B05D10GRASPB.sol '
+++ ./bin/exec/GRASPSolverExec --instance instances/grid-m5V25E24B05D10.in --time-limit 3600 --m 20 --k 500 --statistics statistics/grid-m5V25E24B05D10GRASPB.stat --solution solutions/grid-m5V25E24B05D10GRASPB.sol
+-1942 3600
+++ date
++ echo 'End time: Ter Ago 17 10:51:14 -03 2021'
+End time: Ter Ago 17 10:51:14 -03 2021
++ for VE in 25,24 49,48 100,99
++ set 49 48
++ V=49
++ E=48
++ echo 'V: 49'
+V: 49
++ echo 'E: 48'
+E: 48
++ instance=grid-m5V49E48B05D10
++ echo 'instance: grid-m5V49E48B05D10'
+instance: grid-m5V49E48B05D10
++ warmStartPercentageTime=0.1
++ echo warmStartPercentageTime=0.1
+warmStartPercentageTime=0.1
++ echo BnBSolverA
+BnBSolverA
++ command='./bin/exec/BnBSolverExec '
++ command+='--instance instances/grid-m5V49E48B05D10.in '
++ command+='--time-limit 3600 '
++ command+='--warm-start-percentage-time 0.1 '
++ command+='--m 20 '
++ command+='--k 500 '
++ command+='--statistical-filter '
++ command+='--statistics statistics/grid-m5V49E48B05D10BnBSolverA.stat '
++ command+='--solution solutions/grid-m5V49E48B05D10BnBSolverA.sol '
+++ date
++ echo 'Start time: Ter Ago 17 10:51:14 -03 2021'
+Start time: Ter Ago 17 10:51:14 -03 2021
++ eval './bin/exec/BnBSolverExec --instance instances/grid-m5V49E48B05D10.in --time-limit 3600 --warm-start-percentage-time 0.1 --m 20 --k 500 --statistical-filter --statistics statistics/grid-m5V49E48B05D10BnBSolverA.stat --solution solutions/grid-m5V49E48B05D10BnBSolverA.sol '
+++ ./bin/exec/BnBSolverExec --instance instances/grid-m5V49E48B05D10.in --time-limit 3600 --warm-start-percentage-time 0.1 --m 20 --k 500 --statistical-filter --statistics statistics/grid-m5V49E48B05D10BnBSolverA.stat --solution solutions/grid-m5V49E48B05D10BnBSolverA.sol
+Academic license - for non-commercial use only - expires 2022-08-11
+++ date
++ echo 'End time: Ter Ago 17 10:58:44 -03 2021'
+End time: Ter Ago 17 10:58:44 -03 2021
++ echo BnCSolverA
+BnCSolverA
++ command='./bin/exec/BnCSolverExec '
++ command+='--instance instances/grid-m5V49E48B05D10.in '
++ command+='--time-limit 3600 '
++ command+='--warm-start-percentage-time 0.1 '
++ command+='--m 20 '
++ command+='--k 500 '
++ command+='--statistical-filter '
++ command+='--statistics statistics/grid-m5V49E48B05D10BnCSolverA.stat '
++ command+='--solution solutions/grid-m5V49E48B05D10BnCSolverA.sol '
+++ date
++ echo 'Start time: Ter Ago 17 10:58:44 -03 2021'
+Start time: Ter Ago 17 10:58:44 -03 2021
++ eval './bin/exec/BnCSolverExec --instance instances/grid-m5V49E48B05D10.in --time-limit 3600 --warm-start-percentage-time 0.1 --m 20 --k 500 --statistical-filter --statistics statistics/grid-m5V49E48B05D10BnCSolverA.stat --solution solutions/grid-m5V49E48B05D10BnCSolverA.sol '
+++ ./bin/exec/BnCSolverExec --instance instances/grid-m5V49E48B05D10.in --time-limit 3600 --warm-start-percentage-time 0.1 --m 20 --k 500 --statistical-filter --statistics statistics/grid-m5V49E48B05D10BnCSolverA.stat --solution solutions/grid-m5V49E48B05D10BnCSolverA.sol
+Academic license - for non-commercial use only - expires 2022-08-11
+++ date
++ echo 'End time: Ter Ago 17 11:15:00 -03 2021'
+End time: Ter Ago 17 11:15:00 -03 2021
++ warmStartPercentageTime=0.0
++ echo warmStartPercentageTime=0.0
+warmStartPercentageTime=0.0
++ echo BnBSolverB
+BnBSolverB
++ command='./bin/exec/BnBSolverExec '
++ command+='--instance instances/grid-m5V49E48B05D10.in '
++ command+='--time-limit 3600 '
++ command+='--warm-start-percentage-time 0.0 '
++ command+='--m 20 '
++ command+='--k 500 '
++ command+='--statistical-filter '
++ command+='--statistics statistics/grid-m5V49E48B05D10BnBSolverB.stat '
++ command+='--solution solutions/grid-m5V49E48B05D10BnBSolverB.sol '
+++ date
++ echo 'Start time: Ter Ago 17 11:15:00 -03 2021'
+Start time: Ter Ago 17 11:15:00 -03 2021
++ eval './bin/exec/BnBSolverExec --instance instances/grid-m5V49E48B05D10.in --time-limit 3600 --warm-start-percentage-time 0.0 --m 20 --k 500 --statistical-filter --statistics statistics/grid-m5V49E48B05D10BnBSolverB.stat --solution solutions/grid-m5V49E48B05D10BnBSolverB.sol '
+++ ./bin/exec/BnBSolverExec --instance instances/grid-m5V49E48B05D10.in --time-limit 3600 --warm-start-percentage-time 0.0 --m 20 --k 500 --statistical-filter --statistics statistics/grid-m5V49E48B05D10BnBSolverB.stat --solution solutions/grid-m5V49E48B05D10BnBSolverB.sol
+Academic license - for non-commercial use only - expires 2022-08-11
+++ date
++ echo 'End time: Ter Ago 17 11:16:32 -03 2021'
+End time: Ter Ago 17 11:16:32 -03 2021
++ echo BnCSolverB
+BnCSolverB
++ command='./bin/exec/BnCSolverExec '
++ command+='--instance instances/grid-m5V49E48B05D10.in '
++ command+='--time-limit 3600 '
++ command+='--warm-start-percentage-time 0.0 '
++ command+='--m 20 '
++ command+='--k 500 '
++ command+='--statistical-filter '
++ command+='--statistics statistics/grid-m5V49E48B05D10BnCSolverB.stat '
++ command+='--solution solutions/grid-m5V49E48B05D10BnCSolverB.sol '
+++ date
++ echo 'Start time: Ter Ago 17 11:16:32 -03 2021'
+Start time: Ter Ago 17 11:16:32 -03 2021
++ eval './bin/exec/BnCSolverExec --instance instances/grid-m5V49E48B05D10.in --time-limit 3600 --warm-start-percentage-time 0.0 --m 20 --k 500 --statistical-filter --statistics statistics/grid-m5V49E48B05D10BnCSolverB.stat --solution solutions/grid-m5V49E48B05D10BnCSolverB.sol '
+++ ./bin/exec/BnCSolverExec --instance instances/grid-m5V49E48B05D10.in --time-limit 3600 --warm-start-percentage-time 0.0 --m 20 --k 500 --statistical-filter --statistics statistics/grid-m5V49E48B05D10BnCSolverB.stat --solution solutions/grid-m5V49E48B05D10BnCSolverB.sol
+Academic license - for non-commercial use only - expires 2022-08-11
+++ date
++ echo 'End time: Ter Ago 17 11:24:47 -03 2021'
+End time: Ter Ago 17 11:24:47 -03 2021
++ echo GRASPSolverA
+GRASPSolverA
++ command='./bin/exec/GRASPSolverExec '
++ command+='--instance instances/grid-m5V49E48B05D10.in '
++ command+='--time-limit 3600 '
++ command+='--m 20 '
++ command+='--k 500 '
++ command+='--statistical-filter '
++ command+='--statistics statistics/grid-m5V49E48B05D10GRASPA.stat '
++ command+='--solution solutions/grid-m5V49E48B05D10GRASPA.sol '
+++ date
++ echo 'Start time: Ter Ago 17 11:24:47 -03 2021'
+Start time: Ter Ago 17 11:24:47 -03 2021
++ eval './bin/exec/GRASPSolverExec --instance instances/grid-m5V49E48B05D10.in --time-limit 3600 --m 20 --k 500 --statistical-filter --statistics statistics/grid-m5V49E48B05D10GRASPA.stat --solution solutions/grid-m5V49E48B05D10GRASPA.sol '
+++ ./bin/exec/GRASPSolverExec --instance instances/grid-m5V49E48B05D10.in --time-limit 3600 --m 20 --k 500 --statistical-filter --statistics statistics/grid-m5V49E48B05D10GRASPA.stat --solution solutions/grid-m5V49E48B05D10GRASPA.sol
+-7044 3600
+++ date
++ echo 'End time: Ter Ago 17 12:24:47 -03 2021'
+End time: Ter Ago 17 12:24:47 -03 2021
++ echo GRASPSolverB
+GRASPSolverB
++ command='./bin/exec/GRASPSolverExec '
++ command+='--instance instances/grid-m5V49E48B05D10.in '
++ command+='--time-limit 3600 '
++ command+='--m 20 '
++ command+='--k 500 '
++ command+='--statistics statistics/grid-m5V49E48B05D10GRASPB.stat '
++ command+='--solution solutions/grid-m5V49E48B05D10GRASPB.sol '
+++ date
++ echo 'Start time: Ter Ago 17 12:24:47 -03 2021'
+Start time: Ter Ago 17 12:24:47 -03 2021
++ eval './bin/exec/GRASPSolverExec --instance instances/grid-m5V49E48B05D10.in --time-limit 3600 --m 20 --k 500 --statistics statistics/grid-m5V49E48B05D10GRASPB.stat --solution solutions/grid-m5V49E48B05D10GRASPB.sol '
+++ ./bin/exec/GRASPSolverExec --instance instances/grid-m5V49E48B05D10.in --time-limit 3600 --m 20 --k 500 --statistics statistics/grid-m5V49E48B05D10GRASPB.stat --solution solutions/grid-m5V49E48B05D10GRASPB.sol
+-7044 3600
+++ date
++ echo 'End time: Ter Ago 17 13:24:47 -03 2021'
+End time: Ter Ago 17 13:24:47 -03 2021
++ for VE in 25,24 49,48 100,99
++ set 100 99
++ V=100
++ E=99
++ echo 'V: 100'
+V: 100
++ echo 'E: 99'
+E: 99
++ instance=grid-m5V100E99B05D10
++ echo 'instance: grid-m5V100E99B05D10'
+instance: grid-m5V100E99B05D10
++ warmStartPercentageTime=0.1
++ echo warmStartPercentageTime=0.1
+warmStartPercentageTime=0.1
++ echo BnBSolverA
+BnBSolverA
++ command='./bin/exec/BnBSolverExec '
++ command+='--instance instances/grid-m5V100E99B05D10.in '
++ command+='--time-limit 3600 '
++ command+='--warm-start-percentage-time 0.1 '
++ command+='--m 20 '
++ command+='--k 500 '
++ command+='--statistical-filter '
++ command+='--statistics statistics/grid-m5V100E99B05D10BnBSolverA.stat '
++ command+='--solution solutions/grid-m5V100E99B05D10BnBSolverA.sol '
+++ date
++ echo 'Start time: Ter Ago 17 13:24:47 -03 2021'
+Start time: Ter Ago 17 13:24:47 -03 2021
++ eval './bin/exec/BnBSolverExec --instance instances/grid-m5V100E99B05D10.in --time-limit 3600 --warm-start-percentage-time 0.1 --m 20 --k 500 --statistical-filter --statistics statistics/grid-m5V100E99B05D10BnBSolverA.stat --solution solutions/grid-m5V100E99B05D10BnBSolverA.sol '
+++ ./bin/exec/BnBSolverExec --instance instances/grid-m5V100E99B05D10.in --time-limit 3600 --warm-start-percentage-time 0.1 --m 20 --k 500 --statistical-filter --statistics statistics/grid-m5V100E99B05D10BnBSolverA.stat --solution solutions/grid-m5V100E99B05D10BnBSolverA.sol
+Academic license - for non-commercial use only - expires 2022-08-11
+++ date
++ echo 'End time: Ter Ago 17 14:24:47 -03 2021'
+End time: Ter Ago 17 14:24:47 -03 2021
++ echo BnCSolverA
+BnCSolverA
++ command='./bin/exec/BnCSolverExec '
++ command+='--instance instances/grid-m5V100E99B05D10.in '
++ command+='--time-limit 3600 '
++ command+='--warm-start-percentage-time 0.1 '
++ command+='--m 20 '
++ command+='--k 500 '
++ command+='--statistical-filter '
++ command+='--statistics statistics/grid-m5V100E99B05D10BnCSolverA.stat '
++ command+='--solution solutions/grid-m5V100E99B05D10BnCSolverA.sol '
+++ date
++ echo 'Start time: Ter Ago 17 14:24:47 -03 2021'
+Start time: Ter Ago 17 14:24:47 -03 2021
++ eval './bin/exec/BnCSolverExec --instance instances/grid-m5V100E99B05D10.in --time-limit 3600 --warm-start-percentage-time 0.1 --m 20 --k 500 --statistical-filter --statistics statistics/grid-m5V100E99B05D10BnCSolverA.stat --solution solutions/grid-m5V100E99B05D10BnCSolverA.sol '
+++ ./bin/exec/BnCSolverExec --instance instances/grid-m5V100E99B05D10.in --time-limit 3600 --warm-start-percentage-time 0.1 --m 20 --k 500 --statistical-filter --statistics statistics/grid-m5V100E99B05D10BnCSolverA.stat --solution solutions/grid-m5V100E99B05D10BnCSolverA.sol
+Academic license - for non-commercial use only - expires 2022-08-11
+++ date
++ echo 'End time: Ter Ago 17 15:24:48 -03 2021'
+End time: Ter Ago 17 15:24:48 -03 2021
++ warmStartPercentageTime=0.0
++ echo warmStartPercentageTime=0.0
+warmStartPercentageTime=0.0
++ echo BnBSolverB
+BnBSolverB
++ command='./bin/exec/BnBSolverExec '
++ command+='--instance instances/grid-m5V100E99B05D10.in '
++ command+='--time-limit 3600 '
++ command+='--warm-start-percentage-time 0.0 '
++ command+='--m 20 '
++ command+='--k 500 '
++ command+='--statistical-filter '
++ command+='--statistics statistics/grid-m5V100E99B05D10BnBSolverB.stat '
++ command+='--solution solutions/grid-m5V100E99B05D10BnBSolverB.sol '
+++ date
++ echo 'Start time: Ter Ago 17 15:24:48 -03 2021'
+Start time: Ter Ago 17 15:24:48 -03 2021
++ eval './bin/exec/BnBSolverExec --instance instances/grid-m5V100E99B05D10.in --time-limit 3600 --warm-start-percentage-time 0.0 --m 20 --k 500 --statistical-filter --statistics statistics/grid-m5V100E99B05D10BnBSolverB.stat --solution solutions/grid-m5V100E99B05D10BnBSolverB.sol '
+++ ./bin/exec/BnBSolverExec --instance instances/grid-m5V100E99B05D10.in --time-limit 3600 --warm-start-percentage-time 0.0 --m 20 --k 500 --statistical-filter --statistics statistics/grid-m5V100E99B05D10BnBSolverB.stat --solution solutions/grid-m5V100E99B05D10BnBSolverB.sol
+Academic license - for non-commercial use only - expires 2022-08-11
+++ date
++ echo 'End time: Ter Ago 17 16:24:48 -03 2021'
+End time: Ter Ago 17 16:24:48 -03 2021
++ echo BnCSolverB
+BnCSolverB
++ command='./bin/exec/BnCSolverExec '
++ command+='--instance instances/grid-m5V100E99B05D10.in '
++ command+='--time-limit 3600 '
++ command+='--warm-start-percentage-time 0.0 '
++ command+='--m 20 '
++ command+='--k 500 '
++ command+='--statistical-filter '
++ command+='--statistics statistics/grid-m5V100E99B05D10BnCSolverB.stat '
++ command+='--solution solutions/grid-m5V100E99B05D10BnCSolverB.sol '
+++ date
++ echo 'Start time: Ter Ago 17 16:24:48 -03 2021'
+Start time: Ter Ago 17 16:24:48 -03 2021
++ eval './bin/exec/BnCSolverExec --instance instances/grid-m5V100E99B05D10.in --time-limit 3600 --warm-start-percentage-time 0.0 --m 20 --k 500 --statistical-filter --statistics statistics/grid-m5V100E99B05D10BnCSolverB.stat --solution solutions/grid-m5V100E99B05D10BnCSolverB.sol '
+++ ./bin/exec/BnCSolverExec --instance instances/grid-m5V100E99B05D10.in --time-limit 3600 --warm-start-percentage-time 0.0 --m 20 --k 500 --statistical-filter --statistics statistics/grid-m5V100E99B05D10BnCSolverB.stat --solution solutions/grid-m5V100E99B05D10BnCSolverB.sol
+Academic license - for non-commercial use only - expires 2022-08-11
+++ date
++ echo 'End time: Ter Ago 17 17:24:49 -03 2021'
+End time: Ter Ago 17 17:24:49 -03 2021
++ echo GRASPSolverA
+GRASPSolverA
++ command='./bin/exec/GRASPSolverExec '
++ command+='--instance instances/grid-m5V100E99B05D10.in '
++ command+='--time-limit 3600 '
++ command+='--m 20 '
++ command+='--k 500 '
++ command+='--statistical-filter '
++ command+='--statistics statistics/grid-m5V100E99B05D10GRASPA.stat '
++ command+='--solution solutions/grid-m5V100E99B05D10GRASPA.sol '
+++ date
++ echo 'Start time: Ter Ago 17 17:24:49 -03 2021'
+Start time: Ter Ago 17 17:24:49 -03 2021
++ eval './bin/exec/GRASPSolverExec --instance instances/grid-m5V100E99B05D10.in --time-limit 3600 --m 20 --k 500 --statistical-filter --statistics statistics/grid-m5V100E99B05D10GRASPA.stat --solution solutions/grid-m5V100E99B05D10GRASPA.sol '
+++ ./bin/exec/GRASPSolverExec --instance instances/grid-m5V100E99B05D10.in --time-limit 3600 --m 20 --k 500 --statistical-filter --statistics statistics/grid-m5V100E99B05D10GRASPA.stat --solution solutions/grid-m5V100E99B05D10GRASPA.sol
+-28067 3600
+++ date
++ echo 'End time: Ter Ago 17 18:24:49 -03 2021'
+End time: Ter Ago 17 18:24:49 -03 2021
++ echo GRASPSolverB
+GRASPSolverB
++ command='./bin/exec/GRASPSolverExec '
++ command+='--instance instances/grid-m5V100E99B05D10.in '
++ command+='--time-limit 3600 '
++ command+='--m 20 '
++ command+='--k 500 '
++ command+='--statistics statistics/grid-m5V100E99B05D10GRASPB.stat '
++ command+='--solution solutions/grid-m5V100E99B05D10GRASPB.sol '
+++ date
++ echo 'Start time: Ter Ago 17 18:24:49 -03 2021'
+Start time: Ter Ago 17 18:24:49 -03 2021
++ eval './bin/exec/GRASPSolverExec --instance instances/grid-m5V100E99B05D10.in --time-limit 3600 --m 20 --k 500 --statistics statistics/grid-m5V100E99B05D10GRASPB.stat --solution solutions/grid-m5V100E99B05D10GRASPB.sol '
+++ ./bin/exec/GRASPSolverExec --instance instances/grid-m5V100E99B05D10.in --time-limit 3600 --m 20 --k 500 --statistics statistics/grid-m5V100E99B05D10GRASPB.stat --solution solutions/grid-m5V100E99B05D10GRASPB.sol
+-28234 3600
+++ date
++ echo 'End time: Ter Ago 17 19:24:49 -03 2021'
+End time: Ter Ago 17 19:24:49 -03 2021
++ for B in 05 10
++ echo 'B: 10'
+B: 10
++ for D in 05 10
++ echo 'D: 05'
+D: 05
++ for VE in 25,24 49,48 100,99
++ set 25 24
++ V=25
++ E=24
++ echo 'V: 25'
+V: 25
++ echo 'E: 24'
+E: 24
++ instance=grid-m5V25E24B10D05
++ echo 'instance: grid-m5V25E24B10D05'
+instance: grid-m5V25E24B10D05
++ warmStartPercentageTime=0.1
++ echo warmStartPercentageTime=0.1
+warmStartPercentageTime=0.1
++ echo BnBSolverA
+BnBSolverA
++ command='./bin/exec/BnBSolverExec '
++ command+='--instance instances/grid-m5V25E24B10D05.in '
++ command+='--time-limit 3600 '
++ command+='--warm-start-percentage-time 0.1 '
++ command+='--m 20 '
++ command+='--k 500 '
++ command+='--statistical-filter '
++ command+='--statistics statistics/grid-m5V25E24B10D05BnBSolverA.stat '
++ command+='--solution solutions/grid-m5V25E24B10D05BnBSolverA.sol '
+++ date
++ echo 'Start time: Ter Ago 17 19:24:49 -03 2021'
+Start time: Ter Ago 17 19:24:49 -03 2021
++ eval './bin/exec/BnBSolverExec --instance instances/grid-m5V25E24B10D05.in --time-limit 3600 --warm-start-percentage-time 0.1 --m 20 --k 500 --statistical-filter --statistics statistics/grid-m5V25E24B10D05BnBSolverA.stat --solution solutions/grid-m5V25E24B10D05BnBSolverA.sol '
+++ ./bin/exec/BnBSolverExec --instance instances/grid-m5V25E24B10D05.in --time-limit 3600 --warm-start-percentage-time 0.1 --m 20 --k 500 --statistical-filter --statistics statistics/grid-m5V25E24B10D05BnBSolverA.stat --solution solutions/grid-m5V25E24B10D05BnBSolverA.sol
+Academic license - for non-commercial use only - expires 2022-08-11
+++ date
++ echo 'End time: Ter Ago 17 19:30:51 -03 2021'
+End time: Ter Ago 17 19:30:51 -03 2021
++ echo BnCSolverA
+BnCSolverA
++ command='./bin/exec/BnCSolverExec '
++ command+='--instance instances/grid-m5V25E24B10D05.in '
++ command+='--time-limit 3600 '
++ command+='--warm-start-percentage-time 0.1 '
++ command+='--m 20 '
++ command+='--k 500 '
++ command+='--statistical-filter '
++ command+='--statistics statistics/grid-m5V25E24B10D05BnCSolverA.stat '
++ command+='--solution solutions/grid-m5V25E24B10D05BnCSolverA.sol '
+++ date
++ echo 'Start time: Ter Ago 17 19:30:51 -03 2021'
+Start time: Ter Ago 17 19:30:51 -03 2021
++ eval './bin/exec/BnCSolverExec --instance instances/grid-m5V25E24B10D05.in --time-limit 3600 --warm-start-percentage-time 0.1 --m 20 --k 500 --statistical-filter --statistics statistics/grid-m5V25E24B10D05BnCSolverA.stat --solution solutions/grid-m5V25E24B10D05BnCSolverA.sol '
+++ ./bin/exec/BnCSolverExec --instance instances/grid-m5V25E24B10D05.in --time-limit 3600 --warm-start-percentage-time 0.1 --m 20 --k 500 --statistical-filter --statistics statistics/grid-m5V25E24B10D05BnCSolverA.stat --solution solutions/grid-m5V25E24B10D05BnCSolverA.sol
+Academic license - for non-commercial use only - expires 2022-08-11
+++ date
++ echo 'End time: Ter Ago 17 19:36:56 -03 2021'
+End time: Ter Ago 17 19:36:56 -03 2021
++ warmStartPercentageTime=0.0
++ echo warmStartPercentageTime=0.0
+warmStartPercentageTime=0.0
++ echo BnBSolverB
+BnBSolverB
++ command='./bin/exec/BnBSolverExec '
++ command+='--instance instances/grid-m5V25E24B10D05.in '
++ command+='--time-limit 3600 '
++ command+='--warm-start-percentage-time 0.0 '
++ command+='--m 20 '
++ command+='--k 500 '
++ command+='--statistical-filter '
++ command+='--statistics statistics/grid-m5V25E24B10D05BnBSolverB.stat '
++ command+='--solution solutions/grid-m5V25E24B10D05BnBSolverB.sol '
+++ date
++ echo 'Start time: Ter Ago 17 19:36:56 -03 2021'
+Start time: Ter Ago 17 19:36:56 -03 2021
++ eval './bin/exec/BnBSolverExec --instance instances/grid-m5V25E24B10D05.in --time-limit 3600 --warm-start-percentage-time 0.0 --m 20 --k 500 --statistical-filter --statistics statistics/grid-m5V25E24B10D05BnBSolverB.stat --solution solutions/grid-m5V25E24B10D05BnBSolverB.sol '
+++ ./bin/exec/BnBSolverExec --instance instances/grid-m5V25E24B10D05.in --time-limit 3600 --warm-start-percentage-time 0.0 --m 20 --k 500 --statistical-filter --statistics statistics/grid-m5V25E24B10D05BnBSolverB.stat --solution solutions/grid-m5V25E24B10D05BnBSolverB.sol
+Academic license - for non-commercial use only - expires 2022-08-11
+++ date
++ echo 'End time: Ter Ago 17 19:36:58 -03 2021'
+End time: Ter Ago 17 19:36:58 -03 2021
++ echo BnCSolverB
+BnCSolverB
++ command='./bin/exec/BnCSolverExec '
++ command+='--instance instances/grid-m5V25E24B10D05.in '
++ command+='--time-limit 3600 '
++ command+='--warm-start-percentage-time 0.0 '
++ command+='--m 20 '
++ command+='--k 500 '
++ command+='--statistical-filter '
++ command+='--statistics statistics/grid-m5V25E24B10D05BnCSolverB.stat '
++ command+='--solution solutions/grid-m5V25E24B10D05BnCSolverB.sol '
+++ date
++ echo 'Start time: Ter Ago 17 19:36:58 -03 2021'
+Start time: Ter Ago 17 19:36:58 -03 2021
++ eval './bin/exec/BnCSolverExec --instance instances/grid-m5V25E24B10D05.in --time-limit 3600 --warm-start-percentage-time 0.0 --m 20 --k 500 --statistical-filter --statistics statistics/grid-m5V25E24B10D05BnCSolverB.stat --solution solutions/grid-m5V25E24B10D05BnCSolverB.sol '
+++ ./bin/exec/BnCSolverExec --instance instances/grid-m5V25E24B10D05.in --time-limit 3600 --warm-start-percentage-time 0.0 --m 20 --k 500 --statistical-filter --statistics statistics/grid-m5V25E24B10D05BnCSolverB.stat --solution solutions/grid-m5V25E24B10D05BnCSolverB.sol
+Academic license - for non-commercial use only - expires 2022-08-11
+++ date
++ echo 'End time: Ter Ago 17 19:37:02 -03 2021'
+End time: Ter Ago 17 19:37:02 -03 2021
++ echo GRASPSolverA
+GRASPSolverA
++ command='./bin/exec/GRASPSolverExec '
++ command+='--instance instances/grid-m5V25E24B10D05.in '
++ command+='--time-limit 3600 '
++ command+='--m 20 '
++ command+='--k 500 '
++ command+='--statistical-filter '
++ command+='--statistics statistics/grid-m5V25E24B10D05GRASPA.stat '
++ command+='--solution solutions/grid-m5V25E24B10D05GRASPA.sol '
+++ date
++ echo 'Start time: Ter Ago 17 19:37:02 -03 2021'
+Start time: Ter Ago 17 19:37:02 -03 2021
++ eval './bin/exec/GRASPSolverExec --instance instances/grid-m5V25E24B10D05.in --time-limit 3600 --m 20 --k 500 --statistical-filter --statistics statistics/grid-m5V25E24B10D05GRASPA.stat --solution solutions/grid-m5V25E24B10D05GRASPA.sol '
+++ ./bin/exec/GRASPSolverExec --instance instances/grid-m5V25E24B10D05.in --time-limit 3600 --m 20 --k 500 --statistical-filter --statistics statistics/grid-m5V25E24B10D05GRASPA.stat --solution solutions/grid-m5V25E24B10D05GRASPA.sol
+-1795 3600
+++ date
++ echo 'End time: Ter Ago 17 20:37:02 -03 2021'
+End time: Ter Ago 17 20:37:02 -03 2021
++ echo GRASPSolverB
+GRASPSolverB
++ command='./bin/exec/GRASPSolverExec '
++ command+='--instance instances/grid-m5V25E24B10D05.in '
++ command+='--time-limit 3600 '
++ command+='--m 20 '
++ command+='--k 500 '
++ command+='--statistics statistics/grid-m5V25E24B10D05GRASPB.stat '
++ command+='--solution solutions/grid-m5V25E24B10D05GRASPB.sol '
+++ date
++ echo 'Start time: Ter Ago 17 20:37:02 -03 2021'
+Start time: Ter Ago 17 20:37:02 -03 2021
++ eval './bin/exec/GRASPSolverExec --instance instances/grid-m5V25E24B10D05.in --time-limit 3600 --m 20 --k 500 --statistics statistics/grid-m5V25E24B10D05GRASPB.stat --solution solutions/grid-m5V25E24B10D05GRASPB.sol '
+++ ./bin/exec/GRASPSolverExec --instance instances/grid-m5V25E24B10D05.in --time-limit 3600 --m 20 --k 500 --statistics statistics/grid-m5V25E24B10D05GRASPB.stat --solution solutions/grid-m5V25E24B10D05GRASPB.sol
+-1795 3600
+++ date
++ echo 'End time: Ter Ago 17 21:37:02 -03 2021'
+End time: Ter Ago 17 21:37:02 -03 2021
++ for VE in 25,24 49,48 100,99
++ set 49 48
++ V=49
++ E=48
++ echo 'V: 49'
+V: 49
++ echo 'E: 48'
+E: 48
++ instance=grid-m5V49E48B10D05
++ echo 'instance: grid-m5V49E48B10D05'
+instance: grid-m5V49E48B10D05
++ warmStartPercentageTime=0.1
++ echo warmStartPercentageTime=0.1
+warmStartPercentageTime=0.1
++ echo BnBSolverA
+BnBSolverA
++ command='./bin/exec/BnBSolverExec '
++ command+='--instance instances/grid-m5V49E48B10D05.in '
++ command+='--time-limit 3600 '
++ command+='--warm-start-percentage-time 0.1 '
++ command+='--m 20 '
++ command+='--k 500 '
++ command+='--statistical-filter '
++ command+='--statistics statistics/grid-m5V49E48B10D05BnBSolverA.stat '
++ command+='--solution solutions/grid-m5V49E48B10D05BnBSolverA.sol '
+++ date
++ echo 'Start time: Ter Ago 17 21:37:02 -03 2021'
+Start time: Ter Ago 17 21:37:02 -03 2021
++ eval './bin/exec/BnBSolverExec --instance instances/grid-m5V49E48B10D05.in --time-limit 3600 --warm-start-percentage-time 0.1 --m 20 --k 500 --statistical-filter --statistics statistics/grid-m5V49E48B10D05BnBSolverA.stat --solution solutions/grid-m5V49E48B10D05BnBSolverA.sol '
+++ ./bin/exec/BnBSolverExec --instance instances/grid-m5V49E48B10D05.in --time-limit 3600 --warm-start-percentage-time 0.1 --m 20 --k 500 --statistical-filter --statistics statistics/grid-m5V49E48B10D05BnBSolverA.stat --solution solutions/grid-m5V49E48B10D05BnBSolverA.sol
+Academic license - for non-commercial use only - expires 2022-08-11
+++ date
++ echo 'End time: Ter Ago 17 21:43:13 -03 2021'
+End time: Ter Ago 17 21:43:13 -03 2021
++ echo BnCSolverA
+BnCSolverA
++ command='./bin/exec/BnCSolverExec '
++ command+='--instance instances/grid-m5V49E48B10D05.in '
++ command+='--time-limit 3600 '
++ command+='--warm-start-percentage-time 0.1 '
++ command+='--m 20 '
++ command+='--k 500 '
++ command+='--statistical-filter '
++ command+='--statistics statistics/grid-m5V49E48B10D05BnCSolverA.stat '
++ command+='--solution solutions/grid-m5V49E48B10D05BnCSolverA.sol '
+++ date
++ echo 'Start time: Ter Ago 17 21:43:13 -03 2021'
+Start time: Ter Ago 17 21:43:13 -03 2021
++ eval './bin/exec/BnCSolverExec --instance instances/grid-m5V49E48B10D05.in --time-limit 3600 --warm-start-percentage-time 0.1 --m 20 --k 500 --statistical-filter --statistics statistics/grid-m5V49E48B10D05BnCSolverA.stat --solution solutions/grid-m5V49E48B10D05BnCSolverA.sol '
+++ ./bin/exec/BnCSolverExec --instance instances/grid-m5V49E48B10D05.in --time-limit 3600 --warm-start-percentage-time 0.1 --m 20 --k 500 --statistical-filter --statistics statistics/grid-m5V49E48B10D05BnCSolverA.stat --solution solutions/grid-m5V49E48B10D05BnCSolverA.sol
+Academic license - for non-commercial use only - expires 2022-08-11
+++ date
++ echo 'End time: Ter Ago 17 21:52:17 -03 2021'
+End time: Ter Ago 17 21:52:17 -03 2021
++ warmStartPercentageTime=0.0
++ echo warmStartPercentageTime=0.0
+warmStartPercentageTime=0.0
++ echo BnBSolverB
+BnBSolverB
++ command='./bin/exec/BnBSolverExec '
++ command+='--instance instances/grid-m5V49E48B10D05.in '
++ command+='--time-limit 3600 '
++ command+='--warm-start-percentage-time 0.0 '
++ command+='--m 20 '
++ command+='--k 500 '
++ command+='--statistical-filter '
++ command+='--statistics statistics/grid-m5V49E48B10D05BnBSolverB.stat '
++ command+='--solution solutions/grid-m5V49E48B10D05BnBSolverB.sol '
+++ date
++ echo 'Start time: Ter Ago 17 21:52:17 -03 2021'
+Start time: Ter Ago 17 21:52:17 -03 2021
++ eval './bin/exec/BnBSolverExec --instance instances/grid-m5V49E48B10D05.in --time-limit 3600 --warm-start-percentage-time 0.0 --m 20 --k 500 --statistical-filter --statistics statistics/grid-m5V49E48B10D05BnBSolverB.stat --solution solutions/grid-m5V49E48B10D05BnBSolverB.sol '
+++ ./bin/exec/BnBSolverExec --instance instances/grid-m5V49E48B10D05.in --time-limit 3600 --warm-start-percentage-time 0.0 --m 20 --k 500 --statistical-filter --statistics statistics/grid-m5V49E48B10D05BnBSolverB.stat --solution solutions/grid-m5V49E48B10D05BnBSolverB.sol
+Academic license - for non-commercial use only - expires 2022-08-11
+++ date
++ echo 'End time: Ter Ago 17 21:52:33 -03 2021'
+End time: Ter Ago 17 21:52:33 -03 2021
++ echo BnCSolverB
+BnCSolverB
++ command='./bin/exec/BnCSolverExec '
++ command+='--instance instances/grid-m5V49E48B10D05.in '
++ command+='--time-limit 3600 '
++ command+='--warm-start-percentage-time 0.0 '
++ command+='--m 20 '
++ command+='--k 500 '
++ command+='--statistical-filter '
++ command+='--statistics statistics/grid-m5V49E48B10D05BnCSolverB.stat '
++ command+='--solution solutions/grid-m5V49E48B10D05BnCSolverB.sol '
+++ date
++ echo 'Start time: Ter Ago 17 21:52:33 -03 2021'
+Start time: Ter Ago 17 21:52:33 -03 2021
++ eval './bin/exec/BnCSolverExec --instance instances/grid-m5V49E48B10D05.in --time-limit 3600 --warm-start-percentage-time 0.0 --m 20 --k 500 --statistical-filter --statistics statistics/grid-m5V49E48B10D05BnCSolverB.stat --solution solutions/grid-m5V49E48B10D05BnCSolverB.sol '
+++ ./bin/exec/BnCSolverExec --instance instances/grid-m5V49E48B10D05.in --time-limit 3600 --warm-start-percentage-time 0.0 --m 20 --k 500 --statistical-filter --statistics statistics/grid-m5V49E48B10D05BnCSolverB.stat --solution solutions/grid-m5V49E48B10D05BnCSolverB.sol
+Academic license - for non-commercial use only - expires 2022-08-11
+++ date
++ echo 'End time: Ter Ago 17 21:59:28 -03 2021'
+End time: Ter Ago 17 21:59:28 -03 2021
++ echo GRASPSolverA
+GRASPSolverA
++ command='./bin/exec/GRASPSolverExec '
++ command+='--instance instances/grid-m5V49E48B10D05.in '
++ command+='--time-limit 3600 '
++ command+='--m 20 '
++ command+='--k 500 '
++ command+='--statistical-filter '
++ command+='--statistics statistics/grid-m5V49E48B10D05GRASPA.stat '
++ command+='--solution solutions/grid-m5V49E48B10D05GRASPA.sol '
+++ date
++ echo 'Start time: Ter Ago 17 21:59:28 -03 2021'
+Start time: Ter Ago 17 21:59:28 -03 2021
++ eval './bin/exec/GRASPSolverExec --instance instances/grid-m5V49E48B10D05.in --time-limit 3600 --m 20 --k 500 --statistical-filter --statistics statistics/grid-m5V49E48B10D05GRASPA.stat --solution solutions/grid-m5V49E48B10D05GRASPA.sol '
+++ ./bin/exec/GRASPSolverExec --instance instances/grid-m5V49E48B10D05.in --time-limit 3600 --m 20 --k 500 --statistical-filter --statistics statistics/grid-m5V49E48B10D05GRASPA.stat --solution solutions/grid-m5V49E48B10D05GRASPA.sol
+-7894 3600
+++ date
++ echo 'End time: Ter Ago 17 22:59:28 -03 2021'
+End time: Ter Ago 17 22:59:28 -03 2021
++ echo GRASPSolverB
+GRASPSolverB
++ command='./bin/exec/GRASPSolverExec '
++ command+='--instance instances/grid-m5V49E48B10D05.in '
++ command+='--time-limit 3600 '
++ command+='--m 20 '
++ command+='--k 500 '
++ command+='--statistics statistics/grid-m5V49E48B10D05GRASPB.stat '
++ command+='--solution solutions/grid-m5V49E48B10D05GRASPB.sol '
+++ date
++ echo 'Start time: Ter Ago 17 22:59:28 -03 2021'
+Start time: Ter Ago 17 22:59:28 -03 2021
++ eval './bin/exec/GRASPSolverExec --instance instances/grid-m5V49E48B10D05.in --time-limit 3600 --m 20 --k 500 --statistics statistics/grid-m5V49E48B10D05GRASPB.stat --solution solutions/grid-m5V49E48B10D05GRASPB.sol '
+++ ./bin/exec/GRASPSolverExec --instance instances/grid-m5V49E48B10D05.in --time-limit 3600 --m 20 --k 500 --statistics statistics/grid-m5V49E48B10D05GRASPB.stat --solution solutions/grid-m5V49E48B10D05GRASPB.sol
+-7894 3600
+++ date
++ echo 'End time: Ter Ago 17 23:59:28 -03 2021'
+End time: Ter Ago 17 23:59:28 -03 2021
++ for VE in 25,24 49,48 100,99
++ set 100 99
++ V=100
++ E=99
++ echo 'V: 100'
+V: 100
++ echo 'E: 99'
+E: 99
++ instance=grid-m5V100E99B10D05
++ echo 'instance: grid-m5V100E99B10D05'
+instance: grid-m5V100E99B10D05
++ warmStartPercentageTime=0.1
++ echo warmStartPercentageTime=0.1
+warmStartPercentageTime=0.1
++ echo BnBSolverA
+BnBSolverA
++ command='./bin/exec/BnBSolverExec '
++ command+='--instance instances/grid-m5V100E99B10D05.in '
++ command+='--time-limit 3600 '
++ command+='--warm-start-percentage-time 0.1 '
++ command+='--m 20 '
++ command+='--k 500 '
++ command+='--statistical-filter '
++ command+='--statistics statistics/grid-m5V100E99B10D05BnBSolverA.stat '
++ command+='--solution solutions/grid-m5V100E99B10D05BnBSolverA.sol '
+++ date
++ echo 'Start time: Ter Ago 17 23:59:28 -03 2021'
+Start time: Ter Ago 17 23:59:28 -03 2021
++ eval './bin/exec/BnBSolverExec --instance instances/grid-m5V100E99B10D05.in --time-limit 3600 --warm-start-percentage-time 0.1 --m 20 --k 500 --statistical-filter --statistics statistics/grid-m5V100E99B10D05BnBSolverA.stat --solution solutions/grid-m5V100E99B10D05BnBSolverA.sol '
+++ ./bin/exec/BnBSolverExec --instance instances/grid-m5V100E99B10D05.in --time-limit 3600 --warm-start-percentage-time 0.1 --m 20 --k 500 --statistical-filter --statistics statistics/grid-m5V100E99B10D05BnBSolverA.stat --solution solutions/grid-m5V100E99B10D05BnBSolverA.sol
+Academic license - for non-commercial use only - expires 2022-08-11
+++ date
++ echo 'End time: Qua Ago 18 00:59:28 -03 2021'
+End time: Qua Ago 18 00:59:28 -03 2021
++ echo BnCSolverA
+BnCSolverA
++ command='./bin/exec/BnCSolverExec '
++ command+='--instance instances/grid-m5V100E99B10D05.in '
++ command+='--time-limit 3600 '
++ command+='--warm-start-percentage-time 0.1 '
++ command+='--m 20 '
++ command+='--k 500 '
++ command+='--statistical-filter '
++ command+='--statistics statistics/grid-m5V100E99B10D05BnCSolverA.stat '
++ command+='--solution solutions/grid-m5V100E99B10D05BnCSolverA.sol '
+++ date
++ echo 'Start time: Qua Ago 18 00:59:28 -03 2021'
+Start time: Qua Ago 18 00:59:28 -03 2021
++ eval './bin/exec/BnCSolverExec --instance instances/grid-m5V100E99B10D05.in --time-limit 3600 --warm-start-percentage-time 0.1 --m 20 --k 500 --statistical-filter --statistics statistics/grid-m5V100E99B10D05BnCSolverA.stat --solution solutions/grid-m5V100E99B10D05BnCSolverA.sol '
+++ ./bin/exec/BnCSolverExec --instance instances/grid-m5V100E99B10D05.in --time-limit 3600 --warm-start-percentage-time 0.1 --m 20 --k 500 --statistical-filter --statistics statistics/grid-m5V100E99B10D05BnCSolverA.stat --solution solutions/grid-m5V100E99B10D05BnCSolverA.sol
+Academic license - for non-commercial use only - expires 2022-08-11
+++ date
++ echo 'End time: Qua Ago 18 01:59:29 -03 2021'
+End time: Qua Ago 18 01:59:29 -03 2021
++ warmStartPercentageTime=0.0
++ echo warmStartPercentageTime=0.0
+warmStartPercentageTime=0.0
++ echo BnBSolverB
+BnBSolverB
++ command='./bin/exec/BnBSolverExec '
++ command+='--instance instances/grid-m5V100E99B10D05.in '
++ command+='--time-limit 3600 '
++ command+='--warm-start-percentage-time 0.0 '
++ command+='--m 20 '
++ command+='--k 500 '
++ command+='--statistical-filter '
++ command+='--statistics statistics/grid-m5V100E99B10D05BnBSolverB.stat '
++ command+='--solution solutions/grid-m5V100E99B10D05BnBSolverB.sol '
+++ date
++ echo 'Start time: Qua Ago 18 01:59:29 -03 2021'
+Start time: Qua Ago 18 01:59:29 -03 2021
++ eval './bin/exec/BnBSolverExec --instance instances/grid-m5V100E99B10D05.in --time-limit 3600 --warm-start-percentage-time 0.0 --m 20 --k 500 --statistical-filter --statistics statistics/grid-m5V100E99B10D05BnBSolverB.stat --solution solutions/grid-m5V100E99B10D05BnBSolverB.sol '
+++ ./bin/exec/BnBSolverExec --instance instances/grid-m5V100E99B10D05.in --time-limit 3600 --warm-start-percentage-time 0.0 --m 20 --k 500 --statistical-filter --statistics statistics/grid-m5V100E99B10D05BnBSolverB.stat --solution solutions/grid-m5V100E99B10D05BnBSolverB.sol
+Academic license - for non-commercial use only - expires 2022-08-11
+++ date
++ echo 'End time: Qua Ago 18 02:59:29 -03 2021'
+End time: Qua Ago 18 02:59:29 -03 2021
++ echo BnCSolverB
+BnCSolverB
++ command='./bin/exec/BnCSolverExec '
++ command+='--instance instances/grid-m5V100E99B10D05.in '
++ command+='--time-limit 3600 '
++ command+='--warm-start-percentage-time 0.0 '
++ command+='--m 20 '
++ command+='--k 500 '
++ command+='--statistical-filter '
++ command+='--statistics statistics/grid-m5V100E99B10D05BnCSolverB.stat '
++ command+='--solution solutions/grid-m5V100E99B10D05BnCSolverB.sol '
+++ date
++ echo 'Start time: Qua Ago 18 02:59:29 -03 2021'
+Start time: Qua Ago 18 02:59:29 -03 2021
++ eval './bin/exec/BnCSolverExec --instance instances/grid-m5V100E99B10D05.in --time-limit 3600 --warm-start-percentage-time 0.0 --m 20 --k 500 --statistical-filter --statistics statistics/grid-m5V100E99B10D05BnCSolverB.stat --solution solutions/grid-m5V100E99B10D05BnCSolverB.sol '
+++ ./bin/exec/BnCSolverExec --instance instances/grid-m5V100E99B10D05.in --time-limit 3600 --warm-start-percentage-time 0.0 --m 20 --k 500 --statistical-filter --statistics statistics/grid-m5V100E99B10D05BnCSolverB.stat --solution solutions/grid-m5V100E99B10D05BnCSolverB.sol
+Academic license - for non-commercial use only - expires 2022-08-11
+++ date
++ echo 'End time: Qua Ago 18 03:59:29 -03 2021'
+End time: Qua Ago 18 03:59:29 -03 2021
++ echo GRASPSolverA
+GRASPSolverA
++ command='./bin/exec/GRASPSolverExec '
++ command+='--instance instances/grid-m5V100E99B10D05.in '
++ command+='--time-limit 3600 '
++ command+='--m 20 '
++ command+='--k 500 '
++ command+='--statistical-filter '
++ command+='--statistics statistics/grid-m5V100E99B10D05GRASPA.stat '
++ command+='--solution solutions/grid-m5V100E99B10D05GRASPA.sol '
+++ date
++ echo 'Start time: Qua Ago 18 03:59:29 -03 2021'
+Start time: Qua Ago 18 03:59:29 -03 2021
++ eval './bin/exec/GRASPSolverExec --instance instances/grid-m5V100E99B10D05.in --time-limit 3600 --m 20 --k 500 --statistical-filter --statistics statistics/grid-m5V100E99B10D05GRASPA.stat --solution solutions/grid-m5V100E99B10D05GRASPA.sol '
+++ ./bin/exec/GRASPSolverExec --instance instances/grid-m5V100E99B10D05.in --time-limit 3600 --m 20 --k 500 --statistical-filter --statistics statistics/grid-m5V100E99B10D05GRASPA.stat --solution solutions/grid-m5V100E99B10D05GRASPA.sol
+-27237 3600
+++ date
++ echo 'End time: Qua Ago 18 04:59:29 -03 2021'
+End time: Qua Ago 18 04:59:29 -03 2021
++ echo GRASPSolverB
+GRASPSolverB
++ command='./bin/exec/GRASPSolverExec '
++ command+='--instance instances/grid-m5V100E99B10D05.in '
++ command+='--time-limit 3600 '
++ command+='--m 20 '
++ command+='--k 500 '
++ command+='--statistics statistics/grid-m5V100E99B10D05GRASPB.stat '
++ command+='--solution solutions/grid-m5V100E99B10D05GRASPB.sol '
+++ date
++ echo 'Start time: Qua Ago 18 04:59:29 -03 2021'
+Start time: Qua Ago 18 04:59:29 -03 2021
++ eval './bin/exec/GRASPSolverExec --instance instances/grid-m5V100E99B10D05.in --time-limit 3600 --m 20 --k 500 --statistics statistics/grid-m5V100E99B10D05GRASPB.stat --solution solutions/grid-m5V100E99B10D05GRASPB.sol '
+++ ./bin/exec/GRASPSolverExec --instance instances/grid-m5V100E99B10D05.in --time-limit 3600 --m 20 --k 500 --statistics statistics/grid-m5V100E99B10D05GRASPB.stat --solution solutions/grid-m5V100E99B10D05GRASPB.sol
+-27345 3600
+++ date
++ echo 'End time: Qua Ago 18 05:59:29 -03 2021'
+End time: Qua Ago 18 05:59:29 -03 2021
++ for D in 05 10
++ echo 'D: 10'
+D: 10
++ for VE in 25,24 49,48 100,99
++ set 25 24
++ V=25
++ E=24
++ echo 'V: 25'
+V: 25
++ echo 'E: 24'
+E: 24
++ instance=grid-m5V25E24B10D10
++ echo 'instance: grid-m5V25E24B10D10'
+instance: grid-m5V25E24B10D10
++ warmStartPercentageTime=0.1
++ echo warmStartPercentageTime=0.1
+warmStartPercentageTime=0.1
++ echo BnBSolverA
+BnBSolverA
++ command='./bin/exec/BnBSolverExec '
++ command+='--instance instances/grid-m5V25E24B10D10.in '
++ command+='--time-limit 3600 '
++ command+='--warm-start-percentage-time 0.1 '
++ command+='--m 20 '
++ command+='--k 500 '
++ command+='--statistical-filter '
++ command+='--statistics statistics/grid-m5V25E24B10D10BnBSolverA.stat '
++ command+='--solution solutions/grid-m5V25E24B10D10BnBSolverA.sol '
+++ date
++ echo 'Start time: Qua Ago 18 05:59:29 -03 2021'
+Start time: Qua Ago 18 05:59:29 -03 2021
++ eval './bin/exec/BnBSolverExec --instance instances/grid-m5V25E24B10D10.in --time-limit 3600 --warm-start-percentage-time 0.1 --m 20 --k 500 --statistical-filter --statistics statistics/grid-m5V25E24B10D10BnBSolverA.stat --solution solutions/grid-m5V25E24B10D10BnBSolverA.sol '
+++ ./bin/exec/BnBSolverExec --instance instances/grid-m5V25E24B10D10.in --time-limit 3600 --warm-start-percentage-time 0.1 --m 20 --k 500 --statistical-filter --statistics statistics/grid-m5V25E24B10D10BnBSolverA.stat --solution solutions/grid-m5V25E24B10D10BnBSolverA.sol
+Academic license - for non-commercial use only - expires 2022-08-11
+++ date
++ echo 'End time: Qua Ago 18 06:05:31 -03 2021'
+End time: Qua Ago 18 06:05:31 -03 2021
++ echo BnCSolverA
+BnCSolverA
++ command='./bin/exec/BnCSolverExec '
++ command+='--instance instances/grid-m5V25E24B10D10.in '
++ command+='--time-limit 3600 '
++ command+='--warm-start-percentage-time 0.1 '
++ command+='--m 20 '
++ command+='--k 500 '
++ command+='--statistical-filter '
++ command+='--statistics statistics/grid-m5V25E24B10D10BnCSolverA.stat '
++ command+='--solution solutions/grid-m5V25E24B10D10BnCSolverA.sol '
+++ date
++ echo 'Start time: Qua Ago 18 06:05:31 -03 2021'
+Start time: Qua Ago 18 06:05:31 -03 2021
++ eval './bin/exec/BnCSolverExec --instance instances/grid-m5V25E24B10D10.in --time-limit 3600 --warm-start-percentage-time 0.1 --m 20 --k 500 --statistical-filter --statistics statistics/grid-m5V25E24B10D10BnCSolverA.stat --solution solutions/grid-m5V25E24B10D10BnCSolverA.sol '
+++ ./bin/exec/BnCSolverExec --instance instances/grid-m5V25E24B10D10.in --time-limit 3600 --warm-start-percentage-time 0.1 --m 20 --k 500 --statistical-filter --statistics statistics/grid-m5V25E24B10D10BnCSolverA.stat --solution solutions/grid-m5V25E24B10D10BnCSolverA.sol
+Academic license - for non-commercial use only - expires 2022-08-11
+++ date
++ echo 'End time: Qua Ago 18 06:11:32 -03 2021'
+End time: Qua Ago 18 06:11:32 -03 2021
++ warmStartPercentageTime=0.0
++ echo warmStartPercentageTime=0.0
+warmStartPercentageTime=0.0
++ echo BnBSolverB
+BnBSolverB
++ command='./bin/exec/BnBSolverExec '
++ command+='--instance instances/grid-m5V25E24B10D10.in '
++ command+='--time-limit 3600 '
++ command+='--warm-start-percentage-time 0.0 '
++ command+='--m 20 '
++ command+='--k 500 '
++ command+='--statistical-filter '
++ command+='--statistics statistics/grid-m5V25E24B10D10BnBSolverB.stat '
++ command+='--solution solutions/grid-m5V25E24B10D10BnBSolverB.sol '
+++ date
++ echo 'Start time: Qua Ago 18 06:11:32 -03 2021'
+Start time: Qua Ago 18 06:11:32 -03 2021
++ eval './bin/exec/BnBSolverExec --instance instances/grid-m5V25E24B10D10.in --time-limit 3600 --warm-start-percentage-time 0.0 --m 20 --k 500 --statistical-filter --statistics statistics/grid-m5V25E24B10D10BnBSolverB.stat --solution solutions/grid-m5V25E24B10D10BnBSolverB.sol '
+++ ./bin/exec/BnBSolverExec --instance instances/grid-m5V25E24B10D10.in --time-limit 3600 --warm-start-percentage-time 0.0 --m 20 --k 500 --statistical-filter --statistics statistics/grid-m5V25E24B10D10BnBSolverB.stat --solution solutions/grid-m5V25E24B10D10BnBSolverB.sol
+Academic license - for non-commercial use only - expires 2022-08-11
+++ date
++ echo 'End time: Qua Ago 18 06:11:32 -03 2021'
+End time: Qua Ago 18 06:11:32 -03 2021
++ echo BnCSolverB
+BnCSolverB
++ command='./bin/exec/BnCSolverExec '
++ command+='--instance instances/grid-m5V25E24B10D10.in '
++ command+='--time-limit 3600 '
++ command+='--warm-start-percentage-time 0.0 '
++ command+='--m 20 '
++ command+='--k 500 '
++ command+='--statistical-filter '
++ command+='--statistics statistics/grid-m5V25E24B10D10BnCSolverB.stat '
++ command+='--solution solutions/grid-m5V25E24B10D10BnCSolverB.sol '
+++ date
++ echo 'Start time: Qua Ago 18 06:11:32 -03 2021'
+Start time: Qua Ago 18 06:11:32 -03 2021
++ eval './bin/exec/BnCSolverExec --instance instances/grid-m5V25E24B10D10.in --time-limit 3600 --warm-start-percentage-time 0.0 --m 20 --k 500 --statistical-filter --statistics statistics/grid-m5V25E24B10D10BnCSolverB.stat --solution solutions/grid-m5V25E24B10D10BnCSolverB.sol '
+++ ./bin/exec/BnCSolverExec --instance instances/grid-m5V25E24B10D10.in --time-limit 3600 --warm-start-percentage-time 0.0 --m 20 --k 500 --statistical-filter --statistics statistics/grid-m5V25E24B10D10BnCSolverB.stat --solution solutions/grid-m5V25E24B10D10BnCSolverB.sol
+Academic license - for non-commercial use only - expires 2022-08-11
+++ date
++ echo 'End time: Qua Ago 18 06:11:34 -03 2021'
+End time: Qua Ago 18 06:11:34 -03 2021
++ echo GRASPSolverA
+GRASPSolverA
++ command='./bin/exec/GRASPSolverExec '
++ command+='--instance instances/grid-m5V25E24B10D10.in '
++ command+='--time-limit 3600 '
++ command+='--m 20 '
++ command+='--k 500 '
++ command+='--statistical-filter '
++ command+='--statistics statistics/grid-m5V25E24B10D10GRASPA.stat '
++ command+='--solution solutions/grid-m5V25E24B10D10GRASPA.sol '
+++ date
++ echo 'Start time: Qua Ago 18 06:11:34 -03 2021'
+Start time: Qua Ago 18 06:11:34 -03 2021
++ eval './bin/exec/GRASPSolverExec --instance instances/grid-m5V25E24B10D10.in --time-limit 3600 --m 20 --k 500 --statistical-filter --statistics statistics/grid-m5V25E24B10D10GRASPA.stat --solution solutions/grid-m5V25E24B10D10GRASPA.sol '
+++ ./bin/exec/GRASPSolverExec --instance instances/grid-m5V25E24B10D10.in --time-limit 3600 --m 20 --k 500 --statistical-filter --statistics statistics/grid-m5V25E24B10D10GRASPA.stat --solution solutions/grid-m5V25E24B10D10GRASPA.sol
+-1934 3600
+++ date
++ echo 'End time: Qua Ago 18 07:11:34 -03 2021'
+End time: Qua Ago 18 07:11:34 -03 2021
++ echo GRASPSolverB
+GRASPSolverB
++ command='./bin/exec/GRASPSolverExec '
++ command+='--instance instances/grid-m5V25E24B10D10.in '
++ command+='--time-limit 3600 '
++ command+='--m 20 '
++ command+='--k 500 '
++ command+='--statistics statistics/grid-m5V25E24B10D10GRASPB.stat '
++ command+='--solution solutions/grid-m5V25E24B10D10GRASPB.sol '
+++ date
++ echo 'Start time: Qua Ago 18 07:11:34 -03 2021'
+Start time: Qua Ago 18 07:11:34 -03 2021
++ eval './bin/exec/GRASPSolverExec --instance instances/grid-m5V25E24B10D10.in --time-limit 3600 --m 20 --k 500 --statistics statistics/grid-m5V25E24B10D10GRASPB.stat --solution solutions/grid-m5V25E24B10D10GRASPB.sol '
+++ ./bin/exec/GRASPSolverExec --instance instances/grid-m5V25E24B10D10.in --time-limit 3600 --m 20 --k 500 --statistics statistics/grid-m5V25E24B10D10GRASPB.stat --solution solutions/grid-m5V25E24B10D10GRASPB.sol
+-1934 3600
+++ date
++ echo 'End time: Qua Ago 18 08:11:34 -03 2021'
+End time: Qua Ago 18 08:11:34 -03 2021
++ for VE in 25,24 49,48 100,99
++ set 49 48
++ V=49
++ E=48
++ echo 'V: 49'
+V: 49
++ echo 'E: 48'
+E: 48
++ instance=grid-m5V49E48B10D10
++ echo 'instance: grid-m5V49E48B10D10'
+instance: grid-m5V49E48B10D10
++ warmStartPercentageTime=0.1
++ echo warmStartPercentageTime=0.1
+warmStartPercentageTime=0.1
++ echo BnBSolverA
+BnBSolverA
++ command='./bin/exec/BnBSolverExec '
++ command+='--instance instances/grid-m5V49E48B10D10.in '
++ command+='--time-limit 3600 '
++ command+='--warm-start-percentage-time 0.1 '
++ command+='--m 20 '
++ command+='--k 500 '
++ command+='--statistical-filter '
++ command+='--statistics statistics/grid-m5V49E48B10D10BnBSolverA.stat '
++ command+='--solution solutions/grid-m5V49E48B10D10BnBSolverA.sol '
+++ date
++ echo 'Start time: Qua Ago 18 08:11:34 -03 2021'
+Start time: Qua Ago 18 08:11:34 -03 2021
++ eval './bin/exec/BnBSolverExec --instance instances/grid-m5V49E48B10D10.in --time-limit 3600 --warm-start-percentage-time 0.1 --m 20 --k 500 --statistical-filter --statistics statistics/grid-m5V49E48B10D10BnBSolverA.stat --solution solutions/grid-m5V49E48B10D10BnBSolverA.sol '
+++ ./bin/exec/BnBSolverExec --instance instances/grid-m5V49E48B10D10.in --time-limit 3600 --warm-start-percentage-time 0.1 --m 20 --k 500 --statistical-filter --statistics statistics/grid-m5V49E48B10D10BnBSolverA.stat --solution solutions/grid-m5V49E48B10D10BnBSolverA.sol
+Academic license - for non-commercial use only - expires 2022-08-11
+++ date
++ echo 'End time: Qua Ago 18 08:18:28 -03 2021'
+End time: Qua Ago 18 08:18:28 -03 2021
++ echo BnCSolverA
+BnCSolverA
++ command='./bin/exec/BnCSolverExec '
++ command+='--instance instances/grid-m5V49E48B10D10.in '
++ command+='--time-limit 3600 '
++ command+='--warm-start-percentage-time 0.1 '
++ command+='--m 20 '
++ command+='--k 500 '
++ command+='--statistical-filter '
++ command+='--statistics statistics/grid-m5V49E48B10D10BnCSolverA.stat '
++ command+='--solution solutions/grid-m5V49E48B10D10BnCSolverA.sol '
+++ date
++ echo 'Start time: Qua Ago 18 08:18:28 -03 2021'
+Start time: Qua Ago 18 08:18:28 -03 2021
++ eval './bin/exec/BnCSolverExec --instance instances/grid-m5V49E48B10D10.in --time-limit 3600 --warm-start-percentage-time 0.1 --m 20 --k 500 --statistical-filter --statistics statistics/grid-m5V49E48B10D10BnCSolverA.stat --solution solutions/grid-m5V49E48B10D10BnCSolverA.sol '
+++ ./bin/exec/BnCSolverExec --instance instances/grid-m5V49E48B10D10.in --time-limit 3600 --warm-start-percentage-time 0.1 --m 20 --k 500 --statistical-filter --statistics statistics/grid-m5V49E48B10D10BnCSolverA.stat --solution solutions/grid-m5V49E48B10D10BnCSolverA.sol
+Academic license - for non-commercial use only - expires 2022-08-11
+++ date
++ echo 'End time: Qua Ago 18 08:31:32 -03 2021'
+End time: Qua Ago 18 08:31:32 -03 2021
++ warmStartPercentageTime=0.0
++ echo warmStartPercentageTime=0.0
+warmStartPercentageTime=0.0
++ echo BnBSolverB
+BnBSolverB
++ command='./bin/exec/BnBSolverExec '
++ command+='--instance instances/grid-m5V49E48B10D10.in '
++ command+='--time-limit 3600 '
++ command+='--warm-start-percentage-time 0.0 '
++ command+='--m 20 '
++ command+='--k 500 '
++ command+='--statistical-filter '
++ command+='--statistics statistics/grid-m5V49E48B10D10BnBSolverB.stat '
++ command+='--solution solutions/grid-m5V49E48B10D10BnBSolverB.sol '
+++ date
++ echo 'Start time: Qua Ago 18 08:31:32 -03 2021'
+Start time: Qua Ago 18 08:31:32 -03 2021
++ eval './bin/exec/BnBSolverExec --instance instances/grid-m5V49E48B10D10.in --time-limit 3600 --warm-start-percentage-time 0.0 --m 20 --k 500 --statistical-filter --statistics statistics/grid-m5V49E48B10D10BnBSolverB.stat --solution solutions/grid-m5V49E48B10D10BnBSolverB.sol '
+++ ./bin/exec/BnBSolverExec --instance instances/grid-m5V49E48B10D10.in --time-limit 3600 --warm-start-percentage-time 0.0 --m 20 --k 500 --statistical-filter --statistics statistics/grid-m5V49E48B10D10BnBSolverB.stat --solution solutions/grid-m5V49E48B10D10BnBSolverB.sol
+Academic license - for non-commercial use only - expires 2022-08-11
+++ date
++ echo 'End time: Qua Ago 18 08:32:38 -03 2021'
+End time: Qua Ago 18 08:32:38 -03 2021
++ echo BnCSolverB
+BnCSolverB
++ command='./bin/exec/BnCSolverExec '
++ command+='--instance instances/grid-m5V49E48B10D10.in '
++ command+='--time-limit 3600 '
++ command+='--warm-start-percentage-time 0.0 '
++ command+='--m 20 '
++ command+='--k 500 '
++ command+='--statistical-filter '
++ command+='--statistics statistics/grid-m5V49E48B10D10BnCSolverB.stat '
++ command+='--solution solutions/grid-m5V49E48B10D10BnCSolverB.sol '
+++ date
++ echo 'Start time: Qua Ago 18 08:32:38 -03 2021'
+Start time: Qua Ago 18 08:32:38 -03 2021
++ eval './bin/exec/BnCSolverExec --instance instances/grid-m5V49E48B10D10.in --time-limit 3600 --warm-start-percentage-time 0.0 --m 20 --k 500 --statistical-filter --statistics statistics/grid-m5V49E48B10D10BnCSolverB.stat --solution solutions/grid-m5V49E48B10D10BnCSolverB.sol '
+++ ./bin/exec/BnCSolverExec --instance instances/grid-m5V49E48B10D10.in --time-limit 3600 --warm-start-percentage-time 0.0 --m 20 --k 500 --statistical-filter --statistics statistics/grid-m5V49E48B10D10BnCSolverB.stat --solution solutions/grid-m5V49E48B10D10BnCSolverB.sol
+Academic license - for non-commercial use only - expires 2022-08-11
+++ date
++ echo 'End time: Qua Ago 18 08:40:13 -03 2021'
+End time: Qua Ago 18 08:40:13 -03 2021
++ echo GRASPSolverA
+GRASPSolverA
++ command='./bin/exec/GRASPSolverExec '
++ command+='--instance instances/grid-m5V49E48B10D10.in '
++ command+='--time-limit 3600 '
++ command+='--m 20 '
++ command+='--k 500 '
++ command+='--statistical-filter '
++ command+='--statistics statistics/grid-m5V49E48B10D10GRASPA.stat '
++ command+='--solution solutions/grid-m5V49E48B10D10GRASPA.sol '
+++ date
++ echo 'Start time: Qua Ago 18 08:40:13 -03 2021'
+Start time: Qua Ago 18 08:40:13 -03 2021
++ eval './bin/exec/GRASPSolverExec --instance instances/grid-m5V49E48B10D10.in --time-limit 3600 --m 20 --k 500 --statistical-filter --statistics statistics/grid-m5V49E48B10D10GRASPA.stat --solution solutions/grid-m5V49E48B10D10GRASPA.sol '
+++ ./bin/exec/GRASPSolverExec --instance instances/grid-m5V49E48B10D10.in --time-limit 3600 --m 20 --k 500 --statistical-filter --statistics statistics/grid-m5V49E48B10D10GRASPA.stat --solution solutions/grid-m5V49E48B10D10GRASPA.sol
+-6860 3600
+++ date
++ echo 'End time: Qua Ago 18 09:40:13 -03 2021'
+End time: Qua Ago 18 09:40:13 -03 2021
++ echo GRASPSolverB
+GRASPSolverB
++ command='./bin/exec/GRASPSolverExec '
++ command+='--instance instances/grid-m5V49E48B10D10.in '
++ command+='--time-limit 3600 '
++ command+='--m 20 '
++ command+='--k 500 '
++ command+='--statistics statistics/grid-m5V49E48B10D10GRASPB.stat '
++ command+='--solution solutions/grid-m5V49E48B10D10GRASPB.sol '
+++ date
++ echo 'Start time: Qua Ago 18 09:40:13 -03 2021'
+Start time: Qua Ago 18 09:40:13 -03 2021
++ eval './bin/exec/GRASPSolverExec --instance instances/grid-m5V49E48B10D10.in --time-limit 3600 --m 20 --k 500 --statistics statistics/grid-m5V49E48B10D10GRASPB.stat --solution solutions/grid-m5V49E48B10D10GRASPB.sol '
+++ ./bin/exec/GRASPSolverExec --instance instances/grid-m5V49E48B10D10.in --time-limit 3600 --m 20 --k 500 --statistics statistics/grid-m5V49E48B10D10GRASPB.stat --solution solutions/grid-m5V49E48B10D10GRASPB.sol
+-6975 3600
+++ date
++ echo 'End time: Qua Ago 18 10:40:13 -03 2021'
+End time: Qua Ago 18 10:40:13 -03 2021
++ for VE in 25,24 49,48 100,99
++ set 100 99
++ V=100
++ E=99
++ echo 'V: 100'
+V: 100
++ echo 'E: 99'
+E: 99
++ instance=grid-m5V100E99B10D10
++ echo 'instance: grid-m5V100E99B10D10'
+instance: grid-m5V100E99B10D10
++ warmStartPercentageTime=0.1
++ echo warmStartPercentageTime=0.1
+warmStartPercentageTime=0.1
++ echo BnBSolverA
+BnBSolverA
++ command='./bin/exec/BnBSolverExec '
++ command+='--instance instances/grid-m5V100E99B10D10.in '
++ command+='--time-limit 3600 '
++ command+='--warm-start-percentage-time 0.1 '
++ command+='--m 20 '
++ command+='--k 500 '
++ command+='--statistical-filter '
++ command+='--statistics statistics/grid-m5V100E99B10D10BnBSolverA.stat '
++ command+='--solution solutions/grid-m5V100E99B10D10BnBSolverA.sol '
+++ date
++ echo 'Start time: Qua Ago 18 10:40:13 -03 2021'
+Start time: Qua Ago 18 10:40:13 -03 2021
++ eval './bin/exec/BnBSolverExec --instance instances/grid-m5V100E99B10D10.in --time-limit 3600 --warm-start-percentage-time 0.1 --m 20 --k 500 --statistical-filter --statistics statistics/grid-m5V100E99B10D10BnBSolverA.stat --solution solutions/grid-m5V100E99B10D10BnBSolverA.sol '
+++ ./bin/exec/BnBSolverExec --instance instances/grid-m5V100E99B10D10.in --time-limit 3600 --warm-start-percentage-time 0.1 --m 20 --k 500 --statistical-filter --statistics statistics/grid-m5V100E99B10D10BnBSolverA.stat --solution solutions/grid-m5V100E99B10D10BnBSolverA.sol
+Academic license - for non-commercial use only - expires 2022-08-11
+++ date
++ echo 'End time: Qua Ago 18 11:09:46 -03 2021'
+End time: Qua Ago 18 11:09:46 -03 2021
++ echo BnCSolverA
+BnCSolverA
++ command='./bin/exec/BnCSolverExec '
++ command+='--instance instances/grid-m5V100E99B10D10.in '
++ command+='--time-limit 3600 '
++ command+='--warm-start-percentage-time 0.1 '
++ command+='--m 20 '
++ command+='--k 500 '
++ command+='--statistical-filter '
++ command+='--statistics statistics/grid-m5V100E99B10D10BnCSolverA.stat '
++ command+='--solution solutions/grid-m5V100E99B10D10BnCSolverA.sol '
+++ date
++ echo 'Start time: Qua Ago 18 11:09:46 -03 2021'
+Start time: Qua Ago 18 11:09:46 -03 2021
++ eval './bin/exec/BnCSolverExec --instance instances/grid-m5V100E99B10D10.in --time-limit 3600 --warm-start-percentage-time 0.1 --m 20 --k 500 --statistical-filter --statistics statistics/grid-m5V100E99B10D10BnCSolverA.stat --solution solutions/grid-m5V100E99B10D10BnCSolverA.sol '
+++ ./bin/exec/BnCSolverExec --instance instances/grid-m5V100E99B10D10.in --time-limit 3600 --warm-start-percentage-time 0.1 --m 20 --k 500 --statistical-filter --statistics statistics/grid-m5V100E99B10D10BnCSolverA.stat --solution solutions/grid-m5V100E99B10D10BnCSolverA.sol
+Academic license - for non-commercial use only - expires 2022-08-11
+++ date
++ echo 'End time: Qua Ago 18 12:09:46 -03 2021'
+End time: Qua Ago 18 12:09:46 -03 2021
++ warmStartPercentageTime=0.0
++ echo warmStartPercentageTime=0.0
+warmStartPercentageTime=0.0
++ echo BnBSolverB
+BnBSolverB
++ command='./bin/exec/BnBSolverExec '
++ command+='--instance instances/grid-m5V100E99B10D10.in '
++ command+='--time-limit 3600 '
++ command+='--warm-start-percentage-time 0.0 '
++ command+='--m 20 '
++ command+='--k 500 '
++ command+='--statistical-filter '
++ command+='--statistics statistics/grid-m5V100E99B10D10BnBSolverB.stat '
++ command+='--solution solutions/grid-m5V100E99B10D10BnBSolverB.sol '
+++ date
++ echo 'Start time: Qua Ago 18 12:09:46 -03 2021'
+Start time: Qua Ago 18 12:09:46 -03 2021
++ eval './bin/exec/BnBSolverExec --instance instances/grid-m5V100E99B10D10.in --time-limit 3600 --warm-start-percentage-time 0.0 --m 20 --k 500 --statistical-filter --statistics statistics/grid-m5V100E99B10D10BnBSolverB.stat --solution solutions/grid-m5V100E99B10D10BnBSolverB.sol '
+++ ./bin/exec/BnBSolverExec --instance instances/grid-m5V100E99B10D10.in --time-limit 3600 --warm-start-percentage-time 0.0 --m 20 --k 500 --statistical-filter --statistics statistics/grid-m5V100E99B10D10BnBSolverB.stat --solution solutions/grid-m5V100E99B10D10BnBSolverB.sol
+Academic license - for non-commercial use only - expires 2022-08-11
+++ date
++ echo 'End time: Qua Ago 18 12:57:09 -03 2021'
+End time: Qua Ago 18 12:57:09 -03 2021
++ echo BnCSolverB
+BnCSolverB
++ command='./bin/exec/BnCSolverExec '
++ command+='--instance instances/grid-m5V100E99B10D10.in '
++ command+='--time-limit 3600 '
++ command+='--warm-start-percentage-time 0.0 '
++ command+='--m 20 '
++ command+='--k 500 '
++ command+='--statistical-filter '
++ command+='--statistics statistics/grid-m5V100E99B10D10BnCSolverB.stat '
++ command+='--solution solutions/grid-m5V100E99B10D10BnCSolverB.sol '
+++ date
++ echo 'Start time: Qua Ago 18 12:57:09 -03 2021'
+Start time: Qua Ago 18 12:57:09 -03 2021
++ eval './bin/exec/BnCSolverExec --instance instances/grid-m5V100E99B10D10.in --time-limit 3600 --warm-start-percentage-time 0.0 --m 20 --k 500 --statistical-filter --statistics statistics/grid-m5V100E99B10D10BnCSolverB.stat --solution solutions/grid-m5V100E99B10D10BnCSolverB.sol '
+++ ./bin/exec/BnCSolverExec --instance instances/grid-m5V100E99B10D10.in --time-limit 3600 --warm-start-percentage-time 0.0 --m 20 --k 500 --statistical-filter --statistics statistics/grid-m5V100E99B10D10BnCSolverB.stat --solution solutions/grid-m5V100E99B10D10BnCSolverB.sol
+Academic license - for non-commercial use only - expires 2022-08-11
+++ date
++ echo 'End time: Qua Ago 18 13:57:09 -03 2021'
+End time: Qua Ago 18 13:57:09 -03 2021
++ echo GRASPSolverA
+GRASPSolverA
++ command='./bin/exec/GRASPSolverExec '
++ command+='--instance instances/grid-m5V100E99B10D10.in '
++ command+='--time-limit 3600 '
++ command+='--m 20 '
++ command+='--k 500 '
++ command+='--statistical-filter '
++ command+='--statistics statistics/grid-m5V100E99B10D10GRASPA.stat '
++ command+='--solution solutions/grid-m5V100E99B10D10GRASPA.sol '
+++ date
++ echo 'Start time: Qua Ago 18 13:57:09 -03 2021'
+Start time: Qua Ago 18 13:57:09 -03 2021
++ eval './bin/exec/GRASPSolverExec --instance instances/grid-m5V100E99B10D10.in --time-limit 3600 --m 20 --k 500 --statistical-filter --statistics statistics/grid-m5V100E99B10D10GRASPA.stat --solution solutions/grid-m5V100E99B10D10GRASPA.sol '
+++ ./bin/exec/GRASPSolverExec --instance instances/grid-m5V100E99B10D10.in --time-limit 3600 --m 20 --k 500 --statistical-filter --statistics statistics/grid-m5V100E99B10D10GRASPA.stat --solution solutions/grid-m5V100E99B10D10GRASPA.sol
+-28999 3600
+++ date
++ echo 'End time: Qua Ago 18 14:57:10 -03 2021'
+End time: Qua Ago 18 14:57:10 -03 2021
++ echo GRASPSolverB
+GRASPSolverB
++ command='./bin/exec/GRASPSolverExec '
++ command+='--instance instances/grid-m5V100E99B10D10.in '
++ command+='--time-limit 3600 '
++ command+='--m 20 '
++ command+='--k 500 '
++ command+='--statistics statistics/grid-m5V100E99B10D10GRASPB.stat '
++ command+='--solution solutions/grid-m5V100E99B10D10GRASPB.sol '
+++ date
++ echo 'Start time: Qua Ago 18 14:57:10 -03 2021'
+Start time: Qua Ago 18 14:57:10 -03 2021
++ eval './bin/exec/GRASPSolverExec --instance instances/grid-m5V100E99B10D10.in --time-limit 3600 --m 20 --k 500 --statistics statistics/grid-m5V100E99B10D10GRASPB.stat --solution solutions/grid-m5V100E99B10D10GRASPB.sol '
+++ ./bin/exec/GRASPSolverExec --instance instances/grid-m5V100E99B10D10.in --time-limit 3600 --m 20 --k 500 --statistics statistics/grid-m5V100E99B10D10GRASPB.stat --solution solutions/grid-m5V100E99B10D10GRASPB.sol
+-29064 3600
+++ date
++ echo 'End time: Qua Ago 18 15:57:10 -03 2021'
+End time: Qua Ago 18 15:57:10 -03 2021
++ for T in grid random
++ echo 'T: random'
+T: random
++ for m in 5
++ echo 'm: 5'
+m: 5
++ for B in 05 10
++ echo 'B: 05'
+B: 05
++ for D in 05 10
++ echo 'D: 05'
+D: 05
++ for VE in 25,24 49,48 100,99
++ set 25 24
++ V=25
++ E=24
++ echo 'V: 25'
+V: 25
++ echo 'E: 24'
+E: 24
++ instance=random-m5V25E24B05D05
++ echo 'instance: random-m5V25E24B05D05'
+instance: random-m5V25E24B05D05
++ warmStartPercentageTime=0.1
++ echo warmStartPercentageTime=0.1
+warmStartPercentageTime=0.1
++ echo BnBSolverA
+BnBSolverA
++ command='./bin/exec/BnBSolverExec '
++ command+='--instance instances/random-m5V25E24B05D05.in '
++ command+='--time-limit 3600 '
++ command+='--warm-start-percentage-time 0.1 '
++ command+='--m 20 '
++ command+='--k 500 '
++ command+='--statistical-filter '
++ command+='--statistics statistics/random-m5V25E24B05D05BnBSolverA.stat '
++ command+='--solution solutions/random-m5V25E24B05D05BnBSolverA.sol '
+++ date
++ echo 'Start time: Qua Ago 18 15:57:10 -03 2021'
+Start time: Qua Ago 18 15:57:10 -03 2021
++ eval './bin/exec/BnBSolverExec --instance instances/random-m5V25E24B05D05.in --time-limit 3600 --warm-start-percentage-time 0.1 --m 20 --k 500 --statistical-filter --statistics statistics/random-m5V25E24B05D05BnBSolverA.stat --solution solutions/random-m5V25E24B05D05BnBSolverA.sol '
+++ ./bin/exec/BnBSolverExec --instance instances/random-m5V25E24B05D05.in --time-limit 3600 --warm-start-percentage-time 0.1 --m 20 --k 500 --statistical-filter --statistics statistics/random-m5V25E24B05D05BnBSolverA.stat --solution solutions/random-m5V25E24B05D05BnBSolverA.sol
+Academic license - for non-commercial use only - expires 2022-08-11
+++ date
++ echo 'End time: Qua Ago 18 16:03:33 -03 2021'
+End time: Qua Ago 18 16:03:33 -03 2021
++ echo BnCSolverA
+BnCSolverA
++ command='./bin/exec/BnCSolverExec '
++ command+='--instance instances/random-m5V25E24B05D05.in '
++ command+='--time-limit 3600 '
++ command+='--warm-start-percentage-time 0.1 '
++ command+='--m 20 '
++ command+='--k 500 '
++ command+='--statistical-filter '
++ command+='--statistics statistics/random-m5V25E24B05D05BnCSolverA.stat '
++ command+='--solution solutions/random-m5V25E24B05D05BnCSolverA.sol '
+++ date
++ echo 'Start time: Qua Ago 18 16:03:33 -03 2021'
+Start time: Qua Ago 18 16:03:33 -03 2021
++ eval './bin/exec/BnCSolverExec --instance instances/random-m5V25E24B05D05.in --time-limit 3600 --warm-start-percentage-time 0.1 --m 20 --k 500 --statistical-filter --statistics statistics/random-m5V25E24B05D05BnCSolverA.stat --solution solutions/random-m5V25E24B05D05BnCSolverA.sol '
+++ ./bin/exec/BnCSolverExec --instance instances/random-m5V25E24B05D05.in --time-limit 3600 --warm-start-percentage-time 0.1 --m 20 --k 500 --statistical-filter --statistics statistics/random-m5V25E24B05D05BnCSolverA.stat --solution solutions/random-m5V25E24B05D05BnCSolverA.sol
+Academic license - for non-commercial use only - expires 2022-08-11
+++ date
++ echo 'End time: Qua Ago 18 16:09:45 -03 2021'
+End time: Qua Ago 18 16:09:45 -03 2021
++ warmStartPercentageTime=0.0
++ echo warmStartPercentageTime=0.0
+warmStartPercentageTime=0.0
++ echo BnBSolverB
+BnBSolverB
++ command='./bin/exec/BnBSolverExec '
++ command+='--instance instances/random-m5V25E24B05D05.in '
++ command+='--time-limit 3600 '
++ command+='--warm-start-percentage-time 0.0 '
++ command+='--m 20 '
++ command+='--k 500 '
++ command+='--statistical-filter '
++ command+='--statistics statistics/random-m5V25E24B05D05BnBSolverB.stat '
++ command+='--solution solutions/random-m5V25E24B05D05BnBSolverB.sol '
+++ date
++ echo 'Start time: Qua Ago 18 16:09:45 -03 2021'
+Start time: Qua Ago 18 16:09:45 -03 2021
++ eval './bin/exec/BnBSolverExec --instance instances/random-m5V25E24B05D05.in --time-limit 3600 --warm-start-percentage-time 0.0 --m 20 --k 500 --statistical-filter --statistics statistics/random-m5V25E24B05D05BnBSolverB.stat --solution solutions/random-m5V25E24B05D05BnBSolverB.sol '
+++ ./bin/exec/BnBSolverExec --instance instances/random-m5V25E24B05D05.in --time-limit 3600 --warm-start-percentage-time 0.0 --m 20 --k 500 --statistical-filter --statistics statistics/random-m5V25E24B05D05BnBSolverB.stat --solution solutions/random-m5V25E24B05D05BnBSolverB.sol
+Academic license - for non-commercial use only - expires 2022-08-11
+++ date
++ echo 'End time: Qua Ago 18 16:10:03 -03 2021'
+End time: Qua Ago 18 16:10:03 -03 2021
++ echo BnCSolverB
+BnCSolverB
++ command='./bin/exec/BnCSolverExec '
++ command+='--instance instances/random-m5V25E24B05D05.in '
++ command+='--time-limit 3600 '
++ command+='--warm-start-percentage-time 0.0 '
++ command+='--m 20 '
++ command+='--k 500 '
++ command+='--statistical-filter '
++ command+='--statistics statistics/random-m5V25E24B05D05BnCSolverB.stat '
++ command+='--solution solutions/random-m5V25E24B05D05BnCSolverB.sol '
+++ date
++ echo 'Start time: Qua Ago 18 16:10:03 -03 2021'
+Start time: Qua Ago 18 16:10:03 -03 2021
++ eval './bin/exec/BnCSolverExec --instance instances/random-m5V25E24B05D05.in --time-limit 3600 --warm-start-percentage-time 0.0 --m 20 --k 500 --statistical-filter --statistics statistics/random-m5V25E24B05D05BnCSolverB.stat --solution solutions/random-m5V25E24B05D05BnCSolverB.sol '
+++ ./bin/exec/BnCSolverExec --instance instances/random-m5V25E24B05D05.in --time-limit 3600 --warm-start-percentage-time 0.0 --m 20 --k 500 --statistical-filter --statistics statistics/random-m5V25E24B05D05BnCSolverB.stat --solution solutions/random-m5V25E24B05D05BnCSolverB.sol
+Academic license - for non-commercial use only - expires 2022-08-11
+++ date
++ echo 'End time: Qua Ago 18 16:10:20 -03 2021'
+End time: Qua Ago 18 16:10:20 -03 2021
++ echo GRASPSolverA
+GRASPSolverA
++ command='./bin/exec/GRASPSolverExec '
++ command+='--instance instances/random-m5V25E24B05D05.in '
++ command+='--time-limit 3600 '
++ command+='--m 20 '
++ command+='--k 500 '
++ command+='--statistical-filter '
++ command+='--statistics statistics/random-m5V25E24B05D05GRASPA.stat '
++ command+='--solution solutions/random-m5V25E24B05D05GRASPA.sol '
+++ date
++ echo 'Start time: Qua Ago 18 16:10:20 -03 2021'
+Start time: Qua Ago 18 16:10:20 -03 2021
++ eval './bin/exec/GRASPSolverExec --instance instances/random-m5V25E24B05D05.in --time-limit 3600 --m 20 --k 500 --statistical-filter --statistics statistics/random-m5V25E24B05D05GRASPA.stat --solution solutions/random-m5V25E24B05D05GRASPA.sol '
+++ ./bin/exec/GRASPSolverExec --instance instances/random-m5V25E24B05D05.in --time-limit 3600 --m 20 --k 500 --statistical-filter --statistics statistics/random-m5V25E24B05D05GRASPA.stat --solution solutions/random-m5V25E24B05D05GRASPA.sol
+-2099 3600
+++ date
++ echo 'End time: Qua Ago 18 17:10:20 -03 2021'
+End time: Qua Ago 18 17:10:20 -03 2021
++ echo GRASPSolverB
+GRASPSolverB
++ command='./bin/exec/GRASPSolverExec '
++ command+='--instance instances/random-m5V25E24B05D05.in '
++ command+='--time-limit 3600 '
++ command+='--m 20 '
++ command+='--k 500 '
++ command+='--statistics statistics/random-m5V25E24B05D05GRASPB.stat '
++ command+='--solution solutions/random-m5V25E24B05D05GRASPB.sol '
+++ date
++ echo 'Start time: Qua Ago 18 17:10:20 -03 2021'
+Start time: Qua Ago 18 17:10:20 -03 2021
++ eval './bin/exec/GRASPSolverExec --instance instances/random-m5V25E24B05D05.in --time-limit 3600 --m 20 --k 500 --statistics statistics/random-m5V25E24B05D05GRASPB.stat --solution solutions/random-m5V25E24B05D05GRASPB.sol '
+++ ./bin/exec/GRASPSolverExec --instance instances/random-m5V25E24B05D05.in --time-limit 3600 --m 20 --k 500 --statistics statistics/random-m5V25E24B05D05GRASPB.stat --solution solutions/random-m5V25E24B05D05GRASPB.sol
+-2099 3600
+++ date
++ echo 'End time: Qua Ago 18 18:10:20 -03 2021'
+End time: Qua Ago 18 18:10:20 -03 2021
++ for VE in 25,24 49,48 100,99
++ set 49 48
++ V=49
++ E=48
++ echo 'V: 49'
+V: 49
++ echo 'E: 48'
+E: 48
++ instance=random-m5V49E48B05D05
++ echo 'instance: random-m5V49E48B05D05'
+instance: random-m5V49E48B05D05
++ warmStartPercentageTime=0.1
++ echo warmStartPercentageTime=0.1
+warmStartPercentageTime=0.1
++ echo BnBSolverA
+BnBSolverA
++ command='./bin/exec/BnBSolverExec '
++ command+='--instance instances/random-m5V49E48B05D05.in '
++ command+='--time-limit 3600 '
++ command+='--warm-start-percentage-time 0.1 '
++ command+='--m 20 '
++ command+='--k 500 '
++ command+='--statistical-filter '
++ command+='--statistics statistics/random-m5V49E48B05D05BnBSolverA.stat '
++ command+='--solution solutions/random-m5V49E48B05D05BnBSolverA.sol '
+++ date
++ echo 'Start time: Qua Ago 18 18:10:20 -03 2021'
+Start time: Qua Ago 18 18:10:20 -03 2021
++ eval './bin/exec/BnBSolverExec --instance instances/random-m5V49E48B05D05.in --time-limit 3600 --warm-start-percentage-time 0.1 --m 20 --k 500 --statistical-filter --statistics statistics/random-m5V49E48B05D05BnBSolverA.stat --solution solutions/random-m5V49E48B05D05BnBSolverA.sol '
+++ ./bin/exec/BnBSolverExec --instance instances/random-m5V49E48B05D05.in --time-limit 3600 --warm-start-percentage-time 0.1 --m 20 --k 500 --statistical-filter --statistics statistics/random-m5V49E48B05D05BnBSolverA.stat --solution solutions/random-m5V49E48B05D05BnBSolverA.sol
+Academic license - for non-commercial use only - expires 2022-08-11
+++ date
++ echo 'End time: Qua Ago 18 18:19:02 -03 2021'
+End time: Qua Ago 18 18:19:02 -03 2021
++ echo BnCSolverA
+BnCSolverA
++ command='./bin/exec/BnCSolverExec '
++ command+='--instance instances/random-m5V49E48B05D05.in '
++ command+='--time-limit 3600 '
++ command+='--warm-start-percentage-time 0.1 '
++ command+='--m 20 '
++ command+='--k 500 '
++ command+='--statistical-filter '
++ command+='--statistics statistics/random-m5V49E48B05D05BnCSolverA.stat '
++ command+='--solution solutions/random-m5V49E48B05D05BnCSolverA.sol '
+++ date
++ echo 'Start time: Qua Ago 18 18:19:02 -03 2021'
+Start time: Qua Ago 18 18:19:02 -03 2021
++ eval './bin/exec/BnCSolverExec --instance instances/random-m5V49E48B05D05.in --time-limit 3600 --warm-start-percentage-time 0.1 --m 20 --k 500 --statistical-filter --statistics statistics/random-m5V49E48B05D05BnCSolverA.stat --solution solutions/random-m5V49E48B05D05BnCSolverA.sol '
+++ ./bin/exec/BnCSolverExec --instance instances/random-m5V49E48B05D05.in --time-limit 3600 --warm-start-percentage-time 0.1 --m 20 --k 500 --statistical-filter --statistics statistics/random-m5V49E48B05D05BnCSolverA.stat --solution solutions/random-m5V49E48B05D05BnCSolverA.sol
+Academic license - for non-commercial use only - expires 2022-08-11
+++ date
++ echo 'End time: Qua Ago 18 19:19:02 -03 2021'
+End time: Qua Ago 18 19:19:02 -03 2021
++ warmStartPercentageTime=0.0
++ echo warmStartPercentageTime=0.0
+warmStartPercentageTime=0.0
++ echo BnBSolverB
+BnBSolverB
++ command='./bin/exec/BnBSolverExec '
++ command+='--instance instances/random-m5V49E48B05D05.in '
++ command+='--time-limit 3600 '
++ command+='--warm-start-percentage-time 0.0 '
++ command+='--m 20 '
++ command+='--k 500 '
++ command+='--statistical-filter '
++ command+='--statistics statistics/random-m5V49E48B05D05BnBSolverB.stat '
++ command+='--solution solutions/random-m5V49E48B05D05BnBSolverB.sol '
+++ date
++ echo 'Start time: Qua Ago 18 19:19:02 -03 2021'
+Start time: Qua Ago 18 19:19:02 -03 2021
++ eval './bin/exec/BnBSolverExec --instance instances/random-m5V49E48B05D05.in --time-limit 3600 --warm-start-percentage-time 0.0 --m 20 --k 500 --statistical-filter --statistics statistics/random-m5V49E48B05D05BnBSolverB.stat --solution solutions/random-m5V49E48B05D05BnBSolverB.sol '
+++ ./bin/exec/BnBSolverExec --instance instances/random-m5V49E48B05D05.in --time-limit 3600 --warm-start-percentage-time 0.0 --m 20 --k 500 --statistical-filter --statistics statistics/random-m5V49E48B05D05BnBSolverB.stat --solution solutions/random-m5V49E48B05D05BnBSolverB.sol
+Academic license - for non-commercial use only - expires 2022-08-11
+++ date
++ echo 'End time: Qua Ago 18 19:26:19 -03 2021'
+End time: Qua Ago 18 19:26:19 -03 2021
++ echo BnCSolverB
+BnCSolverB
++ command='./bin/exec/BnCSolverExec '
++ command+='--instance instances/random-m5V49E48B05D05.in '
++ command+='--time-limit 3600 '
++ command+='--warm-start-percentage-time 0.0 '
++ command+='--m 20 '
++ command+='--k 500 '
++ command+='--statistical-filter '
++ command+='--statistics statistics/random-m5V49E48B05D05BnCSolverB.stat '
++ command+='--solution solutions/random-m5V49E48B05D05BnCSolverB.sol '
+++ date
++ echo 'Start time: Qua Ago 18 19:26:19 -03 2021'
+Start time: Qua Ago 18 19:26:19 -03 2021
++ eval './bin/exec/BnCSolverExec --instance instances/random-m5V49E48B05D05.in --time-limit 3600 --warm-start-percentage-time 0.0 --m 20 --k 500 --statistical-filter --statistics statistics/random-m5V49E48B05D05BnCSolverB.stat --solution solutions/random-m5V49E48B05D05BnCSolverB.sol '
+++ ./bin/exec/BnCSolverExec --instance instances/random-m5V49E48B05D05.in --time-limit 3600 --warm-start-percentage-time 0.0 --m 20 --k 500 --statistical-filter --statistics statistics/random-m5V49E48B05D05BnCSolverB.stat --solution solutions/random-m5V49E48B05D05BnCSolverB.sol
+Academic license - for non-commercial use only - expires 2022-08-11
+++ date
++ echo 'End time: Qua Ago 18 20:26:19 -03 2021'
+End time: Qua Ago 18 20:26:19 -03 2021
++ echo GRASPSolverA
+GRASPSolverA
++ command='./bin/exec/GRASPSolverExec '
++ command+='--instance instances/random-m5V49E48B05D05.in '
++ command+='--time-limit 3600 '
++ command+='--m 20 '
++ command+='--k 500 '
++ command+='--statistical-filter '
++ command+='--statistics statistics/random-m5V49E48B05D05GRASPA.stat '
++ command+='--solution solutions/random-m5V49E48B05D05GRASPA.sol '
+++ date
++ echo 'Start time: Qua Ago 18 20:26:19 -03 2021'
+Start time: Qua Ago 18 20:26:19 -03 2021
++ eval './bin/exec/GRASPSolverExec --instance instances/random-m5V49E48B05D05.in --time-limit 3600 --m 20 --k 500 --statistical-filter --statistics statistics/random-m5V49E48B05D05GRASPA.stat --solution solutions/random-m5V49E48B05D05GRASPA.sol '
+++ ./bin/exec/GRASPSolverExec --instance instances/random-m5V49E48B05D05.in --time-limit 3600 --m 20 --k 500 --statistical-filter --statistics statistics/random-m5V49E48B05D05GRASPA.stat --solution solutions/random-m5V49E48B05D05GRASPA.sol
+-7129 3600
+++ date
++ echo 'End time: Qua Ago 18 21:26:19 -03 2021'
+End time: Qua Ago 18 21:26:19 -03 2021
++ echo GRASPSolverB
+GRASPSolverB
++ command='./bin/exec/GRASPSolverExec '
++ command+='--instance instances/random-m5V49E48B05D05.in '
++ command+='--time-limit 3600 '
++ command+='--m 20 '
++ command+='--k 500 '
++ command+='--statistics statistics/random-m5V49E48B05D05GRASPB.stat '
++ command+='--solution solutions/random-m5V49E48B05D05GRASPB.sol '
+++ date
++ echo 'Start time: Qua Ago 18 21:26:19 -03 2021'
+Start time: Qua Ago 18 21:26:19 -03 2021
++ eval './bin/exec/GRASPSolverExec --instance instances/random-m5V49E48B05D05.in --time-limit 3600 --m 20 --k 500 --statistics statistics/random-m5V49E48B05D05GRASPB.stat --solution solutions/random-m5V49E48B05D05GRASPB.sol '
+++ ./bin/exec/GRASPSolverExec --instance instances/random-m5V49E48B05D05.in --time-limit 3600 --m 20 --k 500 --statistics statistics/random-m5V49E48B05D05GRASPB.stat --solution solutions/random-m5V49E48B05D05GRASPB.sol
+-7129 3600
+++ date
++ echo 'End time: Qua Ago 18 22:26:19 -03 2021'
+End time: Qua Ago 18 22:26:19 -03 2021
++ for VE in 25,24 49,48 100,99
++ set 100 99
++ V=100
++ E=99
++ echo 'V: 100'
+V: 100
++ echo 'E: 99'
+E: 99
++ instance=random-m5V100E99B05D05
++ echo 'instance: random-m5V100E99B05D05'
+instance: random-m5V100E99B05D05
++ warmStartPercentageTime=0.1
++ echo warmStartPercentageTime=0.1
+warmStartPercentageTime=0.1
++ echo BnBSolverA
+BnBSolverA
++ command='./bin/exec/BnBSolverExec '
++ command+='--instance instances/random-m5V100E99B05D05.in '
++ command+='--time-limit 3600 '
++ command+='--warm-start-percentage-time 0.1 '
++ command+='--m 20 '
++ command+='--k 500 '
++ command+='--statistical-filter '
++ command+='--statistics statistics/random-m5V100E99B05D05BnBSolverA.stat '
++ command+='--solution solutions/random-m5V100E99B05D05BnBSolverA.sol '
+++ date
++ echo 'Start time: Qua Ago 18 22:26:19 -03 2021'
+Start time: Qua Ago 18 22:26:19 -03 2021
++ eval './bin/exec/BnBSolverExec --instance instances/random-m5V100E99B05D05.in --time-limit 3600 --warm-start-percentage-time 0.1 --m 20 --k 500 --statistical-filter --statistics statistics/random-m5V100E99B05D05BnBSolverA.stat --solution solutions/random-m5V100E99B05D05BnBSolverA.sol '
+++ ./bin/exec/BnBSolverExec --instance instances/random-m5V100E99B05D05.in --time-limit 3600 --warm-start-percentage-time 0.1 --m 20 --k 500 --statistical-filter --statistics statistics/random-m5V100E99B05D05BnBSolverA.stat --solution solutions/random-m5V100E99B05D05BnBSolverA.sol
+Academic license - for non-commercial use only - expires 2022-08-11
+++ date
++ echo 'End time: Qua Ago 18 23:26:20 -03 2021'
+End time: Qua Ago 18 23:26:20 -03 2021
++ echo BnCSolverA
+BnCSolverA
++ command='./bin/exec/BnCSolverExec '
++ command+='--instance instances/random-m5V100E99B05D05.in '
++ command+='--time-limit 3600 '
++ command+='--warm-start-percentage-time 0.1 '
++ command+='--m 20 '
++ command+='--k 500 '
++ command+='--statistical-filter '
++ command+='--statistics statistics/random-m5V100E99B05D05BnCSolverA.stat '
++ command+='--solution solutions/random-m5V100E99B05D05BnCSolverA.sol '
+++ date
++ echo 'Start time: Qua Ago 18 23:26:20 -03 2021'
+Start time: Qua Ago 18 23:26:20 -03 2021
++ eval './bin/exec/BnCSolverExec --instance instances/random-m5V100E99B05D05.in --time-limit 3600 --warm-start-percentage-time 0.1 --m 20 --k 500 --statistical-filter --statistics statistics/random-m5V100E99B05D05BnCSolverA.stat --solution solutions/random-m5V100E99B05D05BnCSolverA.sol '
+++ ./bin/exec/BnCSolverExec --instance instances/random-m5V100E99B05D05.in --time-limit 3600 --warm-start-percentage-time 0.1 --m 20 --k 500 --statistical-filter --statistics statistics/random-m5V100E99B05D05BnCSolverA.stat --solution solutions/random-m5V100E99B05D05BnCSolverA.sol
+Academic license - for non-commercial use only - expires 2022-08-11
+++ date
++ echo 'End time: Qui Ago 19 00:26:20 -03 2021'
+End time: Qui Ago 19 00:26:20 -03 2021
++ warmStartPercentageTime=0.0
++ echo warmStartPercentageTime=0.0
+warmStartPercentageTime=0.0
++ echo BnBSolverB
+BnBSolverB
++ command='./bin/exec/BnBSolverExec '
++ command+='--instance instances/random-m5V100E99B05D05.in '
++ command+='--time-limit 3600 '
++ command+='--warm-start-percentage-time 0.0 '
++ command+='--m 20 '
++ command+='--k 500 '
++ command+='--statistical-filter '
++ command+='--statistics statistics/random-m5V100E99B05D05BnBSolverB.stat '
++ command+='--solution solutions/random-m5V100E99B05D05BnBSolverB.sol '
+++ date
++ echo 'Start time: Qui Ago 19 00:26:20 -03 2021'
+Start time: Qui Ago 19 00:26:20 -03 2021
++ eval './bin/exec/BnBSolverExec --instance instances/random-m5V100E99B05D05.in --time-limit 3600 --warm-start-percentage-time 0.0 --m 20 --k 500 --statistical-filter --statistics statistics/random-m5V100E99B05D05BnBSolverB.stat --solution solutions/random-m5V100E99B05D05BnBSolverB.sol '
+++ ./bin/exec/BnBSolverExec --instance instances/random-m5V100E99B05D05.in --time-limit 3600 --warm-start-percentage-time 0.0 --m 20 --k 500 --statistical-filter --statistics statistics/random-m5V100E99B05D05BnBSolverB.stat --solution solutions/random-m5V100E99B05D05BnBSolverB.sol
+Academic license - for non-commercial use only - expires 2022-08-11
+++ date
++ echo 'End time: Qui Ago 19 01:26:20 -03 2021'
+End time: Qui Ago 19 01:26:20 -03 2021
++ echo BnCSolverB
+BnCSolverB
++ command='./bin/exec/BnCSolverExec '
++ command+='--instance instances/random-m5V100E99B05D05.in '
++ command+='--time-limit 3600 '
++ command+='--warm-start-percentage-time 0.0 '
++ command+='--m 20 '
++ command+='--k 500 '
++ command+='--statistical-filter '
++ command+='--statistics statistics/random-m5V100E99B05D05BnCSolverB.stat '
++ command+='--solution solutions/random-m5V100E99B05D05BnCSolverB.sol '
+++ date
++ echo 'Start time: Qui Ago 19 01:26:20 -03 2021'
+Start time: Qui Ago 19 01:26:20 -03 2021
++ eval './bin/exec/BnCSolverExec --instance instances/random-m5V100E99B05D05.in --time-limit 3600 --warm-start-percentage-time 0.0 --m 20 --k 500 --statistical-filter --statistics statistics/random-m5V100E99B05D05BnCSolverB.stat --solution solutions/random-m5V100E99B05D05BnCSolverB.sol '
+++ ./bin/exec/BnCSolverExec --instance instances/random-m5V100E99B05D05.in --time-limit 3600 --warm-start-percentage-time 0.0 --m 20 --k 500 --statistical-filter --statistics statistics/random-m5V100E99B05D05BnCSolverB.stat --solution solutions/random-m5V100E99B05D05BnCSolverB.sol
+Academic license - for non-commercial use only - expires 2022-08-11
+++ date
++ echo 'End time: Qui Ago 19 02:26:20 -03 2021'
+End time: Qui Ago 19 02:26:20 -03 2021
++ echo GRASPSolverA
+GRASPSolverA
++ command='./bin/exec/GRASPSolverExec '
++ command+='--instance instances/random-m5V100E99B05D05.in '
++ command+='--time-limit 3600 '
++ command+='--m 20 '
++ command+='--k 500 '
++ command+='--statistical-filter '
++ command+='--statistics statistics/random-m5V100E99B05D05GRASPA.stat '
++ command+='--solution solutions/random-m5V100E99B05D05GRASPA.sol '
+++ date
++ echo 'Start time: Qui Ago 19 02:26:20 -03 2021'
+Start time: Qui Ago 19 02:26:20 -03 2021
++ eval './bin/exec/GRASPSolverExec --instance instances/random-m5V100E99B05D05.in --time-limit 3600 --m 20 --k 500 --statistical-filter --statistics statistics/random-m5V100E99B05D05GRASPA.stat --solution solutions/random-m5V100E99B05D05GRASPA.sol '
+++ ./bin/exec/GRASPSolverExec --instance instances/random-m5V100E99B05D05.in --time-limit 3600 --m 20 --k 500 --statistical-filter --statistics statistics/random-m5V100E99B05D05GRASPA.stat --solution solutions/random-m5V100E99B05D05GRASPA.sol
+-28799 3600
+++ date
++ echo 'End time: Qui Ago 19 03:26:21 -03 2021'
+End time: Qui Ago 19 03:26:21 -03 2021
++ echo GRASPSolverB
+GRASPSolverB
++ command='./bin/exec/GRASPSolverExec '
++ command+='--instance instances/random-m5V100E99B05D05.in '
++ command+='--time-limit 3600 '
++ command+='--m 20 '
++ command+='--k 500 '
++ command+='--statistics statistics/random-m5V100E99B05D05GRASPB.stat '
++ command+='--solution solutions/random-m5V100E99B05D05GRASPB.sol '
+++ date
++ echo 'Start time: Qui Ago 19 03:26:21 -03 2021'
+Start time: Qui Ago 19 03:26:21 -03 2021
++ eval './bin/exec/GRASPSolverExec --instance instances/random-m5V100E99B05D05.in --time-limit 3600 --m 20 --k 500 --statistics statistics/random-m5V100E99B05D05GRASPB.stat --solution solutions/random-m5V100E99B05D05GRASPB.sol '
+++ ./bin/exec/GRASPSolverExec --instance instances/random-m5V100E99B05D05.in --time-limit 3600 --m 20 --k 500 --statistics statistics/random-m5V100E99B05D05GRASPB.stat --solution solutions/random-m5V100E99B05D05GRASPB.sol
+-28749 3600
+++ date
++ echo 'End time: Qui Ago 19 04:26:21 -03 2021'
+End time: Qui Ago 19 04:26:21 -03 2021
++ for D in 05 10
++ echo 'D: 10'
+D: 10
++ for VE in 25,24 49,48 100,99
++ set 25 24
++ V=25
++ E=24
++ echo 'V: 25'
+V: 25
++ echo 'E: 24'
+E: 24
++ instance=random-m5V25E24B05D10
++ echo 'instance: random-m5V25E24B05D10'
+instance: random-m5V25E24B05D10
++ warmStartPercentageTime=0.1
++ echo warmStartPercentageTime=0.1
+warmStartPercentageTime=0.1
++ echo BnBSolverA
+BnBSolverA
++ command='./bin/exec/BnBSolverExec '
++ command+='--instance instances/random-m5V25E24B05D10.in '
++ command+='--time-limit 3600 '
++ command+='--warm-start-percentage-time 0.1 '
++ command+='--m 20 '
++ command+='--k 500 '
++ command+='--statistical-filter '
++ command+='--statistics statistics/random-m5V25E24B05D10BnBSolverA.stat '
++ command+='--solution solutions/random-m5V25E24B05D10BnBSolverA.sol '
+++ date
++ echo 'Start time: Qui Ago 19 04:26:21 -03 2021'
+Start time: Qui Ago 19 04:26:21 -03 2021
++ eval './bin/exec/BnBSolverExec --instance instances/random-m5V25E24B05D10.in --time-limit 3600 --warm-start-percentage-time 0.1 --m 20 --k 500 --statistical-filter --statistics statistics/random-m5V25E24B05D10BnBSolverA.stat --solution solutions/random-m5V25E24B05D10BnBSolverA.sol '
+++ ./bin/exec/BnBSolverExec --instance instances/random-m5V25E24B05D10.in --time-limit 3600 --warm-start-percentage-time 0.1 --m 20 --k 500 --statistical-filter --statistics statistics/random-m5V25E24B05D10BnBSolverA.stat --solution solutions/random-m5V25E24B05D10BnBSolverA.sol
+Academic license - for non-commercial use only - expires 2022-08-11
+++ date
++ echo 'End time: Qui Ago 19 04:32:28 -03 2021'
+End time: Qui Ago 19 04:32:28 -03 2021
++ echo BnCSolverA
+BnCSolverA
++ command='./bin/exec/BnCSolverExec '
++ command+='--instance instances/random-m5V25E24B05D10.in '
++ command+='--time-limit 3600 '
++ command+='--warm-start-percentage-time 0.1 '
++ command+='--m 20 '
++ command+='--k 500 '
++ command+='--statistical-filter '
++ command+='--statistics statistics/random-m5V25E24B05D10BnCSolverA.stat '
++ command+='--solution solutions/random-m5V25E24B05D10BnCSolverA.sol '
+++ date
++ echo 'Start time: Qui Ago 19 04:32:28 -03 2021'
+Start time: Qui Ago 19 04:32:28 -03 2021
++ eval './bin/exec/BnCSolverExec --instance instances/random-m5V25E24B05D10.in --time-limit 3600 --warm-start-percentage-time 0.1 --m 20 --k 500 --statistical-filter --statistics statistics/random-m5V25E24B05D10BnCSolverA.stat --solution solutions/random-m5V25E24B05D10BnCSolverA.sol '
+++ ./bin/exec/BnCSolverExec --instance instances/random-m5V25E24B05D10.in --time-limit 3600 --warm-start-percentage-time 0.1 --m 20 --k 500 --statistical-filter --statistics statistics/random-m5V25E24B05D10BnCSolverA.stat --solution solutions/random-m5V25E24B05D10BnCSolverA.sol
+Academic license - for non-commercial use only - expires 2022-08-11
+++ date
++ echo 'End time: Qui Ago 19 04:38:36 -03 2021'
+End time: Qui Ago 19 04:38:36 -03 2021
++ warmStartPercentageTime=0.0
++ echo warmStartPercentageTime=0.0
+warmStartPercentageTime=0.0
++ echo BnBSolverB
+BnBSolverB
++ command='./bin/exec/BnBSolverExec '
++ command+='--instance instances/random-m5V25E24B05D10.in '
++ command+='--time-limit 3600 '
++ command+='--warm-start-percentage-time 0.0 '
++ command+='--m 20 '
++ command+='--k 500 '
++ command+='--statistical-filter '
++ command+='--statistics statistics/random-m5V25E24B05D10BnBSolverB.stat '
++ command+='--solution solutions/random-m5V25E24B05D10BnBSolverB.sol '
+++ date
++ echo 'Start time: Qui Ago 19 04:38:36 -03 2021'
+Start time: Qui Ago 19 04:38:36 -03 2021
++ eval './bin/exec/BnBSolverExec --instance instances/random-m5V25E24B05D10.in --time-limit 3600 --warm-start-percentage-time 0.0 --m 20 --k 500 --statistical-filter --statistics statistics/random-m5V25E24B05D10BnBSolverB.stat --solution solutions/random-m5V25E24B05D10BnBSolverB.sol '
+++ ./bin/exec/BnBSolverExec --instance instances/random-m5V25E24B05D10.in --time-limit 3600 --warm-start-percentage-time 0.0 --m 20 --k 500 --statistical-filter --statistics statistics/random-m5V25E24B05D10BnBSolverB.stat --solution solutions/random-m5V25E24B05D10BnBSolverB.sol
+Academic license - for non-commercial use only - expires 2022-08-11
+++ date
++ echo 'End time: Qui Ago 19 04:38:46 -03 2021'
+End time: Qui Ago 19 04:38:46 -03 2021
++ echo BnCSolverB
+BnCSolverB
++ command='./bin/exec/BnCSolverExec '
++ command+='--instance instances/random-m5V25E24B05D10.in '
++ command+='--time-limit 3600 '
++ command+='--warm-start-percentage-time 0.0 '
++ command+='--m 20 '
++ command+='--k 500 '
++ command+='--statistical-filter '
++ command+='--statistics statistics/random-m5V25E24B05D10BnCSolverB.stat '
++ command+='--solution solutions/random-m5V25E24B05D10BnCSolverB.sol '
+++ date
++ echo 'Start time: Qui Ago 19 04:38:47 -03 2021'
+Start time: Qui Ago 19 04:38:47 -03 2021
++ eval './bin/exec/BnCSolverExec --instance instances/random-m5V25E24B05D10.in --time-limit 3600 --warm-start-percentage-time 0.0 --m 20 --k 500 --statistical-filter --statistics statistics/random-m5V25E24B05D10BnCSolverB.stat --solution solutions/random-m5V25E24B05D10BnCSolverB.sol '
+++ ./bin/exec/BnCSolverExec --instance instances/random-m5V25E24B05D10.in --time-limit 3600 --warm-start-percentage-time 0.0 --m 20 --k 500 --statistical-filter --statistics statistics/random-m5V25E24B05D10BnCSolverB.stat --solution solutions/random-m5V25E24B05D10BnCSolverB.sol
+Academic license - for non-commercial use only - expires 2022-08-11
+++ date
++ echo 'End time: Qui Ago 19 04:38:53 -03 2021'
+End time: Qui Ago 19 04:38:53 -03 2021
++ echo GRASPSolverA
+GRASPSolverA
++ command='./bin/exec/GRASPSolverExec '
++ command+='--instance instances/random-m5V25E24B05D10.in '
++ command+='--time-limit 3600 '
++ command+='--m 20 '
++ command+='--k 500 '
++ command+='--statistical-filter '
++ command+='--statistics statistics/random-m5V25E24B05D10GRASPA.stat '
++ command+='--solution solutions/random-m5V25E24B05D10GRASPA.sol '
+++ date
++ echo 'Start time: Qui Ago 19 04:38:53 -03 2021'
+Start time: Qui Ago 19 04:38:53 -03 2021
++ eval './bin/exec/GRASPSolverExec --instance instances/random-m5V25E24B05D10.in --time-limit 3600 --m 20 --k 500 --statistical-filter --statistics statistics/random-m5V25E24B05D10GRASPA.stat --solution solutions/random-m5V25E24B05D10GRASPA.sol '
+++ ./bin/exec/GRASPSolverExec --instance instances/random-m5V25E24B05D10.in --time-limit 3600 --m 20 --k 500 --statistical-filter --statistics statistics/random-m5V25E24B05D10GRASPA.stat --solution solutions/random-m5V25E24B05D10GRASPA.sol
+-1895 3600
+++ date
++ echo 'End time: Qui Ago 19 05:38:53 -03 2021'
+End time: Qui Ago 19 05:38:53 -03 2021
++ echo GRASPSolverB
+GRASPSolverB
++ command='./bin/exec/GRASPSolverExec '
++ command+='--instance instances/random-m5V25E24B05D10.in '
++ command+='--time-limit 3600 '
++ command+='--m 20 '
++ command+='--k 500 '
++ command+='--statistics statistics/random-m5V25E24B05D10GRASPB.stat '
++ command+='--solution solutions/random-m5V25E24B05D10GRASPB.sol '
+++ date
++ echo 'Start time: Qui Ago 19 05:38:53 -03 2021'
+Start time: Qui Ago 19 05:38:53 -03 2021
++ eval './bin/exec/GRASPSolverExec --instance instances/random-m5V25E24B05D10.in --time-limit 3600 --m 20 --k 500 --statistics statistics/random-m5V25E24B05D10GRASPB.stat --solution solutions/random-m5V25E24B05D10GRASPB.sol '
+++ ./bin/exec/GRASPSolverExec --instance instances/random-m5V25E24B05D10.in --time-limit 3600 --m 20 --k 500 --statistics statistics/random-m5V25E24B05D10GRASPB.stat --solution solutions/random-m5V25E24B05D10GRASPB.sol
+-1895 3600
+++ date
++ echo 'End time: Qui Ago 19 06:38:53 -03 2021'
+End time: Qui Ago 19 06:38:53 -03 2021
++ for VE in 25,24 49,48 100,99
++ set 49 48
++ V=49
++ E=48
++ echo 'V: 49'
+V: 49
++ echo 'E: 48'
+E: 48
++ instance=random-m5V49E48B05D10
++ echo 'instance: random-m5V49E48B05D10'
+instance: random-m5V49E48B05D10
++ warmStartPercentageTime=0.1
++ echo warmStartPercentageTime=0.1
+warmStartPercentageTime=0.1
++ echo BnBSolverA
+BnBSolverA
++ command='./bin/exec/BnBSolverExec '
++ command+='--instance instances/random-m5V49E48B05D10.in '
++ command+='--time-limit 3600 '
++ command+='--warm-start-percentage-time 0.1 '
++ command+='--m 20 '
++ command+='--k 500 '
++ command+='--statistical-filter '
++ command+='--statistics statistics/random-m5V49E48B05D10BnBSolverA.stat '
++ command+='--solution solutions/random-m5V49E48B05D10BnBSolverA.sol '
+++ date
++ echo 'Start time: Qui Ago 19 06:38:53 -03 2021'
+Start time: Qui Ago 19 06:38:53 -03 2021
++ eval './bin/exec/BnBSolverExec --instance instances/random-m5V49E48B05D10.in --time-limit 3600 --warm-start-percentage-time 0.1 --m 20 --k 500 --statistical-filter --statistics statistics/random-m5V49E48B05D10BnBSolverA.stat --solution solutions/random-m5V49E48B05D10BnBSolverA.sol '
+++ ./bin/exec/BnBSolverExec --instance instances/random-m5V49E48B05D10.in --time-limit 3600 --warm-start-percentage-time 0.1 --m 20 --k 500 --statistical-filter --statistics statistics/random-m5V49E48B05D10BnBSolverA.stat --solution solutions/random-m5V49E48B05D10BnBSolverA.sol
+Academic license - for non-commercial use only - expires 2022-08-11
+++ date
++ echo 'End time: Qui Ago 19 06:46:23 -03 2021'
+End time: Qui Ago 19 06:46:23 -03 2021
++ echo BnCSolverA
+BnCSolverA
++ command='./bin/exec/BnCSolverExec '
++ command+='--instance instances/random-m5V49E48B05D10.in '
++ command+='--time-limit 3600 '
++ command+='--warm-start-percentage-time 0.1 '
++ command+='--m 20 '
++ command+='--k 500 '
++ command+='--statistical-filter '
++ command+='--statistics statistics/random-m5V49E48B05D10BnCSolverA.stat '
++ command+='--solution solutions/random-m5V49E48B05D10BnCSolverA.sol '
+++ date
++ echo 'Start time: Qui Ago 19 06:46:23 -03 2021'
+Start time: Qui Ago 19 06:46:23 -03 2021
++ eval './bin/exec/BnCSolverExec --instance instances/random-m5V49E48B05D10.in --time-limit 3600 --warm-start-percentage-time 0.1 --m 20 --k 500 --statistical-filter --statistics statistics/random-m5V49E48B05D10BnCSolverA.stat --solution solutions/random-m5V49E48B05D10BnCSolverA.sol '
+++ ./bin/exec/BnCSolverExec --instance instances/random-m5V49E48B05D10.in --time-limit 3600 --warm-start-percentage-time 0.1 --m 20 --k 500 --statistical-filter --statistics statistics/random-m5V49E48B05D10BnCSolverA.stat --solution solutions/random-m5V49E48B05D10BnCSolverA.sol
+Academic license - for non-commercial use only - expires 2022-08-11
+++ date
++ echo 'End time: Qui Ago 19 07:22:06 -03 2021'
+End time: Qui Ago 19 07:22:06 -03 2021
++ warmStartPercentageTime=0.0
++ echo warmStartPercentageTime=0.0
+warmStartPercentageTime=0.0
++ echo BnBSolverB
+BnBSolverB
++ command='./bin/exec/BnBSolverExec '
++ command+='--instance instances/random-m5V49E48B05D10.in '
++ command+='--time-limit 3600 '
++ command+='--warm-start-percentage-time 0.0 '
++ command+='--m 20 '
++ command+='--k 500 '
++ command+='--statistical-filter '
++ command+='--statistics statistics/random-m5V49E48B05D10BnBSolverB.stat '
++ command+='--solution solutions/random-m5V49E48B05D10BnBSolverB.sol '
+++ date
++ echo 'Start time: Qui Ago 19 07:22:06 -03 2021'
+Start time: Qui Ago 19 07:22:06 -03 2021
++ eval './bin/exec/BnBSolverExec --instance instances/random-m5V49E48B05D10.in --time-limit 3600 --warm-start-percentage-time 0.0 --m 20 --k 500 --statistical-filter --statistics statistics/random-m5V49E48B05D10BnBSolverB.stat --solution solutions/random-m5V49E48B05D10BnBSolverB.sol '
+++ ./bin/exec/BnBSolverExec --instance instances/random-m5V49E48B05D10.in --time-limit 3600 --warm-start-percentage-time 0.0 --m 20 --k 500 --statistical-filter --statistics statistics/random-m5V49E48B05D10BnBSolverB.stat --solution solutions/random-m5V49E48B05D10BnBSolverB.sol
+Academic license - for non-commercial use only - expires 2022-08-11
+++ date
++ echo 'End time: Qui Ago 19 07:23:52 -03 2021'
+End time: Qui Ago 19 07:23:52 -03 2021
++ echo BnCSolverB
+BnCSolverB
++ command='./bin/exec/BnCSolverExec '
++ command+='--instance instances/random-m5V49E48B05D10.in '
++ command+='--time-limit 3600 '
++ command+='--warm-start-percentage-time 0.0 '
++ command+='--m 20 '
++ command+='--k 500 '
++ command+='--statistical-filter '
++ command+='--statistics statistics/random-m5V49E48B05D10BnCSolverB.stat '
++ command+='--solution solutions/random-m5V49E48B05D10BnCSolverB.sol '
+++ date
++ echo 'Start time: Qui Ago 19 07:23:52 -03 2021'
+Start time: Qui Ago 19 07:23:52 -03 2021
++ eval './bin/exec/BnCSolverExec --instance instances/random-m5V49E48B05D10.in --time-limit 3600 --warm-start-percentage-time 0.0 --m 20 --k 500 --statistical-filter --statistics statistics/random-m5V49E48B05D10BnCSolverB.stat --solution solutions/random-m5V49E48B05D10BnCSolverB.sol '
+++ ./bin/exec/BnCSolverExec --instance instances/random-m5V49E48B05D10.in --time-limit 3600 --warm-start-percentage-time 0.0 --m 20 --k 500 --statistical-filter --statistics statistics/random-m5V49E48B05D10BnCSolverB.stat --solution solutions/random-m5V49E48B05D10BnCSolverB.sol
+Academic license - for non-commercial use only - expires 2022-08-11
+++ date
++ echo 'End time: Qui Ago 19 08:08:33 -03 2021'
+End time: Qui Ago 19 08:08:33 -03 2021
++ echo GRASPSolverA
+GRASPSolverA
++ command='./bin/exec/GRASPSolverExec '
++ command+='--instance instances/random-m5V49E48B05D10.in '
++ command+='--time-limit 3600 '
++ command+='--m 20 '
++ command+='--k 500 '
++ command+='--statistical-filter '
++ command+='--statistics statistics/random-m5V49E48B05D10GRASPA.stat '
++ command+='--solution solutions/random-m5V49E48B05D10GRASPA.sol '
+++ date
++ echo 'Start time: Qui Ago 19 08:08:33 -03 2021'
+Start time: Qui Ago 19 08:08:33 -03 2021
++ eval './bin/exec/GRASPSolverExec --instance instances/random-m5V49E48B05D10.in --time-limit 3600 --m 20 --k 500 --statistical-filter --statistics statistics/random-m5V49E48B05D10GRASPA.stat --solution solutions/random-m5V49E48B05D10GRASPA.sol '
+++ ./bin/exec/GRASPSolverExec --instance instances/random-m5V49E48B05D10.in --time-limit 3600 --m 20 --k 500 --statistical-filter --statistics statistics/random-m5V49E48B05D10GRASPA.stat --solution solutions/random-m5V49E48B05D10GRASPA.sol
+-7415 3600
+++ date
++ echo 'End time: Qui Ago 19 09:08:33 -03 2021'
+End time: Qui Ago 19 09:08:33 -03 2021
++ echo GRASPSolverB
+GRASPSolverB
++ command='./bin/exec/GRASPSolverExec '
++ command+='--instance instances/random-m5V49E48B05D10.in '
++ command+='--time-limit 3600 '
++ command+='--m 20 '
++ command+='--k 500 '
++ command+='--statistics statistics/random-m5V49E48B05D10GRASPB.stat '
++ command+='--solution solutions/random-m5V49E48B05D10GRASPB.sol '
+++ date
++ echo 'Start time: Qui Ago 19 09:08:33 -03 2021'
+Start time: Qui Ago 19 09:08:33 -03 2021
++ eval './bin/exec/GRASPSolverExec --instance instances/random-m5V49E48B05D10.in --time-limit 3600 --m 20 --k 500 --statistics statistics/random-m5V49E48B05D10GRASPB.stat --solution solutions/random-m5V49E48B05D10GRASPB.sol '
+++ ./bin/exec/GRASPSolverExec --instance instances/random-m5V49E48B05D10.in --time-limit 3600 --m 20 --k 500 --statistics statistics/random-m5V49E48B05D10GRASPB.stat --solution solutions/random-m5V49E48B05D10GRASPB.sol
+-7415 3600
+++ date
++ echo 'End time: Qui Ago 19 10:08:33 -03 2021'
+End time: Qui Ago 19 10:08:33 -03 2021
++ for VE in 25,24 49,48 100,99
++ set 100 99
++ V=100
++ E=99
++ echo 'V: 100'
+V: 100
++ echo 'E: 99'
+E: 99
++ instance=random-m5V100E99B05D10
++ echo 'instance: random-m5V100E99B05D10'
+instance: random-m5V100E99B05D10
++ warmStartPercentageTime=0.1
++ echo warmStartPercentageTime=0.1
+warmStartPercentageTime=0.1
++ echo BnBSolverA
+BnBSolverA
++ command='./bin/exec/BnBSolverExec '
++ command+='--instance instances/random-m5V100E99B05D10.in '
++ command+='--time-limit 3600 '
++ command+='--warm-start-percentage-time 0.1 '
++ command+='--m 20 '
++ command+='--k 500 '
++ command+='--statistical-filter '
++ command+='--statistics statistics/random-m5V100E99B05D10BnBSolverA.stat '
++ command+='--solution solutions/random-m5V100E99B05D10BnBSolverA.sol '
+++ date
++ echo 'Start time: Qui Ago 19 10:08:33 -03 2021'
+Start time: Qui Ago 19 10:08:33 -03 2021
++ eval './bin/exec/BnBSolverExec --instance instances/random-m5V100E99B05D10.in --time-limit 3600 --warm-start-percentage-time 0.1 --m 20 --k 500 --statistical-filter --statistics statistics/random-m5V100E99B05D10BnBSolverA.stat --solution solutions/random-m5V100E99B05D10BnBSolverA.sol '
+++ ./bin/exec/BnBSolverExec --instance instances/random-m5V100E99B05D10.in --time-limit 3600 --warm-start-percentage-time 0.1 --m 20 --k 500 --statistical-filter --statistics statistics/random-m5V100E99B05D10BnBSolverA.stat --solution solutions/random-m5V100E99B05D10BnBSolverA.sol
+Academic license - for non-commercial use only - expires 2022-08-11
+++ date
++ echo 'End time: Qui Ago 19 10:47:07 -03 2021'
+End time: Qui Ago 19 10:47:07 -03 2021
++ echo BnCSolverA
+BnCSolverA
++ command='./bin/exec/BnCSolverExec '
++ command+='--instance instances/random-m5V100E99B05D10.in '
++ command+='--time-limit 3600 '
++ command+='--warm-start-percentage-time 0.1 '
++ command+='--m 20 '
++ command+='--k 500 '
++ command+='--statistical-filter '
++ command+='--statistics statistics/random-m5V100E99B05D10BnCSolverA.stat '
++ command+='--solution solutions/random-m5V100E99B05D10BnCSolverA.sol '
+++ date
++ echo 'Start time: Qui Ago 19 10:47:07 -03 2021'
+Start time: Qui Ago 19 10:47:07 -03 2021
++ eval './bin/exec/BnCSolverExec --instance instances/random-m5V100E99B05D10.in --time-limit 3600 --warm-start-percentage-time 0.1 --m 20 --k 500 --statistical-filter --statistics statistics/random-m5V100E99B05D10BnCSolverA.stat --solution solutions/random-m5V100E99B05D10BnCSolverA.sol '
+++ ./bin/exec/BnCSolverExec --instance instances/random-m5V100E99B05D10.in --time-limit 3600 --warm-start-percentage-time 0.1 --m 20 --k 500 --statistical-filter --statistics statistics/random-m5V100E99B05D10BnCSolverA.stat --solution solutions/random-m5V100E99B05D10BnCSolverA.sol
+Academic license - for non-commercial use only - expires 2022-08-11
+++ date
++ echo 'End time: Qui Ago 19 11:47:07 -03 2021'
+End time: Qui Ago 19 11:47:07 -03 2021
++ warmStartPercentageTime=0.0
++ echo warmStartPercentageTime=0.0
+warmStartPercentageTime=0.0
++ echo BnBSolverB
+BnBSolverB
++ command='./bin/exec/BnBSolverExec '
++ command+='--instance instances/random-m5V100E99B05D10.in '
++ command+='--time-limit 3600 '
++ command+='--warm-start-percentage-time 0.0 '
++ command+='--m 20 '
++ command+='--k 500 '
++ command+='--statistical-filter '
++ command+='--statistics statistics/random-m5V100E99B05D10BnBSolverB.stat '
++ command+='--solution solutions/random-m5V100E99B05D10BnBSolverB.sol '
+++ date
++ echo 'Start time: Qui Ago 19 11:47:07 -03 2021'
+Start time: Qui Ago 19 11:47:07 -03 2021
++ eval './bin/exec/BnBSolverExec --instance instances/random-m5V100E99B05D10.in --time-limit 3600 --warm-start-percentage-time 0.0 --m 20 --k 500 --statistical-filter --statistics statistics/random-m5V100E99B05D10BnBSolverB.stat --solution solutions/random-m5V100E99B05D10BnBSolverB.sol '
+++ ./bin/exec/BnBSolverExec --instance instances/random-m5V100E99B05D10.in --time-limit 3600 --warm-start-percentage-time 0.0 --m 20 --k 500 --statistical-filter --statistics statistics/random-m5V100E99B05D10BnBSolverB.stat --solution solutions/random-m5V100E99B05D10BnBSolverB.sol
+Academic license - for non-commercial use only - expires 2022-08-11
+++ date
++ echo 'End time: Qui Ago 19 12:47:07 -03 2021'
+End time: Qui Ago 19 12:47:07 -03 2021
++ echo BnCSolverB
+BnCSolverB
++ command='./bin/exec/BnCSolverExec '
++ command+='--instance instances/random-m5V100E99B05D10.in '
++ command+='--time-limit 3600 '
++ command+='--warm-start-percentage-time 0.0 '
++ command+='--m 20 '
++ command+='--k 500 '
++ command+='--statistical-filter '
++ command+='--statistics statistics/random-m5V100E99B05D10BnCSolverB.stat '
++ command+='--solution solutions/random-m5V100E99B05D10BnCSolverB.sol '
+++ date
++ echo 'Start time: Qui Ago 19 12:47:07 -03 2021'
+Start time: Qui Ago 19 12:47:07 -03 2021
++ eval './bin/exec/BnCSolverExec --instance instances/random-m5V100E99B05D10.in --time-limit 3600 --warm-start-percentage-time 0.0 --m 20 --k 500 --statistical-filter --statistics statistics/random-m5V100E99B05D10BnCSolverB.stat --solution solutions/random-m5V100E99B05D10BnCSolverB.sol '
+++ ./bin/exec/BnCSolverExec --instance instances/random-m5V100E99B05D10.in --time-limit 3600 --warm-start-percentage-time 0.0 --m 20 --k 500 --statistical-filter --statistics statistics/random-m5V100E99B05D10BnCSolverB.stat --solution solutions/random-m5V100E99B05D10BnCSolverB.sol
+Academic license - for non-commercial use only - expires 2022-08-11
+++ date
++ echo 'End time: Qui Ago 19 13:47:07 -03 2021'
+End time: Qui Ago 19 13:47:07 -03 2021
++ echo GRASPSolverA
+GRASPSolverA
++ command='./bin/exec/GRASPSolverExec '
++ command+='--instance instances/random-m5V100E99B05D10.in '
++ command+='--time-limit 3600 '
++ command+='--m 20 '
++ command+='--k 500 '
++ command+='--statistical-filter '
++ command+='--statistics statistics/random-m5V100E99B05D10GRASPA.stat '
++ command+='--solution solutions/random-m5V100E99B05D10GRASPA.sol '
+++ date
++ echo 'Start time: Qui Ago 19 13:47:07 -03 2021'
+Start time: Qui Ago 19 13:47:07 -03 2021
++ eval './bin/exec/GRASPSolverExec --instance instances/random-m5V100E99B05D10.in --time-limit 3600 --m 20 --k 500 --statistical-filter --statistics statistics/random-m5V100E99B05D10GRASPA.stat --solution solutions/random-m5V100E99B05D10GRASPA.sol '
+++ ./bin/exec/GRASPSolverExec --instance instances/random-m5V100E99B05D10.in --time-limit 3600 --m 20 --k 500 --statistical-filter --statistics statistics/random-m5V100E99B05D10GRASPA.stat --solution solutions/random-m5V100E99B05D10GRASPA.sol
+-30911 3600
+++ date
++ echo 'End time: Qui Ago 19 14:47:07 -03 2021'
+End time: Qui Ago 19 14:47:07 -03 2021
++ echo GRASPSolverB
+GRASPSolverB
++ command='./bin/exec/GRASPSolverExec '
++ command+='--instance instances/random-m5V100E99B05D10.in '
++ command+='--time-limit 3600 '
++ command+='--m 20 '
++ command+='--k 500 '
++ command+='--statistics statistics/random-m5V100E99B05D10GRASPB.stat '
++ command+='--solution solutions/random-m5V100E99B05D10GRASPB.sol '
+++ date
++ echo 'Start time: Qui Ago 19 14:47:07 -03 2021'
+Start time: Qui Ago 19 14:47:07 -03 2021
++ eval './bin/exec/GRASPSolverExec --instance instances/random-m5V100E99B05D10.in --time-limit 3600 --m 20 --k 500 --statistics statistics/random-m5V100E99B05D10GRASPB.stat --solution solutions/random-m5V100E99B05D10GRASPB.sol '
+++ ./bin/exec/GRASPSolverExec --instance instances/random-m5V100E99B05D10.in --time-limit 3600 --m 20 --k 500 --statistics statistics/random-m5V100E99B05D10GRASPB.stat --solution solutions/random-m5V100E99B05D10GRASPB.sol
+-30984 3600
+++ date
++ echo 'End time: Qui Ago 19 15:47:07 -03 2021'
+End time: Qui Ago 19 15:47:07 -03 2021
++ for B in 05 10
++ echo 'B: 10'
+B: 10
++ for D in 05 10
++ echo 'D: 05'
+D: 05
++ for VE in 25,24 49,48 100,99
++ set 25 24
++ V=25
++ E=24
++ echo 'V: 25'
+V: 25
++ echo 'E: 24'
+E: 24
++ instance=random-m5V25E24B10D05
++ echo 'instance: random-m5V25E24B10D05'
+instance: random-m5V25E24B10D05
++ warmStartPercentageTime=0.1
++ echo warmStartPercentageTime=0.1
+warmStartPercentageTime=0.1
++ echo BnBSolverA
+BnBSolverA
++ command='./bin/exec/BnBSolverExec '
++ command+='--instance instances/random-m5V25E24B10D05.in '
++ command+='--time-limit 3600 '
++ command+='--warm-start-percentage-time 0.1 '
++ command+='--m 20 '
++ command+='--k 500 '
++ command+='--statistical-filter '
++ command+='--statistics statistics/random-m5V25E24B10D05BnBSolverA.stat '
++ command+='--solution solutions/random-m5V25E24B10D05BnBSolverA.sol '
+++ date
++ echo 'Start time: Qui Ago 19 15:47:07 -03 2021'
+Start time: Qui Ago 19 15:47:07 -03 2021
++ eval './bin/exec/BnBSolverExec --instance instances/random-m5V25E24B10D05.in --time-limit 3600 --warm-start-percentage-time 0.1 --m 20 --k 500 --statistical-filter --statistics statistics/random-m5V25E24B10D05BnBSolverA.stat --solution solutions/random-m5V25E24B10D05BnBSolverA.sol '
+++ ./bin/exec/BnBSolverExec --instance instances/random-m5V25E24B10D05.in --time-limit 3600 --warm-start-percentage-time 0.1 --m 20 --k 500 --statistical-filter --statistics statistics/random-m5V25E24B10D05BnBSolverA.stat --solution solutions/random-m5V25E24B10D05BnBSolverA.sol
+Academic license - for non-commercial use only - expires 2022-08-11
+++ date
++ echo 'End time: Qui Ago 19 15:53:10 -03 2021'
+End time: Qui Ago 19 15:53:10 -03 2021
++ echo BnCSolverA
+BnCSolverA
++ command='./bin/exec/BnCSolverExec '
++ command+='--instance instances/random-m5V25E24B10D05.in '
++ command+='--time-limit 3600 '
++ command+='--warm-start-percentage-time 0.1 '
++ command+='--m 20 '
++ command+='--k 500 '
++ command+='--statistical-filter '
++ command+='--statistics statistics/random-m5V25E24B10D05BnCSolverA.stat '
++ command+='--solution solutions/random-m5V25E24B10D05BnCSolverA.sol '
+++ date
++ echo 'Start time: Qui Ago 19 15:53:10 -03 2021'
+Start time: Qui Ago 19 15:53:10 -03 2021
++ eval './bin/exec/BnCSolverExec --instance instances/random-m5V25E24B10D05.in --time-limit 3600 --warm-start-percentage-time 0.1 --m 20 --k 500 --statistical-filter --statistics statistics/random-m5V25E24B10D05BnCSolverA.stat --solution solutions/random-m5V25E24B10D05BnCSolverA.sol '
+++ ./bin/exec/BnCSolverExec --instance instances/random-m5V25E24B10D05.in --time-limit 3600 --warm-start-percentage-time 0.1 --m 20 --k 500 --statistical-filter --statistics statistics/random-m5V25E24B10D05BnCSolverA.stat --solution solutions/random-m5V25E24B10D05BnCSolverA.sol
+Academic license - for non-commercial use only - expires 2022-08-11
+++ date
++ echo 'End time: Qui Ago 19 15:59:11 -03 2021'
+End time: Qui Ago 19 15:59:11 -03 2021
++ warmStartPercentageTime=0.0
++ echo warmStartPercentageTime=0.0
+warmStartPercentageTime=0.0
++ echo BnBSolverB
+BnBSolverB
++ command='./bin/exec/BnBSolverExec '
++ command+='--instance instances/random-m5V25E24B10D05.in '
++ command+='--time-limit 3600 '
++ command+='--warm-start-percentage-time 0.0 '
++ command+='--m 20 '
++ command+='--k 500 '
++ command+='--statistical-filter '
++ command+='--statistics statistics/random-m5V25E24B10D05BnBSolverB.stat '
++ command+='--solution solutions/random-m5V25E24B10D05BnBSolverB.sol '
+++ date
++ echo 'Start time: Qui Ago 19 15:59:11 -03 2021'
+Start time: Qui Ago 19 15:59:11 -03 2021
++ eval './bin/exec/BnBSolverExec --instance instances/random-m5V25E24B10D05.in --time-limit 3600 --warm-start-percentage-time 0.0 --m 20 --k 500 --statistical-filter --statistics statistics/random-m5V25E24B10D05BnBSolverB.stat --solution solutions/random-m5V25E24B10D05BnBSolverB.sol '
+++ ./bin/exec/BnBSolverExec --instance instances/random-m5V25E24B10D05.in --time-limit 3600 --warm-start-percentage-time 0.0 --m 20 --k 500 --statistical-filter --statistics statistics/random-m5V25E24B10D05BnBSolverB.stat --solution solutions/random-m5V25E24B10D05BnBSolverB.sol
+Academic license - for non-commercial use only - expires 2022-08-11
+++ date
++ echo 'End time: Qui Ago 19 15:59:18 -03 2021'
+End time: Qui Ago 19 15:59:18 -03 2021
++ echo BnCSolverB
+BnCSolverB
++ command='./bin/exec/BnCSolverExec '
++ command+='--instance instances/random-m5V25E24B10D05.in '
++ command+='--time-limit 3600 '
++ command+='--warm-start-percentage-time 0.0 '
++ command+='--m 20 '
++ command+='--k 500 '
++ command+='--statistical-filter '
++ command+='--statistics statistics/random-m5V25E24B10D05BnCSolverB.stat '
++ command+='--solution solutions/random-m5V25E24B10D05BnCSolverB.sol '
+++ date
++ echo 'Start time: Qui Ago 19 15:59:18 -03 2021'
+Start time: Qui Ago 19 15:59:18 -03 2021
++ eval './bin/exec/BnCSolverExec --instance instances/random-m5V25E24B10D05.in --time-limit 3600 --warm-start-percentage-time 0.0 --m 20 --k 500 --statistical-filter --statistics statistics/random-m5V25E24B10D05BnCSolverB.stat --solution solutions/random-m5V25E24B10D05BnCSolverB.sol '
+++ ./bin/exec/BnCSolverExec --instance instances/random-m5V25E24B10D05.in --time-limit 3600 --warm-start-percentage-time 0.0 --m 20 --k 500 --statistical-filter --statistics statistics/random-m5V25E24B10D05BnCSolverB.stat --solution solutions/random-m5V25E24B10D05BnCSolverB.sol
+Academic license - for non-commercial use only - expires 2022-08-11
+++ date
++ echo 'End time: Qui Ago 19 15:59:19 -03 2021'
+End time: Qui Ago 19 15:59:19 -03 2021
++ echo GRASPSolverA
+GRASPSolverA
++ command='./bin/exec/GRASPSolverExec '
++ command+='--instance instances/random-m5V25E24B10D05.in '
++ command+='--time-limit 3600 '
++ command+='--m 20 '
++ command+='--k 500 '
++ command+='--statistical-filter '
++ command+='--statistics statistics/random-m5V25E24B10D05GRASPA.stat '
++ command+='--solution solutions/random-m5V25E24B10D05GRASPA.sol '
+++ date
++ echo 'Start time: Qui Ago 19 15:59:19 -03 2021'
+Start time: Qui Ago 19 15:59:19 -03 2021
++ eval './bin/exec/GRASPSolverExec --instance instances/random-m5V25E24B10D05.in --time-limit 3600 --m 20 --k 500 --statistical-filter --statistics statistics/random-m5V25E24B10D05GRASPA.stat --solution solutions/random-m5V25E24B10D05GRASPA.sol '
+++ ./bin/exec/GRASPSolverExec --instance instances/random-m5V25E24B10D05.in --time-limit 3600 --m 20 --k 500 --statistical-filter --statistics statistics/random-m5V25E24B10D05GRASPA.stat --solution solutions/random-m5V25E24B10D05GRASPA.sol
+-2124 3600
+++ date
++ echo 'End time: Qui Ago 19 16:59:19 -03 2021'
+End time: Qui Ago 19 16:59:19 -03 2021
++ echo GRASPSolverB
+GRASPSolverB
++ command='./bin/exec/GRASPSolverExec '
++ command+='--instance instances/random-m5V25E24B10D05.in '
++ command+='--time-limit 3600 '
++ command+='--m 20 '
++ command+='--k 500 '
++ command+='--statistics statistics/random-m5V25E24B10D05GRASPB.stat '
++ command+='--solution solutions/random-m5V25E24B10D05GRASPB.sol '
+++ date
++ echo 'Start time: Qui Ago 19 16:59:19 -03 2021'
+Start time: Qui Ago 19 16:59:19 -03 2021
++ eval './bin/exec/GRASPSolverExec --instance instances/random-m5V25E24B10D05.in --time-limit 3600 --m 20 --k 500 --statistics statistics/random-m5V25E24B10D05GRASPB.stat --solution solutions/random-m5V25E24B10D05GRASPB.sol '
+++ ./bin/exec/GRASPSolverExec --instance instances/random-m5V25E24B10D05.in --time-limit 3600 --m 20 --k 500 --statistics statistics/random-m5V25E24B10D05GRASPB.stat --solution solutions/random-m5V25E24B10D05GRASPB.sol
+-2124 3600
+++ date
++ echo 'End time: Qui Ago 19 17:59:19 -03 2021'
+End time: Qui Ago 19 17:59:19 -03 2021
++ for VE in 25,24 49,48 100,99
++ set 49 48
++ V=49
++ E=48
++ echo 'V: 49'
+V: 49
++ echo 'E: 48'
+E: 48
++ instance=random-m5V49E48B10D05
++ echo 'instance: random-m5V49E48B10D05'
+instance: random-m5V49E48B10D05
++ warmStartPercentageTime=0.1
++ echo warmStartPercentageTime=0.1
+warmStartPercentageTime=0.1
++ echo BnBSolverA
+BnBSolverA
++ command='./bin/exec/BnBSolverExec '
++ command+='--instance instances/random-m5V49E48B10D05.in '
++ command+='--time-limit 3600 '
++ command+='--warm-start-percentage-time 0.1 '
++ command+='--m 20 '
++ command+='--k 500 '
++ command+='--statistical-filter '
++ command+='--statistics statistics/random-m5V49E48B10D05BnBSolverA.stat '
++ command+='--solution solutions/random-m5V49E48B10D05BnBSolverA.sol '
+++ date
++ echo 'Start time: Qui Ago 19 17:59:19 -03 2021'
+Start time: Qui Ago 19 17:59:19 -03 2021
++ eval './bin/exec/BnBSolverExec --instance instances/random-m5V49E48B10D05.in --time-limit 3600 --warm-start-percentage-time 0.1 --m 20 --k 500 --statistical-filter --statistics statistics/random-m5V49E48B10D05BnBSolverA.stat --solution solutions/random-m5V49E48B10D05BnBSolverA.sol '
+++ ./bin/exec/BnBSolverExec --instance instances/random-m5V49E48B10D05.in --time-limit 3600 --warm-start-percentage-time 0.1 --m 20 --k 500 --statistical-filter --statistics statistics/random-m5V49E48B10D05BnBSolverA.stat --solution solutions/random-m5V49E48B10D05BnBSolverA.sol
+Academic license - for non-commercial use only - expires 2022-08-11
+++ date
++ echo 'End time: Qui Ago 19 18:06:32 -03 2021'
+End time: Qui Ago 19 18:06:32 -03 2021
++ echo BnCSolverA
+BnCSolverA
++ command='./bin/exec/BnCSolverExec '
++ command+='--instance instances/random-m5V49E48B10D05.in '
++ command+='--time-limit 3600 '
++ command+='--warm-start-percentage-time 0.1 '
++ command+='--m 20 '
++ command+='--k 500 '
++ command+='--statistical-filter '
++ command+='--statistics statistics/random-m5V49E48B10D05BnCSolverA.stat '
++ command+='--solution solutions/random-m5V49E48B10D05BnCSolverA.sol '
+++ date
++ echo 'Start time: Qui Ago 19 18:06:32 -03 2021'
+Start time: Qui Ago 19 18:06:32 -03 2021
++ eval './bin/exec/BnCSolverExec --instance instances/random-m5V49E48B10D05.in --time-limit 3600 --warm-start-percentage-time 0.1 --m 20 --k 500 --statistical-filter --statistics statistics/random-m5V49E48B10D05BnCSolverA.stat --solution solutions/random-m5V49E48B10D05BnCSolverA.sol '
+++ ./bin/exec/BnCSolverExec --instance instances/random-m5V49E48B10D05.in --time-limit 3600 --warm-start-percentage-time 0.1 --m 20 --k 500 --statistical-filter --statistics statistics/random-m5V49E48B10D05BnCSolverA.stat --solution solutions/random-m5V49E48B10D05BnCSolverA.sol
+Academic license - for non-commercial use only - expires 2022-08-11
+++ date
++ echo 'End time: Qui Ago 19 18:14:40 -03 2021'
+End time: Qui Ago 19 18:14:40 -03 2021
++ warmStartPercentageTime=0.0
++ echo warmStartPercentageTime=0.0
+warmStartPercentageTime=0.0
++ echo BnBSolverB
+BnBSolverB
++ command='./bin/exec/BnBSolverExec '
++ command+='--instance instances/random-m5V49E48B10D05.in '
++ command+='--time-limit 3600 '
++ command+='--warm-start-percentage-time 0.0 '
++ command+='--m 20 '
++ command+='--k 500 '
++ command+='--statistical-filter '
++ command+='--statistics statistics/random-m5V49E48B10D05BnBSolverB.stat '
++ command+='--solution solutions/random-m5V49E48B10D05BnBSolverB.sol '
+++ date
++ echo 'Start time: Qui Ago 19 18:14:40 -03 2021'
+Start time: Qui Ago 19 18:14:40 -03 2021
++ eval './bin/exec/BnBSolverExec --instance instances/random-m5V49E48B10D05.in --time-limit 3600 --warm-start-percentage-time 0.0 --m 20 --k 500 --statistical-filter --statistics statistics/random-m5V49E48B10D05BnBSolverB.stat --solution solutions/random-m5V49E48B10D05BnBSolverB.sol '
+++ ./bin/exec/BnBSolverExec --instance instances/random-m5V49E48B10D05.in --time-limit 3600 --warm-start-percentage-time 0.0 --m 20 --k 500 --statistical-filter --statistics statistics/random-m5V49E48B10D05BnBSolverB.stat --solution solutions/random-m5V49E48B10D05BnBSolverB.sol
+Academic license - for non-commercial use only - expires 2022-08-11
+++ date
++ echo 'End time: Qui Ago 19 18:15:25 -03 2021'
+End time: Qui Ago 19 18:15:25 -03 2021
++ echo BnCSolverB
+BnCSolverB
++ command='./bin/exec/BnCSolverExec '
++ command+='--instance instances/random-m5V49E48B10D05.in '
++ command+='--time-limit 3600 '
++ command+='--warm-start-percentage-time 0.0 '
++ command+='--m 20 '
++ command+='--k 500 '
++ command+='--statistical-filter '
++ command+='--statistics statistics/random-m5V49E48B10D05BnCSolverB.stat '
++ command+='--solution solutions/random-m5V49E48B10D05BnCSolverB.sol '
+++ date
++ echo 'Start time: Qui Ago 19 18:15:25 -03 2021'
+Start time: Qui Ago 19 18:15:25 -03 2021
++ eval './bin/exec/BnCSolverExec --instance instances/random-m5V49E48B10D05.in --time-limit 3600 --warm-start-percentage-time 0.0 --m 20 --k 500 --statistical-filter --statistics statistics/random-m5V49E48B10D05BnCSolverB.stat --solution solutions/random-m5V49E48B10D05BnCSolverB.sol '
+++ ./bin/exec/BnCSolverExec --instance instances/random-m5V49E48B10D05.in --time-limit 3600 --warm-start-percentage-time 0.0 --m 20 --k 500 --statistical-filter --statistics statistics/random-m5V49E48B10D05BnCSolverB.stat --solution solutions/random-m5V49E48B10D05BnCSolverB.sol
+Academic license - for non-commercial use only - expires 2022-08-11
+++ date
++ echo 'End time: Qui Ago 19 18:20:13 -03 2021'
+End time: Qui Ago 19 18:20:13 -03 2021
++ echo GRASPSolverA
+GRASPSolverA
++ command='./bin/exec/GRASPSolverExec '
++ command+='--instance instances/random-m5V49E48B10D05.in '
++ command+='--time-limit 3600 '
++ command+='--m 20 '
++ command+='--k 500 '
++ command+='--statistical-filter '
++ command+='--statistics statistics/random-m5V49E48B10D05GRASPA.stat '
++ command+='--solution solutions/random-m5V49E48B10D05GRASPA.sol '
+++ date
++ echo 'Start time: Qui Ago 19 18:20:13 -03 2021'
+Start time: Qui Ago 19 18:20:13 -03 2021
++ eval './bin/exec/GRASPSolverExec --instance instances/random-m5V49E48B10D05.in --time-limit 3600 --m 20 --k 500 --statistical-filter --statistics statistics/random-m5V49E48B10D05GRASPA.stat --solution solutions/random-m5V49E48B10D05GRASPA.sol '
+++ ./bin/exec/GRASPSolverExec --instance instances/random-m5V49E48B10D05.in --time-limit 3600 --m 20 --k 500 --statistical-filter --statistics statistics/random-m5V49E48B10D05GRASPA.stat --solution solutions/random-m5V49E48B10D05GRASPA.sol
+-8094 3600
+++ date
++ echo 'End time: Qui Ago 19 19:20:13 -03 2021'
+End time: Qui Ago 19 19:20:13 -03 2021
++ echo GRASPSolverB
+GRASPSolverB
++ command='./bin/exec/GRASPSolverExec '
++ command+='--instance instances/random-m5V49E48B10D05.in '
++ command+='--time-limit 3600 '
++ command+='--m 20 '
++ command+='--k 500 '
++ command+='--statistics statistics/random-m5V49E48B10D05GRASPB.stat '
++ command+='--solution solutions/random-m5V49E48B10D05GRASPB.sol '
+++ date
++ echo 'Start time: Qui Ago 19 19:20:13 -03 2021'
+Start time: Qui Ago 19 19:20:13 -03 2021
++ eval './bin/exec/GRASPSolverExec --instance instances/random-m5V49E48B10D05.in --time-limit 3600 --m 20 --k 500 --statistics statistics/random-m5V49E48B10D05GRASPB.stat --solution solutions/random-m5V49E48B10D05GRASPB.sol '
+++ ./bin/exec/GRASPSolverExec --instance instances/random-m5V49E48B10D05.in --time-limit 3600 --m 20 --k 500 --statistics statistics/random-m5V49E48B10D05GRASPB.stat --solution solutions/random-m5V49E48B10D05GRASPB.sol
+-8094 3600
+++ date
++ echo 'End time: Qui Ago 19 20:20:13 -03 2021'
+End time: Qui Ago 19 20:20:13 -03 2021
++ for VE in 25,24 49,48 100,99
++ set 100 99
++ V=100
++ E=99
++ echo 'V: 100'
+V: 100
++ echo 'E: 99'
+E: 99
++ instance=random-m5V100E99B10D05
++ echo 'instance: random-m5V100E99B10D05'
+instance: random-m5V100E99B10D05
++ warmStartPercentageTime=0.1
++ echo warmStartPercentageTime=0.1
+warmStartPercentageTime=0.1
++ echo BnBSolverA
+BnBSolverA
++ command='./bin/exec/BnBSolverExec '
++ command+='--instance instances/random-m5V100E99B10D05.in '
++ command+='--time-limit 3600 '
++ command+='--warm-start-percentage-time 0.1 '
++ command+='--m 20 '
++ command+='--k 500 '
++ command+='--statistical-filter '
++ command+='--statistics statistics/random-m5V100E99B10D05BnBSolverA.stat '
++ command+='--solution solutions/random-m5V100E99B10D05BnBSolverA.sol '
+++ date
++ echo 'Start time: Qui Ago 19 20:20:13 -03 2021'
+Start time: Qui Ago 19 20:20:13 -03 2021
++ eval './bin/exec/BnBSolverExec --instance instances/random-m5V100E99B10D05.in --time-limit 3600 --warm-start-percentage-time 0.1 --m 20 --k 500 --statistical-filter --statistics statistics/random-m5V100E99B10D05BnBSolverA.stat --solution solutions/random-m5V100E99B10D05BnBSolverA.sol '
+++ ./bin/exec/BnBSolverExec --instance instances/random-m5V100E99B10D05.in --time-limit 3600 --warm-start-percentage-time 0.1 --m 20 --k 500 --statistical-filter --statistics statistics/random-m5V100E99B10D05BnBSolverA.stat --solution solutions/random-m5V100E99B10D05BnBSolverA.sol
+Academic license - for non-commercial use only - expires 2022-08-11
+++ date
++ echo 'End time: Qui Ago 19 21:20:14 -03 2021'
+End time: Qui Ago 19 21:20:14 -03 2021
++ echo BnCSolverA
+BnCSolverA
++ command='./bin/exec/BnCSolverExec '
++ command+='--instance instances/random-m5V100E99B10D05.in '
++ command+='--time-limit 3600 '
++ command+='--warm-start-percentage-time 0.1 '
++ command+='--m 20 '
++ command+='--k 500 '
++ command+='--statistical-filter '
++ command+='--statistics statistics/random-m5V100E99B10D05BnCSolverA.stat '
++ command+='--solution solutions/random-m5V100E99B10D05BnCSolverA.sol '
+++ date
++ echo 'Start time: Qui Ago 19 21:20:14 -03 2021'
+Start time: Qui Ago 19 21:20:14 -03 2021
++ eval './bin/exec/BnCSolverExec --instance instances/random-m5V100E99B10D05.in --time-limit 3600 --warm-start-percentage-time 0.1 --m 20 --k 500 --statistical-filter --statistics statistics/random-m5V100E99B10D05BnCSolverA.stat --solution solutions/random-m5V100E99B10D05BnCSolverA.sol '
+++ ./bin/exec/BnCSolverExec --instance instances/random-m5V100E99B10D05.in --time-limit 3600 --warm-start-percentage-time 0.1 --m 20 --k 500 --statistical-filter --statistics statistics/random-m5V100E99B10D05BnCSolverA.stat --solution solutions/random-m5V100E99B10D05BnCSolverA.sol
+Academic license - for non-commercial use only - expires 2022-08-11
+++ date
++ echo 'End time: Qui Ago 19 22:20:14 -03 2021'
+End time: Qui Ago 19 22:20:14 -03 2021
++ warmStartPercentageTime=0.0
++ echo warmStartPercentageTime=0.0
+warmStartPercentageTime=0.0
++ echo BnBSolverB
+BnBSolverB
++ command='./bin/exec/BnBSolverExec '
++ command+='--instance instances/random-m5V100E99B10D05.in '
++ command+='--time-limit 3600 '
++ command+='--warm-start-percentage-time 0.0 '
++ command+='--m 20 '
++ command+='--k 500 '
++ command+='--statistical-filter '
++ command+='--statistics statistics/random-m5V100E99B10D05BnBSolverB.stat '
++ command+='--solution solutions/random-m5V100E99B10D05BnBSolverB.sol '
+++ date
++ echo 'Start time: Qui Ago 19 22:20:14 -03 2021'
+Start time: Qui Ago 19 22:20:14 -03 2021
++ eval './bin/exec/BnBSolverExec --instance instances/random-m5V100E99B10D05.in --time-limit 3600 --warm-start-percentage-time 0.0 --m 20 --k 500 --statistical-filter --statistics statistics/random-m5V100E99B10D05BnBSolverB.stat --solution solutions/random-m5V100E99B10D05BnBSolverB.sol '
+++ ./bin/exec/BnBSolverExec --instance instances/random-m5V100E99B10D05.in --time-limit 3600 --warm-start-percentage-time 0.0 --m 20 --k 500 --statistical-filter --statistics statistics/random-m5V100E99B10D05BnBSolverB.stat --solution solutions/random-m5V100E99B10D05BnBSolverB.sol
+Academic license - for non-commercial use only - expires 2022-08-11
+++ date
++ echo 'End time: Qui Ago 19 23:20:14 -03 2021'
+End time: Qui Ago 19 23:20:14 -03 2021
++ echo BnCSolverB
+BnCSolverB
++ command='./bin/exec/BnCSolverExec '
++ command+='--instance instances/random-m5V100E99B10D05.in '
++ command+='--time-limit 3600 '
++ command+='--warm-start-percentage-time 0.0 '
++ command+='--m 20 '
++ command+='--k 500 '
++ command+='--statistical-filter '
++ command+='--statistics statistics/random-m5V100E99B10D05BnCSolverB.stat '
++ command+='--solution solutions/random-m5V100E99B10D05BnCSolverB.sol '
+++ date
++ echo 'Start time: Qui Ago 19 23:20:14 -03 2021'
+Start time: Qui Ago 19 23:20:14 -03 2021
++ eval './bin/exec/BnCSolverExec --instance instances/random-m5V100E99B10D05.in --time-limit 3600 --warm-start-percentage-time 0.0 --m 20 --k 500 --statistical-filter --statistics statistics/random-m5V100E99B10D05BnCSolverB.stat --solution solutions/random-m5V100E99B10D05BnCSolverB.sol '
+++ ./bin/exec/BnCSolverExec --instance instances/random-m5V100E99B10D05.in --time-limit 3600 --warm-start-percentage-time 0.0 --m 20 --k 500 --statistical-filter --statistics statistics/random-m5V100E99B10D05BnCSolverB.stat --solution solutions/random-m5V100E99B10D05BnCSolverB.sol
+Academic license - for non-commercial use only - expires 2022-08-11
+++ date
++ echo 'End time: Sex Ago 20 00:20:15 -03 2021'
+End time: Sex Ago 20 00:20:15 -03 2021
++ echo GRASPSolverA
+GRASPSolverA
++ command='./bin/exec/GRASPSolverExec '
++ command+='--instance instances/random-m5V100E99B10D05.in '
++ command+='--time-limit 3600 '
++ command+='--m 20 '
++ command+='--k 500 '
++ command+='--statistical-filter '
++ command+='--statistics statistics/random-m5V100E99B10D05GRASPA.stat '
++ command+='--solution solutions/random-m5V100E99B10D05GRASPA.sol '
+++ date
++ echo 'Start time: Sex Ago 20 00:20:15 -03 2021'
+Start time: Sex Ago 20 00:20:15 -03 2021
++ eval './bin/exec/GRASPSolverExec --instance instances/random-m5V100E99B10D05.in --time-limit 3600 --m 20 --k 500 --statistical-filter --statistics statistics/random-m5V100E99B10D05GRASPA.stat --solution solutions/random-m5V100E99B10D05GRASPA.sol '
+++ ./bin/exec/GRASPSolverExec --instance instances/random-m5V100E99B10D05.in --time-limit 3600 --m 20 --k 500 --statistical-filter --statistics statistics/random-m5V100E99B10D05GRASPA.stat --solution solutions/random-m5V100E99B10D05GRASPA.sol
+-29610 3600
+++ date
++ echo 'End time: Sex Ago 20 01:20:15 -03 2021'
+End time: Sex Ago 20 01:20:15 -03 2021
++ echo GRASPSolverB
+GRASPSolverB
++ command='./bin/exec/GRASPSolverExec '
++ command+='--instance instances/random-m5V100E99B10D05.in '
++ command+='--time-limit 3600 '
++ command+='--m 20 '
++ command+='--k 500 '
++ command+='--statistics statistics/random-m5V100E99B10D05GRASPB.stat '
++ command+='--solution solutions/random-m5V100E99B10D05GRASPB.sol '
+++ date
++ echo 'Start time: Sex Ago 20 01:20:15 -03 2021'
+Start time: Sex Ago 20 01:20:15 -03 2021
++ eval './bin/exec/GRASPSolverExec --instance instances/random-m5V100E99B10D05.in --time-limit 3600 --m 20 --k 500 --statistics statistics/random-m5V100E99B10D05GRASPB.stat --solution solutions/random-m5V100E99B10D05GRASPB.sol '
+++ ./bin/exec/GRASPSolverExec --instance instances/random-m5V100E99B10D05.in --time-limit 3600 --m 20 --k 500 --statistics statistics/random-m5V100E99B10D05GRASPB.stat --solution solutions/random-m5V100E99B10D05GRASPB.sol
+-29476 3600
+++ date
++ echo 'End time: Sex Ago 20 02:20:15 -03 2021'
+End time: Sex Ago 20 02:20:15 -03 2021
++ for D in 05 10
++ echo 'D: 10'
+D: 10
++ for VE in 25,24 49,48 100,99
++ set 25 24
++ V=25
++ E=24
++ echo 'V: 25'
+V: 25
++ echo 'E: 24'
+E: 24
++ instance=random-m5V25E24B10D10
++ echo 'instance: random-m5V25E24B10D10'
+instance: random-m5V25E24B10D10
++ warmStartPercentageTime=0.1
++ echo warmStartPercentageTime=0.1
+warmStartPercentageTime=0.1
++ echo BnBSolverA
+BnBSolverA
++ command='./bin/exec/BnBSolverExec '
++ command+='--instance instances/random-m5V25E24B10D10.in '
++ command+='--time-limit 3600 '
++ command+='--warm-start-percentage-time 0.1 '
++ command+='--m 20 '
++ command+='--k 500 '
++ command+='--statistical-filter '
++ command+='--statistics statistics/random-m5V25E24B10D10BnBSolverA.stat '
++ command+='--solution solutions/random-m5V25E24B10D10BnBSolverA.sol '
+++ date
++ echo 'Start time: Sex Ago 20 02:20:15 -03 2021'
+Start time: Sex Ago 20 02:20:15 -03 2021
++ eval './bin/exec/BnBSolverExec --instance instances/random-m5V25E24B10D10.in --time-limit 3600 --warm-start-percentage-time 0.1 --m 20 --k 500 --statistical-filter --statistics statistics/random-m5V25E24B10D10BnBSolverA.stat --solution solutions/random-m5V25E24B10D10BnBSolverA.sol '
+++ ./bin/exec/BnBSolverExec --instance instances/random-m5V25E24B10D10.in --time-limit 3600 --warm-start-percentage-time 0.1 --m 20 --k 500 --statistical-filter --statistics statistics/random-m5V25E24B10D10BnBSolverA.stat --solution solutions/random-m5V25E24B10D10BnBSolverA.sol
+Academic license - for non-commercial use only - expires 2022-08-11
+++ date
++ echo 'End time: Sex Ago 20 02:26:18 -03 2021'
+End time: Sex Ago 20 02:26:18 -03 2021
++ echo BnCSolverA
+BnCSolverA
++ command='./bin/exec/BnCSolverExec '
++ command+='--instance instances/random-m5V25E24B10D10.in '
++ command+='--time-limit 3600 '
++ command+='--warm-start-percentage-time 0.1 '
++ command+='--m 20 '
++ command+='--k 500 '
++ command+='--statistical-filter '
++ command+='--statistics statistics/random-m5V25E24B10D10BnCSolverA.stat '
++ command+='--solution solutions/random-m5V25E24B10D10BnCSolverA.sol '
+++ date
++ echo 'Start time: Sex Ago 20 02:26:18 -03 2021'
+Start time: Sex Ago 20 02:26:18 -03 2021
++ eval './bin/exec/BnCSolverExec --instance instances/random-m5V25E24B10D10.in --time-limit 3600 --warm-start-percentage-time 0.1 --m 20 --k 500 --statistical-filter --statistics statistics/random-m5V25E24B10D10BnCSolverA.stat --solution solutions/random-m5V25E24B10D10BnCSolverA.sol '
+++ ./bin/exec/BnCSolverExec --instance instances/random-m5V25E24B10D10.in --time-limit 3600 --warm-start-percentage-time 0.1 --m 20 --k 500 --statistical-filter --statistics statistics/random-m5V25E24B10D10BnCSolverA.stat --solution solutions/random-m5V25E24B10D10BnCSolverA.sol
+Academic license - for non-commercial use only - expires 2022-08-11
+++ date
++ echo 'End time: Sex Ago 20 02:32:18 -03 2021'
+End time: Sex Ago 20 02:32:18 -03 2021
++ warmStartPercentageTime=0.0
++ echo warmStartPercentageTime=0.0
+warmStartPercentageTime=0.0
++ echo BnBSolverB
+BnBSolverB
++ command='./bin/exec/BnBSolverExec '
++ command+='--instance instances/random-m5V25E24B10D10.in '
++ command+='--time-limit 3600 '
++ command+='--warm-start-percentage-time 0.0 '
++ command+='--m 20 '
++ command+='--k 500 '
++ command+='--statistical-filter '
++ command+='--statistics statistics/random-m5V25E24B10D10BnBSolverB.stat '
++ command+='--solution solutions/random-m5V25E24B10D10BnBSolverB.sol '
+++ date
++ echo 'Start time: Sex Ago 20 02:32:18 -03 2021'
+Start time: Sex Ago 20 02:32:18 -03 2021
++ eval './bin/exec/BnBSolverExec --instance instances/random-m5V25E24B10D10.in --time-limit 3600 --warm-start-percentage-time 0.0 --m 20 --k 500 --statistical-filter --statistics statistics/random-m5V25E24B10D10BnBSolverB.stat --solution solutions/random-m5V25E24B10D10BnBSolverB.sol '
+++ ./bin/exec/BnBSolverExec --instance instances/random-m5V25E24B10D10.in --time-limit 3600 --warm-start-percentage-time 0.0 --m 20 --k 500 --statistical-filter --statistics statistics/random-m5V25E24B10D10BnBSolverB.stat --solution solutions/random-m5V25E24B10D10BnBSolverB.sol
+Academic license - for non-commercial use only - expires 2022-08-11
+++ date
++ echo 'End time: Sex Ago 20 02:32:22 -03 2021'
+End time: Sex Ago 20 02:32:22 -03 2021
++ echo BnCSolverB
+BnCSolverB
++ command='./bin/exec/BnCSolverExec '
++ command+='--instance instances/random-m5V25E24B10D10.in '
++ command+='--time-limit 3600 '
++ command+='--warm-start-percentage-time 0.0 '
++ command+='--m 20 '
++ command+='--k 500 '
++ command+='--statistical-filter '
++ command+='--statistics statistics/random-m5V25E24B10D10BnCSolverB.stat '
++ command+='--solution solutions/random-m5V25E24B10D10BnCSolverB.sol '
+++ date
++ echo 'Start time: Sex Ago 20 02:32:22 -03 2021'
+Start time: Sex Ago 20 02:32:22 -03 2021
++ eval './bin/exec/BnCSolverExec --instance instances/random-m5V25E24B10D10.in --time-limit 3600 --warm-start-percentage-time 0.0 --m 20 --k 500 --statistical-filter --statistics statistics/random-m5V25E24B10D10BnCSolverB.stat --solution solutions/random-m5V25E24B10D10BnCSolverB.sol '
+++ ./bin/exec/BnCSolverExec --instance instances/random-m5V25E24B10D10.in --time-limit 3600 --warm-start-percentage-time 0.0 --m 20 --k 500 --statistical-filter --statistics statistics/random-m5V25E24B10D10BnCSolverB.stat --solution solutions/random-m5V25E24B10D10BnCSolverB.sol
+Academic license - for non-commercial use only - expires 2022-08-11
+++ date
++ echo 'End time: Sex Ago 20 02:32:23 -03 2021'
+End time: Sex Ago 20 02:32:23 -03 2021
++ echo GRASPSolverA
+GRASPSolverA
++ command='./bin/exec/GRASPSolverExec '
++ command+='--instance instances/random-m5V25E24B10D10.in '
++ command+='--time-limit 3600 '
++ command+='--m 20 '
++ command+='--k 500 '
++ command+='--statistical-filter '
++ command+='--statistics statistics/random-m5V25E24B10D10GRASPA.stat '
++ command+='--solution solutions/random-m5V25E24B10D10GRASPA.sol '
+++ date
++ echo 'Start time: Sex Ago 20 02:32:23 -03 2021'
+Start time: Sex Ago 20 02:32:23 -03 2021
++ eval './bin/exec/GRASPSolverExec --instance instances/random-m5V25E24B10D10.in --time-limit 3600 --m 20 --k 500 --statistical-filter --statistics statistics/random-m5V25E24B10D10GRASPA.stat --solution solutions/random-m5V25E24B10D10GRASPA.sol '
+++ ./bin/exec/GRASPSolverExec --instance instances/random-m5V25E24B10D10.in --time-limit 3600 --m 20 --k 500 --statistical-filter --statistics statistics/random-m5V25E24B10D10GRASPA.stat --solution solutions/random-m5V25E24B10D10GRASPA.sol
+-1988 3600
+++ date
++ echo 'End time: Sex Ago 20 03:32:23 -03 2021'
+End time: Sex Ago 20 03:32:23 -03 2021
++ echo GRASPSolverB
+GRASPSolverB
++ command='./bin/exec/GRASPSolverExec '
++ command+='--instance instances/random-m5V25E24B10D10.in '
++ command+='--time-limit 3600 '
++ command+='--m 20 '
++ command+='--k 500 '
++ command+='--statistics statistics/random-m5V25E24B10D10GRASPB.stat '
++ command+='--solution solutions/random-m5V25E24B10D10GRASPB.sol '
+++ date
++ echo 'Start time: Sex Ago 20 03:32:23 -03 2021'
+Start time: Sex Ago 20 03:32:23 -03 2021
++ eval './bin/exec/GRASPSolverExec --instance instances/random-m5V25E24B10D10.in --time-limit 3600 --m 20 --k 500 --statistics statistics/random-m5V25E24B10D10GRASPB.stat --solution solutions/random-m5V25E24B10D10GRASPB.sol '
+++ ./bin/exec/GRASPSolverExec --instance instances/random-m5V25E24B10D10.in --time-limit 3600 --m 20 --k 500 --statistics statistics/random-m5V25E24B10D10GRASPB.stat --solution solutions/random-m5V25E24B10D10GRASPB.sol
+-1988 3600
+++ date
++ echo 'End time: Sex Ago 20 04:32:23 -03 2021'
+End time: Sex Ago 20 04:32:23 -03 2021
++ for VE in 25,24 49,48 100,99
++ set 49 48
++ V=49
++ E=48
++ echo 'V: 49'
+V: 49
++ echo 'E: 48'
+E: 48
++ instance=random-m5V49E48B10D10
++ echo 'instance: random-m5V49E48B10D10'
+instance: random-m5V49E48B10D10
++ warmStartPercentageTime=0.1
++ echo warmStartPercentageTime=0.1
+warmStartPercentageTime=0.1
++ echo BnBSolverA
+BnBSolverA
++ command='./bin/exec/BnBSolverExec '
++ command+='--instance instances/random-m5V49E48B10D10.in '
++ command+='--time-limit 3600 '
++ command+='--warm-start-percentage-time 0.1 '
++ command+='--m 20 '
++ command+='--k 500 '
++ command+='--statistical-filter '
++ command+='--statistics statistics/random-m5V49E48B10D10BnBSolverA.stat '
++ command+='--solution solutions/random-m5V49E48B10D10BnBSolverA.sol '
+++ date
++ echo 'Start time: Sex Ago 20 04:32:23 -03 2021'
+Start time: Sex Ago 20 04:32:23 -03 2021
++ eval './bin/exec/BnBSolverExec --instance instances/random-m5V49E48B10D10.in --time-limit 3600 --warm-start-percentage-time 0.1 --m 20 --k 500 --statistical-filter --statistics statistics/random-m5V49E48B10D10BnBSolverA.stat --solution solutions/random-m5V49E48B10D10BnBSolverA.sol '
+++ ./bin/exec/BnBSolverExec --instance instances/random-m5V49E48B10D10.in --time-limit 3600 --warm-start-percentage-time 0.1 --m 20 --k 500 --statistical-filter --statistics statistics/random-m5V49E48B10D10BnBSolverA.stat --solution solutions/random-m5V49E48B10D10BnBSolverA.sol
+Academic license - for non-commercial use only - expires 2022-08-11
+++ date
++ echo 'End time: Sex Ago 20 04:38:53 -03 2021'
+End time: Sex Ago 20 04:38:53 -03 2021
++ echo BnCSolverA
+BnCSolverA
++ command='./bin/exec/BnCSolverExec '
++ command+='--instance instances/random-m5V49E48B10D10.in '
++ command+='--time-limit 3600 '
++ command+='--warm-start-percentage-time 0.1 '
++ command+='--m 20 '
++ command+='--k 500 '
++ command+='--statistical-filter '
++ command+='--statistics statistics/random-m5V49E48B10D10BnCSolverA.stat '
++ command+='--solution solutions/random-m5V49E48B10D10BnCSolverA.sol '
+++ date
++ echo 'Start time: Sex Ago 20 04:38:53 -03 2021'
+Start time: Sex Ago 20 04:38:53 -03 2021
++ eval './bin/exec/BnCSolverExec --instance instances/random-m5V49E48B10D10.in --time-limit 3600 --warm-start-percentage-time 0.1 --m 20 --k 500 --statistical-filter --statistics statistics/random-m5V49E48B10D10BnCSolverA.stat --solution solutions/random-m5V49E48B10D10BnCSolverA.sol '
+++ ./bin/exec/BnCSolverExec --instance instances/random-m5V49E48B10D10.in --time-limit 3600 --warm-start-percentage-time 0.1 --m 20 --k 500 --statistical-filter --statistics statistics/random-m5V49E48B10D10BnCSolverA.stat --solution solutions/random-m5V49E48B10D10BnCSolverA.sol
+Academic license - for non-commercial use only - expires 2022-08-11
+++ date
++ echo 'End time: Sex Ago 20 04:52:01 -03 2021'
+End time: Sex Ago 20 04:52:01 -03 2021
++ warmStartPercentageTime=0.0
++ echo warmStartPercentageTime=0.0
+warmStartPercentageTime=0.0
++ echo BnBSolverB
+BnBSolverB
++ command='./bin/exec/BnBSolverExec '
++ command+='--instance instances/random-m5V49E48B10D10.in '
++ command+='--time-limit 3600 '
++ command+='--warm-start-percentage-time 0.0 '
++ command+='--m 20 '
++ command+='--k 500 '
++ command+='--statistical-filter '
++ command+='--statistics statistics/random-m5V49E48B10D10BnBSolverB.stat '
++ command+='--solution solutions/random-m5V49E48B10D10BnBSolverB.sol '
+++ date
++ echo 'Start time: Sex Ago 20 04:52:01 -03 2021'
+Start time: Sex Ago 20 04:52:01 -03 2021
++ eval './bin/exec/BnBSolverExec --instance instances/random-m5V49E48B10D10.in --time-limit 3600 --warm-start-percentage-time 0.0 --m 20 --k 500 --statistical-filter --statistics statistics/random-m5V49E48B10D10BnBSolverB.stat --solution solutions/random-m5V49E48B10D10BnBSolverB.sol '
+++ ./bin/exec/BnBSolverExec --instance instances/random-m5V49E48B10D10.in --time-limit 3600 --warm-start-percentage-time 0.0 --m 20 --k 500 --statistical-filter --statistics statistics/random-m5V49E48B10D10BnBSolverB.stat --solution solutions/random-m5V49E48B10D10BnBSolverB.sol
+Academic license - for non-commercial use only - expires 2022-08-11
+++ date
++ echo 'End time: Sex Ago 20 04:52:49 -03 2021'
+End time: Sex Ago 20 04:52:49 -03 2021
++ echo BnCSolverB
+BnCSolverB
++ command='./bin/exec/BnCSolverExec '
++ command+='--instance instances/random-m5V49E48B10D10.in '
++ command+='--time-limit 3600 '
++ command+='--warm-start-percentage-time 0.0 '
++ command+='--m 20 '
++ command+='--k 500 '
++ command+='--statistical-filter '
++ command+='--statistics statistics/random-m5V49E48B10D10BnCSolverB.stat '
++ command+='--solution solutions/random-m5V49E48B10D10BnCSolverB.sol '
+++ date
++ echo 'Start time: Sex Ago 20 04:52:49 -03 2021'
+Start time: Sex Ago 20 04:52:49 -03 2021
++ eval './bin/exec/BnCSolverExec --instance instances/random-m5V49E48B10D10.in --time-limit 3600 --warm-start-percentage-time 0.0 --m 20 --k 500 --statistical-filter --statistics statistics/random-m5V49E48B10D10BnCSolverB.stat --solution solutions/random-m5V49E48B10D10BnCSolverB.sol '
+++ ./bin/exec/BnCSolverExec --instance instances/random-m5V49E48B10D10.in --time-limit 3600 --warm-start-percentage-time 0.0 --m 20 --k 500 --statistical-filter --statistics statistics/random-m5V49E48B10D10BnCSolverB.stat --solution solutions/random-m5V49E48B10D10BnCSolverB.sol
+Academic license - for non-commercial use only - expires 2022-08-11
+++ date
++ echo 'End time: Sex Ago 20 05:01:39 -03 2021'
+End time: Sex Ago 20 05:01:39 -03 2021
++ echo GRASPSolverA
+GRASPSolverA
++ command='./bin/exec/GRASPSolverExec '
++ command+='--instance instances/random-m5V49E48B10D10.in '
++ command+='--time-limit 3600 '
++ command+='--m 20 '
++ command+='--k 500 '
++ command+='--statistical-filter '
++ command+='--statistics statistics/random-m5V49E48B10D10GRASPA.stat '
++ command+='--solution solutions/random-m5V49E48B10D10GRASPA.sol '
+++ date
++ echo 'Start time: Sex Ago 20 05:01:39 -03 2021'
+Start time: Sex Ago 20 05:01:39 -03 2021
++ eval './bin/exec/GRASPSolverExec --instance instances/random-m5V49E48B10D10.in --time-limit 3600 --m 20 --k 500 --statistical-filter --statistics statistics/random-m5V49E48B10D10GRASPA.stat --solution solutions/random-m5V49E48B10D10GRASPA.sol '
+++ ./bin/exec/GRASPSolverExec --instance instances/random-m5V49E48B10D10.in --time-limit 3600 --m 20 --k 500 --statistical-filter --statistics statistics/random-m5V49E48B10D10GRASPA.stat --solution solutions/random-m5V49E48B10D10GRASPA.sol
+-7166 3600
+++ date
++ echo 'End time: Sex Ago 20 06:01:39 -03 2021'
+End time: Sex Ago 20 06:01:39 -03 2021
++ echo GRASPSolverB
+GRASPSolverB
++ command='./bin/exec/GRASPSolverExec '
++ command+='--instance instances/random-m5V49E48B10D10.in '
++ command+='--time-limit 3600 '
++ command+='--m 20 '
++ command+='--k 500 '
++ command+='--statistics statistics/random-m5V49E48B10D10GRASPB.stat '
++ command+='--solution solutions/random-m5V49E48B10D10GRASPB.sol '
+++ date
++ echo 'Start time: Sex Ago 20 06:01:39 -03 2021'
+Start time: Sex Ago 20 06:01:39 -03 2021
++ eval './bin/exec/GRASPSolverExec --instance instances/random-m5V49E48B10D10.in --time-limit 3600 --m 20 --k 500 --statistics statistics/random-m5V49E48B10D10GRASPB.stat --solution solutions/random-m5V49E48B10D10GRASPB.sol '
+++ ./bin/exec/GRASPSolverExec --instance instances/random-m5V49E48B10D10.in --time-limit 3600 --m 20 --k 500 --statistics statistics/random-m5V49E48B10D10GRASPB.stat --solution solutions/random-m5V49E48B10D10GRASPB.sol
+-7159 3600
+++ date
++ echo 'End time: Sex Ago 20 07:01:39 -03 2021'
+End time: Sex Ago 20 07:01:39 -03 2021
++ for VE in 25,24 49,48 100,99
++ set 100 99
++ V=100
++ E=99
++ echo 'V: 100'
+V: 100
++ echo 'E: 99'
+E: 99
++ instance=random-m5V100E99B10D10
++ echo 'instance: random-m5V100E99B10D10'
+instance: random-m5V100E99B10D10
++ warmStartPercentageTime=0.1
++ echo warmStartPercentageTime=0.1
+warmStartPercentageTime=0.1
++ echo BnBSolverA
+BnBSolverA
++ command='./bin/exec/BnBSolverExec '
++ command+='--instance instances/random-m5V100E99B10D10.in '
++ command+='--time-limit 3600 '
++ command+='--warm-start-percentage-time 0.1 '
++ command+='--m 20 '
++ command+='--k 500 '
++ command+='--statistical-filter '
++ command+='--statistics statistics/random-m5V100E99B10D10BnBSolverA.stat '
++ command+='--solution solutions/random-m5V100E99B10D10BnBSolverA.sol '
+++ date
++ echo 'Start time: Sex Ago 20 07:01:39 -03 2021'
+Start time: Sex Ago 20 07:01:39 -03 2021
++ eval './bin/exec/BnBSolverExec --instance instances/random-m5V100E99B10D10.in --time-limit 3600 --warm-start-percentage-time 0.1 --m 20 --k 500 --statistical-filter --statistics statistics/random-m5V100E99B10D10BnBSolverA.stat --solution solutions/random-m5V100E99B10D10BnBSolverA.sol '
+++ ./bin/exec/BnBSolverExec --instance instances/random-m5V100E99B10D10.in --time-limit 3600 --warm-start-percentage-time 0.1 --m 20 --k 500 --statistical-filter --statistics statistics/random-m5V100E99B10D10BnBSolverA.stat --solution solutions/random-m5V100E99B10D10BnBSolverA.sol
+Academic license - for non-commercial use only - expires 2022-08-11
+++ date
++ echo 'End time: Sex Ago 20 07:46:52 -03 2021'
+End time: Sex Ago 20 07:46:52 -03 2021
++ echo BnCSolverA
+BnCSolverA
++ command='./bin/exec/BnCSolverExec '
++ command+='--instance instances/random-m5V100E99B10D10.in '
++ command+='--time-limit 3600 '
++ command+='--warm-start-percentage-time 0.1 '
++ command+='--m 20 '
++ command+='--k 500 '
++ command+='--statistical-filter '
++ command+='--statistics statistics/random-m5V100E99B10D10BnCSolverA.stat '
++ command+='--solution solutions/random-m5V100E99B10D10BnCSolverA.sol '
+++ date
++ echo 'Start time: Sex Ago 20 07:46:52 -03 2021'
+Start time: Sex Ago 20 07:46:52 -03 2021
++ eval './bin/exec/BnCSolverExec --instance instances/random-m5V100E99B10D10.in --time-limit 3600 --warm-start-percentage-time 0.1 --m 20 --k 500 --statistical-filter --statistics statistics/random-m5V100E99B10D10BnCSolverA.stat --solution solutions/random-m5V100E99B10D10BnCSolverA.sol '
+++ ./bin/exec/BnCSolverExec --instance instances/random-m5V100E99B10D10.in --time-limit 3600 --warm-start-percentage-time 0.1 --m 20 --k 500 --statistical-filter --statistics statistics/random-m5V100E99B10D10BnCSolverA.stat --solution solutions/random-m5V100E99B10D10BnCSolverA.sol
+Academic license - for non-commercial use only - expires 2022-08-11
+++ date
++ echo 'End time: Sex Ago 20 08:46:52 -03 2021'
+End time: Sex Ago 20 08:46:52 -03 2021
++ warmStartPercentageTime=0.0
++ echo warmStartPercentageTime=0.0
+warmStartPercentageTime=0.0
++ echo BnBSolverB
+BnBSolverB
++ command='./bin/exec/BnBSolverExec '
++ command+='--instance instances/random-m5V100E99B10D10.in '
++ command+='--time-limit 3600 '
++ command+='--warm-start-percentage-time 0.0 '
++ command+='--m 20 '
++ command+='--k 500 '
++ command+='--statistical-filter '
++ command+='--statistics statistics/random-m5V100E99B10D10BnBSolverB.stat '
++ command+='--solution solutions/random-m5V100E99B10D10BnBSolverB.sol '
+++ date
++ echo 'Start time: Sex Ago 20 08:46:52 -03 2021'
+Start time: Sex Ago 20 08:46:52 -03 2021
++ eval './bin/exec/BnBSolverExec --instance instances/random-m5V100E99B10D10.in --time-limit 3600 --warm-start-percentage-time 0.0 --m 20 --k 500 --statistical-filter --statistics statistics/random-m5V100E99B10D10BnBSolverB.stat --solution solutions/random-m5V100E99B10D10BnBSolverB.sol '
+++ ./bin/exec/BnBSolverExec --instance instances/random-m5V100E99B10D10.in --time-limit 3600 --warm-start-percentage-time 0.0 --m 20 --k 500 --statistical-filter --statistics statistics/random-m5V100E99B10D10BnBSolverB.stat --solution solutions/random-m5V100E99B10D10BnBSolverB.sol
+Academic license - for non-commercial use only - expires 2022-08-11
+++ date
++ echo 'End time: Sex Ago 20 09:46:53 -03 2021'
+End time: Sex Ago 20 09:46:53 -03 2021
++ echo BnCSolverB
+BnCSolverB
++ command='./bin/exec/BnCSolverExec '
++ command+='--instance instances/random-m5V100E99B10D10.in '
++ command+='--time-limit 3600 '
++ command+='--warm-start-percentage-time 0.0 '
++ command+='--m 20 '
++ command+='--k 500 '
++ command+='--statistical-filter '
++ command+='--statistics statistics/random-m5V100E99B10D10BnCSolverB.stat '
++ command+='--solution solutions/random-m5V100E99B10D10BnCSolverB.sol '
+++ date
++ echo 'Start time: Sex Ago 20 09:46:53 -03 2021'
+Start time: Sex Ago 20 09:46:53 -03 2021
++ eval './bin/exec/BnCSolverExec --instance instances/random-m5V100E99B10D10.in --time-limit 3600 --warm-start-percentage-time 0.0 --m 20 --k 500 --statistical-filter --statistics statistics/random-m5V100E99B10D10BnCSolverB.stat --solution solutions/random-m5V100E99B10D10BnCSolverB.sol '
+++ ./bin/exec/BnCSolverExec --instance instances/random-m5V100E99B10D10.in --time-limit 3600 --warm-start-percentage-time 0.0 --m 20 --k 500 --statistical-filter --statistics statistics/random-m5V100E99B10D10BnCSolverB.stat --solution solutions/random-m5V100E99B10D10BnCSolverB.sol
+Academic license - for non-commercial use only - expires 2022-08-11
+++ date
++ echo 'End time: Sex Ago 20 10:46:53 -03 2021'
+End time: Sex Ago 20 10:46:53 -03 2021
++ echo GRASPSolverA
+GRASPSolverA
++ command='./bin/exec/GRASPSolverExec '
++ command+='--instance instances/random-m5V100E99B10D10.in '
++ command+='--time-limit 3600 '
++ command+='--m 20 '
++ command+='--k 500 '
++ command+='--statistical-filter '
++ command+='--statistics statistics/random-m5V100E99B10D10GRASPA.stat '
++ command+='--solution solutions/random-m5V100E99B10D10GRASPA.sol '
+++ date
++ echo 'Start time: Sex Ago 20 10:46:53 -03 2021'
+Start time: Sex Ago 20 10:46:53 -03 2021
++ eval './bin/exec/GRASPSolverExec --instance instances/random-m5V100E99B10D10.in --time-limit 3600 --m 20 --k 500 --statistical-filter --statistics statistics/random-m5V100E99B10D10GRASPA.stat --solution solutions/random-m5V100E99B10D10GRASPA.sol '
+++ ./bin/exec/GRASPSolverExec --instance instances/random-m5V100E99B10D10.in --time-limit 3600 --m 20 --k 500 --statistical-filter --statistics statistics/random-m5V100E99B10D10GRASPA.stat --solution solutions/random-m5V100E99B10D10GRASPA.sol
+-29959 3600
+++ date
++ echo 'End time: Sex Ago 20 11:46:53 -03 2021'
+End time: Sex Ago 20 11:46:53 -03 2021
++ echo GRASPSolverB
+GRASPSolverB
++ command='./bin/exec/GRASPSolverExec '
++ command+='--instance instances/random-m5V100E99B10D10.in '
++ command+='--time-limit 3600 '
++ command+='--m 20 '
++ command+='--k 500 '
++ command+='--statistics statistics/random-m5V100E99B10D10GRASPB.stat '
++ command+='--solution solutions/random-m5V100E99B10D10GRASPB.sol '
+++ date
++ echo 'Start time: Sex Ago 20 11:46:53 -03 2021'
+Start time: Sex Ago 20 11:46:53 -03 2021
++ eval './bin/exec/GRASPSolverExec --instance instances/random-m5V100E99B10D10.in --time-limit 3600 --m 20 --k 500 --statistics statistics/random-m5V100E99B10D10GRASPB.stat --solution solutions/random-m5V100E99B10D10GRASPB.sol '
+++ ./bin/exec/GRASPSolverExec --instance instances/random-m5V100E99B10D10.in --time-limit 3600 --m 20 --k 500 --statistics statistics/random-m5V100E99B10D10GRASPB.stat --solution solutions/random-m5V100E99B10D10GRASPB.sol
+-29842 3600
+++ date
++ echo 'End time: Sex Ago 20 12:46:53 -03 2021'
+End time: Sex Ago 20 12:46:53 -03 2021
++ echo Finished
+Finished

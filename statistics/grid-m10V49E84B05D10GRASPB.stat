@@ -1,0 +1,36 @@
+m: 10
+D: 955
+B: 0.5
+|V|: 49
+|E|: 84
+|U|: 84
+|A|: 214
+|U'|: 85
+|A'|: 298
+Maximum demand: 954.9
+Time limit: 3600s
+Seed: 3392562133
+Solving time: 3600s
+Solutions found: 7389
+Best primal bound: 53533
+Best dual bound: 1.79769e+308
+Is solution feasible: 1
+Total iterations: 19742
+First solution iteration: 4
+First solution time: 0
+Best solution iteration: 8019
+Best solution time: 1472
+Solutions that are not partition: 0
+Solutions that are not connected: 11174
+Solutions that do not respects the capacity: 0
+Solutions that are not balanced: 4791
+Solutions that are not feasible: 12560
+Solutions that were fixed: 208
+Local search counter: 7389
+Ratio mean: 0.950039
+Ratio standard deviation: 0.0607006
+m: 20
+k: 500
+Statistical filter: 0
+Psi: 0.05 0.1 0.15 0.2 0.25 0.3 0.35 0.4 0.45 0.5 0.55 0.6 0.65 0.7 0.75 0.8 0.85 0.9 0.95 1
+p: 0.0530458 0.0523022 0.0524851 0.0523478 0.052036 0.0517001 0.0513453 0.0509323 0.0505145 0.0501436 0.0497694 0.0494494 0.0489372 0.0486916 0.0481941 0.0480392 0.0476824 0.0476257 0.0474263 0.047332

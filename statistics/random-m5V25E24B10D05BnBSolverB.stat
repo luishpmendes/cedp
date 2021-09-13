@@ -1,0 +1,17 @@
+m: 5
+D: 328
+B: 1
+|V|: 25
+|E|: 24
+|U|: 24
+|A|: 49
+|U'|: 25
+|A'|: 73
+Maximum demand: 328
+Time limit: 3600s
+Seed: 1403763339
+Solving time: 7s
+Solutions found: 1
+Best primal bound: 2124
+Best dual bound: 2124
+Is solution feasible: 1
