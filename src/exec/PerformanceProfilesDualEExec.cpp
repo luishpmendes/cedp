@@ -8,7 +8,7 @@
 int main (int argc, char * argv[]) {
     ArgumentParser argParser (argc, argv);
 
-    if (argParser.cmdOptionExists("-E1") && argParser.cmdOptionExists("-E2") 
+    if (argParser.cmdOptionExists("-E1") && argParser.cmdOptionExists("-E2")
             && argParser.cmdOptionExists("-E3")) {
         std::vector<double> dualBoundsBnBA,
                             dualBoundsBnBB,
@@ -17,37 +17,49 @@ int main (int argc, char * argv[]) {
                             ratiosBnBA,
                             ratiosBnBB,
                             ratiosBnCA,
-                            ratiosBnCB;
+                            ratiosBnCB,
+                            psi,
+                            p;
         std::set<double> ratios;
         std::string type, solver;
-        unsigned int m, D, V, E, U, A, UPrime, APrime, timeLimit, seed, 
-                     solvingTime, solutionsFound, primalBound, 
-                     isSolutionFeasible, totalIterations, 
-                     firstSolutionIteration, firstSolutionTime, 
-                     bestSolutionIteration, bestSolutionTime, notPartition, 
-                     notConnected, dontRespectCapacity, notBalanced, 
-                     notFeasible, fixedSolutions, localSearchCounter, n, E1, 
-                     E2, E3;
-        double Dratio, B, dualBound, maximumDemand;
+        unsigned int m, D, V, E, U, A, UPrime, APrime, timeLimit, seed,
+                     solvingTime, solutionsFound, primalBound,
+                     isSolutionFeasible, totalIterations,
+                     firstSolutionIteration, firstSolutionTime,
+                     bestSolutionIteration, bestSolutionTime, notPartition,
+                     notConnected, dontRespectCapacity, notBalanced,
+                     notFeasible, fixedSolutions, localSearchCounter, n, E1,
+                     E2, E3, psiSize, k;
+        double Dratio, B, dualBound, maximumDemand, ratioMean, ratioStd;
+        bool statisticalFilter;
 
         E1 = stoul(argParser.getCmdOption("-E1"));
         E2 = stoul(argParser.getCmdOption("-E2"));
         E3 = stoul(argParser.getCmdOption("-E3"));
 
-        while (std::cin >> type >> Dratio >> solver >> m >> D >> B >> V >> E 
-                >> U >> A >> UPrime >> APrime >> maximumDemand >> timeLimit >> 
-                seed >> solvingTime >> solutionsFound >> primalBound >> 
+        while (std::cin >> type >> Dratio >> solver >> m >> D >> B >> V >> E
+                >> U >> A >> UPrime >> APrime >> maximumDemand >> timeLimit >>
+                seed >> solvingTime >> solutionsFound >> primalBound >>
                 dualBound >> isSolutionFeasible) {
-            if (solver.compare("GRASPSolver") == 0 || 
-                    solver.compare("LagrangianHeuristicSolver1") == 0 || 
-                    solver.compare("LagrangianHeuristicSolver2") == 0) {
-                std::cin >> totalIterations >> firstSolutionIteration >> 
-                    firstSolutionTime >> bestSolutionIteration >> 
-                    bestSolutionTime >> notPartition >> notConnected >> 
-                    dontRespectCapacity >> notBalanced >> notFeasible >> 
-                    fixedSolutions;
-                if (solver.compare("GRASPSolver") == 0) {
-                    std::cin >> localSearchCounter;
+            if (solver.compare("GRASPA") == 0 ||
+                    solver.compare("GRASPB") == 0) {
+                std::cin >> totalIterations >> firstSolutionIteration >>
+                    firstSolutionTime >> bestSolutionIteration >>
+                    bestSolutionTime >> notPartition >> notConnected >>
+                    dontRespectCapacity >> notBalanced >> notFeasible >>
+                    fixedSolutions >> localSearchCounter >> ratioMean >>
+                    ratioStd >> psiSize >> k >> statisticalFilter;
+
+                psi.resize(psiSize);
+
+                for (double & alpha : psi) {
+                    std::cin >> alpha;
+                }
+
+                p.resize(psiSize);
+
+                for (double & prob : p) {
+                    std::cin >> prob;
                 }
             }
 
@@ -126,14 +138,14 @@ int main (int argc, char * argv[]) {
             }
         }
 
-        for (double ratio : ratios) {
+        for (const double & ratio : ratios) {
             double percentageBnBA,
                    percentageBnBB,
                    percentageBnCA,
                    percentageBnCB;
 
             percentageBnBA = 0.0;
-            for (double ratioBnBA : ratiosBnBA) {
+            for (const double & ratioBnBA : ratiosBnBA) {
                 if (ratioBnBA <= ratio) {
                     percentageBnBA += 1.0;
                 }
@@ -141,7 +153,7 @@ int main (int argc, char * argv[]) {
             percentageBnBA *= 100.0/((double) n);
 
             percentageBnBB = 0.0;
-            for (double ratioBnBB : ratiosBnBB) {
+            for (const double & ratioBnBB : ratiosBnBB) {
                 if (ratioBnBB <= ratio) {
                     percentageBnBB += 1.0;
                 }
@@ -149,7 +161,7 @@ int main (int argc, char * argv[]) {
             percentageBnBB *= 100.0/((double) n);
 
             percentageBnCA = 0.0;
-            for (double ratioBnCA : ratiosBnCA) {
+            for (const double & ratioBnCA : ratiosBnCA) {
                 if (ratioBnCA <= ratio) {
                     percentageBnCA += 1.0;
                 }
@@ -157,7 +169,7 @@ int main (int argc, char * argv[]) {
             percentageBnCA *= 100.0/((double) n);
 
             percentageBnCB = 0.0;
-            for (double ratioBnCB : ratiosBnCB) {
+            for (const double & ratioBnCB : ratiosBnCB) {
                 if (ratioBnCB <= ratio) {
                     percentageBnCB += 1.0;
                 }

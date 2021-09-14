@@ -9,35 +9,49 @@ int main () {
                               primalBoundsBnBB,
                               primalBoundsBnCA,
                               primalBoundsBnCB,
-                              primalBoundsGRASP;
+                              primalBoundsGRASPA,
+                              primalBoundsGRASPB;
     std::vector<double> ratiosBnBA,
                         ratiosBnBB,
                         ratiosBnCA,
                         ratiosBnCB,
-                        ratiosGRASP;
+                        ratiosGRASPA,
+                        ratiosGRASPB,
+                        psi,
+                        p;
     std::set<double> ratios;
     std::string type, solver;
-    unsigned int m, D, V, E, U, A, UPrime, APrime, timeLimit, seed, 
-                 solvingTime, solutionsFound, primalBound, isSolutionFeasible, 
-                 totalIterations, firstSolutionIteration, firstSolutionTime, 
-                 bestSolutionIteration, bestSolutionTime, notPartition, 
-                 notConnected, dontRespectCapacity, notBalanced, notFeasible, 
-                 fixedSolutions, localSearchCounter, n;
-    double Dratio, B, dualBound, maximumDemand;
+    unsigned int m, D, V, E, U, A, UPrime, APrime, timeLimit, seed,
+                 solvingTime, solutionsFound, primalBound, isSolutionFeasible,
+                 totalIterations, firstSolutionIteration, firstSolutionTime,
+                 bestSolutionIteration, bestSolutionTime, notPartition,
+                 notConnected, dontRespectCapacity, notBalanced, notFeasible,
+                 fixedSolutions, localSearchCounter, n, psiSize, k;
+    double Dratio, B, dualBound, maximumDemand, ratioMean, ratioStd;
+    bool statisticalFilter;
 
-    while (std::cin >> type >> Dratio >> solver >> m >> D >> B >> V >> E >> U 
-            >> A >> UPrime >> APrime >> maximumDemand >> timeLimit >> seed >> 
-            solvingTime >> solutionsFound >> primalBound >> dualBound >> 
+    while (std::cin >> type >> Dratio >> solver >> m >> D >> B >> V >> E >> U
+            >> A >> UPrime >> APrime >> maximumDemand >> timeLimit >> seed >>
+            solvingTime >> solutionsFound >> primalBound >> dualBound >>
             isSolutionFeasible) {
-        if (solver.compare("GRASPSolver") == 0 || 
-                solver.compare("LagrangianHeuristicSolver1") == 0 || 
-                solver.compare("LagrangianHeuristicSolver2") == 0) {
-            std::cin >> totalIterations >> firstSolutionIteration >> 
-                firstSolutionTime >> bestSolutionIteration >> bestSolutionTime 
-                >> notPartition >> notConnected >> dontRespectCapacity >> 
-                notBalanced >> notFeasible >> fixedSolutions;
-            if (solver.compare("GRASPSolver") == 0) {
-                std::cin >> localSearchCounter;
+        if (solver.compare("GRASPA") == 0 || solver.compare("GRASPB") == 0) {
+            std::cin >> totalIterations >> firstSolutionIteration >>
+                firstSolutionTime >> bestSolutionIteration >>
+                bestSolutionTime >> notPartition >> notConnected >>
+                dontRespectCapacity >> notBalanced >> notFeasible >>
+                fixedSolutions >> localSearchCounter >> ratioMean >>
+                ratioStd >> psiSize >> k >> statisticalFilter;
+
+            psi.resize(psiSize);
+
+            for (double & alpha : psi) {
+                std::cin >> alpha;
+            }
+
+            p.resize(psiSize);
+
+            for (double & prob : p) {
+                std::cin >> prob;
             }
         }
 
@@ -53,8 +67,10 @@ int main () {
             primalBoundsBnCA.push_back(primalBound);
         } else if (solver.compare("BnCSolverB") == 0) {
             primalBoundsBnCB.push_back(primalBound);
-        } else if (solver.compare("GRASPSolver") == 0) {
-            primalBoundsGRASP.push_back(primalBound);
+        } else if (solver.compare("GRASPA") == 0) {
+            primalBoundsGRASPA.push_back(primalBound);
+        } else if (solver.compare("GRASPB") == 0) {
+            primalBoundsGRASPB.push_back(primalBound);
         }
     }
 
@@ -64,21 +80,24 @@ int main () {
     assert(primalBoundsBnBB.size() == n);
     assert(primalBoundsBnCA.size() == n);
     assert(primalBoundsBnCB.size() == n);
-    assert(primalBoundsGRASP.size() == n);
+    assert(primalBoundsGRASPA.size() == n);
+    assert(primalBoundsGRASPB.size() == n);
 
     for (unsigned int i = 0; i < n; i++) {
         unsigned int primalBoundBnBA,
                      primalBoundBnBB,
                      primalBoundBnCA,
                      primalBoundBnCB,
-                     primalBoundGRASP,
+                     primalBoundGRASPA,
+                     primalBoundGRASPB,
                      bestPrimalBound;
 
         primalBoundBnBA = primalBoundsBnBA[i];
         primalBoundBnBB = primalBoundsBnBB[i];
         primalBoundBnCA = primalBoundsBnCA[i];
         primalBoundBnCB = primalBoundsBnCB[i];
-        primalBoundGRASP = primalBoundsGRASP[i];
+        primalBoundGRASPA = primalBoundsGRASPA[i];
+        primalBoundGRASPB = primalBoundsGRASPB[i];
 
         bestPrimalBound = 0;
 
@@ -98,8 +117,12 @@ int main () {
             bestPrimalBound = primalBoundBnCB;
         }
 
-        if (bestPrimalBound < primalBoundGRASP && primalBoundGRASP < UINT_MAX) {
-            bestPrimalBound = primalBoundGRASP;
+        if (bestPrimalBound < primalBoundGRASPA && primalBoundGRASPA < UINT_MAX) {
+            bestPrimalBound = primalBoundGRASPA;
+        }
+
+        if (bestPrimalBound < primalBoundGRASPB && primalBoundGRASPB < UINT_MAX) {
+            bestPrimalBound = primalBoundGRASPB;
         }
 
         if (primalBoundBnBA < UINT_MAX) {
@@ -126,22 +149,29 @@ int main () {
             ratios.insert(ratioBnCB);
         }
 
-        if (primalBoundGRASP < UINT_MAX) {
-            double ratioGRASP = ((double) bestPrimalBound)/((double) primalBoundGRASP);
-            ratiosGRASP.push_back(ratioGRASP);
-            ratios.insert(ratioGRASP);
+        if (primalBoundGRASPA < UINT_MAX) {
+            double ratioGRASPA = ((double) bestPrimalBound)/((double) primalBoundGRASPA);
+            ratiosGRASPA.push_back(ratioGRASPA);
+            ratios.insert(ratioGRASPA);
+        }
+
+        if (primalBoundGRASPB < UINT_MAX) {
+            double ratioGRASPB = ((double) bestPrimalBound)/((double) primalBoundGRASPB);
+            ratiosGRASPB.push_back(ratioGRASPB);
+            ratios.insert(ratioGRASPB);
         }
     }
 
-    for (double ratio : ratios) {
+    for (const double & ratio : ratios) {
         double percentageBnBA,
                percentageBnBB,
                percentageBnCA,
                percentageBnCB,
-               percentageGRASP;
+               percentageGRASPA,
+               percentageGRASPB;
 
         percentageBnBA = 0.0;
-        for (double ratioBnBA : ratiosBnBA) {
+        for (const double & ratioBnBA : ratiosBnBA) {
             if (ratioBnBA <= ratio) {
                 percentageBnBA += 1.0;
             }
@@ -149,7 +179,7 @@ int main () {
         percentageBnBA *= 100.0/((double) n);
 
         percentageBnBB = 0.0;
-        for (double ratioBnBB : ratiosBnBB) {
+        for (const double & ratioBnBB : ratiosBnBB) {
             if (ratioBnBB <= ratio) {
                 percentageBnBB += 1.0;
             }
@@ -157,7 +187,7 @@ int main () {
         percentageBnBB *= 100.0/((double) n);
 
         percentageBnCA = 0.0;
-        for (double ratioBnCA : ratiosBnCA) {
+        for (const double & ratioBnCA : ratiosBnCA) {
             if (ratioBnCA <= ratio) {
                 percentageBnCA += 1.0;
             }
@@ -165,27 +195,36 @@ int main () {
         percentageBnCA *= 100.0/((double) n);
 
         percentageBnCB = 0.0;
-        for (double ratioBnCB : ratiosBnCB) {
+        for (const double & ratioBnCB : ratiosBnCB) {
             if (ratioBnCB <= ratio) {
                 percentageBnCB += 1.0;
             }
         }
         percentageBnCB *= 100.0/((double) n);
 
-        percentageGRASP = 0.0;
-        for (double ratioGRASP : ratiosGRASP) {
-            if (ratioGRASP <= ratio) {
-                percentageGRASP += 1.0;
+        percentageGRASPA = 0.0;
+        for (const double & ratioGRASPA : ratiosGRASPA) {
+            if (ratioGRASPA <= ratio) {
+                percentageGRASPA += 1.0;
             }
         }
-        percentageGRASP *= 100.0/((double) n);
+        percentageGRASPA *= 100.0/((double) n);
+
+        percentageGRASPB = 0.0;
+        for (const double & ratioGRASPB : ratiosGRASPB) {
+            if (ratioGRASPB <= ratio) {
+                percentageGRASPB += 1.0;
+            }
+        }
+        percentageGRASPB *= 100.0/((double) n);
 
         std::cout << ratio << ", "
                   << percentageBnBA << ", "
                   << percentageBnBB << ", "
                   << percentageBnCA << ", "
                   << percentageBnCB << ", "
-                  << percentageGRASP << std::endl;
+                  << percentageGRASPA << ", "
+                  << percentageGRASPB << std::endl;
     }
 
     return 0;
