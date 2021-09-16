@@ -380,6 +380,62 @@ $(BIN)/exec/PerformanceProfilesDualEExec: $(BIN)/exec/ArgumentParser.o \
 
 PerformanceProfilesDualEExec: clean $(BIN)/exec/PerformanceProfilesDualEExec
 
+$(BIN)/exec/StatisticsCalculatorExec: $(BIN)/exec/ArgumentParser.o \
+                                      $(BIN)/exec/StatisticsCalculatorExec.o 
+	@echo "--> Linking objects..."
+	$(CPP) -o $@ $^ $(CARGS)
+	@echo
+
+StatisticsCalculatorExec: clean $(BIN)/exec/StatisticsCalculatorExec
+
+$(BIN)/exec/StatisticsCalculatorTExec: $(BIN)/exec/ArgumentParser.o \
+                                       $(BIN)/exec/StatisticsCalculatorTExec.o
+	@echo "--> Linking objects..."
+	$(CPP) -o $@ $^ $(CARGS)
+	@echo
+
+StatisticsCalculatorTExec: clean $(BIN)/exec/StatisticsCalculatorTExec
+
+$(BIN)/exec/StatisticsCalculatorMExec: $(BIN)/exec/ArgumentParser.o \
+                                       $(BIN)/exec/StatisticsCalculatorMExec.o
+	@echo "--> Linking objects..."
+	$(CPP) -o $@ $^ $(CARGS)
+	@echo
+
+StatisticsCalculatorMExec: clean $(BIN)/exec/StatisticsCalculatorMExec
+
+$(BIN)/exec/StatisticsCalculatorBExec: $(BIN)/exec/ArgumentParser.o \
+                                       $(BIN)/exec/StatisticsCalculatorBExec.o
+	@echo "--> Linking objects..."
+	$(CPP) -o $@ $^ $(CARGS)
+	@echo
+
+StatisticsCalculatorBExec: clean $(BIN)/exec/StatisticsCalculatorBExec
+
+$(BIN)/exec/StatisticsCalculatorDExec: $(BIN)/exec/ArgumentParser.o \
+                                       $(BIN)/exec/StatisticsCalculatorDExec.o
+	@echo "--> Linking objects..."
+	$(CPP) -o $@ $^ $(CARGS)
+	@echo
+
+StatisticsCalculatorDExec: clean $(BIN)/exec/StatisticsCalculatorDExec
+
+$(BIN)/exec/StatisticsCalculatorVExec: $(BIN)/exec/ArgumentParser.o \
+                                       $(BIN)/exec/StatisticsCalculatorVExec.o
+	@echo "--> Linking objects..."
+	$(CPP) -o $@ $^ $(CARGS)
+	@echo
+
+StatisticsCalculatorVExec: clean $(BIN)/exec/StatisticsCalculatorVExec
+
+$(BIN)/exec/StatisticsCalculatorEExec: $(BIN)/exec/ArgumentParser.o \
+                                       $(BIN)/exec/StatisticsCalculatorEExec.o
+	@echo "--> Linking objects..."
+	$(CPP) -o $@ $^ $(CARGS)
+	@echo
+
+StatisticsCalculatorEExec: clean $(BIN)/exec/StatisticsCalculatorEExec
+
 tests: InstanceTest \
        SolutionTest \
        HeuristicTest \
@@ -408,7 +464,14 @@ execs: GraphGeneratorExec \
        PerformanceProfilesPrimalVExec \
        PerformanceProfilesDualVExec \
        PerformanceProfilesPrimalEExec \
-       PerformanceProfilesDualEExec
+       PerformanceProfilesDualEExec \
+       StatisticsCalculatorExec \
+       StatisticsCalculatorTExec \
+       StatisticsCalculatorMExec \
+       StatisticsCalculatorBExec \
+       StatisticsCalculatorDExec \
+       StatisticsCalculatorVExec \
+       StatisticsCalculatorEExec
 
 all : tests execs
 
