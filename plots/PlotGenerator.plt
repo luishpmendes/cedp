@@ -23,14 +23,23 @@ cores[8] = "#9900FF"
 cores[9] = "#00FF99"
 cores[10] = "#FF0099"
 
-if (solver eq "BnBSolver") {
-    titulo = "LGFF"
-} else {
-    if (solver eq "BnCSolver") {
+if (solver eq "BnCSolverB") {
         titulo = "CSF"
-    } else {
-        titulo = "GRASP"
-    }
+}
+if (solver eq "BnBSolverB") {
+    titulo = "LGFF"
+}
+if (solver eq "GRASPB") {
+    titulo = "GRASP without filter"
+}
+if (solver eq "GRASPA") {
+    titulo = "GRASP with filter"
+}
+if (solver eq "BnCSolverA") {
+        titulo = "GRASP + CSF"
+}
+if (solver eq "BnBSolverA") {
+    titulo = "GRASP + LGFF"
 }
 
 set title titulo
