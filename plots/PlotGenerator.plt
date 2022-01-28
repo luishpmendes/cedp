@@ -24,7 +24,7 @@ cores[9] = "#00FF99"
 cores[10] = "#FF0099"
 
 if (solver eq "BnCSolverB") {
-        titulo = "CSF"
+    titulo = "CSF"
 }
 if (solver eq "BnBSolverB") {
     titulo = "LGFF"
@@ -36,7 +36,7 @@ if (solver eq "GRASPA") {
     titulo = "GRASP with filter"
 }
 if (solver eq "BnCSolverA") {
-        titulo = "GRASP + CSF"
+    titulo = "GRASP + CSF"
 }
 if (solver eq "BnBSolverA") {
     titulo = "GRASP + LGFF"
@@ -48,5 +48,5 @@ set output "plots/grid-m".m."V".V."E".E."B".B."D".D.solver.".tex"
 district = "plots/grid-m".m."V".V."E".E."B".B."D".D.solver."District"
 vertices = "plots/grid-m".m."V".V."E".E."B".B."D".D.solver.".txt"
 
-plot for [i=0:m-1] district.i.".txt" with lines linetype 1 linewidth 3 linecolor rgbcolor cores[i+1] title "$\\mathcal{E}_{".(i+1)."}$", vertices using 1:2 with points pointtype 7 pointsize 0.3 linecolor rgb "black" notitle
+plot for [i=0:m-1] district.i.".txt" with lines dashtype i linetype 1 linewidth 3 linecolor rgbcolor cores[i+1] title "$\\mathcal{E}_{".(i+1)."}$", vertices using 1:2 with points pointtype 7 pointsize 0.3 linecolor rgb "black" notitle
 
